@@ -15,6 +15,9 @@ import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './auth/store/auth.effects';
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
+import { CustomSerializer } from './shared/utils';
+
 
 @NgModule({
   declarations: [
@@ -36,8 +39,10 @@ import { AuthEffects } from './auth/store/auth.effects';
       }
     }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    EffectsModule.forRoot([])
-  ],
+    EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot({
+      serializer: CustomSerializer,
+    })],
   providers: [],
   bootstrap: [AppComponent],
 })
