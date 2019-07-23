@@ -1,0 +1,15 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import {WelcomeComponent} from './welcome/welcome.component'
+
+const routes: Routes = [
+  {path: '', pathMatch: 'full', redirectTo: 'welcome'},
+  {path: 'welcome', component: WelcomeComponent},
+  {path: 'offer', loadChildren: () => import('./customer-dashboard/customer-dashboard.module').then(mod => mod.CustomerDashboardModule)}
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

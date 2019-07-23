@@ -1,0 +1,40 @@
+<section class="homes">
+  <div class="home" *ngFor="let event of musicEvents$; let i = index">
+    <img [src]="event.img" alt="" class="home__img" />
+    <svg class="home__like">
+      <use xlink:href="../../../assets/fonts/sprite2.svg#icon-heart-full"></use>
+    </svg>
+    <h5 class="home__name">{{ event.title }}</h5>
+    <div class="home__location">
+      <svg class="home__like">
+        <use xlink:href="../../../assets/fonts/sprite2.svg#icon-map-pin"></use>
+      </svg>
+      <p>{{ event.location.name }}</p>
+    </div>
+    <div class="home__rooms">
+      <svg class="home__like">
+        <use xlink:href="../../../assets/fonts/sprite2.svg#icon-calendar"></use>
+      </svg>
+      <p>{{ getDate(i) }}</p>
+    </div>
+    <div class="home__area">
+      <svg class="home__like">
+        <use
+          xlink:href="../../../assets/fonts/sprite2.svg#icon-documents"
+        ></use>
+      </svg>
+      <p>Starts from {{ event.tickets.stands.price }}$</p>
+    </div>
+    <div class="home__price">
+      <svg class="home__like">
+        <use
+          xlink:href="../../../assets/fonts/sprite2.svg#icon-modern-mic"
+        ></use>
+      </svg>
+      <p>{{ event.genre }}</p>
+    </div>
+    <button class="btn home__btn" [routerLink]="['../event']">Read more</button>
+  </div>
+
+  <app-pagination></app-pagination>
+</section>

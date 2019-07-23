@@ -1,0 +1,25 @@
+@import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins.scss";
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+    background-color: $color-grey-light-1;
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  
+    @include respond(tab-land) {
+      margin: 0;
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  
+  .content {
+    display: flex;
+    min-height: 50rem;
+
+ 
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+  }

@@ -1,0 +1,32 @@
+<nav class="sidebar">
+  <ul class="side-nav">
+    <li class="side-nav__item" routerLinkActive="side-nav__item--active">
+      <a href="#" class="side-nav__link" [routerLink]="['events']" > 
+        <svg class="side-nav__icon">
+          <use xlink:href="../../assets/fonts/sprite.svg#icon-modern-mic"></use>
+        </svg>
+        <span>Events</span>
+      </a>
+    </li>
+    <li class="side-nav__item">
+      <a href="#" class="side-nav__link" [routerLink]="['services']" routerLinkActive="side-nav__item--active" >
+        <svg class="side-nav__icon">
+          <use xlink:href="../../assets/fonts/sprite.svg#icon-tools"></use>
+        </svg>
+        <span>Services</span>
+      </a>
+    </li>
+    <!-- <li class="side-nav__item">
+      <a href="#" class="side-nav__link" [routerLink]="['aboutus']" routerLinkActive="side-nav__item--active" >
+        <svg class="side-nav__icon">
+          <use xlink:href="../../assets/fonts/sprite.svg#icon-tools"></use>
+        </svg>
+        <span>About us</span>
+      </a>
+    </li> -->
+  </ul>
+
+  <div class="legal">
+    &copy; 2017 by Eventoo. All rights reserved.
+  </div>
+</nav>

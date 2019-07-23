@@ -1,0 +1,13 @@
+<div class="pagination">
+        <a class="pagination__item" (click)="decrementPage()">&laquo;</a>
+        <a class="pagination__item" *ngIf="isPageSingle(); else pages">{{
+          currentPage
+        }}</a>
+        <ng-template #pages>
+          <a class="pagination__item" *ngFor="let page of generatePages(); let j = index"
+          [class.pagination__item-middle]="getMiddlePage(j)">
+            {{page}}
+          </a>
+        </ng-template>
+        <a class="pagination__item" (click)="incrementPage()">&raquo;</a>
+      </div>

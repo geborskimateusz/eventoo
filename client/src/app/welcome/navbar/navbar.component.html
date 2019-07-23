@@ -1,0 +1,26 @@
+<div class="navigation">
+  <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
+  <label for="navi-toggle" class="navigation__button">
+    <span class="navigation__icon">&nbsp;</span>
+  </label>
+  <div class="navigation__background"  >&nbsp;</div>
+  <nav class="navigation__nav" >
+    <ul class="navigation__list">
+      <li class="navigation__item">
+        <a routerLink="/welcome" fragment="about" href="#" class="navigation__link" (click)="onClose()" >About Eventoo</a>
+      </li>
+      <li class="navigation__item">
+        <a routerLink="/welcome" fragment="tours" href="#" class="navigation__link" (click)="onClose()">Popular festivals</a>
+      </li>
+      <li class="navigation__item">
+          <a routerLink="/welcome" fragment="services" href="#" class="navigation__link" (click)="onClose()">Services</a>
+        </li>
+      <li class="navigation__item">
+        <a routerLink="/welcome" fragment="stories" href="#" class="navigation__link" (click)="onClose()">Stories</a>
+      </li>
+      <li class="navigation__item">
+        <a routerLink="/welcome" fragment="form" href="#" class="navigation__link" (click)="onClose()">Contact us</a>
+      </li>
+    </ul>
+  </nav>
+</div>

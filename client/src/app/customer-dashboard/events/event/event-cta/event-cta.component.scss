@@ -1,0 +1,76 @@
+@import "../../../../../styles/abstracts/mixins.scss";
+@import "../../../../../styles/abstracts/variables";
+
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+
+  &__book-now {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+
+  @include respond(tab-port) {
+    padding: 2.5rem 0;
+  }
+}
+
+.btn {
+  font-size: 1.5rem;
+  border: none;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  color: $color-white;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  max-height: 5rem;
+
+  & > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-image: linear-gradient(
+      to left,
+      $color-primary-light,
+      $color-primary-dark
+    );
+  }
+
+  &__visible {
+    padding: 0 7rem;
+  }
+
+  &__invisible {
+    position: absolute;
+    left: 0;
+    top: -100%;
+    padding: 1.5rem 0;
+  }
+
+  &:hover &__visible {
+    transform: translateY(200%);
+  }
+
+  &:hover &__invisible {
+    top: 0;
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
