@@ -15,9 +15,20 @@ import { MusicGenres } from 'src/app/shared/music-genres.model';
   styleUrls: ['./events.component.scss']
 })
 export class EventsComponent implements OnInit {
-
+  
+  allEvents$: Observable<Event[]>;
   electronicEvents$: Observable<Event[]>;
   jazzEvents$: Observable<Event[]>;
+  flamencoEvents$: Observable<Event[]>;
+  danceEvents$: Observable<Event[]>;
+  popEvents$: Observable<Event[]>;
+  hipHopEvents$: Observable<Event[]>;
+  rockEvents$: Observable<Event[]>;
+  metalEvents$: Observable<Event[]>;
+  folkEvents$: Observable<Event[]>;
+  reggaeEvents$: Observable<Event[]>;
+  soulEvents$: Observable<Event[]>;
+
 
   constructor(private store: Store<AppState>) {
   }
@@ -30,13 +41,51 @@ export class EventsComponent implements OnInit {
     //   select(selectAllEvents)
     // );
     const events$ = of(EVENTS_DATASOURCE);
+
+    this.allEvents$ = events$;
     
     this.electronicEvents$ = events$.pipe(
       map(events => events.filter(event => event.genre === MusicGenres.ELECTRONIC))
     )
 
+    this.flamencoEvents$ = events$.pipe(
+      map(events => events.filter(event => event.genre === MusicGenres.FLAMENCO))
+    )
+
+    this.danceEvents$ = events$.pipe(
+      map(events => events.filter(event => event.genre === MusicGenres.DANCE))
+    )
+
+    this.popEvents$ = events$.pipe(
+      map(events => events.filter(event => event.genre === MusicGenres.POP))
+    )
+
     this.jazzEvents$ = events$.pipe(
       map(events => events.filter(event => event.genre === MusicGenres.JAZZ))
+    )
+
+    this.hipHopEvents$ = events$.pipe(
+      map(events => events.filter(event => event.genre === MusicGenres.HIP_HOP))
+    )
+
+    this.rockEvents$ = events$.pipe(
+      map(events => events.filter(event => event.genre === MusicGenres.ROCK))
+    )
+
+    this.metalEvents$ = events$.pipe(
+      map(events => events.filter(event => event.genre === MusicGenres.METAL))
+    )
+
+    this.folkEvents$ = events$.pipe(
+      map(events => events.filter(event => event.genre === MusicGenres.FOLK))
+    )
+
+    this.reggaeEvents$ = events$.pipe(
+      map(events => events.filter(event => event.genre === MusicGenres.REGGAE))
+    )
+
+    this.soulEvents$ = events$.pipe(
+      map(events => events.filter(event => event.genre === MusicGenres.SOUL))
     )
 
   }

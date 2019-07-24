@@ -1,7 +1,6 @@
-@import "../../../styles/abstracts/variables";
-@import "../../../styles/abstracts/mixins";
+@import "../../../../styles/abstracts/variables";
+@import "../../../../styles/abstracts/mixins";
 :host {
-  flex: 1;
   display: grid;
   grid-template-columns: repeat(3, minmax(25rem, 1fr));
 

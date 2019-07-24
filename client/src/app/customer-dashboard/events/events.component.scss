@@ -2,7 +2,11 @@
 @import "../../../styles/abstracts/mixins";
 
 :host {
-  flex: 1;
+  max-width: 80%;
+
+  @include respond(tab-port) {
+    max-width: 100%;
+  }
 }
 .homes {
 

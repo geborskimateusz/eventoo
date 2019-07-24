@@ -1,8 +1,8 @@
 <section class="homes">
-    <mat-tab-group>
-        <mat-tab label="All">
+  <mat-tab-group>
+    <mat-tab label="All">
             <app-events-card-list 
-              [events]="electronicEvents$ | async">
+              [events]="allEvents$ | async">
       
             </app-events-card-list >
       
@@ -11,7 +11,7 @@
           <mat-tab label="Hip-Hop">
       
             <app-events-card-list   
-              [events]="jazzEvents$ | async"
+              [events]="hipHopEvents$ | async"
       
             ></app-events-card-list >
       
@@ -22,7 +22,7 @@
         <mat-tab label="Rock">
     
           <app-events-card-list 
-            [events]="electronicEvents$ | async">
+            [events]="rockEvents$ | async">
     
           </app-events-card-list >
     
@@ -31,7 +31,7 @@
         <mat-tab label="Metal">
     
           <app-events-card-list   
-            [events]="jazzEvents$ | async"
+            [events]="metalEvents$ | async"
     
           ></app-events-card-list >
     
@@ -40,7 +40,7 @@
       <mat-tab label="Folk">
     
           <app-events-card-list 
-            [events]="electronicEvents$ | async">
+            [events]="folkEvents$ | async">
     
           </app-events-card-list >
     
@@ -49,7 +49,7 @@
         <mat-tab label="Reggae">
     
           <app-events-card-list   
-            [events]="jazzEvents$ | async"
+            [events]="reggaeEvents$ | async"
     
           ></app-events-card-list >
     
@@ -72,43 +72,27 @@
           ></app-events-card-list >
     
         </mat-tab>
-    
-      <mat-tab label="Pop">
-    
-          <app-events-card-list 
-            [events]="electronicEvents$ | async">
-    
-          </app-events-card-list >
-    
-        </mat-tab>
-    
-        <mat-tab label="Dance">
-    
-          <app-events-card-list   
-            [events]="jazzEvents$ | async"
-    
-          ></app-events-card-list >
-    
-        </mat-tab>
-    
-      <mat-tab label="Flamenco">
-    
-          <app-events-card-list 
-            [events]="electronicEvents$ | async">
-    
-          </app-events-card-list >
-    
-        </mat-tab>
-    
-        <mat-tab label="Electronic">
-    
-          <app-events-card-list   
-            [events]="jazzEvents$ | async"
-    
-          ></app-events-card-list >
-    
-        </mat-tab>
-    
-      </mat-tab-group>
 
+    <mat-tab label="Pop">
+      <app-events-card-list [events]="popEvents$ | async">
+      </app-events-card-list>
+    </mat-tab>
+
+    <mat-tab label="Dance">
+      <app-events-card-list
+        [events]="danceEvents$ | async"
+      ></app-events-card-list>
+    </mat-tab>
+
+    <mat-tab label="Flamenco">
+      <app-events-card-list [events]="flamencoEvents$ | async">
+      </app-events-card-list>
+    </mat-tab>
+
+    <mat-tab label="Electronic">
+      <app-events-card-list
+        [events]="electronicEvents$ | async"
+      ></app-events-card-list>
+    </mat-tab>
+  </mat-tab-group>
 </section>
