@@ -19,6 +19,7 @@ import { EventDetailComponent } from './events/event/event-detail/event-detail.c
 import { EventOverviewComponent } from './events/event/event-overview/event-overview.component';
 
 import { SharedModule } from '../shared/shared.module';
+import { EventResolver } from './events/event/event.resolver';
 
 @NgModule({
     declarations: [
@@ -45,6 +46,7 @@ import { SharedModule } from '../shared/shared.module';
         SharedModule
     ],
     providers: [
+        EventResolver
     ]
 })
 export class CustomerDashboardModule {}

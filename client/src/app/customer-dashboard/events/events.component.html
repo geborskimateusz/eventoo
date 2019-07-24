@@ -33,7 +33,7 @@
       </svg>
       <p>{{ event.genre }}</p>
     </div>
-    <button class="btn home__btn" [routerLink]="['../event']">Read more</button>
+    <button class="btn home__btn" [routerLink]="['../event/', event.id]">Read more</button>
   </div>
 
   <app-pagination></app-pagination>

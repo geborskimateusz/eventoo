@@ -9,6 +9,7 @@ import { UserComponent } from './user/user.component';
 import { ShoppingCart } from './user/shopping-cart/shopping-cart-component';
 import { EventRatesComponent } from './events/event/event-rates/event-rates.component';
 import { AuthGuard } from '../auth/auth.guard';
+import { EventResolver } from './events/event/event.resolver';
 
 
 const routes: Routes = [
@@ -20,7 +21,12 @@ const routes: Routes = [
         redirectTo: 'events'
       },
       { path: 'events', component: EventsComponent },
-      { path: 'event', component: EventComponent },
+      {
+        path: 'event/:id', component: EventComponent,
+        resolve: {
+          event: EventResolver
+        }
+      },
       { path: 'eventRates', component: EventRatesComponent },
       { path: 'services', component: ServicesComponent },
       { path: 'order', component: BookComponent, canActivate: [AuthGuard] },
