@@ -1,6 +1,6 @@
 import { Component, OnInit, ɵConsole } from '@angular/core';
 import { EVENTS_DATASOURCE } from 'src/app/shared/events-datasource';
-import { EventModel } from 'src/app/shared/event.model';
+import { Event } from 'src/app/shared/event.model';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store';
@@ -12,7 +12,7 @@ import { AppState } from 'src/app/store';
 })
 export class EventsComponent implements OnInit {
 
-  musicEvents$: EventModel[];
+  musicEvents$: Event[];
   
 
   constructor(private store: Store<AppState>) {

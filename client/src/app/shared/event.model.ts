@@ -1,7 +1,7 @@
 import { MusicGenres } from './music-genres.model';
 import { TicketModel } from './ticket';
 
-export interface EventModel {
+export interface Event {
     id: string,
     title: string,
     description: string,

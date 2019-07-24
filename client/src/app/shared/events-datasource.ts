@@ -1,7 +1,7 @@
-import { EventModel } from './event.model';
+import { Event } from './event.model';
 import { MusicGenres } from './music-genres.model';
 
-export const EVENTS_DATASOURCE: EventModel[] = [
+export const EVENTS_DATASOURCE: Event[] = [
 
     //DANCE, 5 EVENS
     {

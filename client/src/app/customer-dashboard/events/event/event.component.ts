@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventModel } from 'src/app/shared/event.model';
+import { Event } from 'src/app/shared/event.model';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EventComponent implements OnInit {
 
-  event: EventModel;
+  event: Event;
 
   constructor(private router: ActivatedRoute) { 
     console.log('in event component')
