@@ -1,19 +1,13 @@
 <div class="description">
     <p class="paragraph">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi
-      dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut
-      corporis incidunt deserunt quae architecto voluptate.
-    </p>
-    <p class="paragraph">
-      Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto
-      voluptate delectus, inventore iure aliquid aliquam.
+      {{eventData.description}}
     </p>
     <ul class="list">
-      <li class="list__item">Golden Circle Early Entrance 100$</li>
-      <li class="list__item">Golden Circle 120$</li>
-      <li class="list__item">General Admission 50$</li>
-      <li class="list__item">Stands 30$</li>
-      <li class="list__item">VIP 250$</li>
+      <li class="list__item">Golden Circle Early Entrance {{eventData.tickets.goldenCircleEarlyEntrance.price}}$</li>
+      <li class="list__item">Golden Circle {{eventData.tickets.goldenCircleRegular.price}}$</li>
+      <li class="list__item">General Admission {{eventData.tickets.generalAdmission.price}}$</li>
+      <li class="list__item">Stands {{eventData.tickets.generalAdmission.price}}$</li>
+      <li class="list__item">VIP {{eventData.tickets.VIP.price}}$</li>
     </ul>
     <div class="recommend">
       <p class="recommend__count">

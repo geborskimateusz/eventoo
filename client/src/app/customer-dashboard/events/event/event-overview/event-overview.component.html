@@ -1,8 +1,8 @@
 <div class="gallery">
     <figure class="gallery__item">
       <img
-        src="https://s1.ticketm.net/img/tat/dam/a/d8c/d1e1685d-87ba-40ce-9893-d17fe5d20d8c_1086751_CUSTOM.jpg"
-        alt="Photo of hotel 1"
+        [src]="eventData.img"
+        alt="Artist"
         class="gallery__photo"
       />
     </figure>
@@ -10,7 +10,7 @@
   
 <div class="overview">
     <h1 class="overview__heading">
-      Golden age of Hip Hop
+      {{eventData.title}}
     </h1>
     <div class="overview__stars">
       <svg class="overview__icon-star">

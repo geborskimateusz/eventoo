@@ -20,6 +20,10 @@ import { EventOverviewComponent } from './events/event/event-overview/event-over
 
 import { SharedModule } from '../shared/shared.module';
 import { EventResolver } from './events/event/event.resolver';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { eventsReducer } from './events/store/events.reducers';
+import { EventsEffects } from './events/store/events.effects';
 
 @NgModule({
     declarations: [
@@ -43,7 +47,9 @@ import { EventResolver } from './events/event/event.resolver';
         CustomerDashboardRoutingModule,
         MaterialModule,
         CommonModule,
-        SharedModule
+        SharedModule,
+        StoreModule.forFeature('events', eventsReducer),
+        EffectsModule.forFeature([EventsEffects])
     ],
     providers: [
         EventResolver
