@@ -1,4 +1,4 @@
-<div class="home" *ngFor="let event of events; let i = index">
+<div class="home" *ngFor="let event of events$ | async; let i = index">
   <img [src]="event.img" alt="" class="home__img" />
   <svg class="home__like">
     <use xlink:href="../../../assets/fonts/sprite2.svg#icon-heart-full"></use>
