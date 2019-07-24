@@ -1,11 +1,13 @@
 import { Component, OnInit, ɵConsole } from '@angular/core';
 import { EVENTS_DATASOURCE } from 'src/app/shared/events-datasource';
 import { Event } from 'src/app/shared/event.model';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
 import { selectAllEvents } from './store/events.selectors';
 import { AllEventsRequested } from './store/events.actions';
+import { map } from 'rxjs/operators';
+import { MusicGenres } from 'src/app/shared/music-genres.model';
 
 @Component({
   selector: 'app-events',
@@ -14,8 +16,8 @@ import { AllEventsRequested } from './store/events.actions';
 })
 export class EventsComponent implements OnInit {
 
-  events$: Observable<Event[]>;
-  
+  electronicEvents$: Observable<Event[]>;
+  jazzEvents$: Observable<Event[]>;
 
   constructor(private store: Store<AppState>) {
   }
@@ -24,16 +26,22 @@ export class EventsComponent implements OnInit {
 
     this.store.dispatch(new AllEventsRequested());
 
-    this.events$ = this.store.pipe(
-      select(selectAllEvents)
-    );
+    // const events$ = this.store.pipe(
+    //   select(selectAllEvents)
+    // );
+    const events$ = of(EVENTS_DATASOURCE);
+    
+    this.electronicEvents$ = events$.pipe(
+      map(events => events.filter(event => event.genre === MusicGenres.ELECTRONIC))
+    )
+
+    this.jazzEvents$ = events$.pipe(
+      map(events => events.filter(event => event.genre === MusicGenres.JAZZ))
+    )
 
   }
 
-  getDate(index: number) {
-    let event = this.events$[index];
-    return `${event.date.getMonth()}, ${event.date.getDay()}`;
-  }
+  
 
 
 }
