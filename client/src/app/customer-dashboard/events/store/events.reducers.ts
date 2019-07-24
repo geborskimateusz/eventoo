@@ -21,3 +21,5 @@ export function eventsReducer(state = initialEventsState, action: EventsActions)
         }
     }
 }
+
+export const {selectAll} = adapter.getSelectors();

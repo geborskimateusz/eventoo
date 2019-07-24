@@ -2,8 +2,10 @@ import { Component, OnInit, ɵConsole } from '@angular/core';
 import { EVENTS_DATASOURCE } from 'src/app/shared/events-datasource';
 import { Event } from 'src/app/shared/event.model';
 import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
+import { selectAllEvents } from './store/events.selectors';
+import { AllEventsRequested } from './store/events.actions';
 
 @Component({
   selector: 'app-events',
@@ -12,19 +14,24 @@ import { AppState } from 'src/app/store';
 })
 export class EventsComponent implements OnInit {
 
-  musicEvents$: Event[];
+  events$: Observable<Event[]>;
   
 
   constructor(private store: Store<AppState>) {
   }
 
   ngOnInit() {
-    this.musicEvents$ = EVENTS_DATASOURCE;
+
+    this.store.dispatch(new AllEventsRequested());
+
+    this.events$ = this.store.pipe(
+      select(selectAllEvents)
+    );
 
   }
 
   getDate(index: number) {
-    let event = this.musicEvents$[index];
+    let event = this.events$[index];
     return `${event.date.getMonth()}, ${event.date.getDay()}`;
   }
 
