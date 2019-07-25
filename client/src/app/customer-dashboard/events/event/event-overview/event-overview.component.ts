@@ -19,7 +19,6 @@ export class EventOverviewComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.eventData);
   }
 
 }
