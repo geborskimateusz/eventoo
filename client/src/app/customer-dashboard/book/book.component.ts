@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { EventData } from '../events/event/event-cta/event-cta.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { Event } from 'src/app/shared/event.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-book',
@@ -11,33 +12,26 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 })
 export class BookComponent implements OnInit {
 
+  event: Event;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private router: ActivatedRoute) { }
 
   ngOnInit() {
-    this.firstFormGroup = this.formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this.formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
+    this.event = this.router.snapshot.data['event'];
+
+    const tickets = this.event.tickets;
+    console.log(tickets)
+    this.avilableTickets = [tickets.VIP, tickets.generalAdmission, tickets.goldenCircleEarlyEntrance, tickets.goldenCircleRegular, tickets.stands]
   }
 
-  todo = [
-    'Get to work',
-    'Pick up groceries',
-    'Go home',
-    'Fall asleep'
+  avilableTickets = [
+   
   ];
 
-  done = [
-    'Get up',
-    'Brush teeth',
-    'Take a shower',
-    'Check e-mail',
-    'Walk dog'
+  userShoppingList = [
+  
   ];
 
   drop(event: CdkDragDrop<string[]>) {
@@ -50,8 +44,6 @@ export class BookComponent implements OnInit {
                         event.previousIndex,
                         event.currentIndex);
     }
-
-    console.log(this.todo, this.done)
   }
 
 }

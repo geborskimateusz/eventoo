@@ -23,7 +23,6 @@ export class EventComponent implements OnInit {
 
   ngOnInit() {
     this.event = this.router.snapshot.data['event'];
-    console.log(event)
 
     this.eventDataOverview = {
       eventId: this.event.id,

@@ -30,9 +30,16 @@ const routes: Routes = [
       },
       { path: 'eventRates', component: EventRatesComponent },
       { path: 'services', component: ServicesComponent },
-      { path: 'order/:id', component: BookComponent, canActivate: [AuthGuard] },
       {
-        path: 'user', component: UserComponent, canActivate: [AuthGuard], children: [
+        path: 'order/:id', component: BookComponent,
+        // canActivate: [AuthGuard],
+        resolve: {
+          event: EventResolver
+        },
+      },
+      {
+        path: 'user', component: UserComponent,
+        canActivate: [AuthGuard], children: [
           { path: 'bookmarks', component: BookComponent },
           { path: 'shoppingCart', component: ShoppingCart }
         ]
