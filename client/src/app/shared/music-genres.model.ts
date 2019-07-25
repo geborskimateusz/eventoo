@@ -1,8 +1,8 @@
 export enum MusicGenres {
-    ELECTRONIC = 'Electronic',
-    FLAMENCO = 'Flamenco',
     DANCE = 'Dance',
     POP = 'Pop',
+    ELECTRONIC = 'Electronic',
+    FLAMENCO = 'Flamenco',
     JAZZ = 'Jazz',
     HIP_HOP = 'Hip-hop',
     ROCK = 'Rock',

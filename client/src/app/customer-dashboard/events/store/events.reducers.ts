@@ -1,9 +1,9 @@
 import { Event } from 'src/app/shared/event.model';
-import {EntityState, EntityAdapter, createEntityAdapter} from '@ngrx/entity';
+import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { EventsActions, EventsActionTypes } from './events.actions';
 
 export interface EventsState extends EntityState<Event> {
-  
+
 }
 
 export const adapter: EntityAdapter<Event> = createEntityAdapter<Event>();
@@ -11,10 +11,13 @@ export const adapter: EntityAdapter<Event> = createEntityAdapter<Event>();
 export const initialEventsState: EventsState = adapter.getInitialState();
 
 export function eventsReducer(state = initialEventsState, action: EventsActions) {
-    switch(action.type) {
+    switch (action.type) {
 
-        case EventsActionTypes.EventLoaded: 
+        case EventsActionTypes.EventLoaded:
             return adapter.addOne(action.payload.event, state);
+
+        case EventsActionTypes.AllEventsLoaded:
+            return adapter.addAll(action.payload.events, state);
 
         default: {
             return state;
@@ -22,4 +25,4 @@ export function eventsReducer(state = initialEventsState, action: EventsActions)
     }
 }
 
-export const {selectAll} = adapter.getSelectors();
+export const { selectAll } = adapter.getSelectors();
