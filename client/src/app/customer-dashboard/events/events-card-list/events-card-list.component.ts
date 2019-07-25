@@ -5,7 +5,7 @@ import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
 import { EVENTS_DATASOURCE } from 'src/app/shared/events-datasource';
 import { map } from 'rxjs/operators';
-import { selectAllEvents } from '../store/events.selectors';
+import { selectAllEvents, selectEventsByGenre } from '../store/events.selectors';
 import { AllEventsRequested } from '../store/events.actions';
 @Component({
   selector: 'app-events-card-list',
@@ -22,13 +22,9 @@ export class EventsCardListComponent implements OnInit {
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-    const events$ = this.store.pipe(
-      select(selectAllEvents)
+    this.events$ = this.store.pipe(
+      select(selectEventsByGenre(this.musicGenre))
     );
-
-    this.events$ = events$.pipe(
-      map(events => events.filter(event => event.genre === this.musicGenre))
-    )
   }
 
   getDate(event: Event) {
