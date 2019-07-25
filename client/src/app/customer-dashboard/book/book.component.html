@@ -1,1 +1,77 @@
-Order Event by id
+
+<mat-vertical-stepper [linear]="true" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Select tickets</ng-template>
+      <div class="dialog__tickets">
+        <img src="" alt="" class="dialog__tickets--img" />
+        <h4 class="dialog__tickets--title"></h4>
+        <p class="dialog__tickets--paragraph"><span>Date</span></p>
+        <p class="dialog__tickets--paragraph"><span>Location </span></p>
+        <p>Choose ticktes than drag and drop them in your shopping list</p>
+        <div cdkDropListGroup>
+          <div class="example-container">
+            <h2>To do</h2>
+  
+            <div
+              cdkDropList
+              [cdkDropListData]="todo"
+              class="example-list"
+              (cdkDropListDropped)="drop($event)"
+            >
+              <div class="example-box" *ngFor="let item of todo" cdkDrag>
+                {{ item }}
+              </div>
+            </div>
+          </div>
+  
+          <div class="example-container">
+            <h2>Done</h2>
+  
+            <div
+              cdkDropList
+              [cdkDropListData]="done"
+              class="example-list"
+              (cdkDropListDropped)="drop($event)"
+            >
+              <div class="example-box" *ngFor="let item of done" cdkDrag>
+                {{ item }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Account Details</ng-template>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Address"
+            formControlName="secondCtrl"
+            required
+          />
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Payment options</ng-template>
+      You are now done.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
+  
+  
+  

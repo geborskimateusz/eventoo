@@ -25,7 +25,7 @@ import { StoreModule } from '@ngrx/store';
 import { eventsReducer } from './events/store/events.reducers';
 import { EventsEffects } from './events/store/events.effects';
 import { EventsCardListComponent } from './events/events-card-list/events-card-list.component';
-import { BookDialogComponent } from './events/event/event-cta/book-dialog/book-dialog.component';
+
 
 @NgModule({
     declarations: [
@@ -45,7 +45,6 @@ import { BookDialogComponent } from './events/event/event-cta/book-dialog/book-d
         EventDetailComponent,
         EventOverviewComponent,
         EventsCardListComponent,
-        BookDialogComponent,
     ],
     imports: [
         CustomerDashboardRoutingModule,
@@ -59,7 +58,6 @@ import { BookDialogComponent } from './events/event/event-cta/book-dialog/book-d
         EventResolver
     ], 
     entryComponents: [
-        BookDialogComponent
     ]
 })
 export class CustomerDashboardModule {}

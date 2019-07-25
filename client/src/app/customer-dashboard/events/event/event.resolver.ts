@@ -15,7 +15,10 @@ export class EventResolver implements Resolve<Event> {
     constructor(private store: Store<AppState>) {}
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Event> {
+        
         const eventId = route.params['id'];
+
+        console.log('resolving id ', eventId)
 
         return this.store.pipe(
             select(selectEventById(eventId)),
