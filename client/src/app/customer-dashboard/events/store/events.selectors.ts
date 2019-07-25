@@ -17,3 +17,8 @@ export const selectEventsByGenre = (musicGenre: string) => createSelector(
     selectAllEvents,
     events => events.filter(event => event.genre === musicGenre)
 );
+
+export const selectAllEventsLoaded = createSelector(
+    selectEventsState,
+    eventsState => eventsState.allEventsLoaded
+);
