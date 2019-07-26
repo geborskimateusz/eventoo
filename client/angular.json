@@ -23,13 +23,18 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "./node_modules/leaflet/dist/images",
+                "output": "leaflet/"
+              },
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
               "src/assets/styles.css",
               "src/styles/main.scss",
-              "./node_modules/leaflet-routing-machine/dist/leaflet-routing-machine.css"
+              "./node_modules/leaflet/dist/leaflet.css"
             ],
             "scripts": []
           },

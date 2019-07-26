@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EventOverviewComponent } from './event/event-overview/event-overview.component';
 import { EventService } from './event.service';
 import { EventLocalizationDialogComponent } from './event/event-overview/event-localization-dialog/event-localization-dialog.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { EventLocalizationDialogComponent } from './event/event-overview/event-l
         CommonModule,
         MaterialModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        LeafletModule.forRoot()
     ],
     exports: [
         PaginationComponent,

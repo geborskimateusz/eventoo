@@ -31,8 +31,9 @@ export class EventOverviewComponent implements OnInit {
   openMapDialog() {
     this.dialog.open(EventLocalizationDialogComponent, {
       width: '400px',
+      height: '400px',
       data: {
-        data: this.eventData.location
+        location: this.eventData.location
       }
     })
   }
