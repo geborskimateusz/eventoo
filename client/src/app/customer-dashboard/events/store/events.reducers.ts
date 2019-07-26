@@ -1,12 +1,12 @@
-import { Event } from 'src/app/shared/event.model';
+import { EventModel } from 'src/app/shared/model/event.model';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { EventsActions, EventsActionTypes } from './events.actions';
 
-export interface EventsState extends EntityState<Event> {
+export interface EventsState extends EntityState<EventModel> {
     allEventsLoaded: boolean;
 }
 
-export const adapter: EntityAdapter<Event> = createEntityAdapter<Event>();
+export const adapter: EntityAdapter<EventModel> = createEntityAdapter<EventModel>();
 
 export const initialEventsState: EventsState = adapter.getInitialState({
     allEventsLoaded: false

@@ -1,13 +1,13 @@
 import { Component, OnInit, ɵConsole } from '@angular/core';
 import { EVENTS_DATASOURCE } from 'src/app/shared/events-datasource';
-import { Event } from 'src/app/shared/event.model';
+import { EventModel } from 'src/app/shared/model/event.model';
 import { Observable, of } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
 import { selectAllEvents } from './store/events.selectors';
 import { AllEventsRequested } from './store/events.actions';
 import { map } from 'rxjs/operators';
-import { MusicGenres } from 'src/app/shared/music-genres.model';
+import { MusicGenres } from 'src/app/shared/model/music-genres.model';
 
 @Component({
   selector: 'app-events',

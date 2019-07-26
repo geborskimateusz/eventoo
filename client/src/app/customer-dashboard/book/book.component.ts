@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { Event } from 'src/app/shared/event.model';
+import { EventModel } from 'src/app/shared/model/event.model';
 import { ActivatedRoute } from '@angular/router';
 import { EventData as EventDataOverview} from '../../shared/event-overview/event-overview.component';
 
@@ -14,7 +14,7 @@ import { EventData as EventDataOverview} from '../../shared/event-overview/event
 export class BookComponent implements OnInit {
   eventDataOverview: EventDataOverview;
 
-  event: Event;
+  event: EventModel;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   

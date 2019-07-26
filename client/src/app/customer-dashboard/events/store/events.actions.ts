@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Event } from 'src/app/shared/event.model';
+import { EventModel } from 'src/app/shared/model/event.model';
 
 export enum EventsActionTypes {
     EventRequested = '[View Event Page] Event Requested',
@@ -16,7 +16,7 @@ export class EventRequested implements Action {
 
 export class EventLoaded implements Action {
     readonly type = EventsActionTypes.EventLoaded;
-    constructor(public payload: { event: Event }) { }
+    constructor(public payload: { event: EventModel }) { }
 }
 
 export class AllEventsRequested implements Action {
@@ -26,7 +26,7 @@ export class AllEventsRequested implements Action {
 
 export class AllEventsLoaded implements Action {
     readonly type = EventsActionTypes.AllEventsLoaded;
-    constructor(public payload: { events: Event[] }) { }
+    constructor(public payload: { events: EventModel[] }) { }
 }
 
 export type EventsActions = 

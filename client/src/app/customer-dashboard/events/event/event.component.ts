@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Event } from 'src/app/shared/event.model';
+import { EventModel } from 'src/app/shared/model/event.model';
 import { ActivatedRoute } from '@angular/router';
 import { EventData as EventDataDetail} from './event-detail/event-detail.component';
 import { EventData as EventDataOverview} from '../../../shared/event-overview/event-overview.component';
@@ -12,7 +12,7 @@ import { EventData as EventDataOverview} from '../../../shared/event-overview/ev
 })
 export class EventComponent implements OnInit {
 
-  event: Event;
+  event: EventModel;
   eventDataDetail: EventDataDetail;
   eventDataOverview: EventDataOverview;
 

@@ -1,6 +1,6 @@
-import { Event } from './event.model';
-import { MusicGenres } from './music-genres.model';
-import { TicketTypes } from './ticket-types.model';
+import { Event } from './model/event.model';
+import { MusicGenres } from './model/music-genres.model';
+import { TicketTypes } from './model/ticket-types.model';
 
 export const EVENTS_DATASOURCE: Event[] = [
 

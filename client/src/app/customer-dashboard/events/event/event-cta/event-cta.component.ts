@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { TicketModel } from 'src/app/shared/ticket';
+import { TicketModel } from 'src/app/shared/model/ticket-model';
 
 @Component({
   selector: 'app-event-cta',
