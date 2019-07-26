@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from 'src/app/shared/model/event.model';
 import { ActivatedRoute } from '@angular/router';
-import { EventData as EventDataDetail} from './event-detail/event-detail.component';
-import { EventData as EventDataOverview} from '../../../shared/event-overview/event-overview.component';
-import { EventService } from '../event.service';
+import { EventData as EventDataDetail } from './event-detail/event-detail.component';
+import { EventData as EventDataOverview } from '../../../shared/event-overview/event-overview.component';
+import { EventService } from './event.service';
 
 
 @Component({
@@ -19,8 +19,7 @@ export class EventComponent implements OnInit {
 
 
   constructor(private router: ActivatedRoute,
-              private eventService: EventService) { 
-    console.log('in event component')
+    private eventService: EventService) {
   }
 
   ngOnInit() {
@@ -28,11 +27,7 @@ export class EventComponent implements OnInit {
 
     this.eventDataOverview = this.eventService.getEventDataOverview(this.event);
 
-    this.eventDataDetail = {
-      eventId: this.event.id,
-      description: this.event.description,
-      tickets: this.event.tickets
-    }
+    this.eventDataDetail = this.eventService.getEventDataDetail(this.event);
   }
 
 }

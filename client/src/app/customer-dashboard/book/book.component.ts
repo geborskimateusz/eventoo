@@ -4,7 +4,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Event } from 'src/app/shared/model/event.model';
 import { ActivatedRoute } from '@angular/router';
-import { EventData as EventDataOverview} from '../../shared/event-overview/event-overview.component';
+import { EventData as EventDataOverview } from '../../shared/event-overview/event-overview.component';
+import { EventService } from '../events/event/event.service';
 
 @Component({
   selector: 'app-book',
@@ -17,7 +18,7 @@ export class BookComponent implements OnInit {
   event: Event;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  
+
   avilableTicketsArrName = 'Avilable Tickets';
   avilableTickets = [];
 
@@ -25,7 +26,8 @@ export class BookComponent implements OnInit {
   userShoppingList = [];
 
   constructor(private formBuilder: FormBuilder,
-    private router: ActivatedRoute) { }
+    private router: ActivatedRoute,
+    private eventService: EventService) { }
 
   ngOnInit() {
     console.log('in book component')
@@ -33,11 +35,7 @@ export class BookComponent implements OnInit {
 
     this.initAvilableTickets();
 
-    this.eventDataOverview = {
-      eventId: this.event.id,
-      title: this.event.title,
-      img: this.event.img
-    }
+    this.eventDataOverview = this.eventService.getEventDataOverview(this.event)
   }
 
 

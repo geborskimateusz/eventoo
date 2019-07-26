@@ -14,5 +14,13 @@ export class EventService {
         }
     }
 
+    getEventDataDetail(event: Event) {
+        return {
+            eventId: event.id,
+            description: event.description,
+            tickets: event.tickets
+        }
+    }
+
 
 }
