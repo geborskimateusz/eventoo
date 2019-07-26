@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TicketModel } from 'src/app/shared/model/ticket-model';
 import { Location } from '../../model/location.model';
+import { MatDialog } from '@angular/material';
+import { EventLocalizationDialogComponent } from './event-localization-dialog/event-localization-dialog.component';
 
 export interface EventData {
   eventId: number,
@@ -19,16 +21,21 @@ export class EventOverviewComponent implements OnInit {
 
   @Input() eventData: EventData;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
     console.log(this.eventData)
   }
 
 
-  redirectToGoogleMaps() {
-    return `http://maps.google.com?q=${this.eventData.location.lat},${this.eventData.location.lat}
-    `;
+  openMapDialog() {
+    this.dialog.open(EventLocalizationDialogComponent, {
+      width: '400px',
+      data: {
+        data: this.eventData.location
+      }
+    })
   }
+
 
 }

@@ -17,7 +17,6 @@ export class EventResolver implements Resolve<Event> {
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Event> {
         
         const eventId = route.params['id'];
-
         console.log('resolving id ', eventId)
 
         return this.store.pipe(

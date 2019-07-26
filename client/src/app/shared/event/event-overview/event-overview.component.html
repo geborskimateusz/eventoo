@@ -19,7 +19,7 @@
       <svg class="overview__icon-location">
         <use xlink:href="../../assets/fonts/sprite.svg#icon-location-pin"></use>
       </svg>
-      <a [href]="redirectToGoogleMaps()" class="btn-inline">{{eventData.location.name}} <span>(find on Google Maps)</span></a>
+      <button (click)="openMapDialog()" class="btn-inline">{{eventData.location.name}} <span>(Find in maps)</span></button>
     </div>
     <h1 class="overview__heading">
       {{eventData.title}}

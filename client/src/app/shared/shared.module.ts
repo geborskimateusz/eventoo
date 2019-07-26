@@ -5,11 +5,13 @@ import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EventOverviewComponent } from './event/event-overview/event-overview.component';
 import { EventService } from './event.service';
+import { EventLocalizationDialogComponent } from './event/event-overview/event-localization-dialog/event-localization-dialog.component';
 
 @NgModule({
     declarations: [
         PaginationComponent,
-        EventOverviewComponent
+        EventOverviewComponent,
+        EventLocalizationDialogComponent
     ],
     providers: [
         EventService
@@ -26,6 +28,9 @@ import { EventService } from './event.service';
         FormsModule,
         ReactiveFormsModule,
         EventOverviewComponent,
+    ],
+    entryComponents: [
+        EventLocalizationDialogComponent
     ]
 })
 export class SharedModule { }
