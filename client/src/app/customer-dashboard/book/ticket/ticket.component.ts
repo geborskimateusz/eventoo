@@ -7,18 +7,18 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TicketComponent implements OnInit {
 
-  @Input()
+  // @Input()
 
   constructor() { }
 
   ngOnInit() {
 
 
-    for (const [type, ticketData] of Object.entries(tickets)) {
-      this.avilableTickets.push({ name: type, ticket: ticketData });
-    }
+    // for (const [type, ticketData] of Object.entries(tickets)) {
+    //   this.avilableTickets.push({ name: type, ticket: ticketData });
+    // }
 
-    console.log(this.avilableTickets)
+    // console.log(this.avilableTickets)
   }
 
 }

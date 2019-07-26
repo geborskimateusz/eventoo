@@ -1,5 +1,6 @@
 import { Event } from './event.model';
 import { MusicGenres } from './music-genres.model';
+import { TicketTypes } from './ticket-types.model';
 
 export const EVENTS_DATASOURCE: Event[] = [
 
@@ -17,33 +18,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.397406',
             lon: '16.859026'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -59,33 +67,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '51.108696',
             lon: '17.001780'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -101,33 +116,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.261763',
             lon: '21.049344'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -143,33 +165,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.412699',
             lon: '16.937017'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -185,33 +214,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '50.266113',
             lon: '19.025303'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
 
@@ -230,33 +266,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.212646',
             lon: '20.987218'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -272,33 +315,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '54.524616',
             lon: '16.952392'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -314,33 +364,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '49.416929',
             lon: '20.957205'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -356,33 +413,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '54.524616',
             lon: '16.952392'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -398,33 +462,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '50.083866',
             lon: '19.996131'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -440,33 +511,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.397406',
             lon: '16.859026'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -482,33 +560,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '51.108696',
             lon: '17.001780'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -524,33 +609,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.261763',
             lon: '21.049344'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -566,33 +658,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.412699',
             lon: '16.937017'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -608,33 +707,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '50.266113',
             lon: '19.025303'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
 
@@ -653,33 +759,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.397406',
             lon: '16.859026'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -695,33 +808,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '51.108696',
             lon: '17.001780'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -737,33 +857,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.261763',
             lon: '21.049344'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -779,33 +906,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.412699',
             lon: '16.937017'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -821,33 +955,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '50.266113',
             lon: '19.025303'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -863,33 +1004,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.212646',
             lon: '20.987218'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -905,33 +1053,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '54.524616',
             lon: '16.952392'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -947,33 +1102,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '49.416929',
             lon: '20.957205'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -989,33 +1151,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '54.524616',
             lon: '16.952392'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1031,33 +1200,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '50.083866',
             lon: '19.996131'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1073,33 +1249,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.397406',
             lon: '16.859026'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1115,33 +1298,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '51.108696',
             lon: '17.001780'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     //HIP HOP
@@ -1158,33 +1348,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '50.266113',
             lon: '19.025303'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1200,33 +1397,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.397406',
             lon: '16.859026'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1242,33 +1446,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '51.108696',
             lon: '17.001780'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1284,33 +1495,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.261763',
             lon: '21.049344'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1326,33 +1544,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.412699',
             lon: '16.937017'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1368,33 +1593,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '50.266113',
             lon: '19.025303'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1410,33 +1642,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.212646',
             lon: '20.987218'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1452,33 +1691,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '54.524616',
             lon: '16.952392'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1494,33 +1740,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '49.416929',
             lon: '20.957205'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1536,33 +1789,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '54.524616',
             lon: '16.952392'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1578,33 +1838,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '50.083866',
             lon: '19.996131'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1620,33 +1887,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.397406',
             lon: '16.859026'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1662,33 +1936,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '51.108696',
             lon: '17.001780'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
 
@@ -1706,33 +1987,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '51.108696',
             lon: '17.001780'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1748,33 +2036,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.261763',
             lon: '21.049344'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1790,33 +2085,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.412699',
             lon: '16.937017'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1832,33 +2134,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '50.266113',
             lon: '19.025303'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1874,33 +2183,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.212646',
             lon: '20.987218'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1916,33 +2232,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '54.524616',
             lon: '16.952392'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -1958,33 +2281,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '49.416929',
             lon: '20.957205'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2000,36 +2330,43 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '54.524616',
             lon: '16.952392'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
-    
+
 
 
     //METAL
@@ -2046,33 +2383,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.397406',
             lon: '16.859026'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2088,33 +2432,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '51.108696',
             lon: '17.001780'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2130,33 +2481,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.261763',
             lon: '21.049344'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2172,33 +2530,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.412699',
             lon: '16.937017'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2214,33 +2579,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '50.266113',
             lon: '19.025303'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2256,33 +2628,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.212646',
             lon: '20.987218'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2298,33 +2677,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '54.524616',
             lon: '16.952392'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2340,33 +2726,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '49.416929',
             lon: '20.957205'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2382,33 +2775,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '54.524616',
             lon: '16.952392'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2424,33 +2824,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '50.083866',
             lon: '19.996131'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2466,33 +2873,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.397406',
             lon: '16.859026'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2508,33 +2922,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '51.108696',
             lon: '17.001780'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2550,33 +2971,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.261763',
             lon: '21.049344'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2592,33 +3020,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.412699',
             lon: '16.937017'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2634,33 +3069,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '50.266113',
             lon: '19.025303'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2676,33 +3118,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.397406',
             lon: '16.859026'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     //FOLK
@@ -2720,33 +3169,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '51.108696',
             lon: '17.001780'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2762,33 +3218,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.261763',
             lon: '21.049344'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2804,33 +3267,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.412699',
             lon: '16.937017'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2846,33 +3316,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '50.266113',
             lon: '19.025303'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2888,33 +3365,40 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '52.212646',
             lon: '20.987218'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
     {
@@ -2930,246 +3414,288 @@ export const EVENTS_DATASOURCE: Event[] = [
             lat: '54.524616',
             lon: '16.952392'
         },
-        tickets: {
-            VIP: {
+        tickets: [
+            {
+                type: TicketTypes.VIP,
                 price: 450,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleEarlyEntrance: {
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
                 price: 250,
                 total: 20,
                 inStock: 15
             },
-            goldenCircleRegular: {
+            {
+                type: TicketTypes.goldenCircleRegular,
                 price: 270,
                 total: 20,
                 inStock: 15
             },
-            generalAdmission: {
+            {
+                type: TicketTypes.generalAdmission,
                 price: 130,
                 total: 20,
                 inStock: 15
             },
-            stands: {
+            {
+                type: TicketTypes.stands,
                 price: 50,
                 total: 20,
                 inStock: 15
             }
-        }
+        ]
+
+
     },
 
-   //REGGAE
+    //REGGAE
 
-   {
-    id: 71,
-    title: 'Indios Bravos',
-    description: 'Indios Bravos is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
-    date: new Date(),
-    img: 'https://s1.ticketm.net/img/tat/dam/a/b4f/42e35e96-24f7-404a-9003-ce1ff60f7b4f_1025061_CUSTOM.jpg',
-    genre: MusicGenres.REGGAE,
-    location: {
-        name: 'Concert Center A2',
-        address: 'Góralska 5, 53-610 Wrocław',
-        lat: '51.108696',
-        lon: '17.001780'
+    {
+        id: 71,
+        title: 'Indios Bravos',
+        description: 'Indios Bravos is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
+        date: new Date(),
+        img: 'https://s1.ticketm.net/img/tat/dam/a/b4f/42e35e96-24f7-404a-9003-ce1ff60f7b4f_1025061_CUSTOM.jpg',
+        genre: MusicGenres.REGGAE,
+        location: {
+            name: 'Concert Center A2',
+            address: 'Góralska 5, 53-610 Wrocław',
+            lat: '51.108696',
+            lon: '17.001780'
+        },
+        tickets: [
+            {
+                type: TicketTypes.VIP,
+                price: 450,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
+                price: 250,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.goldenCircleRegular,
+                price: 270,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.generalAdmission,
+                price: 130,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.stands,
+                price: 50,
+                total: 20,
+                inStock: 15
+            }
+        ]
+
+
     },
-    tickets: {
-        VIP: {
-            price: 450,
-            total: 20,
-            inStock: 15
-        },
-        goldenCircleEarlyEntrance: {
-            price: 250,
-            total: 20,
-            inStock: 15
-        },
-        goldenCircleRegular: {
-            price: 270,
-            total: 20,
-            inStock: 15
-        },
-        generalAdmission: {
-            price: 130,
-            total: 20,
-            inStock: 15
-        },
-        stands: {
-            price: 50,
-            total: 20,
-            inStock: 15
-        }
-    }
-},
 
-{
-    id: 72,
-    title: 'Bednarek',
-    description: 'Bednarek is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
-    date: new Date(),
-    img: 'https://s1.ticketm.net/img/tat/dam/a/ca1/3c58cd85-4e50-4c0b-8619-8e513521fca1_959181_CUSTOM.jpg',
-    genre: MusicGenres.REGGAE,
-    location: {
-        name: 'Praga Centrum',
-        address: 'Szwedzka 2/4, 05-077 Warszawa',
-        lat: '52.261763',
-        lon: '21.049344'
+    {
+        id: 72,
+        title: 'Bednarek',
+        description: 'Bednarek is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
+        date: new Date(),
+        img: 'https://s1.ticketm.net/img/tat/dam/a/ca1/3c58cd85-4e50-4c0b-8619-8e513521fca1_959181_CUSTOM.jpg',
+        genre: MusicGenres.REGGAE,
+        location: {
+            name: 'Praga Centrum',
+            address: 'Szwedzka 2/4, 05-077 Warszawa',
+            lat: '52.261763',
+            lon: '21.049344'
+        },
+        tickets: [
+            {
+                type: TicketTypes.VIP,
+                price: 450,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
+                price: 250,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.goldenCircleRegular,
+                price: 270,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.generalAdmission,
+                price: 130,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.stands,
+                price: 50,
+                total: 20,
+                inStock: 15
+            }
+        ]
+
+
     },
-    tickets: {
-        VIP: {
-            price: 450,
-            total: 20,
-            inStock: 15
-        },
-        goldenCircleEarlyEntrance: {
-            price: 250,
-            total: 20,
-            inStock: 15
-        },
-        goldenCircleRegular: {
-            price: 270,
-            total: 20,
-            inStock: 15
-        },
-        generalAdmission: {
-            price: 130,
-            total: 20,
-            inStock: 15
-        },
-        stands: {
-            price: 50,
-            total: 20,
-            inStock: 15
-        }
-    }
-},
 
 
-{
-    id: 73,
-    title: 'Xavier Rudd',
-    description: 'Xavier Rudd is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
-    date: new Date(),
-    img: 'https://s1.ticketm.net/img/tat/dam/a/221/ffeaf3a5-ca62-4fe0-8d59-dca954350221_955651_CUSTOM.jpg',
-    genre: MusicGenres.REGGAE,
-    location: {
-        name: 'Spodek',
-        address: 'al. Korfantego 35, 40-005 Katowice',
-        lat: '50.266113',
-        lon: '19.025303'
+    {
+        id: 73,
+        title: 'Xavier Rudd',
+        description: 'Xavier Rudd is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
+        date: new Date(),
+        img: 'https://s1.ticketm.net/img/tat/dam/a/221/ffeaf3a5-ca62-4fe0-8d59-dca954350221_955651_CUSTOM.jpg',
+        genre: MusicGenres.REGGAE,
+        location: {
+            name: 'Spodek',
+            address: 'al. Korfantego 35, 40-005 Katowice',
+            lat: '50.266113',
+            lon: '19.025303'
+        },
+        tickets: [
+            {
+                type: TicketTypes.VIP,
+                price: 450,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
+                price: 250,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.goldenCircleRegular,
+                price: 270,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.generalAdmission,
+                price: 130,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.stands,
+                price: 50,
+                total: 20,
+                inStock: 15
+            }
+        ]
+
+
     },
-    tickets: {
-        VIP: {
-            price: 450,
-            total: 20,
-            inStock: 15
-        },
-        goldenCircleEarlyEntrance: {
-            price: 250,
-            total: 20,
-            inStock: 15
-        },
-        goldenCircleRegular: {
-            price: 270,
-            total: 20,
-            inStock: 15
-        },
-        generalAdmission: {
-            price: 130,
-            total: 20,
-            inStock: 15
-        },
-        stands: {
-            price: 50,
-            total: 20,
-            inStock: 15
-        }
-    }
-},
 
-// SOUL
-{
-    id: 74,
-    title: 'Jade Bird',
-    description: 'Jade Bird is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
-    date: new Date(),
-    img: 'https://s1.ticketm.net/img/tat/dam/a/f87/995cc760-6cb8-4336-b480-36d74fc23f87_1045531_CUSTOM.jpg',
-    genre: MusicGenres.SOUL,
-    location: {
-        name: 'Proxima',
-        address: 'Żwirki i Wigury 99A, 02-089 Warszawa',
-        lat: '52.212646',
-        lon: '20.987218'
-    },
-    tickets: {
-        VIP: {
-            price: 450,
-            total: 20,
-            inStock: 15
+    // SOUL
+    {
+        id: 74,
+        title: 'Jade Bird',
+        description: 'Jade Bird is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
+        date: new Date(),
+        img: 'https://s1.ticketm.net/img/tat/dam/a/f87/995cc760-6cb8-4336-b480-36d74fc23f87_1045531_CUSTOM.jpg',
+        genre: MusicGenres.SOUL,
+        location: {
+            name: 'Proxima',
+            address: 'Żwirki i Wigury 99A, 02-089 Warszawa',
+            lat: '52.212646',
+            lon: '20.987218'
         },
-        goldenCircleEarlyEntrance: {
-            price: 250,
-            total: 20,
-            inStock: 15
-        },
-        goldenCircleRegular: {
-            price: 270,
-            total: 20,
-            inStock: 15
-        },
-        generalAdmission: {
-            price: 130,
-            total: 20,
-            inStock: 15
-        },
-        stands: {
-            price: 50,
-            total: 20,
-            inStock: 15
-        }
-    }
-},
+        tickets: [
+            {
+                type: TicketTypes.VIP,
+                price: 450,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
+                price: 250,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.goldenCircleRegular,
+                price: 270,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.generalAdmission,
+                price: 130,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.stands,
+                price: 50,
+                total: 20,
+                inStock: 15
+            }
+        ]
 
-{
-    id: 70,
-    title: 'Home Free',
-    description: 'Home Free is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
-    date: new Date(),
-    img: 'https://s1.ticketm.net/img/tat/dam/a/667/86176b14-67dd-4e29-8664-ac05bfd09667_1050911_CUSTOM.jpg',
-    genre: MusicGenres.FOLK,
-    location: {
-        name: 'Dolina Charlotty',
-        address: 'Żwirki i Wigury 99A, 02-089 Warszawa',
-        lat: '54.524616',
-        lon: '16.952392'
+
     },
-    tickets: {
-        VIP: {
-            price: 450,
-            total: 20,
-            inStock: 15
+
+    {
+        id: 70,
+        title: 'Home Free',
+        description: 'Home Free is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
+        date: new Date(),
+        img: 'https://s1.ticketm.net/img/tat/dam/a/667/86176b14-67dd-4e29-8664-ac05bfd09667_1050911_CUSTOM.jpg',
+        genre: MusicGenres.FOLK,
+        location: {
+            name: 'Dolina Charlotty',
+            address: 'Żwirki i Wigury 99A, 02-089 Warszawa',
+            lat: '54.524616',
+            lon: '16.952392'
         },
-        goldenCircleEarlyEntrance: {
-            price: 250,
-            total: 20,
-            inStock: 15
-        },
-        goldenCircleRegular: {
-            price: 270,
-            total: 20,
-            inStock: 15
-        },
-        generalAdmission: {
-            price: 130,
-            total: 20,
-            inStock: 15
-        },
-        stands: {
-            price: 50,
-            total: 20,
-            inStock: 15
-        }
-    }
-},
+        tickets: [
+            {
+                type: TicketTypes.VIP,
+                price: 450,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.goldenCircleEarlyEntrance,
+                price: 250,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.goldenCircleRegular,
+                price: 270,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.generalAdmission,
+                price: 130,
+                total: 20,
+                inStock: 15
+            },
+            {
+                type: TicketTypes.stands,
+                price: 50,
+                total: 20,
+                inStock: 15
+            }
+        ]
+
+
+    },
 ]

@@ -14,11 +14,5 @@ export interface Event {
         lat: string,
         lon: string
     },
-    tickets: {
-        VIP?: TicketModel,
-        goldenCircleEarlyEntrance?: TicketModel,
-        goldenCircleRegular?: TicketModel,
-        generalAdmission?: TicketModel,
-        stands?: TicketModel
-    }
+    tickets: TicketModel[]
 }

@@ -25,6 +25,7 @@ import { StoreModule } from '@ngrx/store';
 import { eventsReducer } from './events/store/events.reducers';
 import { EventsEffects } from './events/store/events.effects';
 import { EventsCardListComponent } from './events/events-card-list/events-card-list.component';
+import { TicketComponent } from './book/ticket/ticket.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { EventsCardListComponent } from './events/events-card-list/events-card-l
         EventDetailComponent,
         EventOverviewComponent,
         EventsCardListComponent,
+        TicketComponent,
     ],
     imports: [
         CustomerDashboardRoutingModule,

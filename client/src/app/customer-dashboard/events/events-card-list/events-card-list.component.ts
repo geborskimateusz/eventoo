@@ -7,6 +7,7 @@ import { EVENTS_DATASOURCE } from 'src/app/shared/events-datasource';
 import { map } from 'rxjs/operators';
 import { selectAllEvents, selectEventsByGenre } from '../store/events.selectors';
 import { AllEventsRequested } from '../store/events.actions';
+import { TicketModel } from 'src/app/shared/ticket';
 @Component({
   selector: 'app-events-card-list',
   templateUrl: './events-card-list.component.html',
@@ -28,7 +29,12 @@ export class EventsCardListComponent implements OnInit {
   }
 
   getDate(event: Event) {
-    // let event = this.events$[index];
     return `${event.date.getMonth()}, ${event.date.getDay()}`;
   }
+
+  getStandsTicketPrice(tickets: TicketModel[]) {
+    const prices = tickets.map(ticket => ticket.price);
+    return prices.reduce((acc, currentVal) => Math.min(acc, currentVal));
+  }
+
 }

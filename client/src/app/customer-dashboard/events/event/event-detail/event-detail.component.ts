@@ -4,13 +4,7 @@ import { TicketModel } from 'src/app/shared/ticket';
 export interface EventData {
   eventId: number,
   description: string,
-  tickets: {
-    VIP?: TicketModel,
-    goldenCircleEarlyEntrance?: TicketModel,
-    goldenCircleRegular?: TicketModel,
-    generalAdmission?: TicketModel,
-    stands?: TicketModel
-  }
+  tickets: TicketModel[]
 }
 
 @Component({
@@ -25,6 +19,7 @@ export class EventDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.eventData)
   }
 
 }

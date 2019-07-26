@@ -43,7 +43,7 @@ export class BookComponent implements OnInit {
   }
 
   private initAvilableTickets() {
-    // this.avilableTickets = this.event.tickets;
+    this.avilableTickets = this.event.tickets;
   }
 
   onShoppingListTicketAmmount() {

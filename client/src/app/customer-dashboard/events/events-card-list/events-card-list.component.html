@@ -20,7 +20,7 @@
     <svg class="home__like">
       <use xlink:href="../../../assets/fonts/sprite2.svg#icon-documents"></use>
     </svg>
-    <p>Starts from {{ event.tickets.stands.price }}$</p>
+    <p>Starts from {{ getStandsTicketPrice(event.tickets) }}$</p>
   </div>
   <div class="home__price">
     <svg class="home__like">
