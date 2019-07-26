@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { EventModel } from 'src/app/shared/model/event.model';
+import { Event } from 'src/app/shared/model/event.model';
 import { ActivatedRoute } from '@angular/router';
 import { EventData as EventDataDetail} from './event-detail/event-detail.component';
 import { EventData as EventDataOverview} from '../../../shared/event-overview/event-overview.component';
+import { EventService } from '../event.service';
 
 
 @Component({
@@ -12,23 +13,20 @@ import { EventData as EventDataOverview} from '../../../shared/event-overview/ev
 })
 export class EventComponent implements OnInit {
 
-  event: EventModel;
+  event: Event;
   eventDataDetail: EventDataDetail;
   eventDataOverview: EventDataOverview;
 
 
-  constructor(private router: ActivatedRoute) { 
+  constructor(private router: ActivatedRoute,
+              private eventService: EventService) { 
     console.log('in event component')
   }
 
   ngOnInit() {
     this.event = this.router.snapshot.data['event'];
 
-    this.eventDataOverview = {
-      eventId: this.event.id,
-      title: this.event.title,
-      img: this.event.img
-    }
+    this.eventDataOverview = this.eventService.getEventDataOverview(this.event);
 
     this.eventDataDetail = {
       eventId: this.event.id,

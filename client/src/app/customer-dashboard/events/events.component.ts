@@ -1,6 +1,5 @@
 import { Component, OnInit, ɵConsole } from '@angular/core';
 import { EVENTS_DATASOURCE } from 'src/app/shared/events-datasource';
-import { EventModel } from 'src/app/shared/model/event.model';
 import { Observable, of } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
