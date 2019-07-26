@@ -9,6 +9,18 @@
   </div>
   
 <div class="overview">
+    <div class="overview__date">
+      <svg class="overview__icon-calendar">
+        <use xlink:href="../../assets/fonts/sprite2.svg#icon-calendar"></use>
+      </svg>
+      <h1 class="btn-inline">{{eventData.date | date: 'dd/MM/yyyy'}}</h1>
+    </div>
+    <div class="overview__location">
+      <svg class="overview__icon-location">
+        <use xlink:href="../../assets/fonts/sprite.svg#icon-location-pin"></use>
+      </svg>
+      <a [href]="redirectToGoogleMaps()" class="btn-inline">{{eventData.location.name}} <span>(find on Google Maps)</span></a>
+    </div>
     <h1 class="overview__heading">
       {{eventData.title}}
     </h1>
@@ -33,12 +45,6 @@
           xlink:href="../../assets/fonts/sprite.svg#icon-star-outlined"
         ></use>
       </svg>
-    </div>
-    <div class="overview__location">
-      <svg class="overview__icon-location">
-        <use xlink:href="../../assets/fonts/sprite.svg#icon-location-pin"></use>
-      </svg>
-      <button class="btn-inline">Polska, Mazury</button>
     </div>
     <div class="overview__rating">
       <div class="overview__rating-average">8.6</div>

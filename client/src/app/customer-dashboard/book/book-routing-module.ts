@@ -1,7 +1,7 @@
 import { BookComponent } from './book.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { EventResolver } from '../../shared/event.resolver';
+import { EventResolver } from '../../shared/event/event.resolver';
 
 const routes: Routes = [
     {

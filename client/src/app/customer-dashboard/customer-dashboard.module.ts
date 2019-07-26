@@ -15,10 +15,10 @@ import { EventRatesComponent } from './events/event/event-rates/event-rates.comp
 import { EventCtaComponent } from './events/event/event-cta/event-cta.component';
 import { UserReviewsComponent } from './events/event/user-reviews/user-reviews.component';
 import { EventDetailComponent } from './events/event/event-detail/event-detail.component';
-import { EventOverviewComponent } from '../shared/event-overview/event-overview.component';
+import { EventOverviewComponent } from '../shared/event/event-overview/event-overview.component';
 
 import { SharedModule } from '../shared/shared.module';
-import { EventResolver } from '../shared/event.resolver';
+import { EventResolver } from '../shared/event/event.resolver';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { eventsReducer } from './events/store/events.reducers';

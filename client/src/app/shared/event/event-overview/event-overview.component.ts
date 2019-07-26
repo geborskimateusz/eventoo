@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TicketModel } from 'src/app/shared/model/ticket-model';
-import { Location } from '../model/location.model';
+import { Location } from '../../model/location.model';
 
 export interface EventData {
   eventId: number,
@@ -22,6 +22,13 @@ export class EventOverviewComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.eventData)
+  }
+
+
+  redirectToGoogleMaps() {
+    return `http://maps.google.com?q=${this.eventData.location.lat},${this.eventData.location.lat}
+    `;
   }
 
 }

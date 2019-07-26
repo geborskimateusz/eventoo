@@ -4,8 +4,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Event } from 'src/app/shared/model/event.model';
 import { ActivatedRoute } from '@angular/router';
-import { EventData as EventDataOverview } from '../../shared/event-overview/event-overview.component';
-import { EventService } from '../events/event/event.service';
+import { EventData as EventDataOverview } from '../../shared/event/event-overview/event-overview.component';
+import { EventService } from '../../shared/event.service';
 
 @Component({
   selector: 'app-book',

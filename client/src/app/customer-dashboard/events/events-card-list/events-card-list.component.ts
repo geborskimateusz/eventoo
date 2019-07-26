@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { EventModel } from '../../../shared/model/event.model';
+import { Event } from '../../../shared/model/event.model';
 import { Observable, of } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
@@ -17,7 +17,7 @@ export class EventsCardListComponent implements OnInit {
 
   @Input() musicGenre: string;
 
-  events$: Observable<EventModel[]>;
+  events$: Observable<Event[]>;
 
 
   constructor(private store: Store<AppState>) { }
@@ -28,7 +28,7 @@ export class EventsCardListComponent implements OnInit {
     );
   }
 
-  getDate(event: EventModel) {
+  getDate(event: Event) {
     return `${event.date.getMonth()}, ${event.date.getDay()}`;
   }
 

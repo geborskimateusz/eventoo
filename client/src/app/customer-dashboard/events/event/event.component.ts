@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Event } from 'src/app/shared/model/event.model';
 import { ActivatedRoute } from '@angular/router';
 import { EventData as EventDataDetail } from './event-detail/event-detail.component';
-import { EventData as EventDataOverview } from '../../../shared/event-overview/event-overview.component';
-import { EventService } from './event.service';
+import { EventData as EventDataOverview } from '../../../shared/event/event-overview/event-overview.component';
+import { EventService } from '../../../shared/event.service';
 
 
 @Component({
