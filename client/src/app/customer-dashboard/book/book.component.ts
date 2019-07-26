@@ -15,14 +15,18 @@ export class BookComponent implements OnInit {
   event: Event;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-
+  
+  avilableTicketsArrName = 'Avilable Tickets';
   avilableTickets = [];
+
+  userShoppingListArrName = 'Avilable Tickets';
   userShoppingList = [];
 
   constructor(private formBuilder: FormBuilder,
     private router: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log('in book component')
     this.event = this.router.snapshot.data['event'];
 
     this.initAvilableTickets();

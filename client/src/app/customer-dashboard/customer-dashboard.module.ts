@@ -8,7 +8,6 @@ import { EventsComponent } from './events/events.component';
 import { MaterialModule } from '../material.module';
 import { ServicesComponent } from './services/services.component';
 import { EventComponent } from './events/event/event.component';
-import { BookComponent } from './book/book.component';
 import { ShoppingCart } from './user/shopping-cart/shopping-cart-component';
 import { BookmarksComponent } from './user/bookmarks/bookmarks.component';
 import { UserComponent } from './user/user.component';
@@ -25,7 +24,6 @@ import { StoreModule } from '@ngrx/store';
 import { eventsReducer } from './events/store/events.reducers';
 import { EventsEffects } from './events/store/events.effects';
 import { EventsCardListComponent } from './events/events-card-list/events-card-list.component';
-import { TicketComponent } from './book/ticket/ticket.component';
 
 
 @NgModule({
@@ -36,7 +34,6 @@ import { TicketComponent } from './book/ticket/ticket.component';
         EventsComponent,
         ServicesComponent,
         EventComponent,
-        BookComponent,
         ShoppingCart,
         BookmarksComponent,
         UserComponent,
@@ -46,7 +43,6 @@ import { TicketComponent } from './book/ticket/ticket.component';
         EventDetailComponent,
         EventOverviewComponent,
         EventsCardListComponent,
-        TicketComponent,
     ],
     imports: [
         CustomerDashboardRoutingModule,
