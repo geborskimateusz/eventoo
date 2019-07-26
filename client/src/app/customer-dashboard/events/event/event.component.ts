@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Event } from 'src/app/shared/event.model';
 import { ActivatedRoute } from '@angular/router';
 import { EventData as EventDataDetail} from './event-detail/event-detail.component';
-import { EventData as EventDataOverwiev} from './event-overview/event-overview.component';
+import { EventData as EventDataOverview} from '../../../shared/event-overview/event-overview.component';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class EventComponent implements OnInit {
 
   event: Event;
   eventDataDetail: EventDataDetail;
-  eventDataOverview: EventDataOverwiev;
+  eventDataOverview: EventDataOverview;
 
 
   constructor(private router: ActivatedRoute) { 

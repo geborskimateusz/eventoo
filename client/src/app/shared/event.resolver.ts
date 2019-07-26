@@ -5,8 +5,8 @@ import { Observable, of } from 'rxjs';
 import { EVENTS_DATASOURCE } from 'src/app/shared/events-datasource';
 import { AppState } from 'src/app/store';
 import { Store, select } from '@ngrx/store';
-import { selectEventById } from '../store/events.selectors';
-import { EventRequested } from '../store/events.actions';
+import { selectEventById } from '../customer-dashboard/events/store/events.selectors';
+import { EventRequested } from '../customer-dashboard/events/store/events.actions';
 import { tap, filter, first } from 'rxjs/operators';
 
 @Injectable() 

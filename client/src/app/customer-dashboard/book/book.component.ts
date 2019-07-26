@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Event } from 'src/app/shared/event.model';
 import { ActivatedRoute } from '@angular/router';
+import { EventData as EventDataOverview} from '../../shared/event-overview/event-overview.component';
 
 @Component({
   selector: 'app-book',
@@ -11,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
+  eventDataOverview: EventDataOverview;
 
   event: Event;
   firstFormGroup: FormGroup;
@@ -30,6 +32,12 @@ export class BookComponent implements OnInit {
     this.event = this.router.snapshot.data['event'];
 
     this.initAvilableTickets();
+
+    this.eventDataOverview = {
+      eventId: this.event.id,
+      title: this.event.title,
+      img: this.event.img
+    }
   }
 
 

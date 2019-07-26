@@ -9,7 +9,7 @@ import { UserComponent } from './user/user.component';
 import { ShoppingCart } from './user/shopping-cart/shopping-cart-component';
 import { EventRatesComponent } from './events/event/event-rates/event-rates.component';
 import { AuthGuard } from '../auth/auth.guard';
-import { EventResolver } from './events/event/event.resolver';
+import { EventResolver } from '../shared/event.resolver';
 import { EventDetailComponent } from './events/event/event-detail/event-detail.component';
 
 
