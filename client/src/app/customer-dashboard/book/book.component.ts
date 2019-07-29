@@ -16,21 +16,15 @@ export class BookComponent implements OnInit {
   eventDataOverview: EventDataOverview;
 
   event: Event;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
 
-  avilableTicketsArrName = 'Avilable Tickets';
   avilableTickets = [];
-
-  userShoppingListArrName = 'Avilable Tickets';
   userShoppingList = [];
+  totalPrice: number = 0;
 
-  constructor(private formBuilder: FormBuilder,
-    private router: ActivatedRoute,
+  constructor(private router: ActivatedRoute,
     private eventService: EventService) { }
 
   ngOnInit() {
-    console.log('in book component')
     this.event = this.router.snapshot.data['event'];
 
     this.initAvilableTickets();
@@ -45,18 +39,19 @@ export class BookComponent implements OnInit {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
+
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex);
     }
   }
+  calculateTotalPrice(ticketPrice: number) {
+    this.totalPrice += ticketPrice;
+  }
 
   private initAvilableTickets() {
     this.avilableTickets = [...this.event.tickets];
   }
 
-  onShoppingListTicketAmmount() {
-
-  }
 }

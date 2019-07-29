@@ -1,59 +1,53 @@
 <app-event-overview [eventData]="eventDataOverview"></app-event-overview>
 <mat-vertical-stepper [linear]="true" #stepper>
   <mat-step [stepControl]="firstFormGroup">
-    <!-- <form [formGroup]="firstFormGroup"> -->
     <ng-template matStepLabel>Select tickets</ng-template>
-    <!-- <div class="dialog__tickets">
-      <img [src]="event.img" alt="event.title" class="dialog__tickets--img" />
-      <h4 class="dialog__tickets--title">{{ event.title }}</h4>
-      <p class="dialog__tickets--paragraph">
-        <span>Date</span> {{ event.date }}
-      </p>
-      <p class="dialog__tickets--paragraph">
-        <span>Location {{ event.location.name }}</span>
-      </p> -->
-      <p>Choose ticktes than drag and drop them in your shopping list</p>
-      <div cdkDropListGroup>
-        <div class="example-container">
-          <h2>Avilable tickets</h2>
+    <p>Choose ticktes than drag and drop them in your shopping list</p>
+    <div cdkDropListGroup>
+      <div class="example-container">
+        <h2>Avilable tickets</h2>
 
+        <div
+          cdkDropList
+          [cdkDropListData]="avilableTickets"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)"
+        >
           <div
-            cdkDropList
-            [cdkDropListData]="avilableTickets"
-            class="example-list"
-            (cdkDropListDropped)="drop($event)"
+            class="example-box"
+            *ngFor="let ticket of avilableTickets"
+            cdkDrag
           >
-            <div
-              class="example-box"
-              *ngFor="let ticket of avilableTickets"
-              cdkDrag
-            >
-              <p>{{ ticket.type }}</p>
-              <p>{{ ticket.price }}$</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="example-container">
-          <h2>Your shopping list</h2>
-
-          <div
-            cdkDropList
-            [cdkDropListData]="userShoppingList"
-            class="example-list"
-            (cdkDropListDropped)="drop($event)"
-          >
-            <div
-              class="example-box"
-              *ngFor="let ticket of userShoppingList"
-              cdkDrag
-            >
-             <app-ticket [(ticket)]="ticket"></app-ticket>
-            </div>
+            <p>{{ ticket.type }}</p>
+            <p>{{ ticket.price }}$</p>
           </div>
         </div>
       </div>
+
+      <div class="example-container">
+        <h2>Your shopping list</h2>
+
+        <div
+          cdkDropList
+          [cdkDropListData]="userShoppingList"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <div
+            class="example-box"
+            *ngFor="let ticket of userShoppingList"
+            cdkDrag
+          >
+            <app-ticket
+              [(ticket)]="ticket"
+              (priceChange)="calculateTotalPrice($event)"
+            ></app-ticket>
+          </div>
+        </div>
+      </div>
+    </div>
     <div>
+      <h1>Price {{ totalPrice }}$</h1>
       <button mat-button matStepperNext>Next</button>
     </div>
     <!-- </form> -->

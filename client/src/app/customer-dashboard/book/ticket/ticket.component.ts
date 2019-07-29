@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, Output, ViewEncapsulation, OnDestroy } from '@angular/core';
 import { Event } from 'src/app/shared/model/event.model';
 import { EventEmitter } from '@angular/core';
 import { TicketModel } from 'src/app/shared/model/ticket-model';
@@ -8,9 +8,10 @@ import { TicketModel } from 'src/app/shared/model/ticket-model';
   templateUrl: './ticket.component.html',
   styleUrls: ['./ticket.component.scss']
 })
-export class TicketComponent implements OnInit {
+export class TicketComponent implements OnInit, OnDestroy {
 
   @Input() ticket: TicketModel;
+  @Output() priceChange: EventEmitter<number> = new EventEmitter<number>();
 
   ammount = 0;
   inStock = 0;
@@ -28,6 +29,8 @@ export class TicketComponent implements OnInit {
     if (this.inStock > 0) {
       this.ammount++;
       this.inStock--;
+
+      this.priceChange.emit(this.ticket.price)
     }
   }
 
@@ -35,8 +38,15 @@ export class TicketComponent implements OnInit {
     if (this.ammount > 1) {
       this.ammount--;
       this.inStock++;
+
+      this.priceChange.emit(-this.ticket.price)
+
     }
   }
 
+  ngOnDestroy() {
+    const total = this.ticket.price * this.ammount;
+    this.priceChange.emit(-total)
+  }
 
 }
