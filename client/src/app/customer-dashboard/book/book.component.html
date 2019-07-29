@@ -28,9 +28,8 @@
               *ngFor="let ticket of avilableTickets"
               cdkDrag
             >
-              <!-- <p>{{ ticket.name }}</p>
-              <p>{{ ticket.ticket.price }}$</p>
-              <p>{{ ticket.ticket.inStock }} left</p> -->
+              <p>{{ ticket.type }}</p>
+              <p>{{ ticket.price }}$</p>
             </div>
           </div>
         </div>
@@ -49,13 +48,7 @@
               *ngFor="let ticket of userShoppingList"
               cdkDrag
             >
-              <!-- <p>{{ ticket.name }}</p>
-              <p>{{ ticket.ticket.price }}$</p>
-              <p>
-                <span>&uarr;</span>
-                {{ ticket.ticket.inStock }} left
-                <span>&darr;</span>
-              </p> -->
+             <app-ticket [(ticket)]="ticket"></app-ticket>
             </div>
           </div>
         </div>
