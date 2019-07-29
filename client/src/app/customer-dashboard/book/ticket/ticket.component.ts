@@ -18,15 +18,14 @@ export class TicketComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.ticket)
     this.inStock = this.ticket.inStock;
 
-    this.incrementInAmmount()
-
+    this.incrementAmmount()
   }
 
-  incrementInAmmount() {
-    if (this.inStock > 0) {
+  incrementAmmount() {
+    const ticketsAreAvilable = this.inStock > 0;
+    if (ticketsAreAvilable) {
       this.ammount++;
       this.inStock--;
 
@@ -34,19 +33,19 @@ export class TicketComponent implements OnInit, OnDestroy {
     }
   }
 
-  decrementInAmmount() {
+  decrementAmmount() {
     if (this.ammount > 1) {
       this.ammount--;
       this.inStock++;
 
-      this.priceChange.emit(-this.ticket.price)
-
+      const negativePrice = this.ticket.price * -1;
+      this.priceChange.emit(negativePrice)
     }
   }
 
   ngOnDestroy() {
-    const total = this.ticket.price * this.ammount;
-    this.priceChange.emit(-total)
+    const totalNegative = this.ticket.price * this.ammount * -1;
+    this.priceChange.emit(totalNegative)
   }
 
 }
