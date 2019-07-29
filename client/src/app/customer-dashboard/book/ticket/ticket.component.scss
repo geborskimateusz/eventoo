@@ -1,5 +1,18 @@
 :host {
-  display: flex;
-  justify-content: space-between;
+  grid-column: 1 / -1;
   width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) min-content;
+}
+
+.ticket__details {
+  &-type {}
+
+  &-instock {}
+
+  &-amount {
+    display: flex;
+    
+  }
 }

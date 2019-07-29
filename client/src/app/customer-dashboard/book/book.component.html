@@ -2,10 +2,13 @@
 <mat-vertical-stepper [linear]="true" #stepper>
   <mat-step [stepControl]="firstFormGroup">
     <ng-template matStepLabel>Select tickets</ng-template>
-    <p>Choose ticktes than drag and drop them in your shopping list</p>
+    <div class="drag__info">
+      <mat-icon id="drag__info-icon">arrow_downward</mat-icon>
+      <p id="dragInfo">Choose tickets then drag them to your shopping list.</p>
+    </div>
     <div cdkDropListGroup>
       <div class="example-container">
-        <h2>Avilable tickets</h2>
+        <h3>Avilable tickets</h3>
 
         <div
           cdkDropList
@@ -25,7 +28,7 @@
       </div>
 
       <div class="example-container">
-        <h2>Your shopping list</h2>
+        <h3>Your shopping list</h3>
 
         <div
           cdkDropList
@@ -56,20 +59,53 @@
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
     <ng-template matStepLabel>Account Details</ng-template>
-      <div class="detail__container">
-        <div class="detail__container-payer-details">
-          A
-        </div>
-        <div class="detail__container-recipent-details">
-          B
-        </div>
-        <div class="detail__container-order-details">
-          C
-        </div>
-        <div class="detail__container-total-price">
-          D
-        </div>
+    <div class="detail__container">
+      <div class="detail__container-payer-details">
+        <h3>Payer details</h3>
+        <ul>
+          <li>
+            <h4>Name:</h4>
+            <p>John Doe</p>
+          </li>
+          <li>
+            <h4>Addres:</h4>
+            <p>Mount Olive, 4801 Reppert Coal Road, Mississippi</p>
+          </li>
+          <li>
+            <h4>Phone:</h4>
+            <p>111 111 111</p>
+          </li>
+          <li>
+            <h4>Email:</h4>
+            <p>john@gmail.com</p>
+          </li>
+        </ul>
       </div>
+      <div class="detail__container-recipent-details">
+        <h3>Recipent details</h3>
+        <ul>
+          <li>
+            <h4>Name:</h4>
+            <p>Eventoo company</p>
+          </li>
+          <li>
+            <h4>Addres:</h4>
+            <p>Fort Wayne, 4783 Cessna Drive, Virginia</p>
+          </li>
+        </ul>
+      </div>
+      <div class="detail__container-order-details">
+        <h3>Order details</h3>
+        <ul>
+          <li>
+            <p>- Little Big, 29/07/2019, B17 Club, Stand ticket x1</p>
+          </li>
+        </ul>
+      </div>
+      <div class="detail__container-total-price">
+        <h3>Total 150$</h3>
+      </div>
+    </div>
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button matStepperNext>Next</button>

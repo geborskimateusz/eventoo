@@ -1,7 +1,22 @@
+:host {
+  flex: 1;
+  font-size: 1.7rem;
+}
+
+.drag__info {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem;
+
+  p {
+    margin-left: 1rem;
+  }
+}
+
 // for drag list
 .example-container {
-  width: 400px;
-  max-width: 100%;
+  max-width: 400px;
+  width: 100%;
   margin: 0 25px 25px 0;
   display: inline-block;
   vertical-align: top;
@@ -17,13 +32,11 @@
 }
 
 .example-box {
-  padding: 20px 10px;
+  padding: 10px 10px;
   border-bottom: solid 1px #ccc;
   color: rgba(0, 0, 0, 0.87);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   box-sizing: border-box;
   cursor: move;
   background: white;
@@ -57,29 +70,33 @@
 .detail__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 1fr repeat(2, min-content);
+  row-gap: 2rem;
+
+  li {
+    display: flex;
+
+    p {
+      margin-left: 1rem;
+      font-size: 1.3rem;
+    }
+  }
 
   &-payer-details {
-    background-color: rebeccapurple;
-
     grid-area: 1 / 1 / 2 / 2;
+    
   }
 
   &-recipent-details {
-    background-color: orangered;
-
     grid-area: 1 / 2 / 2 / 3;
   }
 
   &-order-details {
-    background-color: green;
-
     grid-area: 2 / 1 / 3 / 3;
   }
 
   &-total-price {
-    background-color: blue;
-
     grid-area: 3 / 1 / 4 / 3;
   }
+
 }

@@ -1,6 +1,6 @@
-<p>{{ ticket.type }}</p>
-<p>In stock: {{ inStock }}</p>
-<p>
+<p class="ticket__details-type">{{ ticket.type }}</p>
+<p class="ticket__details-instock">In stock: {{ inStock }}</p>
+<p class="ticket__details-amount">
   <span (click)="decrementAmmount()">
     <mat-icon>remove_circle </mat-icon>
   </span>
