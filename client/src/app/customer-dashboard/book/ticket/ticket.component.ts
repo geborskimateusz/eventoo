@@ -14,7 +14,7 @@ import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
 })
 export class TicketComponent implements OnInit, OnDestroy {
 
-  @Input() ticket: TicketModel;
+  @Input() ticket: OrderedTicket;
   @Output() priceChange: EventEmitter<number> = new EventEmitter<number>();
 
   ammount = 0;
@@ -26,12 +26,12 @@ export class TicketComponent implements OnInit, OnDestroy {
 
     this.incrementAmmount()
 
-    this.store.dispatch(new TicketAdded({
-      orderedTicket: {
-        ...this.ticket,
-        ammount: this.ammount
-      }
-    }));
+    // this.store.dispatch(new TicketAdded({
+    //   orderedTicket: {
+    //     ...this.ticket,
+    //     ammount: this.ammount
+    //   }
+    // }));
   }
 
   incrementAmmount() {
@@ -39,6 +39,10 @@ export class TicketComponent implements OnInit, OnDestroy {
     if (ticketsAreAvilable) {
       this.ammount++;
       this.inStock--;
+
+      this.ticket.inStock = this.inStock;
+      this.ticket.ammount = this.ammount;
+
 
       this.priceChange.emit(this.ticket.price)
     }
@@ -48,6 +52,9 @@ export class TicketComponent implements OnInit, OnDestroy {
     if (this.ammount > 1) {
       this.ammount--;
       this.inStock++;
+
+      this.ticket.inStock = this.inStock;
+      this.ticket.ammount = this.ammount;
 
       const negativePrice = this.ticket.price * -1;
       this.priceChange.emit(negativePrice)

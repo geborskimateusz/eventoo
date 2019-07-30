@@ -6,12 +6,15 @@ export interface BookingState extends EntityState<OrderedTicket> { }
 
 export const adapter: EntityAdapter<OrderedTicket> = createEntityAdapter<OrderedTicket>();
 
-export const initialBookingState: BookingState = adapter.getInitialState();
+export const initialBookingState: BookingState = adapter.getInitialState({
+    ids: [],
+    entities: {}
+});
 
 export function bookingReducer(state = initialBookingState, action: BookingActions) {
     switch (action.type) {
         case BookingActionTypes.TicketAdded:
-            return adapter.addOne(action.payload.orderedTicket, state);
+            return adapter.upsertMany(action.payload.orderedTickets, state);
 
         default: {
             return state;

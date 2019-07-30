@@ -8,7 +8,7 @@ export enum BookingActionTypes {
 
 export class TicketAdded implements Action {
     readonly type = BookingActionTypes.TicketAdded;
-    constructor(public payload: {orderedTicket: OrderedTicket}) { }
+    constructor(public payload: {orderedTickets: OrderedTicket[]}) { }
 }
 
 export type BookingActions = TicketAdded;

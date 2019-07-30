@@ -53,7 +53,7 @@
       <h4 *ngIf="totalPrice != 0">Price {{ totalPrice }}$</h4>
     </div>
     <div>
-      <button mat-button matStepperNext>Next</button>
+      <button mat-button matStepperNext (click)="onTicketStoreAdd()">Next</button>
     </div>
     <!-- </form> -->
   </mat-step>

@@ -6,6 +6,11 @@ import { Event } from 'src/app/shared/model/event.model';
 import { ActivatedRoute } from '@angular/router';
 import { EventData as EventDataOverview } from '../../shared/event/event-overview/event-overview.component';
 import { EventService } from '../../shared/event.service';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store';
+import { TicketAdded } from './store/booking.actions';
+import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
+import { TicketModel } from 'src/app/shared/model/ticket-model';
 
 @Component({
   selector: 'app-book',
@@ -17,12 +22,13 @@ export class BookComponent implements OnInit {
 
   event: Event;
 
-  avilableTickets = [];
-  userShoppingList = [];
+  avilableTickets: TicketModel[] = [];
+  userShoppingList: OrderedTicket[] = [];
   totalPrice: number = 0;
 
   constructor(private router: ActivatedRoute,
-    private eventService: EventService) { }
+    private eventService: EventService,
+    private store: Store<AppState>) { }
 
   ngOnInit() {
     this.event = this.router.snapshot.data['event'];
@@ -55,5 +61,10 @@ export class BookComponent implements OnInit {
   private initAvilableTickets() {
     this.avilableTickets = [...this.event.tickets];
   }
+
+  onTicketStoreAdd() {
+    this.store.dispatch(new TicketAdded({ orderedTickets: this.userShoppingList }));
+  }
+
 
 }
