@@ -2,6 +2,10 @@ import { Component, OnInit, Input, Output, ViewEncapsulation, OnDestroy } from '
 import { Event } from 'src/app/shared/model/event.model';
 import { EventEmitter } from '@angular/core';
 import { TicketModel } from 'src/app/shared/model/ticket-model';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store';
+import { BookingActionTypes, TicketAdded } from '../store/booking.actions';
+import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
 
 @Component({
   selector: 'app-ticket',
@@ -15,12 +19,19 @@ export class TicketComponent implements OnInit, OnDestroy {
 
   ammount = 0;
   inStock = 0;
-  constructor() { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
     this.inStock = this.ticket.inStock;
 
     this.incrementAmmount()
+
+    this.store.dispatch(new TicketAdded({
+      orderedTicket: {
+        ...this.ticket,
+        ammount: this.ammount
+      }
+    }));
   }
 
   incrementAmmount() {
