@@ -45,6 +45,8 @@ export class BookComponent implements OnInit {
         event.previousIndex,
         event.currentIndex);
     }
+
+    console.log(this.userShoppingList)
   }
   calculateTotalPrice(ticketPrice: number) {
     this.totalPrice += ticketPrice;

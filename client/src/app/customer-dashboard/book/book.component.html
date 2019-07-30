@@ -8,7 +8,7 @@
     </div>
     <div cdkDropListGroup>
       <div class="example-container">
-        <h3>Avilable tickets</h3>
+        <h4>Avilable tickets</h4>
 
         <div
           cdkDropList
@@ -28,7 +28,7 @@
       </div>
 
       <div class="example-container">
-        <h3>Your shopping list</h3>
+        <h4>Your shopping list</h4>
 
         <div
           cdkDropList
@@ -50,7 +50,7 @@
       </div>
     </div>
     <div>
-      <h1>Price {{ totalPrice }}$</h1>
+      <h4 *ngIf="totalPrice != 0">Price {{ totalPrice }}$</h4>
     </div>
     <div>
       <button mat-button matStepperNext>Next</button>
@@ -61,49 +61,51 @@
     <ng-template matStepLabel>Account Details</ng-template>
     <div class="detail__container">
       <div class="detail__container-payer-details">
-        <h3>Payer details</h3>
+        <h4>Payer details</h4>
         <ul>
           <li>
-            <h4>Name:</h4>
+            <h5>Name:</h5>
             <p>John Doe</p>
           </li>
           <li>
-            <h4>Addres:</h4>
+            <h5>Address:</h5>
             <p>Mount Olive, 4801 Reppert Coal Road, Mississippi</p>
           </li>
           <li>
-            <h4>Phone:</h4>
+            <h5>Phone:</h5>
             <p>111 111 111</p>
           </li>
           <li>
-            <h4>Email:</h4>
+            <h5>Email:</h5>
             <p>john@gmail.com</p>
           </li>
         </ul>
       </div>
       <div class="detail__container-recipent-details">
-        <h3>Recipent details</h3>
+        <h4>Recipent details</h4>
         <ul>
           <li>
-            <h4>Name:</h4>
+            <h5>Name:</h5>
             <p>Eventoo company</p>
           </li>
           <li>
-            <h4>Addres:</h4>
+            <h5>Address:</h5>
             <p>Fort Wayne, 4783 Cessna Drive, Virginia</p>
           </li>
         </ul>
       </div>
       <div class="detail__container-order-details">
-        <h3>Order details</h3>
+        <h4>Order details</h4>
         <ul>
           <li>
-            <p>- Little Big, 29/07/2019, B17 Club, Stand ticket x1</p>
+            <p>
+              <span>&#x02013;</span>
+               {{event.title}}, {{event.date | date: 'dd/MM/yyyy' }}, {{event.location.name}}, Stand ticket x1</p>
           </li>
         </ul>
       </div>
       <div class="detail__container-total-price">
-        <h3>Total 150$</h3>
+        <h4>Total {{ totalPrice }}$</h4>
       </div>
     </div>
     <div>

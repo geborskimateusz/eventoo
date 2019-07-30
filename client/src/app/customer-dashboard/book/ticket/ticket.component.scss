@@ -1,18 +1,47 @@
+@import "../../../../styles/abstracts/variables";
+
 :host {
   grid-column: 1 / -1;
   width: 100%;
 
   display: grid;
-  grid-template-columns: repeat(2, 1fr) min-content;
+  // grid-template-columns: repeat(2, 1fr) min-content;
+    grid-template-columns: 1fr max-content min-content;
+
 }
 
 .ticket__details {
-  &-type {}
+  &-type {
+  }
 
-  &-instock {}
+  &-instock {
+  }
 
   &-amount {
     display: flex;
-    
+    justify-content: center;
+    align-items: center;
+
+    button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+
+    &-detail {
+      
+    }
+
+    &-icon {
+      max-width: 8rem;
+      visibility: hidden;
+      margin: 0 0.5rem;
+      font-size: 1.8rem;
+      color: $color-primary;
+    }
+  }
+
+  &-amount:hover &-amount-icon {
+    visibility: visible;
   }
 }

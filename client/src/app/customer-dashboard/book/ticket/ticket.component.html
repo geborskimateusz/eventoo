@@ -1,11 +1,16 @@
 <p class="ticket__details-type">{{ ticket.type }}</p>
 <p class="ticket__details-instock">In stock: {{ inStock }}</p>
-<p class="ticket__details-amount">
-  <span (click)="decrementAmmount()">
-    <mat-icon>remove_circle </mat-icon>
-  </span>
-  {{ ammount }}
-  <span (click)="incrementAmmount()">
-    <mat-icon>add_circle</mat-icon>
-  </span>
-</p>
+
+<div class="ticket__details-amount">
+  <button (click)="decrementAmmount()">
+    <mat-icon class="ticket__details-amount-icon">remove_circle </mat-icon>
+  </button>
+  <p class="ticket__details-amount-detail">
+    {{ ammount }}
+  </p>
+  <button (click)="incrementAmmount()">
+    <mat-icon class="ticket__details-amount-icon">add_circle</mat-icon>
+  </button>
+</div>
+
+
