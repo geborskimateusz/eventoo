@@ -13,8 +13,11 @@ export const initialBookingState: BookingState = adapter.getInitialState({
 
 export function bookingReducer(state = initialBookingState, action: BookingActions) {
     switch (action.type) {
-        case BookingActionTypes.TicketAdded:
+        case BookingActionTypes.TicketsAdded:
             return adapter.upsertMany(action.payload.orderedTickets, state);
+
+        case BookingActionTypes.TicketAdded:
+            return adapter.upsertOne(action.payload.orderedTicket, state);
 
         default: {
             return state;

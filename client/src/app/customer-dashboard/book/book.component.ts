@@ -8,9 +8,9 @@ import { EventData as EventDataOverview } from '../../shared/event/event-overvie
 import { EventService } from '../../shared/event.service';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store';
-import { TicketAdded } from './store/booking.actions';
+import { TicketsAdded } from './store/booking.actions';
 import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
-import { TicketModel } from 'src/app/shared/model/ticket-model';
+import { Ticket } from 'src/app/shared/model/ticket-model';
 
 @Component({
   selector: 'app-book',
@@ -22,7 +22,7 @@ export class BookComponent implements OnInit {
 
   event: Event;
 
-  avilableTickets: TicketModel[] = [];
+  avilableTickets: Ticket[] = [];
   userShoppingList: OrderedTicket[] = [];
   totalPrice: number = 0;
 
@@ -51,8 +51,6 @@ export class BookComponent implements OnInit {
         event.previousIndex,
         event.currentIndex);
     }
-
-    console.log(this.userShoppingList)
   }
   calculateTotalPrice(ticketPrice: number) {
     this.totalPrice += ticketPrice;
@@ -62,9 +60,7 @@ export class BookComponent implements OnInit {
     this.avilableTickets = [...this.event.tickets];
   }
 
-  onTicketStoreAdd() {
-    this.store.dispatch(new TicketAdded({ orderedTickets: this.userShoppingList }));
-  }
+ 
 
 
 }

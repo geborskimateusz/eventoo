@@ -1,5 +1,5 @@
 import { MusicGenres } from './music-genres.model';
-import { TicketModel as Ticket } from './ticket-model';
+import { Ticket } from './ticket-model';
 import { Location } from './location.model';
 
 export interface Event {

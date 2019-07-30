@@ -1,5 +1,5 @@
-import { TicketModel } from './ticket-model';
+import { Ticket } from './ticket-model';
 
-export interface OrderedTicket extends TicketModel {
+export interface OrderedTicket extends Ticket {
     ammount: number; 
 }

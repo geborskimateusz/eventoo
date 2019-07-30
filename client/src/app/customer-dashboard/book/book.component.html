@@ -50,12 +50,11 @@
       </div>
     </div>
     <div>
-      <h4 *ngIf="totalPrice != 0">Price {{ totalPrice }}$</h4>
+      <h4>Price {{ totalPrice }}$</h4>
     </div>
     <div>
-      <button mat-button matStepperNext (click)="onTicketStoreAdd()">Next</button>
+      <button mat-button matStepperNext (click)="onTicketStoreUpsertAll()">Next</button>
     </div>
-    <!-- </form> -->
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
     <ng-template matStepLabel>Account Details</ng-template>

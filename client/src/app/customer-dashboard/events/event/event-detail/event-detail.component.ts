@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TicketModel } from 'src/app/shared/model/ticket-model';
+import { Ticket } from 'src/app/shared/model/ticket-model';
 
 export interface EventData {
   eventId: number,
   description: string,
-  tickets: TicketModel[]
+  tickets: Ticket[]
 }
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TicketModel } from 'src/app/shared/model/ticket-model';
+import { Ticket } from 'src/app/shared/model/ticket-model';
 import { Location } from '../../model/location.model';
 import { MatDialog } from '@angular/material';
 import { EventLocalizationDialogComponent } from './event-localization-dialog/event-localization-dialog.component';
