@@ -6,11 +6,14 @@ import { Event } from 'src/app/shared/model/event.model';
 import { ActivatedRoute } from '@angular/router';
 import { EventData as EventDataOverview } from '../../shared/event/event-overview/event-overview.component';
 import { EventService } from '../../shared/event.service';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
-import { TicketsAdded } from './store/booking.actions';
-import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
+import { TicketsAdded, TicketAdded } from './store/booking.actions';
 import { Ticket } from 'src/app/shared/model/ticket-model';
+import { selectAllTickets } from './store/booking.selectors';
+import { map, tap } from 'rxjs/operators';
+import { ListTypes } from './list-type';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-book',
@@ -18,12 +21,16 @@ import { Ticket } from 'src/app/shared/model/ticket-model';
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
+
+  aviableTicketsList = ListTypes.AVILABLE_TICKETS;
+  shoppingList = ListTypes.SHOPPING_LIST;
+
   eventDataOverview: EventDataOverview;
 
   event: Event;
 
-  avilableTickets: Ticket[] = [];
-  userShoppingList: OrderedTicket[] = [];
+  avilableTickets: Observable<Ticket[]>;
+  // userShoppingList: Ticket[] = [];
   totalPrice: number = 0;
 
   constructor(private router: ActivatedRoute,
@@ -38,29 +45,15 @@ export class BookComponent implements OnInit {
     this.eventDataOverview = this.eventService.getEventDataOverview(this.event)
   }
 
-
-
-  drop(event: CdkDragDrop<string[]>) {
-
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-
-      transferArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
-    }
-  }
   calculateTotalPrice(ticketPrice: number) {
     this.totalPrice += ticketPrice;
   }
 
   private initAvilableTickets() {
-    this.avilableTickets = [...this.event.tickets];
+    this.avilableTickets = of([...this.event.tickets])
   }
 
- 
+
 
 
 }

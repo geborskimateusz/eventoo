@@ -5,6 +5,7 @@ export interface Ticket {
     type?: TicketTypes;
     price: number,
     total: number,
-    inStock: number
+    inStock: number,
+    ammount?: number
 }
 

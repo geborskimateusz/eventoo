@@ -6,11 +6,13 @@ import { BookRoutingModule } from './book-routing-module';
 import { TicketComponent } from './ticket/ticket.component';
 import { StoreModule } from '@ngrx/store';
 import { bookingReducer } from './store/booking.reducers';
+import { TicketsComponent } from './tickets/tickets.component';
 
 @NgModule({
     declarations: [
         BookComponent,
-        TicketComponent
+        TicketComponent,
+        TicketsComponent,
     ],
     imports: [
         CommonModule,

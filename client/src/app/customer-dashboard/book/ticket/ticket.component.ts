@@ -5,7 +5,7 @@ import { Ticket } from 'src/app/shared/model/ticket-model';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store';
 import { BookingActionTypes, TicketsAdded, TicketAdded } from '../store/booking.actions';
-import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
+// import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
 
 @Component({
   selector: 'app-ticket',
@@ -14,8 +14,7 @@ import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
 })
 export class TicketComponent implements OnInit, OnDestroy {
 
-  @Input() ticket: OrderedTicket;
-  orderedTicket: OrderedTicket;
+  @Input() ticket: Ticket;
 
   @Output() priceChange: EventEmitter<number> = new EventEmitter<number>();
 
@@ -26,23 +25,24 @@ export class TicketComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.inStock = this.ticket.inStock;
+    console.log(this.ticket);
+    // this.inStock = this.ticket.inStock;
 
-    this.incrementAmmount()
+    this.incrementAmmount();
 
   }
 
   incrementAmmount() {
     const ticketsAreAvilable = this.inStock > 0;
     if (ticketsAreAvilable) {
-      this.ammount++;
-      this.inStock--;
+      // this.ticket.ammount+=1;
+      // this.ticket.inStock-=1;
 
       this.priceChange.emit(this.ticket.price)
 
-      this.orderedTicket = { ...this.ticket, ammount: this.ammount }
-      console.log(this.orderedTicket)
-      this.store.dispatch(new TicketAdded({ orderedTicket: this.orderedTicket }))
+      // this.ticket = {...this.ticket, ammount: this.ammount}
+      console.log(this.ticket)
+      this.store.dispatch(new TicketAdded({ orderedTicket: this.ticket }))
 
     }
   }
@@ -55,8 +55,9 @@ export class TicketComponent implements OnInit, OnDestroy {
       const negativePrice = this.ticket.price * -1;
       this.priceChange.emit(negativePrice)
 
-      this.orderedTicket = { ...this.ticket, ammount: this.ammount }
-      this.store.dispatch(new TicketAdded({ orderedTicket: this.orderedTicket }))
+      this.ticket = {...this.ticket, ammount: this.ammount}
+      console.log(this.ticket)
+      this.store.dispatch(new TicketAdded({ orderedTicket: this.ticket }))
 
     }
   }

@@ -1,0 +1,105 @@
+@import "../../../../styles/abstracts/variables";
+
+// for drag list
+.example-container {
+  width: 400px;
+  margin: 0 25px 25px 0;
+  display: inline-block;
+  vertical-align: top;
+
+
+}
+
+.example-list {
+
+  width: 100%;
+
+  // display: grid;
+  // grid-template-columns: 1fr max-content min-content;
+
+  border: solid 1px #ccc;
+  min-height: 60px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+}
+
+.example-box {
+  display: flex;
+
+  &--type {
+    flex: 0 0 60%;
+  }
+
+  &--price {
+
+  }
+
+  &-avilable {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-shopping {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &--ticket__details {
+      // grid-column: 1 / -1;
+      // width: 100%;
+    
+      // display: grid;
+      // grid-template-columns: 1fr max-content min-content;
+    
+      &-type {
+      }
+    
+      &-instock {
+      }
+    
+      &-amount {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        button {
+          background-color: transparent;
+          border: none;
+          outline: none;
+        }
+    
+        &-detail {
+        }
+    
+        &-icon {
+          max-width: 8rem;
+          // visibility: hidden;
+          margin: 0 0.5rem;
+          font-size: 1.8rem;
+          color: $color-primary;
+        }
+      }
+    
+      &-amount:hover &-amount-icon {
+        // visibility: visible;
+      }
+    }
+  }
+
+
+  padding: 10px 10px;
+  border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  box-sizing: border-box;
+  cursor: move;
+  background: white;
+  font-size: 14px;
+}
+
+
+
+
