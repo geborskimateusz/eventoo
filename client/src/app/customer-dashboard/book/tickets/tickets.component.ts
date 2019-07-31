@@ -23,13 +23,15 @@ export class TicketsComponent implements OnInit {
 
   ngOnInit() {
 
-    if (!this.isAvilableTicketsList()) {
-      this.tickets = this.store.pipe(
-        select(selectAllTickets),
-      )
-    }
+    this.initShoppingList();
   }
 
+
+  private initShoppingList() {
+    if (!this.isAvilableTicketsList()) {
+      this.tickets = this.store.pipe(select(selectAllTickets));
+    }
+  }
 
   isAvilableTicketsList(): boolean {
     return this.listType === ListTypes.AVILABLE_TICKETS;
@@ -39,34 +41,55 @@ export class TicketsComponent implements OnInit {
     this.store.dispatch(new TicketAdded({ orderedTicket: { ...ticket, ammount: 1 } }))
   }
 
-  incrementAmmount(ticket: Ticket) {
-    const ticketsAreAvilable = ticket.inStock > 0;
-    if (ticketsAreAvilable) {
+  onUpdateOrderAmmount(ticket: Ticket) {
+    let ammount;
+    let inStock;
+
+    if (isIncrementing) {
+      const areTicketsAvilable = ticket.inStock > 0;
 
       const ammount = ticket.ammount + 1;
       const inStock = ticket.inStock - 1;
-      this.store.dispatch(
-        new TicketAdded({
-          orderedTicket: { ...ticket, ammount, inStock }
-        }));
+     
+    } else {
+      if (ticket.ammount > 1 && ticket.ammount < ticket.inStock) {
 
+        const ammount = ticket.ammount - 1;
+        const inStock = ticket.inStock + 1;  
+      }
     }
+
+    this.store.dispatch(
+      new TicketAdded({
+        orderedTicket: { ...ticket, ammount, inStock }
+      }));
+
   }
 
-  decrementAmmount(ticket: Ticket) {
-    if (ticket.ammount > 1 && ticket.ammount < ticket.inStock) {
+  // incrementAmmount(ticket: Ticket) {
+  //   const areTicketsAvilable = ticket.inStock > 0;
+  //   if (areTicketsAvilable) {
+
+  //     const ammount = ticket.ammount + 1;
+  //     const inStock = ticket.inStock - 1;
+  //     this.store.dispatch(
+  //       new TicketAdded({
+  //         orderedTicket: { ...ticket, ammount, inStock }
+  //       }));
+
+  //   }
+  // }
+
+  // decrementAmmount(ticket: Ticket) {
+  //   if (ticket.ammount > 1 && ticket.ammount < ticket.inStock) {
 
 
-      // const negativePrice = this.ticket.price * -1;
-      // this.priceChange.emit(negativePrice)
+  //     const ammount = ticket.ammount - 1;
+  //     const inStock = ticket.inStock + 1;
+  //     this.store.dispatch(new TicketAdded({ orderedTicket: { ...ticket, ammount, inStock } }))
 
-
-      const ammount = ticket.ammount - 1;
-      const inStock = ticket.inStock + 1;
-      this.store.dispatch(new TicketAdded({ orderedTicket: { ...ticket, ammount, inStock } }))
-
-    }
-  }
+  //   }
+  // }
 
   // ngOnDestroy(ticket: Ticket) {
   //   const totalNegative = this.ticket.price * this.ammount * -1;

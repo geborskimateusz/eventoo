@@ -20,7 +20,7 @@
 
       <ng-template #isShoppingList class="example-box-shopping">
         <div class="example-box-shopping--ticket__details-amount">
-          <button (click)="decrementAmmount(ticket)">
+          <button (click)="onUpdateOrderAmmount(ticket)">
             <mat-icon class="example-box-shopping--ticket__details-amount-icon"
               >remove_circle
             </mat-icon>
@@ -28,7 +28,7 @@
           <p class="example-box-shopping--ticket__details-amount-detail">
             {{ ticket.ammount }}
           </p>
-          <button (click)="incrementAmmount(ticket)">
+          <button (click)="onUpdateOrderAmmount(ticket)">
             <mat-icon class="example-box-shopping--ticket__details-amount-icon"
               >add_circle</mat-icon
             >
