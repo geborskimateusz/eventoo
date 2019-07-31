@@ -16,7 +16,7 @@ export function bookingReducer(state = initialBookingState, action: BookingActio
             return adapter.upsertMany(action.payload.orderedTickets, state);
 
         case BookingActionTypes.TicketAdded:
-            return adapter.addOne(action.payload.orderedTicket, state);
+            return adapter.upsertOne(action.payload.orderedTicket, state);
 
         default: {
             return state;
