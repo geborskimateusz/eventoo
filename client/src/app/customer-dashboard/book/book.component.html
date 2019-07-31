@@ -12,7 +12,7 @@
       <app-tickets [listType]="shoppingList"></app-tickets>
     </div>
     <div>
-      <h4>Price {{ totalPrice }}$</h4>
+      <h4>Price {{ totalPrice | async }}$</h4>
     </div>
     <div>
       <button mat-button matStepperNext (click)="onTicketStoreUpsertAll()">

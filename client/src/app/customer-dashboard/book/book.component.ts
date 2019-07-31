@@ -10,10 +10,11 @@ import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
 import { TicketsAdded, TicketAdded } from './store/booking.actions';
 import { Ticket } from 'src/app/shared/model/ticket-model';
-import { selectAllTickets } from './store/booking.selectors';
+import { selectAllTickets, selectTotalPrice } from './store/booking.selectors';
 import { map, tap } from 'rxjs/operators';
 import { ListTypes } from './list-type';
 import { Observable, of } from 'rxjs';
+import { selectEventById } from '../events/store/events.selectors';
 
 @Component({
   selector: 'app-book',
@@ -31,7 +32,7 @@ export class BookComponent implements OnInit {
 
   avilableTickets: Observable<Ticket[]>;
   // userShoppingList: Ticket[] = [];
-  totalPrice: number = 0;
+  totalPrice: Observable<number>;
 
   constructor(private router: ActivatedRoute,
     private eventService: EventService,
@@ -42,11 +43,12 @@ export class BookComponent implements OnInit {
 
     this.initAvilableTickets();
 
-    this.eventDataOverview = this.eventService.getEventDataOverview(this.event)
-  }
+    this.eventDataOverview = this.eventService.getEventDataOverview(this.event);
 
-  calculateTotalPrice(ticketPrice: number) {
-    this.totalPrice += ticketPrice;
+    this.totalPrice = this.store.pipe(
+      select(selectTotalPrice)
+    );
+
   }
 
   private initAvilableTickets() {

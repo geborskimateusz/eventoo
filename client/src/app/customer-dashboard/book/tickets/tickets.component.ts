@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Ticket } from 'src/app/shared/model/ticket-model';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
@@ -22,9 +22,8 @@ export class TicketsComponent implements OnInit {
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-    console.log(this.tickets, this.listType)
 
-    if (this.listType === ListTypes.SHOPPING_LIST) {
+    if (!this.isAvilableTicketsList()) {
       this.tickets = this.store.pipe(
         select(selectAllTickets),
       )
@@ -33,7 +32,6 @@ export class TicketsComponent implements OnInit {
 
 
   isAvilableTicketsList(): boolean {
-    console.log(this.listType === ListTypes.AVILABLE_TICKETS)
     return this.listType === ListTypes.AVILABLE_TICKETS;
   }
 
@@ -45,11 +43,12 @@ export class TicketsComponent implements OnInit {
     const ticketsAreAvilable = ticket.inStock > 0;
     if (ticketsAreAvilable) {
 
-      // this.priceChange.emit(this.ticket.price)
-
       const ammount = ticket.ammount + 1;
       const inStock = ticket.inStock - 1;
-      this.store.dispatch(new TicketAdded({ orderedTicket: { ...ticket, ammount, inStock } }))
+      this.store.dispatch(
+        new TicketAdded({
+          orderedTicket: { ...ticket, ammount, inStock }
+        }));
 
     }
   }
@@ -69,8 +68,8 @@ export class TicketsComponent implements OnInit {
     }
   }
 
-  ngOnDestroy(ticket: Ticket) {
-    const totalNegative = this.ticket.price * this.ammount * -1;
-    this.priceChange.emit(totalNegative)
-  }
+  // ngOnDestroy(ticket: Ticket) {
+  //   const totalNegative = this.ticket.price * this.ammount * -1;
+  //   this.priceChange.emit(totalNegative)
+  // }
 }
