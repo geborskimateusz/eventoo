@@ -1,6 +1,7 @@
 <app-event-overview [eventData]="eventDataOverview"></app-event-overview>
+
 <mat-vertical-stepper [linear]="true" #stepper>
-  <mat-step [stepControl]="firstFormGroup">
+  <mat-step [stepControl]="ticketsFormGroup">
     <ng-template matStepLabel>Select tickets</ng-template>
     <div class="drag__info">
       <mat-icon id="drag__info-icon">arrow_downward</mat-icon>
@@ -14,7 +15,7 @@
       <h4>Price {{ totalPrice | async }}$</h4>
     </div>
     <div>
-      <button mat-button matStepperNext (click)="onTicketStoreUpsertAll()">
+      <button mat-button matStepperNext [disabled]="!(areTicketsChoosen() | async)">
         Next
       </button>
     </div>

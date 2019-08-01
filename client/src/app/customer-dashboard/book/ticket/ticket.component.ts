@@ -8,6 +8,7 @@ import { BookingActionTypes, AddAllTickets, SaveOrUpdateTicket, DeleteTicket } f
 import { ListTypes } from '../list-type';
 import { selectPricePerType } from '../store/booking.selectors';
 import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 // import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
 
 @Component({
@@ -15,12 +16,22 @@ import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
     templateUrl: './ticket.component.html',
     styleUrls: ['./ticket.component.scss']
 })
-export class TicketComponent {
+export class TicketComponent implements OnInit {
 
     @Input() ticket: OrderedTicket;
     @Input() listType: string;
 
-    constructor(private store: Store<AppState>) { }
+    updateFormGroup: FormGroup;
+
+
+    constructor(private store: Store<AppState>,
+                private formBuilder: FormBuilder) { }
+
+    ngOnInit() {
+        this.updateFormGroup = this.formBuilder.group({
+            incrementCtrl: [Validators.max(this.ticket.ammount)]
+        });
+    }
 
     isAvilableTicketsList(): boolean {
         return this.listType === ListTypes.AVILABLE_TICKETS;

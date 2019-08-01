@@ -33,11 +33,15 @@ export class BookComponent implements OnInit {
   avilableTickets: Observable<Ticket[]>;
   totalPrice: Observable<number>;
 
+  ticketsFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+
   constructor(private router: ActivatedRoute,
     private eventService: EventService,
     private store: Store<AppState>) { }
 
   ngOnInit() {
+
     this.event = this.router.snapshot.data['event'];
 
     this.initAvilableTickets();
@@ -48,6 +52,13 @@ export class BookComponent implements OnInit {
       select(selectTotalPrice)
     );
 
+  }
+
+  areTicketsChoosen(): Observable<boolean> {
+    return this.store.pipe(
+      select(selectAllTickets),
+      map(tickets => tickets.length != 0)
+    );
   }
 
   private initAvilableTickets() {

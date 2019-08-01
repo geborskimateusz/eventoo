@@ -22,7 +22,7 @@
   </div>
 
   <ng-template #isShoppingList class="ticket__list-shopping">
-    <div class="ticket__list-shopping--ticket__details-amount">
+    <div class="ticket__list-shopping--ticket__details-amount" [formGroup]="updateFormGroup">
       <button (click)="onUpdateOrderAmmount(incRef)">
         <mat-icon
           #incRef
@@ -30,13 +30,14 @@
           >remove_circle
         </mat-icon>
       </button>
-      <p class="ticket__list-shopping--ticket__details-amount-detail">
+      <p class="ticket__list-shopping--ticket__details-amount-detail"  placeholder="Last name, First name" formControlName="incrementCtrl">
         {{ ticket.ammount }}
       </p>
       <button (click)="onUpdateOrderAmmount(decRef)">
         <mat-icon
           #decRef
           class="ticket__list-shopping--ticket__details-amount-icon"
+         
           >add_circle</mat-icon
         >
       </button>
