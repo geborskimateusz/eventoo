@@ -6,6 +6,5 @@ export interface Ticket {
     price: number,
     total: number,
     inStock: number,
-    ammount?: number
 }
 

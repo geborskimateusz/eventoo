@@ -7,74 +7,75 @@ import { AppState } from 'src/app/store';
 import { BookingActionTypes, AddAllTickets, SaveOrUpdateTicket, DeleteTicket } from '../store/booking.actions';
 import { ListTypes } from '../list-type';
 import { selectPricePerType } from '../store/booking.selectors';
+import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
 // import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
 
 @Component({
-  selector: 'app-ticket',
-  templateUrl: './ticket.component.html',
-  styleUrls: ['./ticket.component.scss']
+    selector: 'app-ticket',
+    templateUrl: './ticket.component.html',
+    styleUrls: ['./ticket.component.scss']
 })
-export class TicketComponent  {
+export class TicketComponent {
 
-    @Input() ticket: Ticket;
+    @Input() ticket: OrderedTicket;
     @Input() listType: string;
 
-    constructor(private store: Store<AppState>) {}
- 
+    constructor(private store: Store<AppState>) { }
+
     isAvilableTicketsList(): boolean {
         return this.listType === ListTypes.AVILABLE_TICKETS;
-      }
-    
-      onAddToShoppingList(): void {
+    }
+
+    onAddToShoppingList(): void {
         let initialAmmount: number = 1,
-          inStock: number = this.ticket.inStock - initialAmmount;
-    
+            inStock: number = this.ticket.inStock - initialAmmount;
+
         this.updateTicketData(initialAmmount, inStock)
-      }
-    
-      getPricePerType() {
+    }
+
+    getPricePerType() {
         return this.store.pipe(
-          select(selectPricePerType, { ticketId: this.ticket.id })
+            select(selectPricePerType, { ticketId: this.ticket.id })
         )
-      }
-    
-      onDeleteTicket() {
+    }
+
+    onDeleteTicket() {
         this.store.dispatch(new DeleteTicket({ ticketId: this.ticket.id }))
-      }
-    
-      onUpdateOrderAmmount(el: any): void {
+    }
+
+    onUpdateOrderAmmount(el: any): void {
         const isIncrementing: boolean =
-          el._elementRef.nativeElement.innerText.includes('add'),
-          areTicketsAvilable = this.ticket.inStock > 0;
-    
+            el._elementRef.nativeElement.innerText.includes('add'),
+            areTicketsAvilable = this.ticket.inStock > 0;
+
         let ammount: number,
-          inStock: number;
-    
-    
+            inStock: number;
+
+
         if (isIncrementing && areTicketsAvilable) {
-    
-          ammount = this.ticket.ammount + 1;
-          inStock = this.ticket.inStock - 1;
-    
-          this.updateTicketData(ammount, inStock)
-    
-        } else {
-          if (this.ticket.ammount > 1) {
-    
-            ammount = this.ticket.ammount - 1;
-            inStock = this.ticket.inStock + 1;
-    
+
+            ammount = this.ticket.ammount + 1;
+            inStock = this.ticket.inStock - 1;
+
             this.updateTicketData(ammount, inStock)
-          }
+
+        } else {
+            if (this.ticket.ammount > 1) {
+
+                ammount = this.ticket.ammount - 1;
+                inStock = this.ticket.inStock + 1;
+
+                this.updateTicketData(ammount, inStock)
+            }
         }
-      }
-    
-    
-      private updateTicketData(ammount: number, inStock: number) {
+    }
+
+
+    private updateTicketData(ammount: number, inStock: number) {
         this.store.dispatch(
-          new SaveOrUpdateTicket({
-            orderedTicket: { ...this.ticket, ammount, inStock }
-          }));
-      }
+            new SaveOrUpdateTicket({
+                orderedTicket: { ...this.ticket, ammount, inStock }
+            }));
+    }
 
 }

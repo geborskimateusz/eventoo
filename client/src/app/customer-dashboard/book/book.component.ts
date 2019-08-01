@@ -31,7 +31,6 @@ export class BookComponent implements OnInit {
   event: Event;
 
   avilableTickets: Observable<Ticket[]>;
-  // userShoppingList: Ticket[] = [];
   totalPrice: Observable<number>;
 
   constructor(private router: ActivatedRoute,
