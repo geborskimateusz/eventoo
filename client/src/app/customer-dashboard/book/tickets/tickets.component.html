@@ -4,16 +4,25 @@
   <div class="lists__container-list">
     <div class="ticket__list" *ngFor="let ticket of tickets | async" cdkDrag>
       <p class="ticket__list--type">{{ ticket.type }}</p>
-      <p class="ticket__list--price">{{ ticket.price }}$</p>
+      <p
+        *ngIf="isAvilableTicketsList(); else pricePerType"
+        class="ticket__list--price"
+      >
+        {{ ticket.price }}$
+      </p>
+      <ng-template #pricePerType>
+        <p class="ticket__list--price">
+          {{ getPricePerType(ticket) | async }}$
+        </p>
+      </ng-template>
 
       <div
         class="ticket__list-avilable"
         *ngIf="isAvilableTicketsList(); else isShoppingList"
       >
         <button (click)="onAddToShoppingList(ticket)">
-          <mat-icon
-            class="ticket__list-shopping--ticket__details-amount-icon"
-            >add_circle</mat-icon 
+          <mat-icon class="ticket__list-shopping--ticket__details-amount-icon"
+            >add_circle</mat-icon
           >
         </button>
       </div>
@@ -31,11 +40,16 @@
             {{ ticket.ammount }}
           </p>
           <button (click)="onUpdateOrderAmmount(ticket, decRef)">
-            <mat-icon #decRef class="ticket__list-shopping--ticket__details-amount-icon"
+            <mat-icon
+              #decRef
+              class="ticket__list-shopping--ticket__details-amount-icon"
               >add_circle</mat-icon
             >
           </button>
-          <button *ngIf="!isAvilableTicketsList()" (click)="removeTicket()">
+          <button
+            *ngIf="!isAvilableTicketsList()"
+            (click)="onDeleteTicket(ticket)"
+          >
             <mat-icon class="ticket__list-shopping--ticket__details-amount-icon"
               >clear
             </mat-icon>

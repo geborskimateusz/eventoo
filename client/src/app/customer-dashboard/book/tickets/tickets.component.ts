@@ -2,11 +2,11 @@ import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef }
 import { Ticket } from 'src/app/shared/model/ticket-model';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
-import { SaveOrUpdateTicket } from '../store/booking.actions';
-import { selectAllTickets } from '../store/booking.selectors';
+import { SaveOrUpdateTicket, DeleteTicket } from '../store/booking.actions';
+import { selectAllTickets, selectPricePerType } from '../store/booking.selectors';
 import { map, tap } from 'rxjs/operators';
 import { ListTypes } from '../list-type';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { tick } from '@angular/core/testing';
 
 @Component({
@@ -33,16 +33,7 @@ export class TicketsComponent implements OnInit {
     let initialAmmount: number = 1,
       inStock: number = ticket.inStock - initialAmmount;
 
-      this.updateTicketData(ticket, initialAmmount, inStock)
-
-    // this.store.dispatch(
-    //   new SaveOrUpdateTicket({
-    //     orderedTicket: {
-    //       ...ticket,
-    //       ammount: initialAmmount,
-    //       inStock
-    //     }
-    //   }));
+    this.updateTicketData(ticket, initialAmmount, inStock)
   }
 
   onUpdateOrderAmmount(ticket: Ticket, el: any): void {
@@ -56,17 +47,10 @@ export class TicketsComponent implements OnInit {
 
     if (isIncrementing && areTicketsAvilable) {
 
-      if (areTicketsAvilable) {
-        ammount = ticket.ammount + 1;
-        inStock = ticket.inStock - 1;
+      ammount = ticket.ammount + 1;
+      inStock = ticket.inStock - 1;
 
-        this.updateTicketData(ticket, ammount, inStock)
-
-        // this.store.dispatch(
-        //   new SaveOrUpdateTicket({
-        //     orderedTicket: { ...ticket, ammount, inStock }
-        //   }));
-      }
+      this.updateTicketData(ticket, ammount, inStock)
 
     } else {
       if (ticket.ammount > 1) {
@@ -75,15 +59,22 @@ export class TicketsComponent implements OnInit {
         inStock = ticket.inStock + 1;
 
         this.updateTicketData(ticket, ammount, inStock)
-        // this.store.dispatch(
-        //   new SaveOrUpdateTicket({
-        //     orderedTicket: { ...ticket, ammount, inStock }
-        //   }));
       }
     }
   }
 
-  private updateTicketData (ticket: Ticket, ammount: number, inStock: number) {
+  getPricePerType(ticket: Ticket) {
+    return this.store.pipe(
+      select(selectPricePerType, {ticketId: ticket.id})
+    )
+  }
+ 
+  onDeleteTicket(ticket: Ticket) {
+    console.log(ticket)
+    this.store.dispatch(new DeleteTicket({ticketId: ticket.id}))
+  }
+  
+  private updateTicketData(ticket: Ticket, ammount: number, inStock: number) {
     this.store.dispatch(
       new SaveOrUpdateTicket({
         orderedTicket: { ...ticket, ammount, inStock }
@@ -97,8 +88,4 @@ export class TicketsComponent implements OnInit {
     }
   }
 
-  // ngOnDestroy(ticket: Ticket) {
-  //   const totalNegative = this.ticket.price * this.ammount * -1;
-  //   this.priceChange.emit(totalNegative)
-  // }
 }

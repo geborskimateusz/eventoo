@@ -12,7 +12,7 @@ import { selectAllEventsLoaded } from './events.selectors';
 export class EventsEffects {
 
     constructor(private actions$: Actions,
-                private store: Store<AppState>) { }
+        private store: Store<AppState>) { }
 
     @Effect()
     loadEvent$ = this.actions$.pipe(
@@ -28,6 +28,8 @@ export class EventsEffects {
         ofType<AllEventsRequested>(EventsActionTypes.AllEventsRequested),
         withLatestFrom(this.store.pipe(select(selectAllEventsLoaded))),
         filter(([action, allEventsLoaded]) => !allEventsLoaded),
+
+        //here should be request to server
         mergeMap(() => of(EVENTS_DATASOURCE)),
         map(events => new AllEventsLoaded({ events })));
 }
