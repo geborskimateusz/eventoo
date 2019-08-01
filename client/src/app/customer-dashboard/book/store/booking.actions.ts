@@ -3,19 +3,19 @@ import { Ticket } from 'src/app/shared/model/ticket-model';
 // import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
 
 export enum BookingActionTypes {
-    TicketsAdded = '[Booking API] Tickets Added', 
-    TicketAdded = '[Booking API] Ticket Added' 
+    AddAllTickets = '[Booking API] Tickets Added', 
+    SaveOrUpdateTicket = '[Booking API] Save Or Update Ticket' 
 
 }
 
-export class TicketsAdded implements Action {
-    readonly type = BookingActionTypes.TicketsAdded;
+export class AddAllTickets implements Action {
+    readonly type = BookingActionTypes.AddAllTickets;
     constructor(public payload: {orderedTickets: Ticket[]}) { }
 }
 
-export class TicketAdded implements Action {
-    readonly type = BookingActionTypes.TicketAdded;
+export class SaveOrUpdateTicket implements Action {
+    readonly type = BookingActionTypes.SaveOrUpdateTicket;
     constructor(public payload: {orderedTicket: Ticket}) { }
 }
 
-export type BookingActions = TicketsAdded | TicketAdded;
+export type BookingActions = AddAllTickets | SaveOrUpdateTicket;

@@ -1,8 +1,8 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 import { Ticket } from 'src/app/shared/model/ticket-model';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
-import { TicketAdded } from '../store/booking.actions';
+import { SaveOrUpdateTicket } from '../store/booking.actions';
 import { selectAllTickets } from '../store/booking.selectors';
 import { map, tap } from 'rxjs/operators';
 import { ListTypes } from '../list-type';
@@ -22,74 +22,80 @@ export class TicketsComponent implements OnInit {
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-
     this.initShoppingList();
-  }
-
-
-  private initShoppingList() {
-    if (!this.isAvilableTicketsList()) {
-      this.tickets = this.store.pipe(select(selectAllTickets));
-    }
   }
 
   isAvilableTicketsList(): boolean {
     return this.listType === ListTypes.AVILABLE_TICKETS;
   }
 
-  onAddToShoppingList(ticket: Ticket) {
-    this.store.dispatch(new TicketAdded({ orderedTicket: { ...ticket, ammount: 1 } }))
+  onAddToShoppingList(ticket: Ticket): void {
+    let initialAmmount: number = 1,
+      inStock: number = ticket.inStock - initialAmmount;
+
+      this.updateTicketData(ticket, initialAmmount, inStock)
+
+    // this.store.dispatch(
+    //   new SaveOrUpdateTicket({
+    //     orderedTicket: {
+    //       ...ticket,
+    //       ammount: initialAmmount,
+    //       inStock
+    //     }
+    //   }));
   }
 
-  onUpdateOrderAmmount(ticket: Ticket) {
-    let ammount;
-    let inStock;
+  onUpdateOrderAmmount(ticket: Ticket, el: any): void {
+    const isIncrementing: boolean =
+      el._elementRef.nativeElement.innerText.includes('add'),
+      areTicketsAvilable = ticket.inStock > 0;
 
-    if (isIncrementing) {
-      const areTicketsAvilable = ticket.inStock > 0;
+    let ammount: number,
+      inStock: number;
 
-      const ammount = ticket.ammount + 1;
-      const inStock = ticket.inStock - 1;
-     
+
+    if (isIncrementing && areTicketsAvilable) {
+
+      if (areTicketsAvilable) {
+        ammount = ticket.ammount + 1;
+        inStock = ticket.inStock - 1;
+
+        this.updateTicketData(ticket, ammount, inStock)
+
+        // this.store.dispatch(
+        //   new SaveOrUpdateTicket({
+        //     orderedTicket: { ...ticket, ammount, inStock }
+        //   }));
+      }
+
     } else {
-      if (ticket.ammount > 1 && ticket.ammount < ticket.inStock) {
+      if (ticket.ammount > 1) {
 
-        const ammount = ticket.ammount - 1;
-        const inStock = ticket.inStock + 1;  
+        ammount = ticket.ammount - 1;
+        inStock = ticket.inStock + 1;
+
+        this.updateTicketData(ticket, ammount, inStock)
+        // this.store.dispatch(
+        //   new SaveOrUpdateTicket({
+        //     orderedTicket: { ...ticket, ammount, inStock }
+        //   }));
       }
     }
-
-    this.store.dispatch(
-      new TicketAdded({
-        orderedTicket: { ...ticket, ammount, inStock }
-      }));
-
   }
 
-  // incrementAmmount(ticket: Ticket) {
-  //   const areTicketsAvilable = ticket.inStock > 0;
-  //   if (areTicketsAvilable) {
+  private updateTicketData (ticket: Ticket, ammount: number, inStock: number) {
+    this.store.dispatch(
+      new SaveOrUpdateTicket({
+        orderedTicket: { ...ticket, ammount, inStock }
+      }));
+  }
 
-  //     const ammount = ticket.ammount + 1;
-  //     const inStock = ticket.inStock - 1;
-  //     this.store.dispatch(
-  //       new TicketAdded({
-  //         orderedTicket: { ...ticket, ammount, inStock }
-  //       }));
-
-  //   }
-  // }
-
-  // decrementAmmount(ticket: Ticket) {
-  //   if (ticket.ammount > 1 && ticket.ammount < ticket.inStock) {
-
-
-  //     const ammount = ticket.ammount - 1;
-  //     const inStock = ticket.inStock + 1;
-  //     this.store.dispatch(new TicketAdded({ orderedTicket: { ...ticket, ammount, inStock } }))
-
-  //   }
-  // }
+  private initShoppingList() {
+    if (!this.isAvilableTicketsList()) {
+      this.tickets = this.store.pipe(
+        select(selectAllTickets));
+    }
+  }
 
   // ngOnDestroy(ticket: Ticket) {
   //   const totalNegative = this.ticket.price * this.ammount * -1;

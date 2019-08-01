@@ -1,6 +1,5 @@
 @import "../../../../styles/abstracts/variables";
 
-
 button {
   background-color: transparent;
   border: none;
@@ -8,35 +7,37 @@ button {
   text-align: center;
 }
 
-// for drag list
-.example-container {
-  width: 400px;
-  margin: 0 25px 25px 0;
+.lists__container {
+  width: 40rem;
+  margin: 0 2.5rem 2.5rem 0;
   display: inline-block;
   vertical-align: top;
 
-
+  &-list {
+    width: 100%;
+    min-height: 6rem;
+    background: $color-white;
+    border-radius: 4px;
+    overflow: hidden;
+    display: block;
+  }
 }
 
-.example-list {
-
-  width: 100%;
-  min-height: 60px;
-  background: white;
-  border-radius: 4px;
-  overflow: hidden;
-  display: block;
-}
-
-.example-box {
+.ticket__list {
   display: flex;
+  padding: 1rem 1rem;
+  color: rgba($color-black, 0.87);
+  box-sizing: border-box;
+  cursor: move;
+  background: white;
+  font-size: 1.4rem;
+
+  &:not(:last-child) {
+    border-bottom: solid 1px $color-primary-light;
+  }
 
   &--type {
     flex: 0 0 60%;
-  }
-
-  &--price {
-
   }
 
   &-avilable {
@@ -51,51 +52,25 @@ button {
     justify-content: center;
 
     &--ticket__details {
-
-      &-type {
-      }
-    
-      &-instock {
-      }
-    
       &-amount {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-    
-        &-detail {
-        }
-    
+
         &-icon {
           max-width: 8rem;
           padding-top: 2px;
-          // visibility: hidden;
-          opacity: 0.2;
+          opacity: 0.1;
           margin: 0 0.5rem;
           font-size: 1.8rem;
           color: $color-primary;
         }
       }
-    
     }
   }
-
 
   &:hover &-shopping--ticket__details-amount-icon {
     opacity: 1;
   }
-
-
-  padding: 10px 10px;
-  border-bottom: solid 1px $color-primary-dark;
-  color: rgba(0, 0, 0, 0.87);
-  box-sizing: border-box;
-  cursor: move;
-  background: white;
-  font-size: 14px;
 }
-
-
-
-

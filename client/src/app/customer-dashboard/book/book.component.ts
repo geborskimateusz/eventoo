@@ -8,7 +8,7 @@ import { EventData as EventDataOverview } from '../../shared/event/event-overvie
 import { EventService } from '../../shared/event.service';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
-import { TicketsAdded, TicketAdded } from './store/booking.actions';
+import { AddAllTickets, SaveOrUpdateTicket } from './store/booking.actions';
 import { Ticket } from 'src/app/shared/model/ticket-model';
 import { selectAllTickets, selectTotalPrice } from './store/booking.selectors';
 import { map, tap } from 'rxjs/operators';

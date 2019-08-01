@@ -1,40 +1,42 @@
-<!-- <h1>{{listType}}</h1> -->
-<div class="example-container">
+<div class="lists__container">
   <h4>{{ listType }}</h4>
 
-  <div class="example-list">
-    <div class="example-box" *ngFor="let ticket of tickets | async" cdkDrag>
-      <p class="example-box--type">{{ ticket.type }}</p>
-      <p class="example-box--price">{{ ticket.price }}$</p>
+  <div class="lists__container-list">
+    <div class="ticket__list" *ngFor="let ticket of tickets | async" cdkDrag>
+      <p class="ticket__list--type">{{ ticket.type }}</p>
+      <p class="ticket__list--price">{{ ticket.price }}$</p>
 
       <div
-        class="example-box-avilable"
+        class="ticket__list-avilable"
         *ngIf="isAvilableTicketsList(); else isShoppingList"
       >
         <button (click)="onAddToShoppingList(ticket)">
-          <mat-icon class="example-box-shopping--ticket__details-amount-icon"
-            >add_circle</mat-icon
+          <mat-icon
+            class="ticket__list-shopping--ticket__details-amount-icon"
+            >add_circle</mat-icon 
           >
         </button>
       </div>
 
-      <ng-template #isShoppingList class="example-box-shopping">
-        <div class="example-box-shopping--ticket__details-amount">
-          <button (click)="onUpdateOrderAmmount(ticket)">
-            <mat-icon class="example-box-shopping--ticket__details-amount-icon"
+      <ng-template #isShoppingList class="ticket__list-shopping">
+        <div class="ticket__list-shopping--ticket__details-amount">
+          <button (click)="onUpdateOrderAmmount(ticket, incRef)">
+            <mat-icon
+              #incRef
+              class="ticket__list-shopping--ticket__details-amount-icon"
               >remove_circle
             </mat-icon>
           </button>
-          <p class="example-box-shopping--ticket__details-amount-detail">
+          <p class="ticket__list-shopping--ticket__details-amount-detail">
             {{ ticket.ammount }}
           </p>
-          <button (click)="onUpdateOrderAmmount(ticket)">
-            <mat-icon class="example-box-shopping--ticket__details-amount-icon"
+          <button (click)="onUpdateOrderAmmount(ticket, decRef)">
+            <mat-icon #decRef class="ticket__list-shopping--ticket__details-amount-icon"
               >add_circle</mat-icon
             >
           </button>
           <button *ngIf="!isAvilableTicketsList()" (click)="removeTicket()">
-            <mat-icon class="example-box-shopping--ticket__details-amount-icon"
+            <mat-icon class="ticket__list-shopping--ticket__details-amount-icon"
               >clear
             </mat-icon>
           </button>
