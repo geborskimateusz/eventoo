@@ -29,58 +29,6 @@ export class TicketsComponent implements OnInit {
     return this.listType === ListTypes.AVILABLE_TICKETS;
   }
 
-  onAddToShoppingList(ticket: Ticket): void {
-    let initialAmmount: number = 1,
-      inStock: number = ticket.inStock - initialAmmount;
-
-    this.updateTicketData(ticket, initialAmmount, inStock)
-  }
-
-  onUpdateOrderAmmount(ticket: Ticket, el: any): void {
-    const isIncrementing: boolean =
-      el._elementRef.nativeElement.innerText.includes('add'),
-      areTicketsAvilable = ticket.inStock > 0;
-
-    let ammount: number,
-      inStock: number;
-
-
-    if (isIncrementing && areTicketsAvilable) {
-
-      ammount = ticket.ammount + 1;
-      inStock = ticket.inStock - 1;
-
-      this.updateTicketData(ticket, ammount, inStock)
-
-    } else {
-      if (ticket.ammount > 1) {
-
-        ammount = ticket.ammount - 1;
-        inStock = ticket.inStock + 1;
-
-        this.updateTicketData(ticket, ammount, inStock)
-      }
-    }
-  }
-
-  getPricePerType(ticket: Ticket) {
-    return this.store.pipe(
-      select(selectPricePerType, {ticketId: ticket.id})
-    )
-  }
- 
-  onDeleteTicket(ticket: Ticket) {
-    console.log(ticket)
-    this.store.dispatch(new DeleteTicket({ticketId: ticket.id}))
-  }
-  
-  private updateTicketData(ticket: Ticket, ammount: number, inStock: number) {
-    this.store.dispatch(
-      new SaveOrUpdateTicket({
-        orderedTicket: { ...ticket, ammount, inStock }
-      }));
-  }
-
   private initShoppingList() {
     if (!this.isAvilableTicketsList()) {
       this.tickets = this.store.pipe(

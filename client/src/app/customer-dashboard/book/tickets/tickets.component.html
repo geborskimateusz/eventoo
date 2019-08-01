@@ -2,60 +2,10 @@
   <h4>{{ listType }}</h4>
 
   <div class="lists__container-list">
-    <div class="ticket__list" *ngFor="let ticket of tickets | async" cdkDrag>
-      <p class="ticket__list--type">{{ ticket.type }}</p>
-      <p
-        *ngIf="isAvilableTicketsList(); else pricePerType"
-        class="ticket__list--price"
-      >
-        {{ ticket.price }}$
-      </p>
-      <ng-template #pricePerType>
-        <p class="ticket__list--price">
-          {{ getPricePerType(ticket) | async }}$
-        </p>
-      </ng-template>
+   <div class="ticket__list" *ngFor="let ticket of tickets | async">
 
-      <div
-        class="ticket__list-avilable"
-        *ngIf="isAvilableTicketsList(); else isShoppingList"
-      >
-        <button (click)="onAddToShoppingList(ticket)">
-          <mat-icon class="ticket__list-shopping--ticket__details-amount-icon"
-            >add_circle</mat-icon
-          >
-        </button>
-      </div>
+    <app-ticket [ticket]="ticket" [listType]="listType"></app-ticket>
 
-      <ng-template #isShoppingList class="ticket__list-shopping">
-        <div class="ticket__list-shopping--ticket__details-amount">
-          <button (click)="onUpdateOrderAmmount(ticket, incRef)">
-            <mat-icon
-              #incRef
-              class="ticket__list-shopping--ticket__details-amount-icon"
-              >remove_circle
-            </mat-icon>
-          </button>
-          <p class="ticket__list-shopping--ticket__details-amount-detail">
-            {{ ticket.ammount }}
-          </p>
-          <button (click)="onUpdateOrderAmmount(ticket, decRef)">
-            <mat-icon
-              #decRef
-              class="ticket__list-shopping--ticket__details-amount-icon"
-              >add_circle</mat-icon
-            >
-          </button>
-          <button
-            *ngIf="!isAvilableTicketsList()"
-            (click)="onDeleteTicket(ticket)"
-          >
-            <mat-icon class="ticket__list-shopping--ticket__details-amount-icon"
-              >clear
-            </mat-icon>
-          </button>
-        </div>
-      </ng-template>
     </div>
   </div>
 </div>

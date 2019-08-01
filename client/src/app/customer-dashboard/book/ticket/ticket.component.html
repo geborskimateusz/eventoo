@@ -1,16 +1,50 @@
-<!-- <p class="ticket__details-type">{{ ticket.type }}</p>
-<p class="ticket__details-instock">In stock: {{ ticket.inStock }}</p>
-
-<div class="ticket__details-amount">
-  <button (click)="decrementAmmount()">
-    <mat-icon class="ticket__details-amount-icon">remove_circle </mat-icon>
-  </button>
-  <p class="ticket__details-amount-detail">
-    {{ ammount }}
+<div class="ticket__list">
+  <p class="ticket__list--type">{{ ticket.type }}</p>
+  <p
+    *ngIf="isAvilableTicketsList(); else pricePerType"
+    class="ticket__list--price"
+  >
+    {{ ticket.price }}$
   </p>
-  <button (click)="incrementAmmount()">
-    <mat-icon class="ticket__details-amount-icon">add_circle</mat-icon>
-  </button>
-</div>
+  <ng-template #pricePerType>
+    <p class="ticket__list--price">{{ getPricePerType(ticket) | async }}$</p>
+  </ng-template>
 
- -->
+  <div
+    class="ticket__list-avilable"
+    *ngIf="isAvilableTicketsList(); else isShoppingList"
+  >
+    <button (click)="onAddToShoppingList()">
+      <mat-icon class="ticket__list-shopping--ticket__details-amount-icon"
+        >add_circle</mat-icon
+      >
+    </button>
+  </div>
+
+  <ng-template #isShoppingList class="ticket__list-shopping">
+    <div class="ticket__list-shopping--ticket__details-amount">
+      <button (click)="onUpdateOrderAmmount(incRef)">
+        <mat-icon
+          #incRef
+          class="ticket__list-shopping--ticket__details-amount-icon"
+          >remove_circle
+        </mat-icon>
+      </button>
+      <p class="ticket__list-shopping--ticket__details-amount-detail">
+        {{ ticket.ammount }}
+      </p>
+      <button (click)="onUpdateOrderAmmount(decRef)">
+        <mat-icon
+          #decRef
+          class="ticket__list-shopping--ticket__details-amount-icon"
+          >add_circle</mat-icon
+        >
+      </button>
+      <button *ngIf="!isAvilableTicketsList()" (click)="onDeleteTicket()">
+        <mat-icon class="ticket__list-shopping--ticket__details-amount-icon"
+          >clear
+        </mat-icon>
+      </button>
+    </div>
+  </ng-template>
+</div>

@@ -28,7 +28,7 @@ export const selectPricePerType = createSelector(
         let entity  = entities[props.ticketId];
 
         if(entity) {
-            return entities[props.ticketId].price * entities[props.ticketId].ammount;
+            return entity.price * entity.ammount;
         }
     }
 );
