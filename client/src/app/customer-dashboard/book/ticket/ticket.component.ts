@@ -21,17 +21,11 @@ export class TicketComponent implements OnInit {
     @Input() ticket: OrderedTicket;
     @Input() listType: string;
 
-    updateFormGroup: FormGroup;
 
 
-    constructor(private store: Store<AppState>,
-                private formBuilder: FormBuilder) { }
+    constructor(private store: Store<AppState>) { }
 
-    ngOnInit() {
-        this.updateFormGroup = this.formBuilder.group({
-            incrementCtrl: [Validators.max(this.ticket.ammount)]
-        });
-    }
+    ngOnInit() {}
 
     isAvilableTicketsList(): boolean {
         return this.listType === ListTypes.AVILABLE_TICKETS;
@@ -80,6 +74,8 @@ export class TicketComponent implements OnInit {
             }
         }
     }
+
+    
 
 
     private updateTicketData(ammount: number, inStock: number) {

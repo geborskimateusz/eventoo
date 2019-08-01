@@ -34,7 +34,6 @@ export class BookComponent implements OnInit {
   totalPrice: Observable<number>;
 
   ticketsFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
 
   constructor(private router: ActivatedRoute,
     private eventService: EventService,

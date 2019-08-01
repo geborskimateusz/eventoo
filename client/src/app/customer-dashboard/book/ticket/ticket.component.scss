@@ -56,5 +56,6 @@ button {
 
   &:hover &-shopping--ticket__details-amount-icon {
     opacity: 1;
+    transition: all .3s;
   }
 }
