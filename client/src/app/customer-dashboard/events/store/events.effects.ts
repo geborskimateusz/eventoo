@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { Action, Store, select } from '@ngrx/store';
 import { EventsActionTypes, EventRequested, EventLoaded, AllEventsRequested, AllEventsLoaded } from './events.actions';
-import { EVENTS_DATASOURCE } from 'src/app/shared/events-datasource';
+import { EVENTS_DATASOURCE } from 'src/app/shared/fake-datasource/events-datasource';
 import { of } from 'rxjs';
 import { AppState } from 'src/app/store';
 import { selectAllEventsLoaded } from './events.selectors';

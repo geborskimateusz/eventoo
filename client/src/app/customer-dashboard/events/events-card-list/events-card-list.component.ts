@@ -3,7 +3,7 @@ import { Event } from '../../../shared/model/event.model';
 import { Observable, of } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
-import { EVENTS_DATASOURCE } from 'src/app/shared/events-datasource';
+import { EVENTS_DATASOURCE } from 'src/app/shared/fake-datasource/events-datasource';
 import { map } from 'rxjs/operators';
 import { selectAllEvents, selectEventsByGenre } from '../store/events.selectors';
 import { AllEventsRequested } from '../store/events.actions';

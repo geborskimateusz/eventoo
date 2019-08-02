@@ -7,12 +7,14 @@ import { TicketComponent } from './ticket/ticket.component';
 import { StoreModule } from '@ngrx/store';
 import { bookingReducer } from './store/booking.reducers';
 import { TicketsComponent } from './tickets/tickets.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
 
 @NgModule({
     declarations: [
         BookComponent,
         TicketComponent,
         TicketsComponent,
+        AccountDetailsComponent,
     ],
     imports: [
         CommonModule,
