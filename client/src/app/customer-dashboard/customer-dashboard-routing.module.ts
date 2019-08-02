@@ -32,7 +32,7 @@ const routes: Routes = [
       { path: 'services', component: ServicesComponent },
       {
         path: 'order', loadChildren: () => import('./book/book-module').then(mod => mod.BookModule),
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
       },
       {
         path: 'user', component: UserComponent,

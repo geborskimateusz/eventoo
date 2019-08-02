@@ -1,16 +1,17 @@
 import { Action } from '@ngrx/store';
 import { User } from '../model/user.model';
 import { AuthActionTypes, AuthActions } from './auth.actions';
+import { UserDetails } from 'src/app/shared/model/user-details';
 
 
 export interface State {
   loggedIn: boolean,
-  user: User
+  userDetails: UserDetails
 }
 
 export const initialAuthState: State = {
   loggedIn: false,
-  user: undefined
+  userDetails: undefined
 };
 
 export function authReducer(state = initialAuthState, action: AuthActions): State {
@@ -19,13 +20,13 @@ export function authReducer(state = initialAuthState, action: AuthActions): Stat
     case (AuthActionTypes.Login):
       return {
         loggedIn: true,
-        user: action.payload.user
+        userDetails: action.payload.userDetails
       }
 
     case (AuthActionTypes.Logout):
       return {
         loggedIn: false,
-        user: undefined
+        userDetails: undefined
       }
 
     default:

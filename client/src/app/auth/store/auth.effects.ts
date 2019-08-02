@@ -14,18 +14,18 @@ export class AuthEffects {
   @Effect({ dispatch: false })
   login$ = this.actions$.pipe(
     ofType<Login>(AuthActionTypes.Login),
-    tap(action => localStorage.setItem("user", JSON.stringify(action.payload.user)))
+    tap(action => localStorage.setItem("userId", JSON.stringify(action.payload.userDetails.id)))
   );
 
   @Effect({ dispatch: false })
   logout$ = this.actions$.pipe(
     ofType<Logout>(AuthActionTypes.Logout),
-    tap(() => localStorage.removeItem("user"))
+    tap(() => localStorage.removeItem("userId"))
   )
 
   @Effect()
   init$ = defer(() => {
-    const userData = localStorage.getItem("user");
+    const userData = localStorage.getItem("userId");
 
     if (userData) {
       return of(new Login(JSON.parse(userData)));

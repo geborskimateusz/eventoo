@@ -4,10 +4,10 @@ import { Route } from '@angular/compiler/src/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store';
-import { Login } from '../store/auth.actions';
 import { AuthService } from '../auth.service';
 import { tap, } from 'rxjs/operators';
 import {noop} from "rxjs";
+import { Login } from '../store/auth.actions';
 
 
 @Component({
@@ -40,9 +40,8 @@ export class LoginComponent implements OnInit {
     console.log(authData);
     this.authService.login(authData.email, authData.password)
     .pipe(
-      tap(user => {
-        console.log(user);
-        this.store.dispatch(new Login({user}));
+      tap(userDetails => {
+        this.store.dispatch(new Login({userDetails}));
         this.onAuthSuccesfull.emit(true);
       })
     )
