@@ -1,37 +1,9 @@
 <div class="detail__container">
   <div class="detail__container-payer-details">
-    <h4>Payer details</h4>
-    <ul>
-      <li>
-        <h5>Name:</h5>
-        <p>John Doe</p>
-      </li>
-      <li>
-        <h5>Address:</h5>
-        <p>Mount Olive, 4801 Reppert Coal Road, Mississippi</p>
-      </li>
-      <li>
-        <h5>Phone:</h5>
-        <p>111 111 111</p>
-      </li>
-      <li>
-        <h5>Email:</h5>
-        <p>john@gmail.com</p>
-      </li>
-    </ul>
+    <app-user-details></app-user-details>
   </div>
   <div class="detail__container-recipent-details">
-    <h4>Recipent details</h4>
-    <ul>
-      <li>
-        <h5>Name:</h5>
-        <p>Eventoo company</p>
-      </li>
-      <li>
-        <h5>Address:</h5>
-        <p>Fort Wayne, 4783 Cessna Drive, Virginia</p>
-      </li>
-    </ul>
+    <app-company-details></app-company-details>
   </div>
   <div class="detail__container-order-details">
     <h4>Order details</h4>
@@ -40,15 +12,12 @@
         <p>
           <span>&#x02013;</span>
           {{ event.title }}, {{ event.date | date: "dd/MM/yyyy" }},
-            {{ event.location.name }},
-          {{ ticket.type }} {{ ticket.ammount }}x
+          {{ event.location.name }}, {{ ticket.type }} {{ ticket.ammount }}x
         </p>
       </li>
     </ul>
   </div>
   <div class="detail__container-total-price">
-    <h4>
-      {{ totalPrice }}$
-    </h4>
+    <h4>Total: {{ totalPrice }}$</h4>
   </div>
 </div>

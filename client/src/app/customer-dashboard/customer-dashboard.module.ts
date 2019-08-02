@@ -25,6 +25,8 @@ import { eventsReducer } from './events/store/events.reducers';
 import { EventsEffects } from './events/store/events.effects';
 import { EventsCardListComponent } from './events/events-card-list/events-card-list.component';
 import { TicketsComponent } from './book/tickets/tickets.component';
+import { UserDetailsComponent } from './book/account-details/user-details/user-details.component';
+import { CompanyDetailsComponent } from './book/account-details/company-details/company-details.component';
 
 
 @NgModule({

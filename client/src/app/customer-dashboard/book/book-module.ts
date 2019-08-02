@@ -8,6 +8,8 @@ import { StoreModule } from '@ngrx/store';
 import { bookingReducer } from './store/booking.reducers';
 import { TicketsComponent } from './tickets/tickets.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
+import { UserDetailsComponent } from './account-details/user-details/user-details.component';
+import { CompanyDetailsComponent } from './account-details/company-details/company-details.component';
 
 @NgModule({
     declarations: [
@@ -15,6 +17,8 @@ import { AccountDetailsComponent } from './account-details/account-details.compo
         TicketComponent,
         TicketsComponent,
         AccountDetailsComponent,
+        UserDetailsComponent,
+        CompanyDetailsComponent
     ],
     imports: [
         CommonModule,
