@@ -21,8 +21,6 @@ export class TicketComponent implements OnInit {
     @Input() ticket: OrderedTicket;
     @Input() listType: string;
 
-
-
     constructor(private store: Store<AppState>) { }
 
     ngOnInit() {}
@@ -74,8 +72,6 @@ export class TicketComponent implements OnInit {
             }
         }
     }
-
-    
 
 
     private updateTicketData(ammount: number, inStock: number) {

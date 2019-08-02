@@ -8,11 +8,12 @@ import { EventService } from './event.service';
 import { EventLocalizationDialogComponent } from './event/event-overview/event-localization-dialog/event-localization-dialog.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
+
 @NgModule({
     declarations: [
         PaginationComponent,
         EventOverviewComponent,
-        EventLocalizationDialogComponent
+        EventLocalizationDialogComponent,
     ],
     providers: [
         EventService
