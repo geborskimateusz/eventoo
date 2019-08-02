@@ -10,6 +10,7 @@ import { TicketsComponent } from './tickets/tickets.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { UserDetailsComponent } from './account-details/user-details/user-details.component';
 import { CompanyDetailsComponent } from './account-details/company-details/company-details.component';
+import { FinalizeOrderDialogComponent } from './finalize-order-dialog/finalize-order-dialog.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { CompanyDetailsComponent } from './account-details/company-details/compa
         TicketsComponent,
         AccountDetailsComponent,
         UserDetailsComponent,
-        CompanyDetailsComponent
+        CompanyDetailsComponent,
+        FinalizeOrderDialogComponent
     ],
     imports: [
         CommonModule,
@@ -27,7 +29,7 @@ import { CompanyDetailsComponent } from './account-details/company-details/compa
         StoreModule.forFeature('booking', bookingReducer)
     ],
     entryComponents: [
-        
+        FinalizeOrderDialogComponent
     ]
 })
 export class BookModule {}

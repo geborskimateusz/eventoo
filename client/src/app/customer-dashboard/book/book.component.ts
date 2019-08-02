@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Event } from 'src/app/shared/model/event.model';
@@ -15,6 +15,7 @@ import { map, tap } from 'rxjs/operators';
 import { ListTypes } from './list-type';
 import { Observable, of } from 'rxjs';
 import { selectEventById } from '../events/store/events.selectors';
+import { FinalizeOrderDialogComponent } from './finalize-order-dialog/finalize-order-dialog.component';
 
 @Component({
   selector: 'app-book',
@@ -37,7 +38,8 @@ export class BookComponent implements OnInit {
 
   constructor(private router: ActivatedRoute,
     private eventService: EventService,
-    private store: Store<AppState>) { }
+    private store: Store<AppState>,
+    public dialog: MatDialog) { }
 
   ngOnInit() {
 
@@ -62,6 +64,12 @@ export class BookComponent implements OnInit {
 
   private initAvilableTickets() {
     this.avilableTickets = of([...this.event.tickets])
+  }
+
+  finalizePayment() {
+    this.dialog.open(FinalizeOrderDialogComponent, {
+      width: '250px'
+    })
   }
 
 
