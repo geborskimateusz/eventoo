@@ -1,10 +1,14 @@
-<h1 mat-dialog-title>Finalize Order</h1>
-<div mat-dialog-content>
-  <p>What's your favorite animal?</p>
+<div class="order__finalization">
+  <p class="ribbon">
+    <span class="text">Finalize Order</span>
+  </p>
+  <div mat-dialog-content>
+    <p class="order__finalization--paragraph"><span class="order__finalization--warning">This action cannot be undone.</span> <br> Make sure that all of your data is correct. </p>
+  </div>
+  <div mat-dialog-actions>
+    <button class="order__finalization--btn" mat-button (click)="onNoClick()">Back</button>
+    <button class="order__finalization--btn" mat-button [mat-dialog-close]="orderFinalized()" cdkFocusInitial>
+      Finalize order
+    </button>
+  </div>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button matStepperNext cdkFocusInitial>Ok</button>
-</div>
-
-

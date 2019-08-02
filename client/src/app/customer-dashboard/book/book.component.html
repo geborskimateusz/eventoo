@@ -17,7 +17,7 @@
     <div>
       <h4>Price {{ totalPrice | async }}$</h4>
     </div>
-    <div> 
+    <div>
       <button
         mat-button
         matStepperNext
@@ -35,9 +35,12 @@
     ></app-account-details>
     <div>
       <button mat-button matStepperPrevious>Back</button>
-      <!-- <button mat-button matStepperNext (click)="finalizePayment()">Finalize</button> -->
-      <button mat-button (click)="stepper.next()">Finalize</button>
-
+      <button
+        mat-button
+        (click)="finalizePayment()"
+      >
+        Finalize
+      </button>
     </div>
   </mat-step>
   <mat-step>

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog, MatStepper } from '@angular/material';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Event } from 'src/app/shared/model/event.model';
@@ -17,12 +17,17 @@ import { Observable, of } from 'rxjs';
 import { selectEventById } from '../events/store/events.selectors';
 import { FinalizeOrderDialogComponent } from './finalize-order-dialog/finalize-order-dialog.component';
 
+
+
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
+
+  @ViewChild('stepper', { static: true }) stepper: MatStepper;
+
 
   aviableTicketsList = ListTypes.AVILABLE_TICKETS;
   shoppingList = ListTypes.SHOPPING_LIST;
@@ -34,7 +39,6 @@ export class BookComponent implements OnInit {
   avilableTickets: Observable<Ticket[]>;
   totalPrice: Observable<number>;
 
-  ticketsFormGroup: FormGroup;
 
   constructor(private router: ActivatedRoute,
     private eventService: EventService,
@@ -67,12 +71,15 @@ export class BookComponent implements OnInit {
   }
 
   finalizePayment() {
-    this.dialog.open(FinalizeOrderDialogComponent, {
-      width: '250px'
-    })
+    const dialogRef = this.dialog.open(FinalizeOrderDialogComponent, {
+      maxWidth: '60rem',
+    });
+
+    dialogRef.afterClosed().subscribe(isOrderFinalized => {
+      if (isOrderFinalized) {
+        this.stepper.next();
+      }
+    });
   }
-
-
-
 
 }

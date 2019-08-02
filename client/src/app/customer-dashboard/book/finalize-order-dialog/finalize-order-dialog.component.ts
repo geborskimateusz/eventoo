@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
+import { Component, OnInit, Output, EventEmitter, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+
 
 @Component({
   selector: 'app-finalize-order-dialog',
@@ -7,6 +8,8 @@ import { MatDialogRef } from '@angular/material';
   styleUrls: ['./finalize-order-dialog.component.scss']
 })
 export class FinalizeOrderDialogComponent implements OnInit {
+
+  @Output() confirmationOrder: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(public dialogRef: MatDialogRef<FinalizeOrderDialogComponent>) { }
 
@@ -17,4 +20,7 @@ export class FinalizeOrderDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  orderFinalized() {
+    return true;
+  }
 }
