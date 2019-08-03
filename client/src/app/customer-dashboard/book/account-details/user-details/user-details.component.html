@@ -10,10 +10,10 @@
   </li>
   <li>
     <h5>Phone:</h5>
-    <p>{{ userDetails$.phone | async }}</p>
+    <p>{{ (userDetails$ | async).phone }}</p>
   </li>
   <li>
     <h5>Email:</h5>
-    <p>{{ userDetails$.email | async }}</p>
+    <p>{{ (userDetails$ | async).email }}</p>
   </li>
 </ul>

@@ -11,7 +11,7 @@ export interface State {
 
 export const initialAuthState: State = {
   loggedIn: false,
-  userDetails: null
+  userDetails: undefined
 };
 
 export function authReducer(state = initialAuthState, action: AuthActions): State {
@@ -26,7 +26,7 @@ export function authReducer(state = initialAuthState, action: AuthActions): Stat
     case (AuthActionTypes.Logout):
       return {
         loggedIn: false,
-        userDetails: null
+        userDetails: undefined
       }
 
     default:
