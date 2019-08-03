@@ -19,8 +19,8 @@ public class UserDetailsController {
 
     @ResponseStatus(HttpStatus.OK)
     @PostMapping(value = "/login")
-    public UserDTO loadUserByUserName(@RequestBody User user) {
-        log.info(this.getClass().getSimpleName() + ",  public UserDTO loadUserByUserName(@RequestBody User user)");
+    public UserDetailsDTO loadUserByUserName(@RequestBody User user) {
+        log.info(this.getClass().getSimpleName() + ",  public UserDetailsDTO loadUserByUserName(@RequestBody User user)");
         return userService.authenticateUser(user);
     }
 

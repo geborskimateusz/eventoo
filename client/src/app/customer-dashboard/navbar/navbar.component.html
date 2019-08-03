@@ -13,12 +13,12 @@
   </form>
 
   <nav class="user-nav">
-    <a *ngIf="!(isLoggedIn$ | async); else loggedOut"  mat-list-item class="user-nav__icon-box" (click)="onLoginModalOpen()">
+    <a *ngIf="!(isLoggedIn$ | async); else loggedIn"  mat-list-item class="user-nav__icon-box" (click)="onLoginModalOpen()">
       <mat-icon>account_circle</mat-icon>
       <span>Login</span>
     </a>
 
-    <ng-template #loggedOut>
+    <ng-template #loggedIn>
         <a class="user-nav__icon-box" [routerLink]="['user/bookmarks']">
           <svg class="user-nav__icon">
             <use xlink:href="../../assets/fonts/sprite.svg#icon-bookmark"></use>
@@ -33,7 +33,7 @@
         </a>
         <a class="user-nav__user" [routerLink]="['user']" >
           <img
-            src="../../assets/img/user-1.jpg"
+            src="../../../assets//img//user-1.jpg"
             alt="User photo"
             class="user-nav__user-photo"
           />

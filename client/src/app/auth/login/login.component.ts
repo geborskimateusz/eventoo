@@ -36,8 +36,9 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+
     const authData = this.form.value;
-    console.log(authData);
+    
     this.authService.login(authData.email, authData.password)
     .pipe(
       tap(userDetails => {

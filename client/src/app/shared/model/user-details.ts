@@ -10,5 +10,6 @@ export interface UserDetails {
         street: string;
         homeNo: string;
         postalCode: string;
-    }
+    },
+    imagePath: string;
 }

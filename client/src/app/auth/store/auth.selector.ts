@@ -4,7 +4,10 @@ export const selectAuthState = state => state.auth;
 
 export const isLoggedIn = createSelector(
     selectAuthState,
-    auth => {
-        return auth.loggedIn;
-    }
+    auth => auth.loggedIn
+);
+
+export const selectUserDetails = createSelector(
+    selectAuthState,
+    auth => auth.userDetails
 );

@@ -6,7 +6,8 @@ import { Store, select } from '@ngrx/store';
 import { Logout } from 'src/app/auth/store/auth.actions';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { isLoggedIn } from 'src/app/auth/store/auth.selector';
+import { UserDetails } from 'src/app/shared/model/user-details';
+import { selectUserDetails, isLoggedIn } from 'src/app/auth/store/auth.selector';
 
 @Component({
   selector: 'app-navbar',
@@ -16,20 +17,24 @@ import { isLoggedIn } from 'src/app/auth/store/auth.selector';
 export class NavbarComponent implements OnInit {
 
   isLoggedIn$: Observable<boolean>;
+  userDetails$: Observable<UserDetails>;
 
   constructor(public dialog: MatDialog,
-              private store: Store<AppState>) { }
+    private store: Store<AppState>) { }
 
   ngOnInit() {
-    this.isLoggedIn$ = this.store
-    .pipe(
+    this.isLoggedIn$ = this.store.pipe(
       select(isLoggedIn)
     )
-  
+
+    this.userDetails$ = this.store.pipe(
+      select(selectUserDetails)
+    )
+
   }
 
   onLoginModalOpen() {
-    this.dialog.open(AuthDialog,{
+    this.dialog.open(AuthDialog, {
       width: '250px',
     })
   }

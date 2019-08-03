@@ -11,7 +11,7 @@ export interface State {
 
 export const initialAuthState: State = {
   loggedIn: false,
-  userDetails: undefined
+  userDetails: null
 };
 
 export function authReducer(state = initialAuthState, action: AuthActions): State {
@@ -19,14 +19,14 @@ export function authReducer(state = initialAuthState, action: AuthActions): Stat
 
     case (AuthActionTypes.Login):
       return {
-        loggedIn: true,
-        userDetails: action.payload.userDetails
+        userDetails: action.payload.userDetails,
+        loggedIn: true
       }
 
     case (AuthActionTypes.Logout):
       return {
         loggedIn: false,
-        userDetails: undefined
+        userDetails: null
       }
 
     default:

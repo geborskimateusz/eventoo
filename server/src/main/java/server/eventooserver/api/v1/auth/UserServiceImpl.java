@@ -8,8 +8,22 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     @Override
-    public UserDTO authenticateUser(User user) {
-            log.info(this.getClass().getSimpleName() + ", UserDTO authenticateUser(User user)");
-            return UserDTO.builder().id(1).email(user.getUsername()).build();
+    public UserDetailsDTO authenticateUser(User user) {
+            log.info(this.getClass().getSimpleName() + ", UserDetailsDTO authenticateUser(User user)");
+            return UserDetailsDTO.builder()
+                    .id(1)
+                    .firstName("John")
+                    .lastName("Doe")
+                    .phone("593-131-341")
+                    .email(user.getUsername())
+                    .address(AddressDTO.builder()
+                            .country("Fake country")
+                            .city("Fake city")
+                            .street("Some Fake Street")
+                            .homeNo("2/54D")
+                            .postalCode("23-412")
+                            .build())
+                    .imagePath("../../assets/img/user-1.jpg")
+                    .build();
     }
 }

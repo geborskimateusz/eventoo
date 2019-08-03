@@ -2,18 +2,18 @@
 <ul>
   <li>
     <h5>Name:</h5>
-    <p>John Doe</p>
+    <p>{{ fullName }}</p>
   </li>
   <li>
     <h5>Address:</h5>
-    <p>Mount Olive, 4801 Reppert Coal Road, Mississippi</p>
+    <p>{{ address }}</p>
   </li>
   <li>
     <h5>Phone:</h5>
-    <p>111 111 111</p>
+    <p>{{ userDetails$.phone | async }}</p>
   </li>
   <li>
     <h5>Email:</h5>
-    <p>john@gmail.com</p>
+    <p>{{ userDetails$.email | async }}</p>
   </li>
 </ul>
