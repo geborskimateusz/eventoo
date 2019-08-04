@@ -15,27 +15,11 @@ export class UserDetailsComponent implements OnInit {
 
   userDetails$: Observable<UserDetails>;
 
-  fullName: string;
-  address: string;
-
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
     this.userDetails$ = this.store.pipe(
-      select(selectUserDetails),
-      map(details => {
-
-        this.fullName = `${details.firstName} ${details.lastName}`;
-
-        this.address =
-          `${details.address.city},
-         ${details.address.street},
-         ${details.address.homeNo},
-         ${details.address.postalCode},
-         ${details.address.country} `;
-
-        return details;
-      })
+      select(selectUserDetails)
     );
   }
 }

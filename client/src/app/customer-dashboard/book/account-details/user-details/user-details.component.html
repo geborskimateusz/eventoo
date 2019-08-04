@@ -2,11 +2,20 @@
 <ul>
   <li>
     <h5>Name:</h5>
-    <p>{{ fullName }}</p>
+    <p>
+      {{ (userDetails$ | async).firstName }}
+      {{ (userDetails$ | async).lastName }}
+    </p>
   </li>
   <li>
     <h5>Address:</h5>
-    <p>{{ address }}</p>
+    <p>
+      {{ (userDetails$ | async).address.city }},
+      {{ (userDetails$ | async).address.street }},
+      {{ (userDetails$ | async).address.homeNo }},
+      {{ (userDetails$ | async).address.postalCode }},
+      {{ (userDetails$ | async).address.country }}
+    </p>
   </li>
   <li>
     <h5>Phone:</h5>
