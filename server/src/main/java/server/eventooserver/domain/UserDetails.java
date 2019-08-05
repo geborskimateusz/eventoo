@@ -22,6 +22,7 @@ public class UserDetails extends BaseEntity{
     @OneToOne
     @JoinColumn(name = "address_id")
     private Address address;
+
     private String imagePath;
 
     @Builder

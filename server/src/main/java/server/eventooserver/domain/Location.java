@@ -21,18 +21,11 @@ public class Location extends BaseEntity {
     private Double lat;
     private Double lon;
 
-    @ManyToMany
-    @JoinTable(name="event_location",
-            joinColumns = {@JoinColumn(name = "location_id")},
-            inverseJoinColumns = {@JoinColumn(name = "event_id")})
-    private Set<Event> events = new HashSet<>();
-
     @Builder
-    public Location(String partialAddress, String fullAddress, Double lat, Double lon, Set<Event> events) {
+    public Location(String partialAddress, String fullAddress, Double lat, Double lon) {
         this.partialAddress = partialAddress;
         this.fullAddress = fullAddress;
         this.lat = lat;
         this.lon = lon;
-        this.events = events;
     }
 }

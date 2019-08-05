@@ -120,12 +120,16 @@ public class Bootstrap implements CommandLineRunner {
 
 
 
+
+
         /////GENERATE DANCE EVENTS/////
 
 
         //LITTLE BIG
 
+
         List<Ticket> savedTicketsLittleBig = ticketRepository.saveAll(Stream.of(unsavedTickets).collect(Collectors.toSet()));
+
 
         Event littleBig = Event.builder()
                 .title("Little Big")
@@ -133,8 +137,8 @@ public class Bootstrap implements CommandLineRunner {
                 .date(LocalDate.now())
                 .img("https://s1.ticketm.net/img/tat/dam/a/87b/9a9f97e2-9ddd-4bfd-a60c-41b57378a87b_907141_CUSTOM.jpg")
                 .genre(MusicGenre.DANCE)
-                .locations(Stream.of(b17ClubSaved).collect(Collectors.toSet()))
-                .tickets(new HashSet<>(savedTicketsLittleBig))
+                .location(b17ClubSaved)
+                .tickets(savedTicketsLittleBig.stream().collect(Collectors.toSet()))
                 .build();
 
         eventRepository.save(littleBig);
@@ -144,7 +148,7 @@ public class Bootstrap implements CommandLineRunner {
     }
 
 
-    private static Integer getRandom(double min, double max) {
+    public static Integer getRandom(double min, double max) {
         Double d = (Math.random() * (max + 1 - min)) + min;
         return d.intValue();
     }

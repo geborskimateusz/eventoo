@@ -3,6 +3,7 @@ package server.eventooserver.api.v1.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import server.eventooserver.domain.Event;
 import server.eventooserver.domain.User;
 import server.eventooserver.api.v1.dto.UserDetailsDTO;
 import server.eventooserver.api.v1.service.UserService;
@@ -26,5 +27,14 @@ public class UserDetailsController {
         log.info(this.getClass().getSimpleName() + ",  public UserDetailsDTO loadUserByUserName(@RequestBody User user)");
         return userService.authenticateUser(user);
     }
+
+
+//    @PostMapping(value = "/test")
+//    public void test(@RequestBody EventDTO o) {
+//        System.out.println("hitting test");
+//        System.out.println("\n\n");
+//        System.out.println(o);
+//        System.out.println("\n\n");
+//    }
 
 }

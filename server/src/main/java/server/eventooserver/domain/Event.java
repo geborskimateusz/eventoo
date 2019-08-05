@@ -1,10 +1,7 @@
 package server.eventooserver.domain;
 
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -26,11 +23,9 @@ public class Event extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private MusicGenre genre;
 
-    @ManyToMany
-    @JoinTable(name="event_location",
-            joinColumns = {@JoinColumn(name = "event_id")},
-            inverseJoinColumns = {@JoinColumn(name = "location_id")})
-    Set<Location> locations = new HashSet<>();
+    @OneToOne
+    @JoinColumn(name = "location_id")
+    Location location;
 
     @ManyToMany
     @JoinTable(name="event_ticket",
@@ -39,13 +34,13 @@ public class Event extends BaseEntity {
     Set<Ticket> tickets = new HashSet<>();
 
     @Builder
-    public Event(String title, String description, LocalDate date, String img, MusicGenre genre, Set<Location> locations, Set<Ticket> tickets) {
+    public Event(String title, String description, LocalDate date, String img, MusicGenre genre, Location location, Set<Ticket> tickets) {
         this.title = title;
         this.description = description;
         this.date = date;
         this.img = img;
         this.genre = genre;
-        this.locations = locations;
+        this.location = location;
         this.tickets = tickets;
     }
 

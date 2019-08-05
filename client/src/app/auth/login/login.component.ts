@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
     this.form = formBuilder.group({
       email: ['fakeemail@gmail.com', [Validators.required]],
-      password: ['a', [Validators.required]]
+      password: ['fakeemail@gmail.com', [Validators.required]]
     })
   }
 
@@ -36,6 +36,9 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+
+    //remove this!!
+    this.authService.bootstrapData();
 
     const authData = this.form.value;
     
