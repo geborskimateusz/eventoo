@@ -1,0 +1,26 @@
+@import "../../../../styles/abstracts/variables";
+
+.payment__options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  &--option {
+    text-transform: uppercase;
+    color: $color-primary;
+    margin: 0 2rem;
+    cursor: pointer;
+
+    &-first {
+    }
+
+    &-second {
+    }
+  }
+
+  &--option:hover {
+    color: rgba($color-primary-light, 0.8);
+    transition: all .2s;
+  }
+}

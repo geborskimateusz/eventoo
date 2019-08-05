@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthActionTypes, Login, Logout } from './auth.actions';
 import { tap } from 'rxjs/operators';
-import { defer, of } from 'rxjs';
+import { defer, of, Observable } from 'rxjs';
 
 
 
@@ -14,7 +14,7 @@ export class AuthEffects {
   @Effect({ dispatch: false })
   login$ = this.actions$.pipe(
     ofType<Login>(AuthActionTypes.Login),
-    tap(action => localStorage.setItem("userId", JSON.stringify(action.payload.userDetails.id)))
+    tap(action => localStorage.setItem("userId", JSON.stringify(action.payload.userDetails)))
   );
 
   @Effect({ dispatch: false })
@@ -24,14 +24,14 @@ export class AuthEffects {
   )
 
   @Effect()
-  init$ = defer(() => {
+  init$ = defer((): Observable<Login | Logout> => {
     const userData = localStorage.getItem("userId");
 
-    if (userData) {
-      return of(new Login(JSON.parse(userData)));
-    } else {
-      return of(new Logout())
-    }
+    //get item user id ant look and send request for find by id
+    return (userData) ?
+      of(new Login({ userDetails: JSON.parse(userData) })) :
+      of(new Logout())
+
   });
 
 }

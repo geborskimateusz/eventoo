@@ -11,6 +11,7 @@ import { AccountDetailsComponent } from './account-details/account-details.compo
 import { UserDetailsComponent } from './account-details/user-details/user-details.component';
 import { CompanyDetailsComponent } from './account-details/company-details/company-details.component';
 import { FinalizeOrderDialogComponent } from './finalize-order-dialog/finalize-order-dialog.component';
+import { PaymentOptionsComponent } from './payment-options/payment-options.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { FinalizeOrderDialogComponent } from './finalize-order-dialog/finalize-o
         AccountDetailsComponent,
         UserDetailsComponent,
         CompanyDetailsComponent,
-        FinalizeOrderDialogComponent
+        FinalizeOrderDialogComponent,
+        PaymentOptionsComponent
     ],
     imports: [
         CommonModule,

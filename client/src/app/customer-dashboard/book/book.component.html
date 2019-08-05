@@ -35,20 +35,13 @@
     ></app-account-details>
     <div>
       <button mat-button matStepperPrevious>Back</button>
-      <button
-        mat-button
-        (click)="finalizePayment()"
-      >
+      <button mat-button (click)="finalizePayment()">
         Finalize
       </button>
     </div>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Payment options</ng-template>
-    You are now done.
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
+    <app-payment-options></app-payment-options>
   </mat-step>
 </mat-vertical-stepper>
