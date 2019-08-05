@@ -14,7 +14,7 @@ public enum TicketType {
     GOLDEN_CIRCLE_REGULAR,
 
     @JsonProperty("General Admission")
-    GENREAL_ADMISSION,
+    GENERAL_ADMISSION,
 
     @JsonProperty("Stands")
     STANDS

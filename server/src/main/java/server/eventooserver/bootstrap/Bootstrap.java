@@ -6,8 +6,6 @@ import server.eventooserver.api.v1.repository.*;
 import server.eventooserver.domain.*;
 
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -103,7 +101,7 @@ public class Bootstrap implements CommandLineRunner {
                 .build();
 
         Ticket ga = Ticket.builder()
-                .ticketType(TicketType.GENREAL_ADMISSION)
+                .ticketType(TicketType.GENERAL_ADMISSION)
                 .price(getRandom(150, 200))
                 .toalAmmount(20)
                 .inStock(15)
