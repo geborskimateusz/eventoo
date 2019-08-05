@@ -1,9 +1,9 @@
-package server.eventooserver.api.v1.auth;
+package server.eventooserver.api.v1.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import server.eventooserver.api.v1.dto.AddressDTO;
 
 @Builder
 @Getter

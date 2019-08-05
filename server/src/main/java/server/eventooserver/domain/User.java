@@ -1,4 +1,4 @@
-package server.eventooserver.api.v1.auth;
+package server.eventooserver.domain;
 
 import lombok.Getter;
 import lombok.Setter;

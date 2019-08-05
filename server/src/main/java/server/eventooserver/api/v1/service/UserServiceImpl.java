@@ -1,7 +1,10 @@
-package server.eventooserver.api.v1.auth;
+package server.eventooserver.api.v1.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import server.eventooserver.domain.User;
+import server.eventooserver.api.v1.dto.AddressDTO;
+import server.eventooserver.api.v1.dto.UserDetailsDTO;
 
 @Slf4j
 @Service
