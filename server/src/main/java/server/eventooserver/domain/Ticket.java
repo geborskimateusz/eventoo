@@ -17,7 +17,7 @@ import java.util.Set;
 public class Ticket extends BaseEntity {
 
     @Enumerated(value = EnumType.STRING)
-    private TicketType ticketType;
+    private TicketType type;
     private Integer price;
     private Integer totalAmmount;
     private Integer inStock;
@@ -30,7 +30,7 @@ public class Ticket extends BaseEntity {
 
     @Builder
     public Ticket(TicketType ticketType, Integer price, Integer toalAmmount, Integer inStock, Set<Event> events) {
-        this.ticketType = ticketType;
+        this.type = ticketType;
         this.price = price;
         this.totalAmmount = toalAmmount;
         this.inStock = inStock;

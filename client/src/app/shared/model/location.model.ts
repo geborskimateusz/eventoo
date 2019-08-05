@@ -1,6 +1,6 @@
 export interface Location {
-    name: string,
-    address: string,
+    partialAddress: string,
+    fullAddress: string,
     lat: string,
     lon: string
 }

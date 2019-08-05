@@ -10,7 +10,7 @@ export class EventService {
             title: event.title,
             img: event.img,
             date: event.date,
-            location: event.locations
+            location: event.location
         }
     }
 

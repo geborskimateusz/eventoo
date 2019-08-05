@@ -4,7 +4,7 @@ export interface Ticket {
     id: number,
     type?: TicketTypes;
     price: number,
-    total: number,
+    totalAmmount: number,
     inStock: number,
 }
 

@@ -20,7 +20,19 @@ public class EventDTO {
     private LocalDate date;
     private String img;
     private MusicGenre genre;
-    private Location locations;
-    Set<Ticket> tickets = new HashSet<>();
+    private LocationDTO location;
+    Set<TicketDTO> tickets = new HashSet<>();
 
+    @Override
+    public String toString() {
+        return "EventDTO{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", date=" + date +
+                ", img='" + img + '\'' +
+                ", genre='" + genre + '\'' +
+                ", location=" + location +
+                ", tickets=" + tickets +
+                '}';
+    }
 }

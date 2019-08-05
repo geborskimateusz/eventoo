@@ -34,7 +34,7 @@ export class EventLocalizationDialogComponent implements OnInit {
         iconUrl: 'leaflet/marker-icon.png',
         shadowUrl: 'leaflet/marker-shadow.png'
       })
-    }).bindPopup(`<b> <a href="http://maps.google.co.uk/maps?q=${this.data.location.lat},${this.data.location.lon}">${this.data.location.address}</a></b>`);
+    }).bindPopup(`<b> <a href="http://maps.google.co.uk/maps?q=${this.data.location.lat},${this.data.location.lon}">${this.data.location.fullAddress}</a></b>`);
 
     this.options = {
       layers: [
