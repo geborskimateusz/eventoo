@@ -1,17 +1,20 @@
 package server.eventooserver.api.v1.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 import server.eventooserver.api.v1.dto.EventDTO;
 import server.eventooserver.api.v1.dto.EventsDTO;
 import server.eventooserver.api.v1.service.EventService;
 import server.eventooserver.domain.Event;
 
+@Slf4j
+@CrossOrigin(value = "${cors.origin.value}")
+@RestController
+@RequestMapping(EventController.API_V1_EVENTS)
 public class EventController {
 
-    private static final String API_V1_EVENTS = "api/v1/events";
+    public static final String API_V1_EVENTS = "api/v1/events";
 
     private final EventService eventService;
 

@@ -18,6 +18,6 @@ export class AuthService {
 
 
     bootstrapData() {
-        this.http.post('http://localhost:8080/api/v1/user/test', EVENTS_DATASOURCE[0]).subscribe();
+        this.http.post('http://localhost:8080/api/v1/events', {events:  EVENTS_DATASOURCE}).subscribe();
     }
 }

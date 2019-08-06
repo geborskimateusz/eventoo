@@ -26,9 +26,6 @@ public class EventServiceImpl implements EventService {
     @Override
     public EventsDTO saveAll(EventsDTO eventsDTO) {
 
-        List<EventDTO> eventDTOS = eventsDTO.getEvents();
-        List<EventDTO> events =
-
         return EventsDTO.builder()
                 .events(
                         eventsDTO.getEvents().stream()
@@ -36,7 +33,5 @@ public class EventServiceImpl implements EventService {
                                 .map(event -> eventMapper.eventToEventDTO(event))
                                 .collect(Collectors.toList())
                 ).build();
-
-        return null;
     }
 }

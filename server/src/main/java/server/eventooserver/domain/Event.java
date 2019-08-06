@@ -16,6 +16,8 @@ import java.util.Set;
 public class Event extends BaseEntity {
 
     private String title;
+
+    @Column(columnDefinition="LONGTEXT")
     private String description;
     private LocalDate date;
     private String img;
