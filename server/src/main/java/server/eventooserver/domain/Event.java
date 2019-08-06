@@ -23,12 +23,17 @@ public class Event extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private MusicGenre genre;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "location_id")
     Location location;
 
-    @ManyToMany
-    @JoinTable(name="event_ticket",
+    @ManyToMany(cascade = {
+            CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.PERSIST,
+            CascadeType.REFRESH
+    })
+    @JoinTable(name = "event_ticket",
             joinColumns = {@JoinColumn(name = "event_id")},
             inverseJoinColumns = {@JoinColumn(name = "ticket_id")})
     Set<Ticket> tickets = new HashSet<>();

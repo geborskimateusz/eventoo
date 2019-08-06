@@ -30,14 +30,6 @@ public class UserDetailsController {
     }
 
 
-    @PostMapping(value = "/test")
-    public EventDTO test(@RequestBody EventDTO o) {
-        System.out.println("hitting test");
-        System.out.println("\n\n");
-        System.out.println(o);
-        System.out.println("\n\n");
 
-        return o;
-    }
 
 }

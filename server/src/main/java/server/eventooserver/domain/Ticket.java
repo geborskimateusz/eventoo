@@ -22,7 +22,12 @@ public class Ticket extends BaseEntity {
     private Integer totalAmmount;
     private Integer inStock;
 
-    @ManyToMany
+    @ManyToMany(cascade = {
+            CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.PERSIST,
+            CascadeType.REFRESH
+    })
     @JoinTable(name="event_ticket",
             joinColumns = {@JoinColumn(name = "ticket_id")},
             inverseJoinColumns = {@JoinColumn(name = "event_id")})

@@ -5,7 +5,11 @@ import org.springframework.stereotype.Component;
 import server.eventooserver.api.v1.repository.*;
 import server.eventooserver.domain.*;
 
+import javax.transaction.Transactional;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -72,7 +76,7 @@ public class Bootstrap implements CommandLineRunner {
                 .build();
 
 
-        Location b17ClubSaved = locationRepository.save(b17Club);
+//        Location b17ClubSaved = locationRepository.save(b17Club);
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -114,7 +118,7 @@ public class Bootstrap implements CommandLineRunner {
                 .inStock(15)
                 .build();
 
-        Ticket[] unsavedTickets = {vip, gcee, gcr, ga, s};
+        List<Ticket> unsavedTickets = new ArrayList<>(Arrays.asList(vip, gcee, gcr, ga, s));
 
 
 
@@ -126,7 +130,7 @@ public class Bootstrap implements CommandLineRunner {
         //LITTLE BIG
 
 
-        List<Ticket> savedTicketsLittleBig = ticketRepository.saveAll(Stream.of(unsavedTickets).collect(Collectors.toSet()));
+//        List<Ticket> savedTicketsLittleBig = ticketRepository.saveAll(Stream.of(unsavedTickets).collect(Collectors.toSet()));
 
 
         Event littleBig = Event.builder()
@@ -135,8 +139,8 @@ public class Bootstrap implements CommandLineRunner {
                 .date(LocalDate.now())
                 .img("https://s1.ticketm.net/img/tat/dam/a/87b/9a9f97e2-9ddd-4bfd-a60c-41b57378a87b_907141_CUSTOM.jpg")
                 .genre(MusicGenre.DANCE)
-                .location(b17ClubSaved)
-                .tickets(savedTicketsLittleBig.stream().collect(Collectors.toSet()))
+                .location(b17Club)
+                .tickets(new HashSet<>(unsavedTickets))
                 .build();
 
         eventRepository.save(littleBig);

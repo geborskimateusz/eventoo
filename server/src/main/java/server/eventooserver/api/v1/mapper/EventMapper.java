@@ -12,4 +12,6 @@ public interface EventMapper {
     EventMapper INSTANCE = Mappers.getMapper(EventMapper.class);
 
     Event eventDTOtoEvent(EventDTO eventDTO);
+
+    EventDTO eventToEventDTO(Event event);
 }
