@@ -34,4 +34,12 @@ public class EventServiceImpl implements EventService {
                                 .collect(Collectors.toList())
                 ).build();
     }
+
+    @Override
+    public List<EventDTO> findAll() {
+        return eventRepository.findAll()
+                .stream()
+                .map(event -> eventMapper.eventToEventDTO(event))
+                .collect(Collectors.toList());
+    }
 }

@@ -15,9 +15,4 @@ export class AuthService {
     login(email: string, password: string): Observable<UserDetails> {
         return this.http.post<UserDetails>('http://localhost:8080/api/v1/user/login', { username: email, password: password });
     }
-
-
-    bootstrapData() {
-        this.http.post('http://localhost:8080/api/v1/events', {events:  EVENTS_DATASOURCE}).subscribe();
-    }
 }

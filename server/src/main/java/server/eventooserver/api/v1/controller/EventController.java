@@ -8,6 +8,8 @@ import server.eventooserver.api.v1.dto.EventsDTO;
 import server.eventooserver.api.v1.service.EventService;
 import server.eventooserver.domain.Event;
 
+import java.util.List;
+
 @Slf4j
 @CrossOrigin(value = "${cors.origin.value}")
 @RestController
@@ -20,6 +22,12 @@ public class EventController {
 
     public EventController(EventService eventService) {
         this.eventService = eventService;
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<EventDTO> findAll() {
+        return eventService.findAll();
     }
 
     @PostMapping
