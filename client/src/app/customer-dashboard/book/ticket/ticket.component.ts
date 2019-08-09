@@ -23,7 +23,9 @@ export class TicketComponent implements OnInit {
 
     constructor(private store: Store<AppState>) { }
 
-    ngOnInit() {}
+    ngOnInit() {
+        console.log(this.ticket)
+    }
 
     isAvilableTicketsList(): boolean {
         return this.listType === ListTypes.AVILABLE_TICKETS;
@@ -57,15 +59,15 @@ export class TicketComponent implements OnInit {
 
         if (isIncrementing && areTicketsAvilable) {
 
-            ammount = this.ticket.ammount + 1;
+            ammount = this.ticket.amount + 1;
             inStock = this.ticket.inStock - 1;
 
             this.updateTicketData(ammount, inStock)
 
         } else {
-            if (this.ticket.ammount > 1) {
+            if (this.ticket.amount > 1) {
 
-                ammount = this.ticket.ammount - 1;
+                ammount = this.ticket.amount - 1;
                 inStock = this.ticket.inStock + 1;
 
                 this.updateTicketData(ammount, inStock)
@@ -77,7 +79,7 @@ export class TicketComponent implements OnInit {
     private updateTicketData(ammount: number, inStock: number) {
         this.store.dispatch(
             new SaveOrUpdateTicket({
-                orderedTicket: { ...this.ticket, ammount, inStock }
+                orderedTicket: { ...this.ticket, amount: ammount, inStock }
             }));
     }
 

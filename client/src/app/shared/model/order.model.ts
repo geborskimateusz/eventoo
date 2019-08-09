@@ -1,6 +1,6 @@
 import { OrderedTicket } from './ordered-ticket.model';
 
-export  interface Order {
+export  interface OrderedTickets {
     orderDate: Date,
     orderedTickets: OrderedTicket[]
 }

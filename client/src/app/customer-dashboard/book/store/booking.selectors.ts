@@ -19,7 +19,7 @@ export const selectEntities = createSelector(
 
 export const selectTotalPrice = createSelector(
     selectAllTickets,
-    tickets => tickets.reduce((acc, ticket) => acc + (ticket.price * ticket.ammount), 0)
+    tickets => tickets.reduce((acc, ticket) => acc + (ticket.price * ticket.amount), 0)
 )
 
 export const selectPricePerType = createSelector(
@@ -28,7 +28,7 @@ export const selectPricePerType = createSelector(
         let entity  = entities[props.ticketId];
 
         if(entity) {
-            return entity.price * entity.ammount;
+            return entity.price * entity.amount;
         }
     }
 );

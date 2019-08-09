@@ -13,7 +13,11 @@ export class BookingEffects {
 
     book$ = this.actions$.pipe(
         ofType<BookTickets>(BookingActionTypes.BookTickets),
-        tap(action => this.httpClient.post('api/v1/events/book', action.payload.order))
+        tap(action => {
+            console.log('ofType<BookTickets>(BookingActionTypes.BookTickets)')
+
+            return  this.httpClient.put('api/v1/order', action.payload.order);
+        })
     )
 
 }

@@ -3,6 +3,7 @@ import { AppState } from 'src/app/store';
 import { Store, select } from '@ngrx/store';
 import { selectAllTickets } from '../store/booking.selectors';
 import { tap } from 'rxjs/operators';
+import { BookTickets } from '../store/booking.actions';
 
 @Component({
   selector: 'app-payment-options',
@@ -19,8 +20,14 @@ export class PaymentOptionsComponent implements OnInit {
   generateOrderConfirmation() {
     this.store.pipe(
       select(selectAllTickets),
-      tap(tickets => console.log(tickets))
-    )
+      tap(tickets => this.store.dispatch(
+        new BookTickets({
+          order: {
+            orderDate: new Date(),
+            orderedTickets: tickets
+          }
+        })))
+    ).subscribe();
   }
 
 }

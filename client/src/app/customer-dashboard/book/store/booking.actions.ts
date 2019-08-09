@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
 import { Ticket } from 'src/app/shared/model/ticket-model';
 import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
-import { Order } from 'src/app/shared/model/order.model';
+import { OrderedTickets } from 'src/app/shared/model/order.model';
 
 
 export enum BookingActionTypes {
@@ -28,7 +28,7 @@ export class DeleteTicket implements Action {
 
 export class BookTickets implements Action {
     readonly type = BookingActionTypes.BookTickets;
-    constructor(public payload: {order: Order}) {}
+    constructor(public payload: {order: OrderedTickets}) {}
 }
 
 export type BookingActions =
