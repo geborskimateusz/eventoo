@@ -11,13 +11,15 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity(name = "Event")
 @Table(name = "event")
 public class Event extends BaseEntity {
 
     private String title;
 
-    @Column(columnDefinition="LONGTEXT")
+    @Column(columnDefinition = "LONGTEXT")
     private String description;
     private LocalDate date;
     private String img;
@@ -29,30 +31,19 @@ public class Event extends BaseEntity {
     @JoinColumn(name = "location_id")
     Location location;
 
-    @ManyToMany(cascade = {
+    @OneToMany(cascade = {
             CascadeType.DETACH,
             CascadeType.MERGE,
             CascadeType.PERSIST,
             CascadeType.REFRESH
-    })
-    @JoinTable(name = "event_ticket",
-            joinColumns = {@JoinColumn(name = "event_id")},
-            inverseJoinColumns = {@JoinColumn(name = "ticket_id")})
+    },
+            mappedBy = "event")
     Set<Ticket> tickets = new HashSet<>();
 
-    @Builder
-    public Event(String title, String description, LocalDate date, String img, MusicGenre genre, Location location, Set<Ticket> tickets) {
-        this.title = title;
-        this.description = description;
-        this.date = date;
-        this.img = img;
-        this.genre = genre;
-        this.location = location;
-        this.tickets = tickets;
-    }
+
 
     public void addTicket(Ticket ticket) {
         this.tickets.add(ticket);
-        ticket.getEvents().add(this);
+        ticket.setEvent(this);
     }
 }

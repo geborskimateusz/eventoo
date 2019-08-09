@@ -3,7 +3,7 @@ import { Ticket } from './ticket-model';
 import { Location } from './location.model';
 
 export interface Event {
-    id: number,
+    id?: number,
     title: string,
     description: string,
     date: Date,

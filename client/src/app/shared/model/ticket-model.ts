@@ -1,7 +1,7 @@
 import { TicketTypes } from './ticket-types.model';
 
 export interface Ticket {
-    id: number,
+    id?: number,
     type?: TicketTypes;
     price: number,
     totalAmmount: number,

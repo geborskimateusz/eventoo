@@ -1,9 +1,6 @@
 package server.eventooserver.api.v1.dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,11 +8,9 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class EventsDTO {
     List<EventDTO> events = new ArrayList<>();
 
-    @Builder
-    public EventsDTO(List<EventDTO> events) {
-        this.events = events;
-    }
 }

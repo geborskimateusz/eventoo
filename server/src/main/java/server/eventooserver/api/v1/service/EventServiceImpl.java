@@ -8,6 +8,7 @@ import server.eventooserver.api.v1.mapper.EventMapper;
 import server.eventooserver.api.v1.repository.EventRepository;
 import server.eventooserver.domain.Event;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,15 +25,29 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
+    @Transactional
     public EventsDTO saveAll(EventsDTO eventsDTO) {
+
+        List<Event> events = eventsDTO.getEvents().stream().map(eventDTO -> eventMapper.eventDTOtoEvent(eventDTO)).collect(Collectors.toList());
+
+        events.forEach(event -> event.getTickets().forEach(event::addTicket));
 
         return EventsDTO.builder()
                 .events(
-                        eventsDTO.getEvents().stream()
-                                .map(eventDTO -> eventRepository.save(eventMapper.eventDTOtoEvent(eventDTO)))
-                                .map(event -> eventMapper.eventToEventDTO(event))
-                                .collect(Collectors.toList())
-                ).build();
+                        events.stream().map(event -> eventMapper.eventToEventDTO(eventRepository.save(event))).collect(Collectors.toList())
+                )
+                .build();
+
+
+//        return EventsDTO.builder()
+//                .events(
+//                        eventsDTO.getEvents().stream()
+//                                .map(eventDTO -> eventMapper.eventDTOtoEvent(eventDTO))
+//                                .peek(event -> event.getTickets().forEach(event::addTicket))
+//                                .map(eventRepository::save)
+//                                .map(event -> eventMapper.eventToEventDTO(event))
+//                                .collect(Collectors.toList())
+//                ).build();
     }
 
     @Override

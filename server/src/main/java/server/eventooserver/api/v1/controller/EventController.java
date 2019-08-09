@@ -30,7 +30,7 @@ public class EventController {
         return eventService.findAll();
     }
 
-    @PostMapping
+    @PutMapping
     @ResponseStatus(HttpStatus.CREATED)
     public EventsDTO saveAll(@RequestBody EventsDTO eventsDTO) {
         return this.eventService.saveAll(eventsDTO);

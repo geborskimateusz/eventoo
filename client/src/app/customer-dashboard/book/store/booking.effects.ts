@@ -14,7 +14,7 @@ export class BookingEffects {
     @Effect({ dispatch: false })
     book$ = this.actions$.pipe(
         ofType<BookTickets>(BookingActionTypes.BookTickets),
-        switchMap(action => this.httpClient.put('http://localhost:8080/api/v1/order',
+        switchMap(action => this.httpClient.patch('http://localhost:8080/api/v1/order',
             {
                 orderDate: new Date(),
                 orderedTickets: action.payload.orderedTickets

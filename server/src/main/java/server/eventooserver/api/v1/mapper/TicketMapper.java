@@ -13,6 +13,9 @@ public interface TicketMapper {
     TicketMapper INSTANCE = Mappers.getMapper(TicketMapper.class);
 
     @Named("ticketDTOtoTicket")
-    @Mapping(target="events", ignore = true)
-     Ticket ticketDTOtoTicket(TicketDTO ticketDTO);
+    Ticket ticketDTOtoTicket(TicketDTO ticketDTO);
+
+    @Named("ticketToTicketDTO")
+    TicketDTO ticketToTicketDTO(Ticket ticket);
+
 }
