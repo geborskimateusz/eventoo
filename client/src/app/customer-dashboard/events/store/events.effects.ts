@@ -7,12 +7,16 @@ import { EVENTS_DATASOURCE } from 'src/app/shared/fake-datasource/events-datasou
 import { of } from 'rxjs';
 import { AppState } from 'src/app/store';
 import { selectAllEventsLoaded } from './events.selectors';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { JsonPipe } from '@angular/common';
+import { Event } from 'src/app/shared/model/event.model';
 
 @Injectable()
 export class EventsEffects {
 
     constructor(private actions$: Actions,
-        private store: Store<AppState>) { }
+        private store: Store<AppState>,
+        private httpClient: HttpClient) { }
 
     @Effect()
     loadEvent$ = this.actions$.pipe(
@@ -30,6 +34,11 @@ export class EventsEffects {
         filter(([action, allEventsLoaded]) => !allEventsLoaded),
 
         //here should be request to server
-        mergeMap(() => of(EVENTS_DATASOURCE)),
-        map(events => new AllEventsLoaded({ events })));
+        mergeMap(() => {
+            return this.httpClient.get<Event[]>('http://localhost:8080/api/v1/events')
+        }),
+        map(events => {
+            events.forEach(event => event.date = new Date(event.date))
+            return new AllEventsLoaded({ events })
+        }));
 }

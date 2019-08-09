@@ -14,7 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EventDTO {
+public class EventDTO extends BaseEntityDTO{
     private String title;
     private String description;
     private LocalDate date;

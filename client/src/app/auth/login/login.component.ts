@@ -37,18 +37,18 @@ export class LoginComponent implements OnInit {
 
   login() {
     const authData = this.form.value;
-    this.authService.bootstrapData().subscribe();
-  //   this.authService.login(authData.email, authData.password)
-  //   .pipe(
-  //     tap(userDetails => {
-  //       this.store.dispatch(new Login({userDetails}));
-  //       this.onAuthSuccesfull.emit(true);
-  //     })
-  //   )
-  //   .subscribe(
-  //     noop,
-  //     () => alert('Login Failed')
-  //   );
+    
+    this.authService.login(authData.email, authData.password)
+    .pipe(
+      tap(userDetails => {
+        this.store.dispatch(new Login({userDetails}));
+        this.onAuthSuccesfull.emit(true);
+      })
+    )
+    .subscribe(
+      noop,
+      () => alert('Login Failed')
+    );
   }
 
 }
