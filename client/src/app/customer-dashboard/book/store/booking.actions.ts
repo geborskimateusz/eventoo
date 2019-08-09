@@ -28,7 +28,9 @@ export class DeleteTicket implements Action {
 
 export class BookTickets implements Action {
     readonly type = BookingActionTypes.BookTickets;
-    constructor(public payload: {order: OrderedTickets}) {}
+    constructor(public payload: {orderedTickets: OrderedTicket[]}) {
+        console.log(payload)
+    }
 }
 
 export type BookingActions =

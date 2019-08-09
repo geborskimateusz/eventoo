@@ -24,7 +24,6 @@ export class TicketComponent implements OnInit {
     constructor(private store: Store<AppState>) { }
 
     ngOnInit() {
-        console.log(this.ticket)
     }
 
     isAvilableTicketsList(): boolean {

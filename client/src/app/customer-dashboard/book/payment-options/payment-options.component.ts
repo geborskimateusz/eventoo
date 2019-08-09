@@ -20,13 +20,14 @@ export class PaymentOptionsComponent implements OnInit {
   generateOrderConfirmation() {
     this.store.pipe(
       select(selectAllTickets),
-      tap(tickets => this.store.dispatch(
-        new BookTickets({
-          order: {
-            orderDate: new Date(),
+      tap(tickets => {
+
+        console.log('generateOrderConfirmation')
+        this.store.dispatch(
+          new BookTickets({
             orderedTickets: tickets
-          }
-        })))
+          }))
+      })
     ).subscribe();
   }
 

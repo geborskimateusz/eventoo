@@ -32,7 +32,6 @@ import { EffectsModule } from '@ngrx/effects';
         BookRoutingModule,
         StoreModule.forFeature('booking', bookingReducer),
         EffectsModule.forFeature([BookingEffects])
-
     ],
     entryComponents: [
         FinalizeOrderDialogComponent
