@@ -16,6 +16,7 @@ import server.eventooserver.api.v1.service.UserService;
 public class UserDetailsController {
 
     public static final String API_V_1_USER = "api/v1/user";
+
     private UserService userService;
 
     public UserDetailsController(UserService userService) {
@@ -25,7 +26,6 @@ public class UserDetailsController {
     @ResponseStatus(HttpStatus.OK)
     @PostMapping(value = "/login")
     public UserDetailsDTO loadUserByUserName(@RequestBody User user) {
-
         return userService.authenticateUser(user);
     }
 

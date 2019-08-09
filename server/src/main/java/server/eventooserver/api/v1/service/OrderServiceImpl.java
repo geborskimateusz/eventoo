@@ -27,6 +27,8 @@ public class OrderServiceImpl implements OrderService {
 
         postOrder(orderedTicketsDTO);
 
+        //TODO pdf should be returned example below:
+        //return generateOrderConfirmation(orderedTicketsDTO);
         generateOrderConfirmation(orderedTicketsDTO);
 
     }
@@ -38,16 +40,19 @@ public class OrderServiceImpl implements OrderService {
     private void postOrder(OrderedTicketsDTO orderedTicketsDTO) {
         orderedTicketsDTO.getOrderedTickets()
                 .forEach(orderedTicketDTO -> {
+
                     TicketDTO found = ticketService.findById(orderedTicketDTO.getId());
 
-                    found.setInStock(
-                            found.getInStock() - orderedTicketDTO.getAmount()
-                    );
+                    decreaseInStockAmount(orderedTicketDTO, found);
 
-
-                   TicketDTO saved =  ticketService.saveOrUpdateTicket(found);
-                    System.out.println("after update "+ saved);
-
+                    ticketService.saveOrUpdateTicket(found);
                 });
+
+    }
+
+    private void decreaseInStockAmount(OrderedTicketDTO orderedTicketDTO, TicketDTO found) {
+        found.setInStock(
+                found.getInStock() - orderedTicketDTO.getAmount()
+        );
     }
 }

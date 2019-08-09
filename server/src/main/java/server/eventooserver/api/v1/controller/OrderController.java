@@ -21,10 +21,10 @@ public class OrderController {
     public static final String API_VI_ORDER = "api/v1/order";
 
 
+    //TODO pdf should be returned
     @PatchMapping
     @ResponseStatus(HttpStatus.OK)
     public void bookTickets(@RequestBody OrderedTicketsDTO orderedTicketsDTO) {
-
         orderService.orderTickets(orderedTicketsDTO);
     }
 }

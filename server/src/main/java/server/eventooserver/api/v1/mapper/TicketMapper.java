@@ -12,10 +12,8 @@ public interface TicketMapper {
 
     TicketMapper INSTANCE = Mappers.getMapper(TicketMapper.class);
 
-    @Named("ticketDTOtoTicket")
     Ticket ticketDTOtoTicket(TicketDTO ticketDTO);
 
-    @Named("ticketToTicketDTO")
     TicketDTO ticketToTicketDTO(Ticket ticket);
 
 }

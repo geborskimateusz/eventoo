@@ -26,7 +26,7 @@
 //
 //
 //    public static void main(String[] args) throws IOException, DocumentException, URISyntaxException {
-//        Path path = Paths.get(ClassLoader.getSystemResource("static/pdf/hand-small.resized.png").toURI());
+//        Path path = Paths.get(ClassLoader.getSystemResource("static/pdf/eventoo-logo.png").toURI());
 //        Image img = Image.getInstance(path.toAbsolutePath().toString());
 //        img.setAbsolutePosition(45, 790);
 //        img.scalePercent(50);

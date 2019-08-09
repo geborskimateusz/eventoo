@@ -28,26 +28,15 @@ public class EventServiceImpl implements EventService {
     @Transactional
     public EventsDTO saveAll(EventsDTO eventsDTO) {
 
-        List<Event> events = eventsDTO.getEvents().stream().map(eventDTO -> eventMapper.eventDTOtoEvent(eventDTO)).collect(Collectors.toList());
-
-        events.forEach(event -> event.getTickets().forEach(event::addTicket));
-
         return EventsDTO.builder()
                 .events(
-                        events.stream().map(event -> eventMapper.eventToEventDTO(eventRepository.save(event))).collect(Collectors.toList())
-                )
-                .build();
-
-
-//        return EventsDTO.builder()
-//                .events(
-//                        eventsDTO.getEvents().stream()
-//                                .map(eventDTO -> eventMapper.eventDTOtoEvent(eventDTO))
-//                                .peek(event -> event.getTickets().forEach(event::addTicket))
-//                                .map(eventRepository::save)
-//                                .map(event -> eventMapper.eventToEventDTO(event))
-//                                .collect(Collectors.toList())
-//                ).build();
+                        eventsDTO.getEvents().stream()
+                                .map(eventDTO -> eventMapper.eventDTOtoEvent(eventDTO))
+                                .peek(event -> event.getTickets().forEach(event::addTicket))
+                                .map(eventRepository::save)
+                                .map(event -> eventMapper.eventToEventDTO(event))
+                                .collect(Collectors.toList())
+                ).build();
     }
 
     @Override
