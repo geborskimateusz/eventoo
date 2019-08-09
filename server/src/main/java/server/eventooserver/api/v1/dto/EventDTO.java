@@ -1,5 +1,6 @@
 package server.eventooserver.api.v1.dto;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,6 +23,17 @@ public class EventDTO {
     private MusicGenre genre;
     private LocationDTO location;
     Set<TicketDTO> tickets = new HashSet<>();
+
+    @Builder
+    public EventDTO(String title, String description, LocalDate date, String img, MusicGenre genre, LocationDTO location, Set<TicketDTO> tickets) {
+        this.title = title;
+        this.description = description;
+        this.date = date;
+        this.img = img;
+        this.genre = genre;
+        this.location = location;
+        this.tickets = tickets;
+    }
 
     @Override
     public String toString() {

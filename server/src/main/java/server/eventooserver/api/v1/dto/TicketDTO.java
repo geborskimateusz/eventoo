@@ -1,6 +1,7 @@
 package server.eventooserver.api.v1.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,7 +21,18 @@ public class TicketDTO {
     private Integer price;
     private Integer totalAmmount;
     private Integer inStock;
-    Set<Event> events = new HashSet<>();
+//    Set<EventDTO> events = new HashSet<>();
+    private EventDTO event;
+
+    @Builder
+    public TicketDTO(TicketType type, Integer price, Integer totalAmmount, Integer inStock, EventDTO event) {
+        this.type = type;
+        this.price = price;
+        this.totalAmmount = totalAmmount;
+        this.inStock = inStock;
+        this.event = event;
+    }
+
 
     @Override
     public String toString() {

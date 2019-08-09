@@ -12,6 +12,8 @@ import { UserDetailsComponent } from './account-details/user-details/user-detail
 import { CompanyDetailsComponent } from './account-details/company-details/company-details.component';
 import { FinalizeOrderDialogComponent } from './finalize-order-dialog/finalize-order-dialog.component';
 import { PaymentOptionsComponent } from './payment-options/payment-options.component';
+import { BookingEffects } from './store/booking.effects';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
     declarations: [
@@ -28,7 +30,9 @@ import { PaymentOptionsComponent } from './payment-options/payment-options.compo
         CommonModule,
         SharedModule,
         BookRoutingModule,
-        StoreModule.forFeature('booking', bookingReducer)
+        StoreModule.forFeature('booking', bookingReducer),
+        EffectsModule.forFeature([BookingEffects])
+
     ],
     entryComponents: [
         FinalizeOrderDialogComponent

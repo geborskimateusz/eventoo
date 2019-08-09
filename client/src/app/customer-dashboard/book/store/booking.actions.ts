@@ -1,12 +1,14 @@
 import { Action } from '@ngrx/store';
 import { Ticket } from 'src/app/shared/model/ticket-model';
 import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
-// import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
+import { Order } from 'src/app/shared/model/order.model';
+
 
 export enum BookingActionTypes {
     AddAllTickets = '[Booking API] Tickets Added',
     SaveOrUpdateTicket = '[Booking API] Save Or Update Ticket',
-    DeleteTicket = '[Booking API] DeleteTicket'
+    DeleteTicket = '[Booking API] DeleteTicket',
+    BookTickets = '[Booking API] Book Tickets'
 }
 
 export class AddAllTickets implements Action {
@@ -24,7 +26,13 @@ export class DeleteTicket implements Action {
     constructor(public payload: { ticketId: number }) { }
 }
 
+export class BookTickets implements Action {
+    readonly type = BookingActionTypes.BookTickets;
+    constructor(public payload: {order: Order}) {}
+}
+
 export type BookingActions =
     AddAllTickets |
     SaveOrUpdateTicket |
-    DeleteTicket;
+    DeleteTicket |
+    BookTickets;
