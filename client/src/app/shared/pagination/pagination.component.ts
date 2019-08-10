@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { PaginationService } from './pagination.service';
 
 @Component({
   selector: 'app-pagination',
@@ -10,7 +11,13 @@ export class PaginationComponent implements OnInit {
   // itemsPerPage = 15;
   currentPage = 1;
 
-  constructor() { }
+  constructor(private paginationService: PaginationService) {
+    this.paginationService.poinerReset$.subscribe(
+      firstPage => {
+        this.currentPage = firstPage;
+      }
+    )
+   }
 
   ngOnInit() {
   }
@@ -41,7 +48,6 @@ export class PaginationComponent implements OnInit {
       for (let i = this.currentPage - 1; i <= this.currentPage + 1; i++) {
         arr.push(i);
       }
-      console.log(arr);
       return arr;
     }
   }

@@ -8,6 +8,7 @@ import { EventsRequested } from './store/events.actions';
 import { map } from 'rxjs/operators';
 import { MusicGenre } from 'src/app/shared/model/music-genres.model';
 import { MatTabChangeEvent } from '@angular/material';
+import { PaginationService } from 'src/app/shared/pagination/pagination.service';
 
 @Component({
   selector: 'app-events',
@@ -17,8 +18,11 @@ import { MatTabChangeEvent } from '@angular/material';
 export class EventsComponent implements OnInit {
 
   genresTabs: any[] = [];
+
+  currentTab: MusicGenre = MusicGenre.ALL;
   
-  constructor(private store: Store<AppState>) {
+  constructor(private store: Store<AppState>,
+              private paginationService: PaginationService) {
   }
 
   ngOnInit() {
@@ -26,7 +30,7 @@ export class EventsComponent implements OnInit {
     this.initMatTabs();
 
     //initial request
-    this.store.dispatch(new EventsRequested({musicGenre: MusicGenre.ALL, pageNum: 0}));
+    this.store.dispatch(new EventsRequested({musicGenre: this.currentTab, pageNum: 0}));
   }
 
 
@@ -36,7 +40,14 @@ export class EventsComponent implements OnInit {
 
 
   tabChanged(tabChangeEvent: MatTabChangeEvent): void {
-    console.log('tabChangeEvent => ', tabChangeEvent.tab.textLabel);
+
+    const activePage = tabChangeEvent.tab.textLabel;
+
+    if(activePage !== this.currentTab) {
+      this.paginationService.resetPointer();
+      this.currentTab = MusicGenre[activePage];
+    }
+    
   }
 
   
