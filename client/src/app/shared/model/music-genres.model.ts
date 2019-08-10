@@ -1,4 +1,5 @@
 export enum MusicGenres {
+    ALL = 'All',
     DANCE = 'Dance',
     POP = 'Pop',
     ELECTRONIC = 'Electronic',
@@ -9,5 +10,5 @@ export enum MusicGenres {
     METAL = 'Metal',
     FOLK = 'Folk',
     REGGAE = 'Reggae',
-    SOUL = 'Soul'
+    SOUL = 'Soul',
 }

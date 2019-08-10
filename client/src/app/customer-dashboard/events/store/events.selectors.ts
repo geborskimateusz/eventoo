@@ -1,6 +1,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { EventsState } from './events.reducers';
 import * as fromEvents from './events.reducers'
+import { MusicGenres } from 'src/app/shared/model/music-genres.model';
 export const selectEventsState = createFeatureSelector<EventsState>("events");
 
 export const selectEventById = (eventId: number) => createSelector(
@@ -15,7 +16,11 @@ export const selectAllEvents = createSelector(
 
 export const selectEventsByGenre = (musicGenre: string) => createSelector(
     selectAllEvents,
-    events => events.filter(event => event.genre === musicGenre)
+    events => events.filter(
+        event =>
+            musicGenre === MusicGenres.ALL ?
+                fromEvents.selectAll : event.genre === musicGenre
+    )
 );
 
 export const selectAllEventsLoaded = createSelector(
