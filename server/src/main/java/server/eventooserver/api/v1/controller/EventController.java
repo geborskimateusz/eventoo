@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import server.eventooserver.api.v1.dto.EventDTO;
 import server.eventooserver.api.v1.dto.EventsDTO;
 import server.eventooserver.api.v1.service.EventService;
-import server.eventooserver.domain.Event;
+import server.eventooserver.domain.MusicGenre;
 
 import java.util.List;
 
@@ -24,10 +24,11 @@ public class EventController {
         this.eventService = eventService;
     }
 
-    @GetMapping
+    @GetMapping("/{musicGenre}")
     @ResponseStatus(HttpStatus.OK)
-    public List<EventDTO> findAll() {
-        return eventService.findAll();
+    public EventsDTO findByGenre(@PathVariable String musicGenre,
+                                 @RequestParam(value = "page", defaultValue = "0") Integer pageNum) {
+        return eventService.findByGenre(musicGenre, pageNum);
     }
 
     @PutMapping

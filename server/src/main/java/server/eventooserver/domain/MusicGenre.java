@@ -35,5 +35,9 @@ public enum MusicGenre {
     REGGAE,
 
     @JsonProperty("Soul")
-    SOUL
+    SOUL,
+
+    @JsonProperty("All")
+    ALL;
+
 }
