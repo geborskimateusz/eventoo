@@ -49,31 +49,24 @@ public class EventServiceImpl implements EventService {
     @Override
     public EventsDTO findByGenre(String genre, Integer pageNum) {
 
-        System.out.println(genre + " " + pageNum);
+        MusicGenre musicGenre = parseMusicGenre(genre);
 
-        List<Event> events = new ArrayList<>();
+        Pageable pageAbleRequest = getPageAbleRequest(pageNum);
 
-        if (allEventsRequested(genre)) {
-            eventRepository.findAll(getPageAbleRequest(pageNum))
-                    .iterator().forEachRemaining(events::add);
-        } else {
-            eventRepository.findByGenre(parseMusicGenre(genre), getPageAbleRequest(pageNum))
-                    .get()
-                    .iterator().forEachRemaining(events::add);
-        }
-
-        log.info("\n\n\n List size = " + events.size() + " \n\n\n");
+        Page<Event> eventPage = allEventsRequested(musicGenre) ?
+                eventRepository.findAll(pageAbleRequest) :
+                eventRepository.findByGenre(musicGenre, pageAbleRequest);
 
         return EventsDTO.builder()
                 .events(
-                        events.stream()
+                        eventPage.get()
                                 .map(eventMapper::eventToEventDTO)
                                 .collect(Collectors.toList())
                 ).build();
     }
 
-    private boolean allEventsRequested(String genre) {
-        return parseMusicGenre(genre).equals(MusicGenre.ALL);
+    private boolean allEventsRequested(MusicGenre genre) {
+        return genre.equals(MusicGenre.ALL);
     }
 
     private MusicGenre parseMusicGenre(String genre) {
