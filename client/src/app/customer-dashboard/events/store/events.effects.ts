@@ -2,7 +2,7 @@ import { first, mergeMap, map, withLatestFrom, filter } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { Action, Store, select } from '@ngrx/store';
-import { EventsActionTypes, EventRequested, EventLoaded, AllEventsRequested, AllEventsLoaded } from './events.actions';
+import { EventsActionTypes, EventRequested, EventLoaded, EventsRequested, EventsLoaded } from './events.actions';
 import { EVENTS_DATASOURCE } from 'src/app/shared/fake-datasource/events-datasource';
 import { of } from 'rxjs';
 import { AppState } from 'src/app/store';
@@ -29,16 +29,18 @@ export class EventsEffects {
 
     @Effect()
     loadEvents$ = this.actions$.pipe(
-        ofType<AllEventsRequested>(EventsActionTypes.AllEventsRequested),
-        withLatestFrom(this.store.pipe(select(selectAllEventsLoaded))),
-        filter(([action, allEventsLoaded]) => !allEventsLoaded),
+        ofType<EventsRequested>(EventsActionTypes.EventsRequested),
+        // withLatestFrom(this.store.pipe(select(selectAllEventsLoaded))),
+        // filter(([action, allEventsLoaded]) => !allEventsLoaded),
 
         //here should be request to server
-        mergeMap(() => {
-            return this.httpClient.get<Event[]>('http://localhost:8080/api/v1/events')
+        mergeMap((action) => {
+            return this.httpClient.get<Event[]>(`http://localhost:8080/api/v1/events/${action.payload.musicGenre}?page=${action.payload.pageNum}`)
         }),
-        map(events => {
+        map((eventsArr: any) => {
+            console.log(eventsArr)
+            let events = eventsArr.events;
             events.forEach(event => event.date = new Date(event.date))
-            return new AllEventsLoaded({ events })
+            return new EventsLoaded({ events })
         }));
 }

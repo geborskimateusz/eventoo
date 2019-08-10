@@ -1,4 +1,4 @@
-import { MusicGenres } from './music-genres.model';
+import { MusicGenre } from './music-genres.model';
 import { Ticket } from './ticket-model';
 import { Location } from './location.model';
 
@@ -8,7 +8,7 @@ export interface Event {
     description: string,
     date: Date,
     img: string,
-    genre: MusicGenres,
+    genre: MusicGenre,
     location: Location,
     tickets: Ticket[]
 }

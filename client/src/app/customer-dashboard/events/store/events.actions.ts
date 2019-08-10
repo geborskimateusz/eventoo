@@ -1,11 +1,12 @@
 import { Action } from '@ngrx/store';
 import { Event } from 'src/app/shared/model/event.model';
+import { MusicGenre } from 'src/app/shared/model/music-genres.model';
 
 export enum EventsActionTypes {
     EventRequested = '[View Event Page] Event Requested',
     EventLoaded = '[Events API] Event Loaded',
-    AllEventsRequested = '[View Events Page] All Events Requested',
-    AllEventsLoaded = '[View Events Page] All Events Loaded'
+    EventsRequested = '[View Events Page] Events Requested',
+    EventsLoaded = '[View Events Page] Events Loaded'
 }
 
 
@@ -19,18 +20,18 @@ export class EventLoaded implements Action {
     constructor(public payload: { event: Event }) { }
 }
 
-export class AllEventsRequested implements Action {
-    readonly type = EventsActionTypes.AllEventsRequested;
-    constructor() { }
+export class EventsRequested implements Action {
+    readonly type = EventsActionTypes.EventsRequested;
+    constructor(public payload: {musicGenre: MusicGenre, pageNum: number}) { }
 }
 
-export class AllEventsLoaded implements Action {
-    readonly type = EventsActionTypes.AllEventsLoaded;
+export class EventsLoaded implements Action {
+    readonly type = EventsActionTypes.EventsLoaded;
     constructor(public payload: { events: Event[] }) { }
 }
 
 export type EventsActions = 
 EventRequested | 
 EventLoaded | 
-AllEventsRequested | 
-AllEventsLoaded;
+EventsRequested | 
+EventsLoaded;

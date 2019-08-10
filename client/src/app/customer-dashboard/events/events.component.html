@@ -1,7 +1,7 @@
 <section class="homes">
 
-    <mat-tab-group>
-        <mat-tab *ngFor="let genreTab of genresTabs" [label]="genreTab">
+    <mat-tab-group (selectedTabChange)="tabChanged($event)">
+        <mat-tab *ngFor="let genreTab of genresTabs" [label]="genreTab" >
             <app-events-card-list [musicGenre]="genreTab">
             </app-events-card-list>
           </mat-tab>

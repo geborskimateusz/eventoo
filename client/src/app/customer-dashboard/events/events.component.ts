@@ -4,9 +4,10 @@ import { Observable, of } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
 import { selectAllEvents } from './store/events.selectors';
-import { AllEventsRequested } from './store/events.actions';
+import { EventsRequested } from './store/events.actions';
 import { map } from 'rxjs/operators';
-import { MusicGenres } from 'src/app/shared/model/music-genres.model';
+import { MusicGenre } from 'src/app/shared/model/music-genres.model';
+import { MatTabChangeEvent } from '@angular/material';
 
 @Component({
   selector: 'app-events',
@@ -24,12 +25,18 @@ export class EventsComponent implements OnInit {
 
     this.initMatTabs();
 
-    this.store.dispatch(new AllEventsRequested());
+    //initial request
+    this.store.dispatch(new EventsRequested({musicGenre: MusicGenre.ALL, pageNum: 0}));
   }
 
 
   initMatTabs() {
-    this.genresTabs = Object.values(MusicGenres);
+    this.genresTabs = Object.values(MusicGenre);
+  }
+
+
+  tabChanged(tabChangeEvent: MatTabChangeEvent): void {
+    console.log('tabChangeEvent => ', tabChangeEvent.tab.textLabel);
   }
 
   
