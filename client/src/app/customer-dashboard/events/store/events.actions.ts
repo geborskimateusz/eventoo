@@ -10,6 +10,11 @@ export enum EventsActionTypes {
     EventsPageCancelled = '[View Events Page] Events Page Cancelled'
 }
 
+export interface PageQuery {
+    pageIndex: number,
+    pageSize: number
+}
+
 
 export class EventRequested implements Action {
     readonly type = EventsActionTypes.EventRequested;
@@ -23,7 +28,7 @@ export class EventLoaded implements Action {
 
 export class EventsPageRequested implements Action {
     readonly type = EventsActionTypes.EventsPageRequested;
-    constructor(public payload: {musicGenre: MusicGenre, pageNum: number}) { }
+    constructor(public payload: { musicGenre: MusicGenre, page: PageQuery }) { }
 }
 
 export class EventsPageLoaded implements Action {
@@ -31,8 +36,13 @@ export class EventsPageLoaded implements Action {
     constructor(public payload: { events: Event[] }) { }
 }
 
-export type EventsActions = 
-EventRequested | 
-EventLoaded | 
-EventsPageRequested | 
-EventsPageLoaded;
+export class EventsPageCancelled implements Action {
+    readonly type = EventsActionTypes.EventsPageCancelled
+}
+
+export type EventsActions =
+    EventRequested
+    | EventLoaded
+    | EventsPageRequested
+    | EventsPageLoaded
+   | EventsPageCancelled;

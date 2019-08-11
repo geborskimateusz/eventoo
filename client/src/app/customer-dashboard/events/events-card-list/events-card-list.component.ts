@@ -5,7 +5,7 @@ import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
 import { EVENTS_DATASOURCE } from 'src/app/shared/fake-datasource/events-datasource';
 import { map } from 'rxjs/operators';
-import { selectAllEvents, selectEventsByGenre } from '../store/events.selectors';
+import { selectAllEvents, selectEventsByGenre, selectEventsPageByGenre } from '../store/events.selectors';
 import { EventsPageRequested } from '../store/events.actions';
 import { Ticket } from 'src/app/shared/model/ticket-model';
 import { PaginationService } from 'src/app/shared/pagination/pagination.service';
@@ -27,8 +27,13 @@ export class EventsCardListComponent implements OnInit {
 
   ngOnInit() {
 
+    // this.events$ = this.store.pipe(
+    //   select(selectEventsByGenre(this.musicGenre))
+    // );
+
     this.events$ = this.store.pipe(
-      select(selectEventsByGenre(this.musicGenre))
+      () => this.paginationService.page$,
+      map(pageIndex => select(selectEventsPageByGenre(this.musicGenre, {pageIndex, pageSize: 3})))
     );
    
   }

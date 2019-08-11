@@ -33,7 +33,10 @@ export class EventsComponent implements OnInit {
     this.paginationService.page$.subscribe(number => {
       this.store.dispatch(new EventsPageRequested({
         musicGenre: this.currentTab,
-        pageNum: number - 1
+        page: {
+          pageIndex: number,
+          pageSize: 3
+        }
       }));
     })
   }

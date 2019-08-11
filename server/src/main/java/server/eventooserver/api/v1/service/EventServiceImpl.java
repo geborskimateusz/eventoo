@@ -22,7 +22,9 @@ import java.util.stream.Collectors;
 @Slf4j
 public class EventServiceImpl implements EventService {
 
-    public static final int EVENTS_PER_PAGE = 6;
+    //TODO REFACTOR HARDCODED -> SET VAL BY REQUEST
+    public static final int EVENTS_PER_PAGE = 3;
+
     private final EventRepository eventRepository;
 
     private EventMapper eventMapper = EventMapper.INSTANCE;
