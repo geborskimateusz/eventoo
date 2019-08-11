@@ -6,8 +6,10 @@ import { AppState } from 'src/app/store';
 import { EVENTS_DATASOURCE } from 'src/app/shared/fake-datasource/events-datasource';
 import { map } from 'rxjs/operators';
 import { selectAllEvents, selectEventsByGenre } from '../store/events.selectors';
-import { EventsRequested } from '../store/events.actions';
+import { EventsPageRequested } from '../store/events.actions';
 import { Ticket } from 'src/app/shared/model/ticket-model';
+import { PaginationService } from 'src/app/shared/pagination/pagination.service';
+import { MusicGenre } from 'src/app/shared/model/music-genres.model';
 @Component({
   selector: 'app-events-card-list',
   templateUrl: './events-card-list.component.html',
@@ -20,15 +22,15 @@ export class EventsCardListComponent implements OnInit {
   events$: Observable<Event[]>;
 
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<AppState>,
+    private paginationService: PaginationService) { }
 
   ngOnInit() {
-
-    console.log('clicked on ' + this.musicGenre)
 
     this.events$ = this.store.pipe(
       select(selectEventsByGenre(this.musicGenre))
     );
+   
   }
 
   getDate(event: Event) {
@@ -39,7 +41,5 @@ export class EventsCardListComponent implements OnInit {
     const prices = tickets.map(ticket => ticket.price);
     return prices.reduce((acc, currentVal) => Math.min(acc, currentVal));
   }
-
- 
 
 }

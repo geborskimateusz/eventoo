@@ -4,14 +4,18 @@ import { Subject } from 'rxjs';
 @Injectable()
 export class PaginationService {
 
-    private paginationPointerResetSource = new Subject<number>();
+    private paginationPageSource = new Subject<number>();
 
-    poinerReset$ = this.paginationPointerResetSource.asObservable();
+    page$ = this.paginationPageSource.asObservable();
 
     resetPointer() {
-        const firstPAge = 1;
+        const firstPage = 1;
 
-        this.paginationPointerResetSource.next(firstPAge);
+        this.paginationPageSource.next(firstPage);
+    }
+
+    pageChange(page: number) {
+        this.paginationPageSource.next(page);
     }
     
     

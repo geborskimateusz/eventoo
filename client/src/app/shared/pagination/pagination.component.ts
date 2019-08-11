@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { PaginationService } from './pagination.service';
 
 @Component({
@@ -9,10 +9,11 @@ import { PaginationService } from './pagination.service';
 export class PaginationComponent implements OnInit {
 
   // itemsPerPage = 15;
+
   currentPage = 1;
 
   constructor(private paginationService: PaginationService) {
-    this.paginationService.poinerReset$.subscribe(
+    this.paginationService.page$.subscribe(
       firstPage => {
         this.currentPage = firstPage;
       }
@@ -20,16 +21,26 @@ export class PaginationComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.changePage();
   }
 
   decrementPage() {
     if (this.currentPage !== 1) {
       this.currentPage--;
+      this.changePage();
     }
   }
 
   incrementPage() {
     this.currentPage++;
+    this.changePage();
+  }
+
+  private changePage() {
+    //pagination starts from 0, here default page is 0
+    let page = this.currentPage;
+    console.log(page)
+    this.paginationService.pageChange(page);
   }
 
   isPageSingle(): boolean {

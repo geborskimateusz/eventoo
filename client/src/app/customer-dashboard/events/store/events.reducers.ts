@@ -18,8 +18,8 @@ export function eventsReducer(state = initialEventsState, action: EventsActions)
         case EventsActionTypes.EventLoaded:
             return adapter.addOne(action.payload.event, state);
 
-        case EventsActionTypes.EventsLoaded:
-            return adapter.addAll(
+        case EventsActionTypes.EventsPageLoaded:
+            return adapter.upsertMany(
                 action.payload.events,
                  {...state, allEventsLoaded: true});
 

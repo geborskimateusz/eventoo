@@ -5,8 +5,9 @@ import { MusicGenre } from 'src/app/shared/model/music-genres.model';
 export enum EventsActionTypes {
     EventRequested = '[View Event Page] Event Requested',
     EventLoaded = '[Events API] Event Loaded',
-    EventsRequested = '[View Events Page] Events Requested',
-    EventsLoaded = '[View Events Page] Events Loaded'
+    EventsPageRequested = '[View Events Page] Events Page Requested',
+    EventsPageLoaded = '[View Events Page] Events Page Loaded',
+    EventsPageCancelled = '[View Events Page] Events Page Cancelled'
 }
 
 
@@ -20,18 +21,18 @@ export class EventLoaded implements Action {
     constructor(public payload: { event: Event }) { }
 }
 
-export class EventsRequested implements Action {
-    readonly type = EventsActionTypes.EventsRequested;
+export class EventsPageRequested implements Action {
+    readonly type = EventsActionTypes.EventsPageRequested;
     constructor(public payload: {musicGenre: MusicGenre, pageNum: number}) { }
 }
 
-export class EventsLoaded implements Action {
-    readonly type = EventsActionTypes.EventsLoaded;
+export class EventsPageLoaded implements Action {
+    readonly type = EventsActionTypes.EventsPageLoaded;
     constructor(public payload: { events: Event[] }) { }
 }
 
 export type EventsActions = 
 EventRequested | 
 EventLoaded | 
-EventsRequested | 
-EventsLoaded;
+EventsPageRequested | 
+EventsPageLoaded;
