@@ -4,7 +4,7 @@ import { Observable, of, forkJoin } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
 import { EVENTS_DATASOURCE } from 'src/app/shared/fake-datasource/events-datasource';
-import { map, tap, startWith, delay, switchMap } from 'rxjs/operators';
+import { map, tap, startWith, delay, switchMap, filter, concat, concatMap, mergeMap } from 'rxjs/operators';
 import { selectAllEvents, selectEventsByGenre, selectEventsPageByGenre } from '../store/events.selectors';
 import { EventsPageRequested } from '../store/events.actions';
 import { Ticket } from 'src/app/shared/model/ticket-model';
@@ -27,23 +27,34 @@ export class EventsCardListComponent implements OnInit {
     private paginationService: PaginationService) { }
 
   ngOnInit() {
-    this.paginationService.page$.subscribe(pageIndex => {
-      console.log(MusicGenre[this.musicGenre.toUpperCase()], pageIndex)
-      this.store.dispatch(new EventsPageRequested({
-        musicGenre: MusicGenre[this.musicGenre.toUpperCase()],
-        page: {
-          pageIndex: pageIndex,
-          pageSize: 6
-        }
-      }));
-    });
+  
 
     this.events$ = this.paginationService.page$.pipe(
       switchMap(pageIndex => this.store.pipe(
         delay(0),
-        tap(() => console.log(pageIndex, this.musicGenre)),
-        select(selectEventsPageByGenre(this.musicGenre, { pageIndex: pageIndex, pageSize:  3}))))
-    )
+
+        //get objects from store
+        select(selectEventsPageByGenre(this.musicGenre, { pageIndex: pageIndex, pageSize: 3 })),
+
+        map(events => {
+
+          if (events.length > 0) {
+            return events;
+          }
+          
+          this.store.dispatch(new EventsPageRequested({
+            musicGenre: MusicGenre[this.musicGenre.toUpperCase()],
+            page: {
+              pageIndex: pageIndex,
+              pageSize: 6
+            }
+          }));
+    
+          return [];
+        })
+      ))
+    );
+
   }
 
 

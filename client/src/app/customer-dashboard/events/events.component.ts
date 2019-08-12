@@ -26,20 +26,7 @@ export class EventsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('initialize EventsComponent')
-
     this.initMatTabs();
-
-    // this.paginationService.page$.subscribe(pageIndex => {
-    //   console.log(this.currentTab, pageIndex)
-    //   this.store.dispatch(new EventsPageRequested({
-    //     musicGenre: this.currentTab,
-    //     page: {
-    //       pageIndex: pageIndex,
-    //       pageSize: 3
-    //     }
-    //   }));
-    // });
   }
 
 
