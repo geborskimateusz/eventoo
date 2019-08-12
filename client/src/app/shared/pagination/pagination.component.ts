@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { PaginationService } from './pagination.service';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pagination',
@@ -15,7 +16,9 @@ export class PaginationComponent implements OnInit {
   constructor(private paginationService: PaginationService) { }
 
   ngOnInit() {
-    this.paginationService.page$.subscribe(
+    this.paginationService.page$.pipe(
+      delay(0)
+    ).subscribe(
       firstPage => {
         this.currentPage = firstPage;
       }
@@ -54,7 +57,7 @@ export class PaginationComponent implements OnInit {
 
   generatePages(): number[] {
     if (this.isPageArrInitialized()) {
-      return [1, 2];
+      return [0, 1];
     } else {
       let arr: number[] = [];
       for (let i = this.currentPage - 1; i <= this.currentPage + 1; i++) {

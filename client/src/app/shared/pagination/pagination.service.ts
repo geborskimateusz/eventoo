@@ -9,7 +9,7 @@ export class PaginationService {
     page$ = this.paginationPageSource.asObservable();
 
     resetPointer() {
-        const firstPage = 1;
+        const firstPage = 0;
 
         this.paginationPageSource.next(firstPage);
     }

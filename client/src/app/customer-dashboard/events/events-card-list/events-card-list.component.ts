@@ -27,12 +27,22 @@ export class EventsCardListComponent implements OnInit {
     private paginationService: PaginationService) { }
 
   ngOnInit() {
+    // this.paginationService.page$.subscribe(pageIndex => {
+    //   console.log(MusicGenre[this.musicGenre.toUpperCase()], pageIndex)
+    //   this.store.dispatch(new EventsPageRequested({
+    //     musicGenre: MusicGenre[this.musicGenre.toUpperCase()],
+    //     page: {
+    //       pageIndex: pageIndex,
+    //       pageSize: 6
+    //     }
+    //   }));
+    // });
 
     this.events$ = this.paginationService.page$.pipe(
       switchMap(pageIndex => this.store.pipe(
         delay(0),
         tap(() => console.log(pageIndex, this.musicGenre)),
-        select(selectEventsPageByGenre(this.musicGenre, { pageIndex: pageIndex, pageSize: 6 }))))
+        select(selectEventsPageByGenre(this.musicGenre, { pageIndex: pageIndex, pageSize:  3}))))
     )
   }
 

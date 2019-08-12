@@ -36,10 +36,10 @@ export class EventsComponent implements OnInit {
         musicGenre: this.currentTab,
         page: {
           pageIndex: pageIndex,
-          pageSize: 6
+          pageSize: 3
         }
       }));
-    })
+    });
   }
 
 
@@ -53,6 +53,7 @@ export class EventsComponent implements OnInit {
     const activePage = tabChangeEvent.tab.textLabel;
 
     if (activePage !== this.currentTab) {
+      console.log('reset page')
       this.paginationService.resetPointer();
       this.currentTab = MusicGenre[activePage.toUpperCase()];
     }
