@@ -1,4 +1,4 @@
-import { first, mergeMap, map, withLatestFrom, filter } from 'rxjs/operators';
+import { first, mergeMap, map, withLatestFrom, filter, shareReplay, tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { Action, Store, select } from '@ngrx/store';
@@ -32,11 +32,11 @@ export class EventsEffects {
     @Effect()
     loadEvents$ = this.actions$.pipe(
         ofType<EventsPageRequested>(EventsActionTypes.EventsPageRequested),
+        tap(() => console.log('request')),
         mergeMap((action) => {
-            return this.httpClient.get<Event[]>(`http://localhost:8080/api/v1/events/${action.payload.musicGenre}?page=${action.payload.page}`)
+            return this.httpClient.get<Event[]>(`http://localhost:8080/api/v1/events/${action.payload.musicGenre}?page=${action.payload.page.pageIndex}`)
         }),
         map((eventsArr: any) => {
-            console.log(eventsArr)
             let events = eventsArr.events;
             events.forEach(event => event.date = new Date(event.date))
             return new EventsPageLoaded({ events })

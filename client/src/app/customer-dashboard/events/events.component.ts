@@ -26,6 +26,7 @@ export class EventsComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('initialize EventsComponent')
 
     this.initMatTabs();
 

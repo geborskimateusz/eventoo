@@ -28,6 +28,9 @@ public class EventController {
     @ResponseStatus(HttpStatus.OK)
     public EventsDTO findByGenre(@PathVariable String musicGenre,
                                  @RequestParam(value = "page", defaultValue = "0") Integer pageNum) {
+
+        log.info("Request for page " + pageNum + ", genre " + musicGenre);
+
         return eventService.findByGenre(musicGenre, pageNum);
     }
 
