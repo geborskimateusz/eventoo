@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 public class EventServiceImpl implements EventService {
 
     //TODO REFACTOR HARDCODED -> SET VAL BY REQUEST
-    public static final int EVENTS_PER_PAGE = 3;
+    public static final int EVENTS_PER_PAGE = 6;
 
     private final EventRepository eventRepository;
 

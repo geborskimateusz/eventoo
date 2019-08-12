@@ -17,6 +17,7 @@ export class PaginationService {
     pageChange(page: number) {
         this.paginationPageSource.next(page);
     }
-    
-    
+
 }
+
+export const PAGE_SIZE: number = 6;
