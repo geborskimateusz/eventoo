@@ -12,7 +12,7 @@ export enum EventsActionTypes {
 
 export interface PageQuery {
     pageIndex: number,
-    pageSize: number
+    pageSize?: number
 }
 
 

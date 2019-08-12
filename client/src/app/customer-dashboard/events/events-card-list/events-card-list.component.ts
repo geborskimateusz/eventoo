@@ -30,22 +30,11 @@ export class EventsCardListComponent implements OnInit {
 
     this.events$ = this.paginationService.page$.pipe(
       switchMap(pageIndex => this.store.pipe(
+        delay(0),
         tap(() => console.log(pageIndex, this.musicGenre)),
-        select(selectEventsPageByGenre(this.musicGenre, { pageIndex: pageIndex, pageSize: 3 }))))
+        select(selectEventsPageByGenre(this.musicGenre, { pageIndex: pageIndex, pageSize: 6 }))))
     )
   }
-
-
-
-  // this.paginationService.page$.subscribe(
-  //   pageIndex => {
-  //     this.events$ = this.store.pipe(
-  //       tap(() => console.log(this.musicGenre, pageIndex)),
-  //       select(selectEventsPageByGenre(this.musicGenre, { pageIndex: pageIndex, pageSize: 3 })),
-  //     );
-  //   }
-  // )
-
 
 
   getDate(event: Event) {

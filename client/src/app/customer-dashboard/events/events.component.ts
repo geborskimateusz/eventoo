@@ -36,7 +36,7 @@ export class EventsComponent implements OnInit {
         musicGenre: this.currentTab,
         page: {
           pageIndex: pageIndex,
-          pageSize: 3
+          pageSize: 6
         }
       }));
     })
