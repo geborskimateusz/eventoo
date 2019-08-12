@@ -10,9 +10,9 @@ export class PaginationComponent implements OnInit {
 
   // itemsPerPage = 15;
 
-  currentPage = 1;
+  currentPage = 0;
 
-  constructor(private paginationService: PaginationService) {}
+  constructor(private paginationService: PaginationService) { }
 
   ngOnInit() {
     this.paginationService.page$.subscribe(
@@ -25,7 +25,7 @@ export class PaginationComponent implements OnInit {
   }
 
   decrementPage() {
-    if (this.currentPage !== 1) {
+    if (this.currentPage !== 0) {
       this.currentPage--;
       this.changePage();
     }
@@ -36,23 +36,24 @@ export class PaginationComponent implements OnInit {
     this.changePage();
   }
 
+  showPage(page: number) {
+    return page + 1;
+  }
+
   private changePage() {
-    //pagination starts from 0, here default page is 0
-    let page = this.currentPage;
-    console.log(page)
-    this.paginationService.pageChange(page);
+    this.paginationService.pageChange(this.currentPage);
   }
 
   isPageSingle(): boolean {
+    return this.currentPage == 0;
+  }
+
+  isPageArrInitialized(): boolean {
     return this.currentPage == 1;
   }
 
-  isPageDouble(): boolean {
-    return this.currentPage == 2;
-  }
-
   generatePages(): number[] {
-    if (this.isPageDouble()) {
+    if (this.isPageArrInitialized()) {
       return [1, 2];
     } else {
       let arr: number[] = [];
