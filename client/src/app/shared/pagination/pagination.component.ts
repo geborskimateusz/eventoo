@@ -12,15 +12,15 @@ export class PaginationComponent implements OnInit {
 
   currentPage = 1;
 
-  constructor(private paginationService: PaginationService) {
+  constructor(private paginationService: PaginationService) {}
+
+  ngOnInit() {
     this.paginationService.page$.subscribe(
       firstPage => {
         this.currentPage = firstPage;
       }
     )
-   }
 
-  ngOnInit() {
     this.changePage();
   }
 

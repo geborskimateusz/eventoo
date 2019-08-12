@@ -30,12 +30,12 @@ export class EventsComponent implements OnInit {
 
     this.initMatTabs();
 
-    //initial request
-    this.paginationService.page$.subscribe(number => {
+    this.paginationService.page$.subscribe(pageIndex => {
+      console.log(this.currentTab, pageIndex)
       this.store.dispatch(new EventsPageRequested({
         musicGenre: this.currentTab,
         page: {
-          pageIndex: number,
+          pageIndex: pageIndex,
           pageSize: 3
         }
       }));
@@ -56,6 +56,8 @@ export class EventsComponent implements OnInit {
       this.paginationService.resetPointer();
       this.currentTab = MusicGenre[activePage.toUpperCase()];
     }
+
+    console.log(this.currentTab)
   }
 
 
