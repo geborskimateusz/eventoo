@@ -1,3 +1,5 @@
+import { map } from 'rxjs/operators';
+
 export enum MusicGenre {
   ALL = 'All',
   DANCE = 'Dance',
@@ -11,4 +13,8 @@ export enum MusicGenre {
   FOLK = 'Folk',
   REGGAE = 'Reggae',
   SOUL = 'Soul',
+}
+
+export const genreToEnum = (musicGenre: string) => {
+   return MusicGenre[musicGenre.toUpperCase().replace(/-/g, "_")];
 }

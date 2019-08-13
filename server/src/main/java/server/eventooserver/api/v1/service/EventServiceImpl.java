@@ -72,7 +72,7 @@ public class EventServiceImpl implements EventService {
     }
 
     private MusicGenre parseMusicGenre(String genre) {
-        return MusicGenre.valueOf(genre.toUpperCase());
+        return MusicGenre.valueOf(genre.toUpperCase().replace("-", "_"));
     }
 
     private Pageable getPageAbleRequest(Integer pageNum) {

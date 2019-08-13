@@ -1,5 +1,4 @@
 import { Component, OnInit, ɵConsole } from '@angular/core';
-import { EVENTS_DATASOURCE } from 'src/app/shared/fake-datasource/events-datasource';
 import { Observable, of } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
@@ -40,12 +39,8 @@ export class EventsComponent implements OnInit {
     const activePage = tabChangeEvent.tab.textLabel;
 
     if (activePage !== this.currentTab) {
-      console.log('reset page')
       this.paginationService.resetPointer();
-      this.currentTab = MusicGenre[activePage.toUpperCase()];
     }
-
-    console.log(this.currentTab)
   }
 
 
