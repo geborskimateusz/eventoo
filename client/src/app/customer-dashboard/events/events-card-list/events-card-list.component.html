@@ -33,7 +33,11 @@
   </button>
 </div>
 
-<div *ngIf="isLoading$ | async" class="spinner-container">
+<div *ngIf="(isEmpty$ | async)" class="condition-container">
+  <img src="../../../../assets/img/mirage-list-is-empty.png" alt="https://icons8.com" class="condition-container--img">
+</div>
+
+<div *ngIf="isLoading$ | async" class="condition-container">
   <mat-spinner></mat-spinner>
 </div>
 

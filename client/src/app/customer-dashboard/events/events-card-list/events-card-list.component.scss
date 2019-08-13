@@ -12,12 +12,16 @@
   padding: 5rem;
 }
 
-.spinner-container {
+.condition-container {
   display: grid;
   grid-template-columns: 1fr;
   grid-column: 1 / -1;
   justify-items: center;
   align-content: center;
+
+  &--img {
+    width: 40%;
+  }
 }
 
 .home {

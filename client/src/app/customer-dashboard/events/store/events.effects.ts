@@ -17,16 +17,6 @@ export class EventsEffects {
         private store: Store<AppState>,
         private httpClient: HttpClient) { }
 
-    // @Effect()
-    // loadEvent$ = this.actions$.pipe(
-    //     ofType<EventRequested>(EventsActionTypes.EventRequested),
-    //     // withLatestFrom(this.store.pipe(select(selectAllEventsLoaded))),
-    //     // filter(([action, allEventsLoaded]) => !allEventsLoaded),
-    //     mergeMap((action) =>
-    //         //here should be request to server
-    //         of(EVENTS_DATASOURCE.find(event => event.id == action.payload.eventId))),
-    //     map(event => new EventLoaded({ event })))
-
 
     @Effect()
     loadEvents$ = this.actions$.pipe(

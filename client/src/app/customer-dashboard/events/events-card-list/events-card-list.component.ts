@@ -22,6 +22,7 @@ export class EventsCardListComponent implements OnInit {
   events$: Observable<Event[]>;
 
   isLoading$: Observable<boolean>;
+  isEmpty$: Observable<boolean>;
 
 
   constructor(private store: Store<AppState>,
@@ -52,6 +53,7 @@ export class EventsCardListComponent implements OnInit {
           return [];
         }),
         tap(events => {
+          this.isEmpty$ = of(this.isListEmpty(events))
           this.paginationService.isIncrementEnabled(events)
         })
       ))
@@ -68,5 +70,10 @@ export class EventsCardListComponent implements OnInit {
     const prices = tickets.map(ticket => ticket.price);
     return prices.reduce((acc, currentVal) => Math.min(acc, currentVal));
   }
+
+  isListEmpty(events: Event[]): boolean {
+    return events.length === 0;
+  }
+
 
 }
