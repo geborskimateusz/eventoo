@@ -22,6 +22,7 @@ export class EventsCardListComponent implements OnInit {
   events$: Observable<Event[]>;
 
   isLoading$: Observable<boolean>;
+
   isEmpty$: Observable<boolean>;
 
 
@@ -63,7 +64,7 @@ export class EventsCardListComponent implements OnInit {
 
 
   getDate(event: Event) {
-    return `${event.date.getMonth()}, ${event.date.getDay()}`;
+    return `${event.date.getDay()}.${event.date.getMonth()}..${event.date.getFullYear()}`;
   }
 
   getStandsTicketPrice(tickets: Ticket[]) {
