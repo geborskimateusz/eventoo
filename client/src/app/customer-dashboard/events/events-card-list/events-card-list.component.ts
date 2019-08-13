@@ -4,7 +4,7 @@ import { Observable, of, forkJoin } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
 import { map, tap, startWith, delay, switchMap, filter, concat, concatMap, mergeMap } from 'rxjs/operators';
-import { selectAllEvents, selectEventsByGenre, selectEventsPageByGenre } from '../store/events.selectors';
+import { selectAllEvents, selectEventsByGenre, selectEventsPageByGenre, selectEventsLoading } from '../store/events.selectors';
 import { EventsPageRequested } from '../store/events.actions';
 import { Ticket } from 'src/app/shared/model/ticket-model';
 import { PaginationService, PAGE_SIZE } from 'src/app/shared/pagination/pagination.service';
@@ -21,11 +21,15 @@ export class EventsCardListComponent implements OnInit {
 
   events$: Observable<Event[]>;
 
+  isLoading$: Observable<boolean>;
+
 
   constructor(private store: Store<AppState>,
     private paginationService: PaginationService) { }
 
   ngOnInit() {
+
+    this.isLoading$ = this.store.pipe(select(selectEventsLoading))
 
     this.events$ = this.paginationService.page$.pipe(
       switchMap(pageIndex => this.store.pipe(

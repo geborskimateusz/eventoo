@@ -3,13 +3,13 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { EventsActions, EventsActionTypes } from './events.actions';
 
 export interface EventsState extends EntityState<Event> {
-    allEventsLoaded: boolean;
+    loading: boolean;
 }
 
 export const adapter: EntityAdapter<Event> = createEntityAdapter<Event>();
 
 export const initialEventsState: EventsState = adapter.getInitialState({
-    allEventsLoaded: false
+    loading: false
 });
 
 export function eventsReducer(state = initialEventsState, action: EventsActions) {
@@ -18,10 +18,17 @@ export function eventsReducer(state = initialEventsState, action: EventsActions)
         case EventsActionTypes.EventLoaded:
             return adapter.addOne(action.payload.event, state);
 
+        case EventsActionTypes.EventsPageRequested:
+            return { ...state, loading: true }
+
         case EventsActionTypes.EventsPageLoaded:
             return adapter.upsertMany(
                 action.payload.events,
-                 {...state, allEventsLoaded: true});
+                {...state, loading: false
+                });
+
+        case EventsActionTypes.EventsPageCancelled:
+                return { ...state, loading: false }
 
         default: {
             return state;

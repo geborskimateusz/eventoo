@@ -26,7 +26,7 @@ export const selectEventsByGenre = (musicGenre: string) => createSelector(
 
 export const selectAllEventsLoaded = createSelector(
     selectEventsState,
-    eventsState => eventsState.allEventsLoaded
+    eventsState => eventsState.loading
 );
 
 export const selectEventsPageByGenre = (musicGenre: string, page: PageQuery) => createSelector(
@@ -37,5 +37,9 @@ export const selectEventsPageByGenre = (musicGenre: string, page: PageQuery) => 
 
         return events.slice(start, end);
         }
+)
 
+export const selectEventsLoading = createSelector(
+    selectEventsState,
+    state => state.loading
 )

@@ -12,6 +12,14 @@
   padding: 5rem;
 }
 
+.spinner-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column: 1 / -1;
+  justify-items: center;
+  align-content: center;
+}
+
 .home {
   background-color: $color-grey-light-2;
 
