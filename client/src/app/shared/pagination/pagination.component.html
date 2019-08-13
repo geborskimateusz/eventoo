@@ -9,5 +9,5 @@
             {{showPage(page)}}
           </a>
         </ng-template>
-        <a class="pagination__item" (click)="incrementPage()">&raquo;</a>
+        <a *ngIf="nextPageContainsEvents" class="pagination__item" (click)="incrementPage()">&raquo;</a>
       </div>

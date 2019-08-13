@@ -1,6 +1,9 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { PaginationService } from './pagination.service';
 import { delay } from 'rxjs/operators';
+import { AppState } from 'src/app/store';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-pagination',
@@ -12,10 +15,16 @@ export class PaginationComponent implements OnInit {
   // itemsPerPage = 15;
 
   currentPage = 0;
+  nextPageContainsEvents: boolean;
 
   constructor(private paginationService: PaginationService) { }
 
   ngOnInit() {
+
+     this.paginationService.nextPageEvents$.subscribe(
+       flag => this.nextPageContainsEvents = flag
+     )
+
     this.paginationService.page$.pipe(
       delay(0)
     ).subscribe(
@@ -70,5 +79,7 @@ export class PaginationComponent implements OnInit {
   getMiddlePage(index: number): boolean {
     return index == 1;
   }
+
+ 
 
 }

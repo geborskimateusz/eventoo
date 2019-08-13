@@ -26,7 +26,6 @@ export class EventsCardListComponent implements OnInit {
     private paginationService: PaginationService) { }
 
   ngOnInit() {
-  
 
     this.events$ = this.paginationService.page$.pipe(
       switchMap(pageIndex => this.store.pipe(
@@ -45,8 +44,11 @@ export class EventsCardListComponent implements OnInit {
               pageSize: PAGE_SIZE
             }
           }));
-    
+
           return [];
+        }),
+        tap(events => {
+          this.paginationService.isIncrementEnabled(events)
         })
       ))
     );

@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import {  Event } from 'src/app/shared/model/event.model';
 import { Observable, of } from 'rxjs';
-import { EVENTS_DATASOURCE } from 'src/app/shared/fake-datasource/events-datasource';
+
 import { AppState } from 'src/app/store';
 import { Store, select } from '@ngrx/store';
 import { selectEventById } from '../../customer-dashboard/events/store/events.selectors';

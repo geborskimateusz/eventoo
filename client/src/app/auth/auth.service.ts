@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 import { User } from './model/user.model';
 import { HttpClient } from '@angular/common/http';
 import { UserDetails } from '../shared/model/user-details';
-import { EVENTS_DATASOURCE } from '../shared/fake-datasource/events-datasource';
+
 
 @Injectable()
 export class AuthService {
