@@ -7,8 +7,6 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.draw.LineSeparator;
 import server.eventooserver.api.v1.dto.*;
-import server.eventooserver.domain.MusicGenre;
-import server.eventooserver.domain.Ticket;
 import server.eventooserver.domain.TicketType;
 
 import java.io.FileOutputStream;
@@ -25,6 +23,24 @@ import java.util.UUID;
 public class PdfExperiment {
 
     public static final BaseColor HEADER_BASE_COLOR = new BaseColor(194, 155, 232);
+    public static final String NEW_LINE = "\n";
+    public static final String ORDER_TITLE_PARAGRAPH = "Order number: " + NEW_LINE;
+    public static final String COMMA = ",";
+    public static final String COMPANY_ADDRESS_PART_TWO = "54-123" + COMMA + " Poland" + NEW_LINE;
+    public static final String COMPANY_ADDRESS_PART_ONE = "Fake city" + COMMA + " Fake Street, 12/4" + NEW_LINE;
+    public static final String COMPANY_NAME = "Eventoo Company" + NEW_LINE;
+    public static final String UNDERSCORE = "_";
+    public static final String PDF_EXTENSION = ".pdf";
+    public static final String LOGO_PNG = "static/pdf/eventoo-logo.png";
+    public static final String ACC_NUMBER = "5133459698682025";
+    public static final String ACCOUNT_NUM = "Account number: " + ACC_NUMBER;
+    public static final String COMPANY_DETAILS = COMPANY_NAME +
+            COMPANY_ADDRESS_PART_ONE +
+            COMPANY_ADDRESS_PART_TWO +
+            ACCOUNT_NUM;
+    public static final String WHITE_SPACE = " ";
+    public static final int DEFAULT_PADDING = 5;
+    public static final int DEFAULT_PARAGRAPH_SPACE = 5;
 
     static Font headerFont = FontFactory.getFont(FontFactory.COURIER, 18, HEADER_BASE_COLOR);
     static Font fontBig = FontFactory.getFont(FontFactory.HELVETICA, 10, BaseColor.BLACK);
@@ -36,30 +52,26 @@ public class PdfExperiment {
 
     public static void main(String[] args) throws IOException, DocumentException, URISyntaxException {
 
+        //method argument
+        OrderDTO orderDTO = orderDTO();
 
         Document document = new Document();
-        PdfWriter.getInstance(document, new FileOutputStream("iTextTable.pdf"));
+        String pdfName = orderDTO.getUserDetailsDTO().getEmail() + UNDERSCORE + orderDTO.getOrderDate();
+        PdfWriter.getInstance(document, new FileOutputStream(pdfName + PDF_EXTENSION));
 
         document.open();
 
-        Path path = Paths.get(ClassLoader.getSystemResource("static/pdf/eventoo-logo.png").toURI());
-        Image img = Image.getInstance(path.toAbsolutePath().toString());
-        img.setAbsolutePosition(45, 790);
-        img.scalePercent(50);
-        document.add(img);
-
-        Chunk header = new Chunk("Eventoo", headerFont);
-        document.add(header);
+        renderLogo(document);
 
 
-        document.add(new Paragraph("\n \n"));
+        renderParagraphs(document, 2);
 
         LineSeparator l = new LineSeparator();
         document.add(new Chunk(l));
 
         PdfPTable table = new PdfPTable(3);
         addHeaderRow(table);
-        addRows(table);
+        addRows(table, orderDTO);
 
         document.add(table);
 
@@ -72,112 +84,83 @@ public class PdfExperiment {
 
     }
 
-//    private static void addTableHeader(PdfPTable table) {
-//        Stream.of("column header 1", "column header 2", "column header 3")
-//                .forEach(columnTitle -> {
-//                    PdfPCell header = new PdfPCell();
-//                    header.setBackgroundColor(BaseColor.LIGHT_GRAY);
-//                    header.setBorderWidth(2);
-//                    header.setPhrase(new Phrase(columnTitle));
-//                    table.addCell(header);
-//                });
-//    }
+    private static void renderParagraphs(Document document, Integer number) throws DocumentException {
+        while (number > 0) {
+            document.add(new Paragraph(NEW_LINE));
+            number--;
+        }
+    }
 
-//    private static void addCustomRows(PdfPTable table)
-//            throws URISyntaxException, BadElementException, IOException {
-//        Path path = Paths.get(ClassLoader.getSystemResource("static/pdf/eventoo-logo.png").toURI());
-//        Image img = Image.getInstance(path.toAbsolutePath().toString());
-//        img.scalePercent(10);
-//
-//        PdfPCell imageCell = new PdfPCell(img);
-//        table.addCell(imageCell);
-//
-//        PdfPCell horizontalAlignCell = new PdfPCell(new Phrase("row 2, col 2"));
-//        horizontalAlignCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-//        table.addCell(horizontalAlignCell);
-//
-//        PdfPCell verticalAlignCell = new PdfPCell(new Phrase("row 2, col 3"));
-//        verticalAlignCell.setVerticalAlignment(Element.ALIGN_BOTTOM);
-//        table.addCell(verticalAlignCell);
-//    }
+    private static void renderLogo(Document document) throws URISyntaxException, IOException, DocumentException {
+        Path path = Paths.get(ClassLoader.getSystemResource(LOGO_PNG).toURI());
+        Image img = Image.getInstance(path.toAbsolutePath().toString());
+        img.setAbsolutePosition(45, 790);
+        img.scalePercent(50);
+        document.add(img);
+
+        Chunk header = new Chunk("Eventoo", headerFont);
+        document.add(header);
+    }
 
 
     private static void addHeaderRow(PdfPTable table) {
         PdfPCell payersDetail = new PdfPCell(new Phrase("Payer's detail:", fontMediumBold));
-        payersDetail.setHorizontalAlignment(Element.ALIGN_LEFT);
-        payersDetail.setPadding(5);
-        payersDetail.setExtraParagraphSpace(5);
-        payersDetail.setBorder(Rectangle.NO_BORDER);
+        renderCell(payersDetail);
         table.addCell(payersDetail);
 
         PdfPCell recipientsDetails = new PdfPCell(new Phrase("Recipient's details:", fontMediumBold));
-        recipientsDetails.setHorizontalAlignment(Element.ALIGN_LEFT);
-        recipientsDetails.setPadding(5);
-        recipientsDetails.setExtraParagraphSpace(5);
-        recipientsDetails.setBorder(Rectangle.NO_BORDER);
+        renderCell(recipientsDetails);
         table.addCell(recipientsDetails);
 
         PdfPCell title = new PdfPCell(new Phrase("Title:", fontMediumBold));
-        title.setHorizontalAlignment(Element.ALIGN_LEFT);
-        title.setPadding(5);
-        title.setExtraParagraphSpace(5);
-        title.setBorder(Rectangle.NO_BORDER);
+        renderCell(title);
         table.addCell(title);
     }
 
 
-    private static void addRows(PdfPTable table) throws DocumentException {
-        generateUserDetails(table);
+    private static void addRows(PdfPTable table, OrderDTO orderDTO) throws DocumentException {
+        generateUserDetails(table, orderDTO.getUserDetailsDTO());
 
         generateCompanyDetails(table);
 
         generateTitle(table);
     }
 
-    private static void generateTitle(PdfPTable table) {
-        String paragraph = "Transfer details for order: " + "\n";
-        String orderNumber = UUID.randomUUID().toString();
-
-        String builder = paragraph + orderNumber;
-
-        PdfPCell title = new PdfPCell(new Phrase(builder, fontMedium));
-        title.setHorizontalAlignment(Element.ALIGN_LEFT);
-        title.setPadding(5);
-        title.setExtraParagraphSpace(5);
-        title.setBorder(Rectangle.NO_BORDER);
-        table.addCell(title);
-    }
 
     private static void orderTickets(Document document) throws DocumentException {
-        generateOrdererdEvents();
+        bootstrapOrderedTickets();
 
 
-        document.add(new Paragraph());
+        renderParagraph(document);
 
         Chunk from = new Chunk("Order", fontBigBold);
         document.add(from);
-        document.add(new Paragraph());
+        renderParagraph(document);
 
-        for (int i = 1; i <= generateOrdererdEvents().size(); i++) {
-            OrderedTicketDTO orderedEvent = generateOrdererdEvents().get(i - 1);
+        for (int i = 1; i <= bootstrapOrderedTickets().size(); i++) {
+            OrderedTicketDTO orderedEvent = bootstrapOrderedTickets().get(i - 1);
 
             Chunk order = new Chunk(
-                    i + ". " + orderedEvent.getEvent().getTitle() + ", " +
-                            orderedEvent.getEvent().getLocation().getFullAddress() + ", " +
+                    i + ". " + orderedEvent.getEvent().getTitle() + COMMA + " " +
+                            orderedEvent.getEvent().getLocation().getFullAddress() + COMMA + " " +
                             orderedEvent.getAmount() + "x " +
                             convertType(orderedEvent.getType())
                     , fontMedium);
             document.add(order);
-            document.add(new Paragraph());
+            renderParagraph(document);
         }
 
 
-        document.add(new Paragraph("\n"));
+        renderParagraphs(document, 1);
 
         Chunk total = new Chunk("Total: " + calculateTotal() + "$", fontBig);
         document.add(total);
 
 
+    }
+
+    private static void renderParagraph(Document document) throws DocumentException {
+        document.add(new Paragraph());
     }
 
     private static String convertType(TicketType ticketType) {
@@ -196,12 +179,90 @@ public class PdfExperiment {
 
     private static Integer calculateTotal() {
 
-        return generateOrdererdEvents().stream()
+        return bootstrapOrderedTickets().stream()
                 .map(orderedTicketDTO -> orderedTicketDTO.getAmount() * orderedTicketDTO.getPrice())
                 .reduce((price1, price2) -> price1 + price2).get();
     }
 
-    private static List<OrderedTicketDTO> generateOrdererdEvents() {
+
+    private static void generateCompanyDetails(PdfPTable table)  {
+        PdfPCell cell = new PdfPCell(new Phrase(COMPANY_DETAILS, fontMedium));
+        renderCell(cell);
+        table.addCell(cell);
+    }
+
+    private static void generateTitle(PdfPTable table) {
+
+        //Fake order number just for pdf purposes
+        String orderNumber = UUID.randomUUID().toString();
+
+        String builder = ORDER_TITLE_PARAGRAPH + orderNumber;
+
+        PdfPCell cell = new PdfPCell(new Phrase(builder, fontMedium));
+        renderCell(cell);
+        table.addCell(cell);
+    }
+
+    private static void renderCell(PdfPCell cell) {
+        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+        cell.setPadding(DEFAULT_PADDING);
+        cell.setExtraParagraphSpace(DEFAULT_PARAGRAPH_SPACE);
+        cell.setBorder(Rectangle.NO_BORDER);
+    }
+
+    private static void generateUserDetails(PdfPTable table, UserDetailsDTO userDetailsDTO) throws DocumentException {
+
+        String fullName = userDetailsDTO.getFirstName() + WHITE_SPACE + userDetailsDTO.getLastName() + NEW_LINE;
+
+        String addressPartOne =
+                userDetailsDTO.getAddress().getCity() + COMMA + WHITE_SPACE +
+                        userDetailsDTO.getAddress().getStreet() + WHITE_SPACE +
+                        userDetailsDTO.getAddress().getHomeNo() + NEW_LINE;
+
+        String addressPartTwo =
+                userDetailsDTO.getAddress().getPostalCode() + COMMA + WHITE_SPACE +
+                        userDetailsDTO.getAddress().getCountry() + NEW_LINE;
+
+        String phoneNum = userDetailsDTO.getPhone() + NEW_LINE;
+
+        String email = userDetailsDTO.getEmail();
+
+
+        String builder = fullName +
+                addressPartOne +
+                addressPartTwo +
+                phoneNum +
+                email;
+
+        PdfPCell cell = new PdfPCell(new Phrase(builder, fontMedium));
+        renderCell(cell);
+        table.addCell(cell);
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    private static OrderDTO orderDTO() {
+
+        return OrderDTO.builder()
+                .orderDate(LocalDate.now())
+                .orderedTickets(bootstrapOrderedTickets())
+                .userDetailsDTO(bootstrapUserDetailsDTO())
+                .build();
+    }
+
+    private static UserDetailsDTO bootstrapUserDetailsDTO() {
+        return UserDetailsDTO.builder()
+                .firstName("John")
+                .lastName("Doe")
+                .address(AddressDTO.builder().country("Poland").city("Katowice").street("Fake Street").homeNo("2").postalCode("42-123").build())
+                .email("fakeemail@gmail.com")
+                .phone("511 123 432")
+                .build();
+    }
+
+    private static List<OrderedTicketDTO> bootstrapOrderedTickets() {
 
         EventDTO o1 = EventDTO.builder()
                 .title("Fake Title")
@@ -225,76 +286,6 @@ public class PdfExperiment {
 
         return Arrays.asList(dto1, dto1, dto1, dto1);
 
-    }
-
-    //
-    private static void generateCompanyDetails(PdfPTable table) throws DocumentException {
-
-        String companyName = "Eventoo Company" + "\n";
-
-        String addressPartOne = "Fake city, Fake Street, 12/4" + "\n";
-
-        String addressPartTwo = "54-123, Poland" + "\n";
-
-        String accountNum = "Account number: 5133459698682025";
-
-
-        String builder = companyName +
-                addressPartOne +
-                addressPartTwo +
-                accountNum;
-
-        PdfPCell cell = new PdfPCell(new Phrase(builder, fontMedium));
-        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
-        cell.setPadding(5);
-        cell.setBorder(Rectangle.NO_BORDER);
-
-        cell.setExtraParagraphSpace(5);
-        table.addCell(cell);
-
-
-    }
-
-    private static void generateUserDetails(PdfPTable table) throws DocumentException {
-        UserDetailsDTO userDetailsDTO = getUserDetailsDTO();
-
-        String fullName = userDetailsDTO.getFirstName() + " " + userDetailsDTO.getLastName() + "\n";
-
-        String addressPartOne =
-                userDetailsDTO.getAddress().getCity() + ", " +
-                        userDetailsDTO.getAddress().getStreet() + " " +
-                        userDetailsDTO.getAddress().getHomeNo() + "\n";
-
-        String addressPartTwo =
-                userDetailsDTO.getAddress().getPostalCode() + ", " +
-                        userDetailsDTO.getAddress().getCountry() + "\n";
-
-        String phoneNum = userDetailsDTO.getPhone() + "\n";
-
-        String email = userDetailsDTO.getEmail();
-
-
-        String builder = fullName +
-                addressPartOne +
-                addressPartTwo +
-                phoneNum +
-                email;
-        PdfPCell cell = new PdfPCell(new Phrase(builder, fontMedium));
-        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
-        cell.setPadding(5);
-        cell.setBorder(Rectangle.NO_BORDER);
-        cell.setExtraParagraphSpace(5);
-        table.addCell(cell);
-    }
-
-    private static UserDetailsDTO getUserDetailsDTO() {
-        return UserDetailsDTO.builder()
-                .firstName("John")
-                .lastName("Doe")
-                .address(AddressDTO.builder().country("Poland").city("Katowice").street("Fake Street").homeNo("2").postalCode("42-123").build())
-                .email("fakeemail@gmail.com")
-                .phone("511 123 432")
-                .build();
     }
 
 

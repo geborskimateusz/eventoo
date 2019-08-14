@@ -2,23 +2,24 @@ package server.eventooserver.api.v1.dto;
 
 import lombok.*;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.time.LocalDate;
+import java.util.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderedTicketsDTO {
+@Builder
+public class OrderDTO {
 
-    private Date orderDate;
-    private Set<OrderedTicketDTO> orderedTickets = new HashSet<>();
+    private LocalDate orderDate;
+    private List<OrderedTicketDTO> orderedTickets = new ArrayList<>();
+    private UserDetailsDTO userDetailsDTO;
 
 
     @Override
     public String toString() {
-        return "OrderedTicketsDTO{" +
+        return "OrderDTO{" +
                 "orderDate=" + orderDate +
                 ", orderedTickets=" + orderedTickets +
                 '}';

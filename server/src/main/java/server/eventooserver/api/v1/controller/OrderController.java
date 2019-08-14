@@ -3,7 +3,7 @@ package server.eventooserver.api.v1.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import server.eventooserver.api.v1.dto.OrderedTicketsDTO;
+import server.eventooserver.api.v1.dto.OrderDTO;
 import server.eventooserver.api.v1.service.OrderService;
 
 @Slf4j
@@ -24,7 +24,7 @@ public class OrderController {
     //TODO pdf should be returned
     @PatchMapping
     @ResponseStatus(HttpStatus.OK)
-    public void bookTickets(@RequestBody OrderedTicketsDTO orderedTicketsDTO) {
+    public void bookTickets(@RequestBody OrderDTO orderedTicketsDTO) {
         orderService.orderTickets(orderedTicketsDTO);
     }
 }

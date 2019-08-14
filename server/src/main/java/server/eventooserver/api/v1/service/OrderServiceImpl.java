@@ -2,14 +2,11 @@ package server.eventooserver.api.v1.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import server.eventooserver.api.v1.dto.OrderDTO;
 import server.eventooserver.api.v1.dto.OrderedTicketDTO;
-import server.eventooserver.api.v1.dto.OrderedTicketsDTO;
 import server.eventooserver.api.v1.dto.TicketDTO;
-import server.eventooserver.domain.Ticket;
 
 import javax.transaction.Transactional;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -23,7 +20,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     @Transactional
-    public void orderTickets(OrderedTicketsDTO orderedTicketsDTO) {
+    public void orderTickets(OrderDTO orderedTicketsDTO) {
 
         postOrder(orderedTicketsDTO);
 
@@ -33,11 +30,11 @@ public class OrderServiceImpl implements OrderService {
 
     }
 
-    private void generateOrderConfirmation(OrderedTicketsDTO orderedTicketsDTO) {
-        //TODO code for generating PDF, should be returned from public void orderTickets(OrderedTicketsDTO orderedTicketsDTO)
+    private void generateOrderConfirmation(OrderDTO orderedTicketsDTO) {
+        //TODO code for generating PDF, should be returned from public void orderTickets(OrderDTO orderedTicketsDTO)
     }
 
-    private void postOrder(OrderedTicketsDTO orderedTicketsDTO) {
+    private void postOrder(OrderDTO orderedTicketsDTO) {
         orderedTicketsDTO.getOrderedTickets()
                 .forEach(orderedTicketDTO -> {
 
