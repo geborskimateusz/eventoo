@@ -6,4 +6,6 @@ import server.eventooserver.api.v1.dto.UserDetailsDTO;
 public interface UserService {
 
     UserDetailsDTO authenticateUser(User user);
+
+    UserDetailsDTO findById(Long id);
 }

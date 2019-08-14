@@ -29,4 +29,14 @@ public class UserServiceImpl implements UserService {
                     userDetailsRepository.findByEmail(user.getUsername())
                             .orElseThrow(ResourceNotFoundException::new));
     }
+
+    @Override
+    public UserDetailsDTO findById(Long id) {
+
+        log.info(this.getClass().getSimpleName() + ", UserDetailsDTO findById(Long id)");
+
+
+        return userDetailsMapper.UserDetailsToUserDetailsDTO(
+                userDetailsRepository.findById(id)
+                        .orElseThrow(ResourceNotFoundException::new));    }
 }

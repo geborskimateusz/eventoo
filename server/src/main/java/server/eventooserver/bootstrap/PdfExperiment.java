@@ -1,11 +1,11 @@
 //package server.eventooserver.bootstrap;
 //
-//
 //import com.itextpdf.text.*;
 //import com.itextpdf.text.pdf.PdfPCell;
 //import com.itextpdf.text.pdf.PdfPTable;
 //import com.itextpdf.text.pdf.PdfWriter;
 //import com.itextpdf.text.pdf.draw.LineSeparator;
+//import lombok.extern.slf4j.Slf4j;
 //import server.eventooserver.api.v1.dto.*;
 //import server.eventooserver.domain.TicketType;
 //
@@ -20,6 +20,7 @@
 //import java.util.List;
 //import java.util.UUID;
 //
+//@Slf4j
 //public class PdfExperiment {
 //
 //    private static final String NEW_LINE = "\n";
@@ -61,14 +62,18 @@
 //    private static final Font FONT_MEDIUM_BOLD = new Font(Font.FontFamily.HELVETICA, 10, Font.BOLD);
 //
 //
+//
 //    public static void main(String[] args) throws IOException, DocumentException, URISyntaxException {
+//
 //
 //        //method argument
 //        OrderDTO orderDTO = orderDTO();
 //
 //        Document document = new Document();
+//
+//
 //        String pdfName = bootstrapUserDetailsDTO().getEmail() + UNDERSCORE + orderDTO.getOrderDate();
-//        PdfWriter.getInstance(document, new FileOutputStream(pdfName + PDF_EXTENSION));
+//        PdfWriter.getInstance(document, new FileOutputStream("src/main/resources/static/pdf/" + pdfName + PDF_EXTENSION));
 //
 //        document.open();
 //

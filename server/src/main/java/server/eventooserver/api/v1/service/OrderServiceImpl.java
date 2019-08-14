@@ -13,16 +13,23 @@ import javax.transaction.Transactional;
 public class OrderServiceImpl implements OrderService {
 
     private final TicketService ticketService;
+    private final FilesUtilService filesUtilService;
 
-    public OrderServiceImpl(TicketService ticketService) {
+    public OrderServiceImpl(TicketService ticketService, FilesUtilService filesUtilService) {
         this.ticketService = ticketService;
+        this.filesUtilService = filesUtilService;
     }
 
     @Override
     @Transactional
-    public void orderTickets(OrderDTO orderedTicketsDTO) {
+    public void orderTickets(OrderDTO orderDTO) {
 
-        System.out.println(orderedTicketsDTO);
+        //post order -> if success then generate pdf (try catch finally)
+        // 1 update tickets
+        // 2 save transaction data
+        // 3 generate pdf
+
+        System.out.println(orderDTO);
 //        postOrder(orderedTicketsDTO);
 
         //TODO pdf should be returned example below:
