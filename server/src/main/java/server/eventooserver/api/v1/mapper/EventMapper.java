@@ -1,7 +1,6 @@
 package server.eventooserver.api.v1.mapper;
 
-import org.mapstruct.Mapper;
-import org.mapstruct.Named;
+import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 import server.eventooserver.api.v1.dto.EventDTO;
 import server.eventooserver.domain.Event;
@@ -13,5 +12,16 @@ public interface EventMapper {
 
     Event eventDTOtoEvent(EventDTO eventDTO);
 
+
+    @BeforeMapping
+    default void setTickets(@MappingTarget EventDTO eventDTO, Event event) {
+        event.getTickets().forEach(ticket -> ticket.setEvent(null));
+    }
+
+//    @Mapping(target = "tickets", ignore = true)
     EventDTO eventToEventDTO(Event event);
+
+
+
+
 }

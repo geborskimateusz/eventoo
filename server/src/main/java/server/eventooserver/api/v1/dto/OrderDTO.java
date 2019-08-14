@@ -14,7 +14,7 @@ public class OrderDTO {
 
     private LocalDate orderDate;
     private List<OrderedTicketDTO> orderedTickets = new ArrayList<>();
-    private UserDetailsDTO userDetailsDTO;
+    private Long userId;
 
 
     @Override
@@ -22,6 +22,7 @@ public class OrderDTO {
         return "OrderDTO{" +
                 "orderDate=" + orderDate +
                 ", orderedTickets=" + orderedTickets +
+                ", userId=" + userId +
                 '}';
     }
 }

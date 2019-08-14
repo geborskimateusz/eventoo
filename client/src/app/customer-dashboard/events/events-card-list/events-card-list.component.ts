@@ -64,7 +64,7 @@ export class EventsCardListComponent implements OnInit {
 
 
   getDate(event: Event) {
-    return `${event.date.getDay()}.${event.date.getMonth()}..${event.date.getFullYear()}`;
+    return `${event.date.getDay()}.${event.date.getMonth()}.${event.date.getFullYear()}`;
   }
 
   getStandsTicketPrice(tickets: Ticket[]) {

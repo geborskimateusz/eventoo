@@ -1,6 +1,7 @@
 package server.eventooserver.api.v1.dto;
 
 import lombok.*;
+import org.mapstruct.AfterMapping;
 import server.eventooserver.api.v1.dto.EventDTO;
 import server.eventooserver.domain.TicketType;
 
@@ -8,6 +9,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class OrderedTicketDTO extends TicketDTO {
     private Integer amount;
 

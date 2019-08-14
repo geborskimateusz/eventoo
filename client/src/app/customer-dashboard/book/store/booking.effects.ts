@@ -17,7 +17,8 @@ export class BookingEffects {
         switchMap(action => this.httpClient.patch('http://localhost:8080/api/v1/order',
             {
                 orderDate: new Date(),
-                orderedTickets: action.payload.orderedTickets
+                orderedTickets: action.payload.orderedTickets,
+                userId: localStorage.getItem("current_user_id")
             })
         ))
 

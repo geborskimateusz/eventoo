@@ -22,11 +22,12 @@ public class OrderServiceImpl implements OrderService {
     @Transactional
     public void orderTickets(OrderDTO orderedTicketsDTO) {
 
-        postOrder(orderedTicketsDTO);
+        System.out.println(orderedTicketsDTO);
+//        postOrder(orderedTicketsDTO);
 
         //TODO pdf should be returned example below:
         //return generateOrderConfirmation(orderedTicketsDTO);
-        generateOrderConfirmation(orderedTicketsDTO);
+//        generateOrderConfirmation(orderedTicketsDTO);
 
     }
 

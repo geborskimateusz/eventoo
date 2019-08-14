@@ -22,4 +22,13 @@ public class TicketDTO extends BaseEntityDTO {
     private Integer inStock;
     private EventDTO event;
 
+    @Override
+    public String toString() {
+        return "TicketDTO{" +
+                "type=" + type +
+                ", price=" + price +
+                ", totalAmmount=" + totalAmmount +
+                ", inStock=" + inStock +
+                '}';
+    }
 }
