@@ -13,7 +13,6 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @JsonIgnoreProperties({"event"})
 public class TicketDTO extends BaseEntityDTO {
 
@@ -21,6 +20,6 @@ public class TicketDTO extends BaseEntityDTO {
     private Integer price;
     private Integer totalAmmount;
     private Integer inStock;
-    EventsDTO event;
+    private EventDTO event;
 
 }
