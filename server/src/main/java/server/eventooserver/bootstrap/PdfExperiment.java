@@ -8,6 +8,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.draw.LineSeparator;
 import server.eventooserver.api.v1.dto.*;
 import server.eventooserver.domain.MusicGenre;
+import server.eventooserver.domain.Ticket;
 import server.eventooserver.domain.TicketType;
 
 import java.io.FileOutputStream;
@@ -27,45 +28,14 @@ public class PdfExperiment {
 
     static Font headerFont = FontFactory.getFont(FontFactory.COURIER, 18, HEADER_BASE_COLOR);
     static Font fontBig = FontFactory.getFont(FontFactory.HELVETICA, 10, BaseColor.BLACK);
+    static Font fontBigBold = FontFactory.getFont(FontFactory.HELVETICA, 10, Font.BOLD);
     static Font fontMedium = FontFactory.getFont(FontFactory.HELVETICA, 8, BaseColor.BLACK);
-    static Font fontSmall = FontFactory.getFont(FontFactory.COURIER, 6, BaseColor.BLACK);
     static Font fontMediumBold = new Font(Font.FontFamily.HELVETICA, 10, Font.BOLD);
+    static Font fontSmall = FontFactory.getFont(FontFactory.COURIER, 6, BaseColor.BLACK);
 
 
     public static void main(String[] args) throws IOException, DocumentException, URISyntaxException {
-//        Path path = Paths.get(ClassLoader.getSystemResource("static/pdf/eventoo-logo.png").toURI());
-//        Image img = Image.getInstance(path.toAbsolutePath().toString());
-//        img.setAbsolutePosition(540, 790);
-//        img.scalePercent(50);
-//
-//        Document document = new Document();
-//
-//        String pdfName = getUserDetailsDTO().getId()+getUserDetailsDTO().getEmail();
-//        File file = new File(pdfName +".pdf");
-//        PdfWriter.getInstance(document, new FileOutputStream(file));
-//
-//        document.open();
-//
-//        document.add(img);
-//
-//
-//
-//        Chunk header = new Chunk("Eventoo", headerFont);
-//        document.add(header);
-//        document.add(new Paragraph("\n"));
-//
-//
-//        generateUserDetails(document);
-//
-//        document.add(new Paragraph("\n"));
-//
-//        generateCompanyDetails(document);
-//
-//        document.add(new Paragraph("\n"));
-//
-////        orderTickets(document);
-//
-//        document.close();
+
 
         Document document = new Document();
         PdfWriter.getInstance(document, new FileOutputStream("iTextTable.pdf"));
@@ -184,7 +154,7 @@ public class PdfExperiment {
 
         document.add(new Paragraph());
 
-        Chunk from = new Chunk("Order", fontBig);
+        Chunk from = new Chunk("Order", fontBigBold);
         document.add(from);
         document.add(new Paragraph());
 
@@ -195,8 +165,8 @@ public class PdfExperiment {
                     i + ". " + orderedEvent.getEvent().getTitle() + ", " +
                             orderedEvent.getEvent().getLocation().getFullAddress() + ", " +
                             orderedEvent.getAmount() + "x " +
-                            orderedEvent.getType().toString()
-                    , fontSmall);
+                            convertType(orderedEvent.getType())
+                    , fontMedium);
             document.add(order);
             document.add(new Paragraph());
         }
@@ -208,6 +178,20 @@ public class PdfExperiment {
         document.add(total);
 
 
+    }
+
+    private static String convertType(TicketType ticketType) {
+        String s = ticketType.toString().toLowerCase();
+        s = s.replace("_", " ");
+        String[] splitted = s.split(" ");
+
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < splitted.length; i++) {
+            builder.append(splitted[i].substring(0, 1).toUpperCase() + splitted[i].substring(1) + " ");
+        }
+
+
+        return builder.toString();
     }
 
     private static Integer calculateTotal() {
@@ -236,7 +220,7 @@ public class PdfExperiment {
                 .inStock(15)
                 .price(145)
                 .totalAmmount(20)
-                .type(TicketType.GENERAL_ADMISSION)
+                .type(TicketType.GOLDEN_CIRCLE_EARLY_ENTRANCE)
                 .build();
 
         return Arrays.asList(dto1, dto1, dto1, dto1);
