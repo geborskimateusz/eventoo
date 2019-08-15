@@ -7,6 +7,7 @@ import server.eventooserver.api.v1.mapper.UserDetailsMapper;
 import server.eventooserver.api.v1.service.exception.ResourceNotFoundException;
 import server.eventooserver.domain.User;
 import server.eventooserver.api.v1.dto.UserDetailsDTO;
+import server.eventooserver.domain.UserDetails;
 
 @Slf4j
 @Service
@@ -23,20 +24,26 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDetailsDTO authenticateUser(User user) {
 
-            log.info(this.getClass().getSimpleName() + ", UserDetailsDTO authenticateUser(User user)");
+        log.info(this.getClass().getSimpleName() + ", UserDetailsDTO authenticateUser(User user)");
 
-            return userDetailsMapper.UserDetailsToUserDetailsDTO(
-                    userDetailsRepository.findByEmail(user.getUsername())
-                            .orElseThrow(ResourceNotFoundException::new));
+        return userDetailsMapper.UserDetailsToUserDetailsDTO(
+                userDetailsRepository.findByEmail(user.getUsername())
+                        .orElseThrow(ResourceNotFoundException::new));
     }
 
     @Override
-    public UserDetailsDTO findById(Long id) {
+    public UserDetails findById(Long id) {
+        return userDetailsRepository.findById(id)
+                .orElseThrow(ResourceNotFoundException::new);
+    }
 
-        log.info(this.getClass().getSimpleName() + ", UserDetailsDTO findById(Long id)");
+    @Override
+    public UserDetailsDTO findDTOById(Long id) {
 
+        log.info(this.getClass().getSimpleName() + ", UserDetailsDTO findDTOById(Long id)");
 
         return userDetailsMapper.UserDetailsToUserDetailsDTO(
-                userDetailsRepository.findById(id)
-                        .orElseThrow(ResourceNotFoundException::new));    }
+                findById(id)
+        );
+    }
 }

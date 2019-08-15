@@ -34,7 +34,7 @@ public class FilesUtilServiceImpl implements FilesUtilService {
     @Override
     public void generateOrderConfirmation(InvoiceDTO orderDTO) throws DocumentException, IOException, URISyntaxException {
 
-        UserDetailsDTO userDetailsDTO = userService.findById(orderDTO.getUserDetails().getId());
+        UserDetailsDTO userDetailsDTO = userService.findDTOById(orderDTO.getUserDetails().getId());
 
         Document document = new Document();
 

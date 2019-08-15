@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import server.eventooserver.api.v1.dto.InvoiceDTO;
 import server.eventooserver.api.v1.dto.OrderedTicketDTO;
 import server.eventooserver.api.v1.dto.UserDetailsDTO;
-import server.eventooserver.domain.OrderedTicket;
 import server.eventooserver.domain.TicketType;
 
 import javax.transaction.Transactional;
@@ -17,7 +16,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text.NEW_LINE;
 import static server.eventooserver.api.v1.service.util.OrderConstans.*;
@@ -166,7 +164,7 @@ public class OrderPdfUtilImpl implements PdfUtil {
     @Transactional
     public void generateUserDetails(PdfPTable table, InvoiceDTO orderDTO)  {
 
-        UserDetailsDTO userDetailsDTO = userService.findById(orderDTO.getUserDetails().getId());
+        UserDetailsDTO userDetailsDTO = userService.findDTOById(orderDTO.getUserDetails().getId());
 
                 String fullName = userDetailsDTO.getFirstName() + WHITE_SPACE + userDetailsDTO.getLastName() + NEW_LINE;
 

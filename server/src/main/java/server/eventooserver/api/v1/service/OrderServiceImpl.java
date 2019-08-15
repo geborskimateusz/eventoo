@@ -5,8 +5,16 @@ import org.springframework.stereotype.Service;
 import server.eventooserver.api.v1.dto.InvoiceDTO;
 import server.eventooserver.api.v1.dto.OrderedTicketDTO;
 import server.eventooserver.api.v1.dto.TicketDTO;
+import server.eventooserver.api.v1.mapper.InvoiceMapper;
+import server.eventooserver.api.v1.repository.OrderRepository;
+import server.eventooserver.domain.Invoice;
+import server.eventooserver.domain.OrderedTicket;
+import server.eventooserver.domain.Ticket;
+import server.eventooserver.domain.UserDetails;
 
 import javax.transaction.Transactional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -14,50 +22,47 @@ public class OrderServiceImpl implements OrderService {
 
     private final TicketService ticketService;
     private final FilesUtilService filesUtilService;
+    private final UserService userService;
 
-    public OrderServiceImpl(TicketService ticketService, FilesUtilService filesUtilService){
+    private final OrderRepository orderRepository;
+
+    private final InvoiceMapper invoiceMapper = InvoiceMapper.INSTANCE;
+
+    public OrderServiceImpl(TicketService ticketService, FilesUtilService filesUtilService, UserService userService, OrderRepository orderRepository) {
         this.ticketService = ticketService;
         this.filesUtilService = filesUtilService;
+        this.userService = userService;
+        this.orderRepository = orderRepository;
     }
 
     @Override
     @Transactional
-    public void orderTickets(InvoiceDTO orderDTO) {
+    public void orderTickets(InvoiceDTO invoiceDTO) {
 
-        //post order -> if success then generate pdf (try catch finally)
-        // 1 update tickets
-        // 2 save transaction data
-        // 3 generate pdf
+        Invoice invoice = invoiceMapper.invoiceDTOtoInvoice(invoiceDTO);
 
-        System.out.println(orderDTO);
-//        postOrder(orderedTicketsDTO);
+        List<OrderedTicket> orderedTickets = invoice.getOrderedTickets().stream()
+                .peek(orderedTicket -> {
 
-        //TODO pdf should be returned example below:
-        //return generateOrderConfirmation(orderedTicketsDTO);
-//        generateOrderConfirmation(orderedTicketsDTO);
+                    Ticket ticket = ticketService.updateTicketByOrderAmount(orderedTicket);
+
+                    orderedTicket.setTicket(ticket);
+
+                }).collect(Collectors.toList());
+
+        orderedTickets.forEach(invoice::addOrderedTicket);
+
+        UserDetails userDetails = userService.findById(invoiceDTO.getUserDetails().getId());
+        invoice.setUserDetails(userDetails);
+
+        Invoice saved = orderRepository.save(invoice);
+        generateOrderConfirmation(saved);
 
     }
 
-    private void generateOrderConfirmation(InvoiceDTO orderedTicketsDTO) {
-        //TODO code for generating PDF, should be returned from public void orderTickets(InvoiceDTO orderedTicketsDTO)
+    private void generateOrderConfirmation(Invoice invoice) {
+        //TODO filesUtilService.generateOrderConfirmation();
     }
 
-//    private void postOrder(InvoiceDTO orderedTicketsDTO) {
-//        orderedTicketsDTO.getOrderedTickets()
-//                .forEach(orderedTicketDTO -> {
-//
-//                    TicketDTO found = ticketService.findById(orderedTicketDTO.getId());
-//
-//                    decreaseInStockAmount(orderedTicketDTO, found);
-//
-//                    ticketService.saveOrUpdateTicket(found);
-//                });
-//
-//    }
-//
-//    private void decreaseInStockAmount(OrderedTicketDTO orderedTicketDTO, TicketDTO found) {
-//        found.setInStock(
-//                found.getInStock() - orderedTicketDTO.getAmount()
-//        );
-//    }
+
 }
