@@ -13,13 +13,11 @@ import javax.transaction.Transactional;
 public class OrderServiceImpl implements OrderService {
 
     private final TicketService ticketService;
-//    private final FilesUtilService filesUtilService;
+    private final FilesUtilService filesUtilService;
 
-    public OrderServiceImpl(TicketService ticketService)
-//                            FilesUtilService filesUtilService)
- {
+    public OrderServiceImpl(TicketService ticketService, FilesUtilService filesUtilService){
         this.ticketService = ticketService;
-//        this.filesUtilService = filesUtilService;
+        this.filesUtilService = filesUtilService;
     }
 
     @Override
