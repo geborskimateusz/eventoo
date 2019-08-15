@@ -18,7 +18,6 @@ public interface EventMapper {
         event.getTickets().forEach(ticket -> ticket.setEvent(null));
     }
 
-//    @Mapping(target = "tickets", ignore = true)
     EventDTO eventToEventDTO(Event event);
 
 

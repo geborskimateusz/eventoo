@@ -67,7 +67,7 @@
 //
 //
 //        //method argument
-//        OrderDTO orderDTO = orderDTO();
+//        InvoiceDTO orderDTO = orderDTO();
 //
 //        Document document = new Document();
 //
@@ -134,7 +134,7 @@
 //    }
 //
 //
-//    private static void renderDetailsRows(PdfPTable table, OrderDTO orderDTO) throws DocumentException {
+//    private static void renderDetailsRows(PdfPTable table, InvoiceDTO orderDTO) throws DocumentException {
 //        generateUserDetails(table, bootstrapUserDetailsDTO());
 //
 //        generateCompanyDetails(table);
@@ -262,9 +262,9 @@
 //    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 //
-//    private static OrderDTO orderDTO() {
+//    private static InvoiceDTO orderDTO() {
 //
-//        return OrderDTO.builder()
+//        return InvoiceDTO.builder()
 //                .orderDate(LocalDate.now())
 //                .orderedTickets(bootstrapOrderedTickets())
 //                .userId(1L)

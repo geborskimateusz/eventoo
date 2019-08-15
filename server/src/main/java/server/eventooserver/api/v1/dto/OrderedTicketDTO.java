@@ -10,15 +10,15 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @NoArgsConstructor
-public class OrderedTicketDTO extends TicketDTO {
+public class OrderedTicketDTO {
     private Integer amount;
+    private TicketDTO ticket;
 
     @Builder
-    public OrderedTicketDTO(TicketType type, Integer price, Integer totalAmmount, Integer inStock, EventDTO event, Integer amount) {
-        super(type, price, totalAmmount, inStock, event);
+    public OrderedTicketDTO(Integer amount, TicketDTO ticket) {
         this.amount = amount;
+        this.ticket = ticket;
     }
-
 
 
     @Override

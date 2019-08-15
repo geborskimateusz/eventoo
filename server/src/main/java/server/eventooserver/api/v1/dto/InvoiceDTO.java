@@ -1,6 +1,7 @@
 package server.eventooserver.api.v1.dto;
 
 import lombok.*;
+import server.eventooserver.domain.UserDetails;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -10,19 +11,19 @@ import java.util.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class OrderDTO {
+public class InvoiceDTO {
 
     private LocalDate orderDate;
-    private List<OrderedTicketDTO> orderedTickets = new ArrayList<>();
-    private Long userId;
+    private Set<OrderedTicketDTO> orderedTickets = new HashSet<>();
+    private UserDetailsDTO userDetails;
 
 
     @Override
     public String toString() {
-        return "OrderDTO{" +
+        return "InvoiceDTO{" +
                 "orderDate=" + orderDate +
                 ", orderedTickets=" + orderedTickets +
-                ", userId=" + userId +
+//                ", userId=" + userId +
                 '}';
     }
 }

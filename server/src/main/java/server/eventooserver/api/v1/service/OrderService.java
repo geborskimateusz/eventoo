@@ -1,8 +1,8 @@
 package server.eventooserver.api.v1.service;
 
-import server.eventooserver.api.v1.dto.OrderDTO;
+import server.eventooserver.api.v1.dto.InvoiceDTO;
 
 public interface OrderService {
 
-    void orderTickets(OrderDTO orderedTicketsDTO);
+    void orderTickets(InvoiceDTO orderedTicketsDTO);
 }

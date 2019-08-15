@@ -22,6 +22,27 @@ public class TicketDTO extends BaseEntityDTO {
     private Integer inStock;
     private EventDTO event;
 
+    //@Builder
+//    public TicketDTO(TicketType type, Integer price, Integer totalAmmount, Integer inStock, EventDTO event) {
+//        this.type = type;
+//        this.price = price;
+//        this.totalAmmount = totalAmmount;
+//        this.inStock = inStock;
+//        this.event = event;
+//    }
+
+    @Builder
+    public TicketDTO(Long id, TicketType type, Integer price, Integer totalAmmount, Integer inStock, EventDTO event) {
+        super(id);
+        this.type = type;
+        this.price = price;
+        this.totalAmmount = totalAmmount;
+        this.inStock = inStock;
+        this.event = event;
+    }
+
+
+
     @Override
     public String toString() {
         return "TicketDTO{" +

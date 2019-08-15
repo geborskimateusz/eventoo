@@ -29,4 +29,16 @@ public class Ticket extends BaseEntity {
     })
     @JoinColumn(name = "event_id")
     Event event;
+
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "type=" + type +
+                ", price=" + price +
+                ", totalAmmount=" + totalAmmount +
+                ", inStock=" + inStock +
+                ", event=" + event +
+                '}';
+    }
 }
