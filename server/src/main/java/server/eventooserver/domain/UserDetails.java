@@ -48,6 +48,7 @@ public class UserDetails extends BaseEntity{
     @Override
     public String toString() {
         return "UserDetails{" +
+                "id= " + super.getId() + '\'' +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", phone='" + phone + '\'' +

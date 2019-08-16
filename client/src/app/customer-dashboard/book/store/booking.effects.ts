@@ -14,22 +14,30 @@ export class BookingEffects {
     @Effect({ dispatch: false })
     book$ = this.actions$.pipe(
         ofType<BookTickets>(BookingActionTypes.BookTickets),
-        tap(action => {
+        switchMap(action => {
 
-            let invoice = {
+            let orderedTickets = action.payload.orderedTickets.reduce((arr, orderedTicket) => {
+                let { amount, ...ticket } = orderedTicket;
+
+                let preparedTicket = {
+                    amount,
+                    ticket
+                }
+
+                console.log(preparedTicket)
+
+                arr.push(preparedTicket)
+
+                return arr;
+            }, [])
+
+            let userDetailsId = localStorage.getItem("current_user_id");
+            console.log(userDetailsId)
+
+            return this.httpClient.patch('http://localhost:8080/api/v1/order',{
                 orderDate: new Date(),
-                orderedTickets: action.payload.orderedTickets,
-                userDetails: action.payload.userDetails
-            }
-            
-
-            // this.httpClient.patch('http://localhost:8080/api/v1/order',
-            // {
-            //     orderDate: new Date(),
-            //     orderedTickets: action.payload.orderedTickets,
-            //     userId: localStorage.getItem("current_user_id")
-            // })
-        }
-        ))
-
+                orderedTickets,
+                userDetailsId
+            })
+        }))
 }

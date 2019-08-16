@@ -15,15 +15,15 @@ public class InvoiceDTO {
 
     private LocalDate orderDate;
     private Set<OrderedTicketDTO> orderedTickets = new HashSet<>();
-    private UserDetailsDTO userDetails;
-
+//    private UserDetailsDTO userDetails;
+    private Long userDetailsId;
 
     @Override
     public String toString() {
         return "InvoiceDTO{" +
                 "orderDate=" + orderDate +
                 ", orderedTickets=" + orderedTickets +
-//                ", userId=" + userId +
+                ", userId=" + userDetailsId +
                 '}';
     }
 }

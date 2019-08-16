@@ -10,22 +10,29 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @NoArgsConstructor
-public class OrderedTicketDTO {
+public class OrderedTicketDTO extends BaseEntityDTO {
     private Integer amount;
     private TicketDTO ticket;
 
+//    @Builder
+//    public OrderedTicketDTO(Integer amount, TicketDTO ticket) {
+//        this.amount = amount;
+//        this.ticket = ticket;
+//    }
+
     @Builder
-    public OrderedTicketDTO(Integer amount, TicketDTO ticket) {
+    public OrderedTicketDTO(Long id, Integer amount, TicketDTO ticket) {
+        super(id);
         this.amount = amount;
         this.ticket = ticket;
     }
 
-
     @Override
     public String toString() {
         return "OrderedTicketDTO{" +
+                "id = " + super.getId() + "\n" +
                 "amount=" + amount +
-                "ticket" + super.toString() +
+                "ticket" + ticket +
                 '}';
     }
 }

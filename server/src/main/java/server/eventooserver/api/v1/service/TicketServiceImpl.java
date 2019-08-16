@@ -11,6 +11,7 @@ import server.eventooserver.api.v1.service.exception.ResourceNotFoundException;
 import server.eventooserver.domain.OrderedTicket;
 import server.eventooserver.domain.Ticket;
 
+import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Slf4j
@@ -50,8 +51,12 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
+    @Transactional
     public Ticket updateTicketByOrderAmount(OrderedTicket orderedTicket) {
-        Ticket found = findById(orderedTicket.getId());
+        Ticket found = findById(orderedTicket.getTicket().getId());
+
+        System.out.println(found);
+
 
         decreaseInStockAmount(orderedTicket, found);
 

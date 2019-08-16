@@ -93,7 +93,7 @@
 //
 //        document.add(new Chunk(horizontalLine));
 //
-//        orderTickets(document, orderDTO.getOrderedTickets());
+//        renderOrder(document, orderDTO.getOrderedTickets());
 //
 //
 //        document.close();
@@ -143,7 +143,7 @@
 //    }
 //
 //
-//    private static void orderTickets(Document document, List<OrderedTicketDTO> orderedTickets) throws DocumentException {
+//    private static void renderOrder(Document document, List<OrderedTicketDTO> orderedTickets) throws DocumentException {
 //
 //        renderParagraph(document);
 //

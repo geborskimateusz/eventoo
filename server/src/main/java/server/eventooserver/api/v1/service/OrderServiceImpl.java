@@ -55,7 +55,7 @@ public class OrderServiceImpl implements OrderService {
 
         orderedTickets.forEach(invoice::addOrderedTicket);
 
-        UserDetails userDetails = userService.findById(invoiceDTO.getUserDetails().getId());
+        UserDetails userDetails = userService.findById(invoiceDTO.getUserDetailsId());
         invoice.setUserDetails(userDetails);
 
         Invoice saved = orderRepository.save(invoice);
@@ -66,7 +66,7 @@ public class OrderServiceImpl implements OrderService {
 
     private void generateOrderConfirmation(Invoice invoice) {
         System.out.println(invoice);
-//        filesUtilService.generateOrderConfirmation(invoice);
+        filesUtilService.generateOrderConfirmation(invoice);
     }
 
 

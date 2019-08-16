@@ -8,7 +8,7 @@
 //import server.eventooserver.api.v1.dto.*;
 //import server.eventooserver.api.v1.mapper.InvoiceMapper;
 //import server.eventooserver.api.v1.repository.*;
-//import server.eventooserver.api.v1.service.EventService;
+//import server.eventooserver.api.v1.service.*;
 //import server.eventooserver.domain.*;
 //
 //import java.time.LocalDate;
@@ -20,25 +20,31 @@
 //@Component
 //public class Bootstrap implements CommandLineRunner {
 //
-//    UserDetailsRepository userDetailsRepository;
-//    AddressRepository addressRepository;
+//    private final UserDetailsRepository userDetailsRepository;
+//    private final AddressRepository addressRepository;
+//    private final OrderRepository orderRepository;
+//    private final TicketRepository ticketRepository;
+//    private final OrderService orderService;
+//    private final TicketService ticketService;
+//    private final FilesUtilService filesUtilService;
+//    private final UserService userService;
+//    private final InvoiceMapper invoiceMapper = InvoiceMapper.INSTANCE;
 //
-//    @Autowired
-//    OrderRepository orderRepository;
 //
-//    @Autowired
-//    TicketRepository ticketRepository;
-//
-//    InvoiceMapper invoiceMapper = InvoiceMapper.INSTANCE;
-//
-//    public Bootstrap(UserDetailsRepository userDetailsRepository, AddressRepository addressRepository) {
+//    public Bootstrap(UserDetailsRepository userDetailsRepository, AddressRepository addressRepository, OrderRepository orderRepository, TicketRepository ticketRepository, OrderService orderService, TicketService ticketService, FilesUtilService filesUtilService, UserService userService) {
 //        this.userDetailsRepository = userDetailsRepository;
 //        this.addressRepository = addressRepository;
+//        this.orderRepository = orderRepository;
+//        this.ticketRepository = ticketRepository;
+//        this.orderService = orderService;
+//        this.ticketService = ticketService;
+//        this.filesUtilService = filesUtilService;
+//        this.userService = userService;
 //    }
 //
 //    @Override
 //    public void run(String... args) throws Exception {
-
+//
 //        AddressDTO address = AddressDTO.builder()
 //                .country("Fcountry")
 //                .city("Fcity")
@@ -74,35 +80,32 @@
 //        InvoiceDTO invoiceDTO = InvoiceDTO.builder()
 //                .orderDate(LocalDate.now())
 //                .orderedTickets(Arrays.asList(orderedTicketDTO).stream().collect(Collectors.toSet()))
-//                .userDetails(userDetailsDTO)
+//                .userDetailsId(userDetailsDTO.getId())
 //                .build();
-
-        //////////////////////
-
-//        UserDetails userDetails = userDetailsRepository.findDTOById(invoiceDTO.getUserDetails().getId()).get();
+//
+//        ////////////////////
+////        orderService.orderTickets(invoiceDTO);
+//
+////        UserDetails userDetails = userService.findById(invoiceDTO.getUserDetailsId());
+////
+////
+////        Invoice invoice = invoiceMapper.invoiceDTOtoInvoice(invoiceDTO);
+////        List<OrderedTicket> ticketList = invoice.getOrderedTickets().stream()
+////                .map(orderedTicket -> {
+////                    Ticket ticket = ticketService.findById(orderedTicket.getTicket().getId());
+////
+////                    orderedTicket.setTicket(ticket);
+////
+////                    return orderedTicket;
+////                }).collect(Collectors.toList());
+////
+////        ticketList.forEach(orderedTicket -> invoice.addOrderedTicket(orderedTicket));
+////
+////        invoice.setUserDetails(userDetails);
+////
+////        orderRepository.save(invoice);
 //
 //
-//
-//        Invoice invoice = invoiceMapper.invoiceDTOtoInvoice(invoiceDTO);
-//        List<OrderedTicket> ticketList = invoice.getOrderedTickets().stream()
-//                .map(orderedTicket -> {
-//                    Ticket ticket = ticketRepository.findDTOById(orderedTicket.getTicket().getId()).get();
-//
-//                    orderedTicket.setTicket(ticket);
-//
-//                    return orderedTicket;
-//                }).collect(Collectors.toList());
-//
-//        ticketList.forEach(orderedTicket -> invoice.addOrderedTicket(orderedTicket));
-//
-//        invoice.setUserDetails(userDetails);
-//
-//        orderRepository.save(invoice);
-
-
-//        Invoice invoice = orderRepository.save(invoiceDTO);
-
-
 //    }
 //
 //    private void generateUser() {

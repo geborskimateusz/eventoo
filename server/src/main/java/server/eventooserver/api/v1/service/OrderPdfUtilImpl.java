@@ -10,6 +10,7 @@ import server.eventooserver.api.v1.dto.UserDetailsDTO;
 import server.eventooserver.domain.Invoice;
 import server.eventooserver.domain.OrderedTicket;
 import server.eventooserver.domain.TicketType;
+import server.eventooserver.domain.UserDetails;
 
 import javax.transaction.Transactional;
 import java.io.IOException;
@@ -19,7 +20,6 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.List;
 
-import static com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text.NEW_LINE;
 import static server.eventooserver.api.v1.service.util.OrderConstans.*;
 
 @Service
@@ -76,7 +76,7 @@ public class OrderPdfUtilImpl implements PdfUtil {
     }
 
     @Override
-    public void orderTickets(Document document, Set<OrderedTicket> orderedTicketsSet) throws DocumentException {
+    public void renderOrder(Document document, Set<OrderedTicket> orderedTicketsSet) throws DocumentException {
 
         List<OrderedTicket> orderedTickets = new ArrayList<>(orderedTicketsSet);
 
@@ -89,6 +89,9 @@ public class OrderPdfUtilImpl implements PdfUtil {
         int orderedListStartingPoint = 1;
         for (int i = orderedListStartingPoint; i <= orderedTickets.size(); i++) {
             OrderedTicket orderedTicket = orderedTickets.get(i - orderedListStartingPoint);
+
+            System.out.println(orderedTickets);
+
 
             Chunk order = new Chunk(
                     i + DOT + WHITE_SPACE + orderedTicket.getTicket().getEvent().getTitle() + COMMA + WHITE_SPACE +
@@ -166,22 +169,22 @@ public class OrderPdfUtilImpl implements PdfUtil {
     @Transactional
     public void generateUserDetails(PdfPTable table, Invoice invoice)  {
 
-        UserDetailsDTO userDetailsDTO = userService.findDTOById(invoice.getUserDetails().getId());
+        UserDetails userDetails = invoice.getUserDetails();
 
-                String fullName = userDetailsDTO.getFirstName() + WHITE_SPACE + userDetailsDTO.getLastName() + NEW_LINE;
+                String fullName = userDetails.getFirstName() + WHITE_SPACE + userDetails.getLastName() + NEW_LINE;
 
         String addressPartOne =
-                userDetailsDTO.getAddress().getCity() + COMMA + WHITE_SPACE +
-                        userDetailsDTO.getAddress().getStreet() + WHITE_SPACE +
-                        userDetailsDTO.getAddress().getHomeNo() + NEW_LINE;
+                userDetails.getAddress().getCity() + COMMA + WHITE_SPACE +
+                        userDetails.getAddress().getStreet() + WHITE_SPACE +
+                        userDetails.getAddress().getHomeNo() + NEW_LINE;
 
         String addressPartTwo =
-                userDetailsDTO.getAddress().getPostalCode() + COMMA + WHITE_SPACE +
-                        userDetailsDTO.getAddress().getCountry() + NEW_LINE;
+                userDetails.getAddress().getPostalCode() + COMMA + WHITE_SPACE +
+                        userDetails.getAddress().getCountry() + NEW_LINE;
 
-        String phoneNum = userDetailsDTO.getPhone() + NEW_LINE;
+        String phoneNum = userDetails.getPhone() + NEW_LINE;
 
-        String email = userDetailsDTO.getEmail();
+        String email = userDetails.getEmail();
 
 
         String builder = fullName +

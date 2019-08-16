@@ -19,5 +19,5 @@ public interface PdfUtil {
     void renderLogo(Document document) throws URISyntaxException, IOException, DocumentException;
     void addHeadersRow(PdfPTable table);
     void renderDetailsRows(PdfPTable table, Invoice invoice) throws DocumentException;
-    void orderTickets(Document document, Set<OrderedTicket> orderedTickets) throws DocumentException;
+    void renderOrder(Document document, Set<OrderedTicket> orderedTickets) throws DocumentException;
 }

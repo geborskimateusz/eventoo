@@ -46,4 +46,18 @@ public class Event extends BaseEntity {
         this.tickets.add(ticket);
         ticket.setEvent(this);
     }
+
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", date=" + date +
+                ", img='" + img + '\'' +
+                ", genre=" + genre +
+                ", location=" + location +
+//                ", tickets=" + tickets +
+                '}';
+    }
 }
