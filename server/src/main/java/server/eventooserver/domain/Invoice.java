@@ -48,6 +48,7 @@ public class Invoice extends BaseEntity {
         return "Invoice{" +
                 "orderDate=" + orderDate +
                 ", orderedTickets=" + orderedTickets +
+                ", userDetails=" + userDetails +
                 '}';
     }
 }

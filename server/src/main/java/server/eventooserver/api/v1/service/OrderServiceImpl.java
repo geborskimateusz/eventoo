@@ -1,5 +1,6 @@
 package server.eventooserver.api.v1.service;
 
+import com.itextpdf.text.DocumentException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import server.eventooserver.api.v1.dto.InvoiceDTO;
@@ -13,6 +14,8 @@ import server.eventooserver.domain.Ticket;
 import server.eventooserver.domain.UserDetails;
 
 import javax.transaction.Transactional;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -56,12 +59,14 @@ public class OrderServiceImpl implements OrderService {
         invoice.setUserDetails(userDetails);
 
         Invoice saved = orderRepository.save(invoice);
+
         generateOrderConfirmation(saved);
 
     }
 
     private void generateOrderConfirmation(Invoice invoice) {
-        //TODO filesUtilService.generateOrderConfirmation();
+        System.out.println(invoice);
+//        filesUtilService.generateOrderConfirmation(invoice);
     }
 
 

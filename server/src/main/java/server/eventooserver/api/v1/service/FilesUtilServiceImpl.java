@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import server.eventooserver.api.v1.dto.InvoiceDTO;
 import server.eventooserver.api.v1.dto.UserDetailsDTO;
+import server.eventooserver.domain.Invoice;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -32,36 +33,41 @@ public class FilesUtilServiceImpl implements FilesUtilService {
 
     //TODO THIS METHOD SHOULD UPLOAD FILE TO AWS S3, FOR TESTING IT UPLOADS FILE TO src/main/resources/static/pdf/
     @Override
-    public void generateOrderConfirmation(InvoiceDTO orderDTO) throws DocumentException, IOException, URISyntaxException {
+    public void generateOrderConfirmation(Invoice invoice){
 
-        UserDetailsDTO userDetailsDTO = userService.findDTOById(orderDTO.getUserDetails().getId());
+        UserDetailsDTO userDetailsDTO = userService.findDTOById(invoice.getUserDetails().getId());
 
         Document document = new Document();
 
-        String pdfName = userDetailsDTO.getEmail() + UNDERSCORE + orderDTO.getOrderDate();
-        PdfWriter.getInstance(document, new FileOutputStream("src/main/resources/static/pdf/" + pdfName + PDF_EXTENSION));
+       try {
+           String pdfName = userDetailsDTO.getEmail() + UNDERSCORE + invoice.getOrderDate();
+           PdfWriter.getInstance(document, new FileOutputStream("src/main/resources/static/pdf/" + pdfName + PDF_EXTENSION));
 
-        document.open();
+           document.open();
 
-        pdfUtil.renderLogo(document);
+           pdfUtil.renderLogo(document);
 
 
-        pdfUtil.renderParagraphs(document, 2);
+           pdfUtil.renderParagraphs(document, 2);
 
-        LineSeparator horizontalLine = new LineSeparator();
-        document.add(new Chunk(horizontalLine));
+           LineSeparator horizontalLine = new LineSeparator();
+           document.add(new Chunk(horizontalLine));
 
-        PdfPTable table = new PdfPTable(3);
-        pdfUtil.addHeadersRow(table);
-        pdfUtil.renderDetailsRows(table, orderDTO);
+           PdfPTable table = new PdfPTable(3);
+           pdfUtil.addHeadersRow(table);
+           pdfUtil.renderDetailsRows(table, invoice);
 
-        document.add(table);
+           document.add(table);
 
-        document.add(new Chunk(horizontalLine));
+           document.add(new Chunk(horizontalLine));
 
-        pdfUtil.orderTickets(document, orderDTO.getOrderedTickets());
+           pdfUtil.orderTickets(document, invoice.getOrderedTickets());
+       }catch (Exception e) {
+           System.out.println(e.getMessage());
+       }finally {
+           document.close();
+       }
 
-        document.close();
     }
 
 }

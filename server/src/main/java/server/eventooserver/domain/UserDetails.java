@@ -44,4 +44,17 @@ public class UserDetails extends BaseEntity{
         this.invoices.add(invoice);
         invoice.setUserDetails(this);
     }
+
+    @Override
+    public String toString() {
+        return "UserDetails{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", address=" + address +
+                ", imagePath='" + imagePath + '\'' +
+//                ", invoices=" + invoices +
+                '}';
+    }
 }

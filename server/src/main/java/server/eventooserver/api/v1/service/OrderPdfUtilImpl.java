@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import server.eventooserver.api.v1.dto.InvoiceDTO;
 import server.eventooserver.api.v1.dto.OrderedTicketDTO;
 import server.eventooserver.api.v1.dto.UserDetailsDTO;
+import server.eventooserver.domain.Invoice;
+import server.eventooserver.domain.OrderedTicket;
 import server.eventooserver.domain.TicketType;
 
 import javax.transaction.Transactional;
@@ -65,8 +67,8 @@ public class OrderPdfUtilImpl implements PdfUtil {
     }
 
     @Override
-    public void renderDetailsRows(PdfPTable table, InvoiceDTO orderDTO) {
-        generateUserDetails(table,orderDTO);
+    public void renderDetailsRows(PdfPTable table, Invoice invoice) {
+        generateUserDetails(table,invoice);
 
         generateCompanyDetails(table);
 
@@ -74,9 +76,9 @@ public class OrderPdfUtilImpl implements PdfUtil {
     }
 
     @Override
-    public void orderTickets(Document document, Set<OrderedTicketDTO> orderedTicketsSet) throws DocumentException {
+    public void orderTickets(Document document, Set<OrderedTicket> orderedTicketsSet) throws DocumentException {
 
-        List<OrderedTicketDTO> orderedTickets = new ArrayList<>(orderedTicketsSet);
+        List<OrderedTicket> orderedTickets = new ArrayList<>(orderedTicketsSet);
 
         renderParagraph(document);
 
@@ -86,7 +88,7 @@ public class OrderPdfUtilImpl implements PdfUtil {
 
         int orderedListStartingPoint = 1;
         for (int i = orderedListStartingPoint; i <= orderedTickets.size(); i++) {
-            OrderedTicketDTO orderedTicket = orderedTickets.get(i - orderedListStartingPoint);
+            OrderedTicket orderedTicket = orderedTickets.get(i - orderedListStartingPoint);
 
             Chunk order = new Chunk(
                     i + DOT + WHITE_SPACE + orderedTicket.getTicket().getEvent().getTitle() + COMMA + WHITE_SPACE +
@@ -128,7 +130,7 @@ public class OrderPdfUtilImpl implements PdfUtil {
         return builder.toString();
     }
 
-    private Integer calculateTotalPrice(List<OrderedTicketDTO> orderedTickets) {
+    private Integer calculateTotalPrice(List<OrderedTicket> orderedTickets) {
 
         return orderedTickets.stream()
                 .map(orderedTicketDTO -> orderedTicketDTO.getAmount() * orderedTicketDTO.getTicket().getPrice())
@@ -162,9 +164,9 @@ public class OrderPdfUtilImpl implements PdfUtil {
     }
 
     @Transactional
-    public void generateUserDetails(PdfPTable table, InvoiceDTO orderDTO)  {
+    public void generateUserDetails(PdfPTable table, Invoice invoice)  {
 
-        UserDetailsDTO userDetailsDTO = userService.findDTOById(orderDTO.getUserDetails().getId());
+        UserDetailsDTO userDetailsDTO = userService.findDTOById(invoice.getUserDetails().getId());
 
                 String fullName = userDetailsDTO.getFirstName() + WHITE_SPACE + userDetailsDTO.getLastName() + NEW_LINE;
 
