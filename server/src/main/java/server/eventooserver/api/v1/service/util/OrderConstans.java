@@ -4,13 +4,10 @@ import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.FontFactory;
 
+import static server.eventooserver.api.v1.service.util.SharedConstans.*;
+
 public final class OrderConstans {
-    public static final String NEW_LINE = "\n";
-    public static final String COLON = ":";
-    public static final String COMMA = ",";
-    public static final String UNDERSCORE = "_";
-    public static final String DOT = ".";
-    public static final String WHITE_SPACE = " ";
+
     public static final String DOLLAR_SIGN = "$";
     public static final String TIMES = "x";
 

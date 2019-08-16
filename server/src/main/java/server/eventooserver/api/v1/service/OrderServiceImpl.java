@@ -65,7 +65,6 @@ public class OrderServiceImpl implements OrderService {
     }
 
     private void generateOrderConfirmation(Invoice invoice) {
-        System.out.println(invoice);
         filesUtilService.generateOrderConfirmation(invoice);
     }
 

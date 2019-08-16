@@ -15,7 +15,6 @@ public class InvoiceDTO {
 
     private LocalDate orderDate;
     private Set<OrderedTicketDTO> orderedTickets = new HashSet<>();
-//    private UserDetailsDTO userDetails;
     private Long userDetailsId;
 
     @Override

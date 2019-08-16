@@ -4,9 +4,6 @@ import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import org.springframework.stereotype.Service;
-import server.eventooserver.api.v1.dto.InvoiceDTO;
-import server.eventooserver.api.v1.dto.OrderedTicketDTO;
-import server.eventooserver.api.v1.dto.UserDetailsDTO;
 import server.eventooserver.domain.Invoice;
 import server.eventooserver.domain.OrderedTicket;
 import server.eventooserver.domain.TicketType;
@@ -21,15 +18,10 @@ import java.util.*;
 import java.util.List;
 
 import static server.eventooserver.api.v1.service.util.OrderConstans.*;
+import static server.eventooserver.api.v1.service.util.SharedConstans.*;
 
 @Service
 public class OrderPdfUtilImpl implements PdfUtil {
-
-    private final UserService userService;
-
-    public OrderPdfUtilImpl(UserService userService) {
-        this.userService = userService;
-    }
 
     @Override
     public void renderParagraphs(Document document, Integer number) throws DocumentException {
@@ -68,7 +60,7 @@ public class OrderPdfUtilImpl implements PdfUtil {
 
     @Override
     public void renderDetailsRows(PdfPTable table, Invoice invoice) {
-        generateUserDetails(table,invoice);
+        generateUserDetails(table, invoice);
 
         generateCompanyDetails(table);
 
@@ -84,29 +76,35 @@ public class OrderPdfUtilImpl implements PdfUtil {
 
         Chunk from = new Chunk(ORDER, FONT_BIG_BOLD);
         document.add(from);
+
         renderParagraph(document);
 
-        int orderedListStartingPoint = 1;
-        for (int i = orderedListStartingPoint; i <= orderedTickets.size(); i++) {
-            OrderedTicket orderedTicket = orderedTickets.get(i - orderedListStartingPoint);
-
-            System.out.println(orderedTickets);
-
-
-            Chunk order = new Chunk(
-                    i + DOT + WHITE_SPACE + orderedTicket.getTicket().getEvent().getTitle() + COMMA + WHITE_SPACE +
-                            orderedTicket.getTicket().getEvent().getLocation().getFullAddress() + COMMA + WHITE_SPACE +
-                            orderedTicket.getAmount() + TIMES + WHITE_SPACE +
-                            convertType(orderedTicket.getTicket().getType())
-                    , FONT_MEDIUM);
-            document.add(order);
-            renderParagraph(document);
-        }
+        renderOrderRows(document, orderedTickets);
 
         renderParagraphs(document, 1);
 
         Chunk total = new Chunk(TOTAL + calculateTotalPrice(orderedTickets) + DOLLAR_SIGN, FONT_BIG);
         document.add(total);
+    }
+
+    private void renderOrderRows(Document document, List<OrderedTicket> orderedTickets) throws DocumentException {
+
+        int orderedListStartingPoint = 1;
+        for (int i = orderedListStartingPoint; i <= orderedTickets.size(); i++) {
+            OrderedTicket orderedTicket = orderedTickets.get(i - orderedListStartingPoint);
+
+            Chunk order = new Chunk(i + renderRowDetails(orderedTicket), FONT_MEDIUM);
+            document.add(order);
+
+            renderParagraph(document);
+        }
+    }
+
+    private String renderRowDetails(OrderedTicket orderedTicket) {
+        return DOT + WHITE_SPACE + orderedTicket.getTicket().getEvent().getTitle() + COMMA + WHITE_SPACE +
+                orderedTicket.getTicket().getEvent().getLocation().getFullAddress() + COMMA + WHITE_SPACE +
+                orderedTicket.getAmount() + TIMES + WHITE_SPACE +
+                convertType(orderedTicket.getTicket().getType());
     }
 
     private void renderParagraph(Document document) throws DocumentException {
@@ -124,11 +122,10 @@ public class OrderPdfUtilImpl implements PdfUtil {
 
         StringBuilder builder = new StringBuilder();
         for (String s : split) {
-            builder.append(
-                    s.substring(0, 1).toUpperCase() +
-                            s.substring(1) + WHITE_SPACE);
+            builder.append(s.substring(0, 1).toUpperCase())
+                    .append(s.substring(1))
+                    .append(WHITE_SPACE);
         }
-
 
         return builder.toString();
     }
@@ -166,12 +163,11 @@ public class OrderPdfUtilImpl implements PdfUtil {
         cell.setBorder(Rectangle.NO_BORDER);
     }
 
-    @Transactional
-    public void generateUserDetails(PdfPTable table, Invoice invoice)  {
+    private void generateUserDetails(PdfPTable table, Invoice invoice) {
 
         UserDetails userDetails = invoice.getUserDetails();
 
-                String fullName = userDetails.getFirstName() + WHITE_SPACE + userDetails.getLastName() + NEW_LINE;
+        String fullName = userDetails.getFirstName() + WHITE_SPACE + userDetails.getLastName() + NEW_LINE;
 
         String addressPartOne =
                 userDetails.getAddress().getCity() + COMMA + WHITE_SPACE +

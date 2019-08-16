@@ -14,15 +14,8 @@ public class OrderedTicketDTO extends BaseEntityDTO {
     private Integer amount;
     private TicketDTO ticket;
 
-//    @Builder
-//    public OrderedTicketDTO(Integer amount, TicketDTO ticket) {
-//        this.amount = amount;
-//        this.ticket = ticket;
-//    }
-
     @Builder
-    public OrderedTicketDTO(Long id, Integer amount, TicketDTO ticket) {
-        super(id);
+    public OrderedTicketDTO(Integer amount, TicketDTO ticket) {
         this.amount = amount;
         this.ticket = ticket;
     }

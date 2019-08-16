@@ -22,12 +22,10 @@ public class OrderController {
     public static final String API_VI_ORDER = "api/v1/order";
 
     //TODO pdf name should be returned
-//    InvoiceMapper invoiceMapper = InvoiceMapper.INSTANCE;
     @PatchMapping
     @ResponseStatus(HttpStatus.OK)
     public void bookTickets(@RequestBody InvoiceDTO invoiceDTO) {
-//        System.out.println(invoiceDTO);
-//        System.out.println(invoiceMapper.invoiceDTOtoInvoice(invoiceDTO));
+
         orderService.orderTickets(invoiceDTO);
     }
 

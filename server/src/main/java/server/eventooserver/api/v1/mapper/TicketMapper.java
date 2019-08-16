@@ -12,9 +12,7 @@ public interface TicketMapper {
 
     TicketMapper INSTANCE = Mappers.getMapper(TicketMapper.class);
 
-//    @Mapping(target = "event", ignore = true)
     Ticket ticketDTOtoTicket(TicketDTO ticketDTO);
-
 
 
     @BeforeMapping

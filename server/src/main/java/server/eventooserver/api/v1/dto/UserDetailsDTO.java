@@ -22,20 +22,8 @@ public class UserDetailsDTO extends BaseEntityDTO {
     private String imagePath;
     private Set<Invoice> invoices = new HashSet<>();
 
-//    @Builder
-//    public UserDetailsDTO(String firstName, String lastName, String phone, String email, AddressDTO address, String imagePath, Set<Invoice> invoices) {
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.phone = phone;
-//        this.email = email;
-//        this.address = address;
-//        this.imagePath = imagePath;
-//        this.invoices = invoices;
-//    }
-
     @Builder
-    public UserDetailsDTO(Long id, String firstName, String lastName, String phone, String email, AddressDTO address, String imagePath, Set<Invoice> invoices) {
-        super(id);
+    public UserDetailsDTO(String firstName, String lastName, String phone, String email, AddressDTO address, String imagePath, Set<Invoice> invoices) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
@@ -44,4 +32,5 @@ public class UserDetailsDTO extends BaseEntityDTO {
         this.imagePath = imagePath;
         this.invoices = invoices;
     }
+
 }

@@ -18,12 +18,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static server.eventooserver.api.v1.service.util.SharedConstans.DASH;
+import static server.eventooserver.api.v1.service.util.SharedConstans.UNDERSCORE;
+
 @Service
 @Slf4j
 public class EventServiceImpl implements EventService {
 
     //TODO REFACTOR HARDCODED -> SET VAL BY REQUEST
-    //load events for two pages
     public static final int EVENTS_PER_PAGE = 12;
 
     private final EventRepository eventRepository;
@@ -73,7 +75,7 @@ public class EventServiceImpl implements EventService {
     }
 
     private MusicGenre parseMusicGenre(String genre) {
-        return MusicGenre.valueOf(genre.toUpperCase().replace("-", "_"));
+        return MusicGenre.valueOf(genre.toUpperCase().replace(DASH, UNDERSCORE));
     }
 
     private Pageable getPageAbleRequest(Integer pageNum) {

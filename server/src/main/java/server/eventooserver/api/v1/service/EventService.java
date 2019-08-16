@@ -10,6 +10,5 @@ public interface EventService {
 
     EventsDTO saveAll(EventsDTO eventsDTO);
 
-//    List<EventDTO> findAll();
     EventsDTO findByGenre(String genre, Integer pageNum);
 }

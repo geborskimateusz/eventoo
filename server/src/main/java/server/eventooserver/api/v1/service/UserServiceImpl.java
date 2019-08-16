@@ -24,8 +24,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDetailsDTO authenticateUser(User user) {
 
-        log.info(this.getClass().getSimpleName() + ", UserDetailsDTO authenticateUser(User user)");
-
         return userDetailsMapper.UserDetailsToUserDetailsDTO(
                 userDetailsRepository.findByEmail(user.getUsername())
                         .orElseThrow(ResourceNotFoundException::new));
@@ -39,8 +37,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDetailsDTO findDTOById(Long id) {
-
-        log.info(this.getClass().getSimpleName() + ", UserDetailsDTO findDTOById(Long id)");
 
         return userDetailsMapper.UserDetailsToUserDetailsDTO(
                 findById(id)
