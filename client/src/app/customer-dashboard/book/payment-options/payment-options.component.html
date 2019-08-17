@@ -1,5 +1,13 @@
-<h4>Your reservation will expire in 3 days from now.</h4>
-<div class="payment__options">
-    <a class="payment__options--option" (click)="generateOrderConfirmation()">Show form</a>
-    <a class="payment__options--option">Send form via email</a>
+<div *ngIf="!(isLoading$ | async); else loading">
+  <h4>
+    If you will not make transaction your reservation will expire in 3 days from
+    now.
+  </h4>
+  <div class="payment__options">
+    <a class="payment__options--option">Download confirmation order</a>
+    <a class="payment__options--option">Send order via email</a>
+  </div>
 </div>
+<ng-template #loading>
+    <mat-spinner></mat-spinner>
+</ng-template>

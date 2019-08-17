@@ -5,11 +5,15 @@ import { Ticket } from 'src/app/shared/model/ticket-model';
 import { retry } from 'rxjs/operators';
 import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
 
-export interface BookingState extends EntityState<OrderedTicket> { }
+export interface BookingState extends EntityState<OrderedTicket> {
+    loading: boolean;
+}
 
 export const adapter: EntityAdapter<OrderedTicket> = createEntityAdapter<OrderedTicket>();
 
-export const initialBookingState: BookingState = adapter.getInitialState();
+export const initialBookingState: BookingState = adapter.getInitialState({
+    loading: false
+});
 
 export function bookingReducer(state = initialBookingState, action: BookingActions) {
 
@@ -22,6 +26,15 @@ export function bookingReducer(state = initialBookingState, action: BookingActio
 
         case BookingActionTypes.DeleteTicket:
             return adapter.removeOne(action.payload.ticketId, state);
+
+        case BookingActionTypes.BookTicketsRequest:
+            return { ...state, loading: true }
+
+        case BookingActionTypes.OrderCancelled:
+            return { ...state, loading: false }
+
+        case BookingActionTypes.TicketsBooked:
+            return { ...state, loading: false }
 
         default: {
             return state;

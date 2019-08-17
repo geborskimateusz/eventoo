@@ -8,7 +8,9 @@ export enum BookingActionTypes {
     AddAllTickets = '[Booking API] Tickets Added',
     SaveOrUpdateTicket = '[Booking API] Save Or Update Ticket',
     DeleteTicket = '[Booking API] DeleteTicket',
-    BookTickets = '[Booking API] Book Tickets'
+    BookTicketsRequest = '[Booking API] Book Tickets Request',
+    TicketsBooked = '[Booking API] Tickets Booked',
+    OrderCancelled = '[Booking API] Order Cancelled'
 }
 
 export class AddAllTickets implements Action {
@@ -26,15 +28,26 @@ export class DeleteTicket implements Action {
     constructor(public payload: { ticketId: number }) { }
 }
 
-export class BookTickets implements Action {
-    readonly type = BookingActionTypes.BookTickets;
+export class BookTicketsRequest implements Action {
+    readonly type = BookingActionTypes.BookTicketsRequest;
     constructor(public payload: {orderedTickets: OrderedTicket[]}) {
-        console.log(payload)
     }
+}
+
+export class TicketsBooked implements Action {
+    readonly type = BookingActionTypes.TicketsBooked;
+    constructor() { }
+}
+
+export class OrderCancelled implements Action {
+    readonly type = BookingActionTypes.OrderCancelled;
+    constructor() { }
 }
 
 export type BookingActions =
     AddAllTickets |
     SaveOrUpdateTicket |
     DeleteTicket |
-    BookTickets;
+    BookTicketsRequest |
+    TicketsBooked |
+    OrderCancelled;

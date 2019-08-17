@@ -21,7 +21,6 @@ export class EventsEffects {
     @Effect()
     loadEvents$ = this.actions$.pipe(
         ofType<EventsPageRequested>(EventsActionTypes.EventsPageRequested),
-        tap(() => console.log('request')),
         mergeMap((action) => {
             return this.httpClient.get<Event[]>(`http://localhost:8080/api/v1/events/${action.payload.musicGenre}?page=${action.payload.page.pageIndex}`)
                 .pipe(

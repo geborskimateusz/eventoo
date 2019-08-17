@@ -24,9 +24,10 @@ public class OrderController {
     //TODO pdf name should be returned
     @PatchMapping
     @ResponseStatus(HttpStatus.OK)
-    public void bookTickets(@RequestBody InvoiceDTO invoiceDTO) {
+    public void bookTickets(@RequestBody InvoiceDTO invoiceDTO) throws Exception {
 
-        orderService.orderTickets(invoiceDTO);
+//        orderService.orderTickets(invoiceDTO);
+        throw new Exception("");
     }
 
 }

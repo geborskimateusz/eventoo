@@ -7,7 +7,7 @@
   </div>
   <div mat-dialog-actions>
     <button class="order__finalization--btn" mat-button (click)="onNoClick()">Back</button>
-    <button class="order__finalization--btn" mat-button [mat-dialog-close]="orderFinalized()" cdkFocusInitial>
+    <button class="order__finalization--btn" mat-button [mat-dialog-close]="orderFinalized()" (click)="generateOrderConfirmation()" cdkFocusInitial>
       Finalize order
     </button>
   </div>

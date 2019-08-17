@@ -32,3 +32,8 @@ export const selectPricePerType = createSelector(
         }
     }
 );
+
+export const selectBookingLoading = createSelector(
+    selectBookingState,
+    state => state.loading
+)
