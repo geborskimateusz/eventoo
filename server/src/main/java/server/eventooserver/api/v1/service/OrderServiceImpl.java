@@ -1,11 +1,8 @@
 package server.eventooserver.api.v1.service;
 
-import com.itextpdf.text.DocumentException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import server.eventooserver.api.v1.dto.InvoiceDTO;
-import server.eventooserver.api.v1.dto.OrderedTicketDTO;
-import server.eventooserver.api.v1.dto.TicketDTO;
 import server.eventooserver.api.v1.mapper.InvoiceMapper;
 import server.eventooserver.api.v1.repository.OrderRepository;
 import server.eventooserver.domain.Invoice;
@@ -14,8 +11,7 @@ import server.eventooserver.domain.Ticket;
 import server.eventooserver.domain.UserDetails;
 
 import javax.transaction.Transactional;
-import java.io.IOException;
-import java.net.URISyntaxException;
+import java.io.ByteArrayOutputStream;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,21 +22,24 @@ public class OrderServiceImpl implements OrderService {
     private final TicketService ticketService;
     private final FilesUtilService filesUtilService;
     private final UserService userService;
+    private final AwsS3service awsS3service;
+
 
     private final OrderRepository orderRepository;
 
     private final InvoiceMapper invoiceMapper = InvoiceMapper.INSTANCE;
 
-    public OrderServiceImpl(TicketService ticketService, FilesUtilService filesUtilService, UserService userService, OrderRepository orderRepository) {
+    public OrderServiceImpl(TicketService ticketService, FilesUtilService filesUtilService, UserService userService, OrderRepository orderRepository, AwsS3service awsS3service) {
         this.ticketService = ticketService;
         this.filesUtilService = filesUtilService;
         this.userService = userService;
         this.orderRepository = orderRepository;
+        this.awsS3service = awsS3service;
     }
 
     @Override
     @Transactional
-    public void orderTickets(InvoiceDTO invoiceDTO) {
+    public String orderTickets(InvoiceDTO invoiceDTO) {
 
         Invoice invoice = invoiceMapper.invoiceDTOtoInvoice(invoiceDTO);
 
@@ -60,12 +59,23 @@ public class OrderServiceImpl implements OrderService {
 
         Invoice saved = orderRepository.save(invoice);
 
-        generateOrderConfirmation(saved);
+        return generateConfirmationOrder(saved);
 
     }
 
-    private void generateOrderConfirmation(Invoice invoice) {
-        filesUtilService.generateOrderConfirmation(invoice);
+    @Override
+    public ByteArrayOutputStream downloadInvoice(String fileName) {
+
+        fileName = fileName.replace(".pdf", "");
+
+        String bucketInvoicesDirectory = "invoices/";
+        String keyName = bucketInvoicesDirectory + fileName;
+
+        return awsS3service.downloadFile(keyName);
+    }
+
+    private String generateConfirmationOrder(Invoice invoice) {
+        return filesUtilService.generateConfirmationOrder(invoice);
     }
 
 

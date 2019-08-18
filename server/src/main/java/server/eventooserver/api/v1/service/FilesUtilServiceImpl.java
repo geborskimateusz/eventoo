@@ -1,5 +1,6 @@
 package server.eventooserver.api.v1.service;
 
+import com.amazonaws.services.dynamodbv2.xspec.S;
 import com.itextpdf.text.*;
 
 import com.itextpdf.text.pdf.PdfPTable;
@@ -18,6 +19,7 @@ import java.io.ByteArrayInputStream;
 
 
 import static server.eventooserver.api.v1.service.util.OrderConstans.PDF_EXTENSION;
+import static server.eventooserver.api.v1.service.util.SharedConstans.DOT;
 import static server.eventooserver.api.v1.service.util.SharedConstans.UNDERSCORE;
 
 @Service
@@ -37,18 +39,17 @@ public class FilesUtilServiceImpl implements FilesUtilService {
     //TODO THIS METHOD SHOULD UPLOAD FILE TO AWS S3, FOR TESTING IT UPLOADS FILE TO src/main/resources/static/pdf/
     //TODO THIS METHOD SHOULD RETURN PDF ID ETC. FOR CLIENT REQUEST
     @Override
-    public void generateOrderConfirmation(Invoice invoice) {
+    public String generateConfirmationOrder(Invoice invoice) {
 
         UserDetails userDetails = invoice.getUserDetails();
+        String pdfName = userDetails.getEmail() + UNDERSCORE + invoice.getId() + UNDERSCORE + invoice.getOrderDate() + PDF_EXTENSION;
+
 
         Document document = new Document();
         ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-        String pdfName = userDetails.getEmail() + UNDERSCORE + invoice.getId() + UNDERSCORE + invoice.getOrderDate();
-
 
         try {
-//           PdfWriter.getInstance(document, new FileOutputStream("src/main/resources/static/pdf/" + pdfName + PDF_EXTENSION));
             PdfWriter.getInstance(document, out);
 
 
@@ -73,6 +74,7 @@ public class FilesUtilServiceImpl implements FilesUtilService {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
+
             document.close();
 
             InputStream inputStream = new ByteArrayInputStream(out.toByteArray());
@@ -81,7 +83,7 @@ public class FilesUtilServiceImpl implements FilesUtilService {
 
         }
 
-
+        return pdfName;
     }
 
 }

@@ -10,5 +10,5 @@ public interface AwsS3service {
 
     void uploadFile(InputStream inputStream, String pdfName);
 
-    ByteArrayOutputStream downloadFileFormBucket(String fileName);
+    ByteArrayOutputStream downloadFile(String fileName);
 }

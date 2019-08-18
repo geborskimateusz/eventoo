@@ -56,7 +56,7 @@ public class AwsS3serviceImpl implements AwsS3service {
     }
 
     @Override
-    public ByteArrayOutputStream downloadFileFormBucket(String fileName) {
+    public ByteArrayOutputStream downloadFile(String fileName) {
         try {
             S3Object s3object = s3client.getObject(new GetObjectRequest(bucketName, fileName));
 

@@ -9,5 +9,5 @@ import java.net.URISyntaxException;
 
 public interface FilesUtilService {
 
-     void generateOrderConfirmation(Invoice invoice);
+     String generateConfirmationOrder(Invoice invoice);
 }
