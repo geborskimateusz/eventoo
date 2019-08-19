@@ -15,6 +15,9 @@ import java.io.ByteArrayOutputStream;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static server.eventooserver.api.v1.service.util.SharedConstans.EMPTY;
+import static server.eventooserver.api.v1.service.util.SharedConstans.PDF_EXTENSION;
+
 @Slf4j
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -65,9 +68,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public ByteArrayOutputStream downloadInvoice(String fileName) {
-
-        fileName = fileName.replace(".pdf", "");
-
+        
         String bucketInvoicesDirectory = "invoices/";
         String keyName = bucketInvoicesDirectory + fileName;
 

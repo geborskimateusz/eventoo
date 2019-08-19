@@ -11,9 +11,6 @@ public final class OrderConstans {
     public static final String DOLLAR_SIGN = "$";
     public static final String TIMES = "x";
 
-    public static final String PDF_EXTENSION = DOT + "pdf";
-    private static final String PNG_EXTENSION = "png";
-
     public static final String LOGO_PATH = "static/pdf/eventoo-logo" + DOT + PNG_EXTENSION;
 
     public static final String EVENTOO = "Eventoo";

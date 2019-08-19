@@ -31,6 +31,7 @@ public class OrderController {
     @PatchMapping
     @ResponseStatus(HttpStatus.OK)
     public String bookTickets(@RequestBody InvoiceDTO invoiceDTO) {
+        System.out.println(invoiceDTO);
 
         return orderService.orderTickets(invoiceDTO);
     }
@@ -38,7 +39,9 @@ public class OrderController {
 
     @GetMapping("{fileName}")
     public ResponseEntity<byte[]> downloadInvoice(@PathVariable String fileName) {
+
         System.out.println(fileName);
+
         ByteArrayOutputStream downloadInputStream = orderService.downloadInvoice(fileName);
 
         return ResponseEntity.ok()

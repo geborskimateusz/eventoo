@@ -7,12 +7,14 @@ import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
 
 export interface BookingState extends EntityState<OrderedTicket> {
     loading: boolean;
+    latestInvoice: string;
 }
 
 export const adapter: EntityAdapter<OrderedTicket> = createEntityAdapter<OrderedTicket>();
 
 export const initialBookingState: BookingState = adapter.getInitialState({
-    loading: false
+    loading: false,
+    latestInvoice: undefined
 });
 
 export function bookingReducer(state = initialBookingState, action: BookingActions) {
@@ -34,7 +36,11 @@ export function bookingReducer(state = initialBookingState, action: BookingActio
             return { ...state, loading: false }
 
         case BookingActionTypes.TicketsBooked:
-            return { ...state, loading: false }
+            return {
+                ...state,
+                loading: false,
+                latestInvoice: action.payload.latestInvoice
+            }
 
         default: {
             return state;

@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './auth/store/auth.effects';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
-import { CustomSerializer } from './shared/utils';
+import { CustomSerializer } from './shared/util/utils';
 
 
 @NgModule({

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AppState } from 'src/app/store';
 import { Store, select } from '@ngrx/store';
-import { selectAllTickets, selectBookingLoading } from '../store/booking.selectors';
+import { selectAllTickets, selectBookingLoading, selectLatestInvoice } from '../store/booking.selectors';
 import { tap } from 'rxjs/operators';
 import { BookTicketsRequest } from '../store/booking.actions';
 import { Observable } from 'rxjs';
+import { DownloadRequested } from 'src/app/shared/util/file-store/files.actions';
 
 @Component({
   selector: 'app-payment-options',
@@ -20,10 +21,17 @@ export class PaymentOptionsComponent implements OnInit {
   ngOnInit() {
     this.isLoading$ = this.store.pipe(
       select(selectBookingLoading),
-      tap(isloading => console.log('is loading' ,isloading) )
     )
   }
 
- 
+  downloadInvoice() {
+    this.store.pipe(
+      select(selectLatestInvoice),
+      tap(name => console.log(name))
+    ).subscribe(invoiceName => {
+      this.store.dispatch(new DownloadRequested({ fileName: invoiceName }))
+    })
+  }
+
 
 }

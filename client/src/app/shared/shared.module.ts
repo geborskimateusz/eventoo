@@ -8,6 +8,8 @@ import { EventService } from './event.service';
 import { EventLocalizationDialogComponent } from './event/event-overview/event-localization-dialog/event-localization-dialog.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { PaginationService } from './pagination/pagination.service';
+import { FilesEffects } from './util/file-store/files.effects';
+import { EffectsModule } from '@ngrx/effects';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { PaginationService } from './pagination/pagination.service';
         MaterialModule,
         FormsModule,
         ReactiveFormsModule,
-        LeafletModule.forRoot()
+        LeafletModule.forRoot(),
+        EffectsModule.forFeature([FilesEffects])
     ],
     exports: [
         PaginationComponent,

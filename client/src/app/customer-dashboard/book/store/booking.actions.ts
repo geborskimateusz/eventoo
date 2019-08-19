@@ -36,7 +36,7 @@ export class BookTicketsRequest implements Action {
 
 export class TicketsBooked implements Action {
     readonly type = BookingActionTypes.TicketsBooked;
-    constructor() { }
+    constructor(public payload: {latestInvoice: string}) { }
 }
 
 export class OrderCancelled implements Action {

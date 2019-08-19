@@ -7,5 +7,8 @@ public final class SharedConstans {
     public static final String UNDERSCORE = "_";
     public static final String DOT = ".";
     public static final String WHITE_SPACE = " ";
+    public static final String EMPTY = "";
     public static final String DASH = "-";
+    public static final String PDF_EXTENSION = DOT + "pdf";
+    public static final String PNG_EXTENSION = "png";
 }

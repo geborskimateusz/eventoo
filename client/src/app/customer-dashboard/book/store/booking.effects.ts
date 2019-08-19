@@ -36,13 +36,14 @@ export class BookingEffects {
             }, [])
 
             let userDetailsId = localStorage.getItem("current_user_id");
-            console.log(userDetailsId)
+
 
             return this.httpClient.patch('http://localhost:8080/api/v1/order', {
                 orderDate: new Date(),
                 orderedTickets,
                 userDetailsId
-            })
+            }, { responseType: 'text' })
+
                 .pipe(
                     catchError(err => {
                         console.log(err)
@@ -52,7 +53,7 @@ export class BookingEffects {
                     })
                 )
         }),
-        map(() => {
-            return new TicketsBooked();
+        map(invoiceName => {
+            return new TicketsBooked({ latestInvoice: invoiceName });
         }))
 }

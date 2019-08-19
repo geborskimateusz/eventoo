@@ -18,8 +18,8 @@ import java.io.InputStream;
 import java.io.ByteArrayInputStream;
 
 
-import static server.eventooserver.api.v1.service.util.OrderConstans.PDF_EXTENSION;
 import static server.eventooserver.api.v1.service.util.SharedConstans.DOT;
+import static server.eventooserver.api.v1.service.util.SharedConstans.PDF_EXTENSION;
 import static server.eventooserver.api.v1.service.util.SharedConstans.UNDERSCORE;
 
 @Service

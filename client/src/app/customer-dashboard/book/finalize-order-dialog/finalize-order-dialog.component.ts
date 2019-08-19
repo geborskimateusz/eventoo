@@ -34,7 +34,6 @@ export class FinalizeOrderDialogComponent implements OnInit {
   }
 
   generateOrderConfirmation() {
-    console.log('odrer confirmation')
     this.store.pipe(
       select(selectAllTickets),
       tap(tickets => {

@@ -37,3 +37,8 @@ export const selectBookingLoading = createSelector(
     selectBookingState,
     state => state.loading
 )
+
+export const selectLatestInvoice = createSelector(
+    selectBookingState,
+    state => state.latestInvoice
+)
