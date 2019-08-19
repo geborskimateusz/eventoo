@@ -34,7 +34,7 @@ export class FilesEffects {
         }),
         map(file => {
             let pdf = new Blob([file], { type: 'application/pdf' });
-            var fileURL = URL.createObjectURL(pdf);
+            let fileURL = URL.createObjectURL(pdf);
             window.open(fileURL)
         })
     )
