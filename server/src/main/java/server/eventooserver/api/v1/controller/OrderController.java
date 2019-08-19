@@ -31,9 +31,16 @@ public class OrderController {
     @PatchMapping
     @ResponseStatus(HttpStatus.OK)
     public String bookTickets(@RequestBody InvoiceDTO invoiceDTO) {
-        System.out.println(invoiceDTO);
+
+        //this return is used only to save AWS Free Tier,
+        //instead of hitting S3 bucket hard coded file name which
+        //representation exist in S3 bucket is returned
+        //
+        //return "fakeemail@gmail.com_23_2019-08-19.pdf";
+
 
         return orderService.orderTickets(invoiceDTO);
+
     }
 
 

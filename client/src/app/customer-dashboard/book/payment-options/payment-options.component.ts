@@ -5,7 +5,7 @@ import { selectAllTickets, selectBookingLoading, selectLatestInvoice } from '../
 import { tap } from 'rxjs/operators';
 import { BookTicketsRequest } from '../store/booking.actions';
 import { Observable } from 'rxjs';
-import { DownloadRequested } from 'src/app/shared/util/file-store/files.actions';
+import { DownloadRequested, SendByEmailRequested } from 'src/app/shared/util/file-store/files.actions';
 
 @Component({
   selector: 'app-payment-options',
@@ -16,21 +16,26 @@ export class PaymentOptionsComponent implements OnInit {
 
   isLoading$: Observable<boolean>;
 
+  invoiceName: string;
+
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
     this.isLoading$ = this.store.pipe(
       select(selectBookingLoading),
     )
+
+    this.store.pipe(
+      select(selectLatestInvoice),
+    ).subscribe(fileName => this.invoiceName = fileName)
   }
 
   downloadInvoice() {
-    this.store.pipe(
-      select(selectLatestInvoice),
-      tap(name => console.log(name))
-    ).subscribe(invoiceName => {
-      this.store.dispatch(new DownloadRequested({ fileName: invoiceName }))
-    })
+    this.store.dispatch(new DownloadRequested({ fileName: this.invoiceName }))
+  }
+
+  sendConfirmationOrderEmail() {
+    this.store.dispatch(new SendByEmailRequested({ fileName: this.invoiceName }))
   }
 
 

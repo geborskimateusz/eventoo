@@ -5,7 +5,7 @@
   </h4>
   <div class="payment__options">
     <a class="payment__options--option" (click)="downloadInvoice()" >Download confirmation order</a>
-    <a class="payment__options--option">Send order via email</a>
+    <a class="payment__options--option" (click)="sendConfirmationOrderEmail()">Send order via email</a>
   </div>
 </div>
 <ng-template #loading>

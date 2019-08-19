@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 
 export enum FilesActionTypes {
     DownloadRequested = '[File] Download Requested',
-    // SendByEmailRequested = '[File] Send By Email Requested'
+    SendByEmailRequested = '[File] Send By Email Requested'
 }
 
 export class DownloadRequested implements Action {
@@ -11,4 +11,12 @@ export class DownloadRequested implements Action {
     constructor(public payload: {fileName: string}) {}
 }
 
-export type FilesActions = DownloadRequested;
+export class SendByEmailRequested implements Action {
+    readonly type = FilesActionTypes.SendByEmailRequested;
+
+    constructor(public payload: {fileName: string}) {}
+}
+
+export type FilesActions = 
+DownloadRequested |
+SendByEmailRequested;
