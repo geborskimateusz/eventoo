@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     private store: Store<AppState>) {
 
     this.form = formBuilder.group({
-      email: ['fakeemail@gmail.com', [Validators.required]],
+      email: ['doe055952@gmail.com', [Validators.required]],
       password: ['fakeemail@gmail.com', [Validators.required]]
     })
   }

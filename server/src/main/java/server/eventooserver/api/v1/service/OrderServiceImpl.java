@@ -15,6 +15,8 @@ import java.io.ByteArrayOutputStream;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static server.eventooserver.api.v1.service.util.SharedConstans.S3_INVOICE_DIR;
+
 @Slf4j
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -66,8 +68,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public ByteArrayOutputStream downloadInvoice(String fileName) {
 
-        String bucketInvoicesDirectory = "invoices/";
-        String keyName = bucketInvoicesDirectory + fileName;
+        String keyName = S3_INVOICE_DIR + fileName;
 
         return awsS3service.getFile(keyName);
     }

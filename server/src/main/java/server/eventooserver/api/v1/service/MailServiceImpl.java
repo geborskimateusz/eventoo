@@ -35,7 +35,6 @@ public class MailServiceImpl implements MailService {
 
         String email = extractEmail(fileName);
 
-        System.out.println(fileName);
         ByteArrayOutputStream baos = awsS3service.getFile(S3_INVOICE_DIR + fileName);
 
         DataSource attachment = new ByteArrayDataSource(baos.toByteArray(), MediaType.APPLICATION_OCTET_STREAM.toString());
@@ -54,7 +53,7 @@ public class MailServiceImpl implements MailService {
         } catch (MessagingException e) {
             System.out.println(e.getMessage());
         } finally {
-            log.info("Message sent succesfully to " + email);
+            log.info("Message was sent successfully to " + email);
         }
 
     }
