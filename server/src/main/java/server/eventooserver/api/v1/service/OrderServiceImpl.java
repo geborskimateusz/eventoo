@@ -68,7 +68,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public ByteArrayOutputStream downloadInvoice(String fileName) {
-        
+
         String bucketInvoicesDirectory = "invoices/";
         String keyName = bucketInvoicesDirectory + fileName;
 

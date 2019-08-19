@@ -12,6 +12,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.http.MediaType;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 
 import server.eventooserver.api.v1.dto.*;
@@ -20,7 +23,15 @@ import server.eventooserver.api.v1.repository.*;
 import server.eventooserver.api.v1.service.*;
 import server.eventooserver.domain.*;
 
+import javax.activation.DataSource;
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import javax.mail.util.ByteArrayDataSource;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
@@ -51,6 +62,8 @@ public class Bootstrap implements CommandLineRunner {
     @Value("${amazon.properties.secretKey}")
     private String secretKey;
 
+    @Autowired
+    private JavaMailSender sender;
 
     public Bootstrap(UserDetailsRepository userDetailsRepository, AddressRepository addressRepository, OrderRepository orderRepository, TicketRepository ticketRepository, OrderService orderService, TicketService ticketService, FilesUtilService filesUtilService, UserService userService) {
         this.userDetailsRepository = userDetailsRepository;
@@ -65,7 +78,31 @@ public class Bootstrap implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        sendEmail();
+    }
 
+    private void sendEmail() throws IOException {
+
+        byte[] array = Files.readAllBytes(Paths.get("/home/mat/Documents/Potwierdzenie_transakcji_nr_0054027546_290719.pdf"));
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream(array.length);
+        baos.write(array, 0, array.length);
+
+        DataSource aAttachment = new ByteArrayDataSource(baos.toByteArray(), MediaType.APPLICATION_OCTET_STREAM.toString());
+
+        try {
+            MimeMessage message = sender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, true);
+
+            helper.setTo("eventoo.services@gmail.com");
+            helper.setText("How are you?");
+            helper.setSubject("Hi attachment");
+            helper.addAttachment("some file", aAttachment);
+
+            sender.send(message);
+        } catch (MessagingException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 
