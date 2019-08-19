@@ -20,6 +20,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
+import static server.eventooserver.api.v1.service.util.SharedConstans.S3_INVOICE_DIR;
+
 @Slf4j
 @Service
 public class AwsS3serviceImpl implements AwsS3service {
@@ -48,7 +50,7 @@ public class AwsS3serviceImpl implements AwsS3service {
         } finally {
             s3client.putObject(
                     bucketName,
-                    "invoices/" + pdfName,
+                    S3_INVOICE_DIR + pdfName,
                     inputStream,
                     metadata
             );
@@ -56,7 +58,7 @@ public class AwsS3serviceImpl implements AwsS3service {
     }
 
     @Override
-    public ByteArrayOutputStream downloadFile(String fileName) {
+    public ByteArrayOutputStream getFile(String fileName) {
         try {
             S3Object s3object = s3client.getObject(new GetObjectRequest(bucketName, fileName));
 

@@ -15,9 +15,6 @@ import java.io.ByteArrayOutputStream;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static server.eventooserver.api.v1.service.util.SharedConstans.EMPTY;
-import static server.eventooserver.api.v1.service.util.SharedConstans.PDF_EXTENSION;
-
 @Slf4j
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -72,7 +69,7 @@ public class OrderServiceImpl implements OrderService {
         String bucketInvoicesDirectory = "invoices/";
         String keyName = bucketInvoicesDirectory + fileName;
 
-        return awsS3service.downloadFile(keyName);
+        return awsS3service.getFile(keyName);
     }
 
     private String generateConfirmationOrder(Invoice invoice) {

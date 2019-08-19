@@ -11,4 +11,7 @@ public final class SharedConstans {
     public static final String DASH = "-";
     public static final String PDF_EXTENSION = DOT + "pdf";
     public static final String PNG_EXTENSION = "png";
+    public static final String SLASH = "/";
+
+    public static final String S3_INVOICE_DIR = "invoices" + SLASH;
 }
