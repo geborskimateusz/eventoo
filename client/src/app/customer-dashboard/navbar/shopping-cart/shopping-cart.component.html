@@ -1,26 +1,28 @@
 <a mat-icon-button [matMenuTriggerFor]="appMenu" class="user-nav__icon-box">
-    <svg class="user-nav__icon">
-      <use xlink:href="../../../assets/fonts/sprite.svg#icon-shopping-cart"></use>
-    </svg>
-    <span *ngIf="!(isShoppingCartEmpty | async)" class="user-nav__notification">7</span>
-  </a>
+  <svg class="user-nav__icon">
+    <use xlink:href="../../../assets/fonts/sprite.svg#icon-shopping-cart"></use>
+  </svg>
+  <span
+    *ngIf="!(isShoppingCartEmpty$ | async)"
+    class="user-nav__notification"
+    >{{ count$ | async }}</span
+  >
+</a>
 
-  <mat-menu  #appMenu="matMenu">
-    <div *ngIf="(areEventsBookmarked | async); else notification ">
-        <button mat-menu-item>Event 1</button>
-        <button mat-menu-item>Event 2</button>
-        <button mat-menu-item>Event 3</button>
-        <button mat-menu-item>Event 4</button>
-        <button mat-menu-item>Event 5</button>
-        <button mat-menu-item  [routerLink]="['user/bookmarks']">More..</button>
-    </div>
-    <ng-template #notification>
-      <p>There are no events in your bookmarks</p>
-    </ng-template>
-   
-  </mat-menu>
+<mat-menu #appMenu="matMenu">
+  <div *ngIf="areEventsBookmarked | async; else notification">
+    <button mat-menu-item>Event 1</button>
+    <button mat-menu-item>Event 2</button>
+    <button mat-menu-item>Event 3</button>
+    <button mat-menu-item>Event 4</button>
+    <button mat-menu-item>Event 5</button>
+    <button mat-menu-item [routerLink]="['user/bookmarks']">More..</button>
+  </div>
+  <ng-template #notification>
+    <p>There are no events in your bookmarks</p>
+  </ng-template>
+</mat-menu>
 
-  
-  <!-- <button mat-icon-button [matMenuTriggerFor]="appMenu">
+<!-- <button mat-icon-button [matMenuTriggerFor]="appMenu">
     <mat-icon>more_vert</mat-icon>
   </button> -->
