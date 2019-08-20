@@ -13,6 +13,11 @@ export const selectTotalCount = createSelector(
     fromShoppingCart.selectTotal
 )
 
+export const selectEventIDs = createSelector(
+    selectShoppingCartState,
+    fromShoppingCart.selectIds
+)
+
 export const isShoppingCartEmpty = createSelector(
     selectTotalCount,
     total => total === 0

@@ -3,14 +3,15 @@ import { Event } from '../../../shared/model/event.model';
 import { Observable, of, forkJoin } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
-import { map, tap, startWith, delay, switchMap, filter, concat, concatMap, mergeMap } from 'rxjs/operators';
+import { map, tap, startWith, delay, switchMap, filter, concat, concatMap, mergeMap, first } from 'rxjs/operators';
 import { selectAllEvents, selectEventsByGenre, selectEventsPageByGenre, selectEventsLoading } from '../store/events.selectors';
 import { EventsPageRequested } from '../store/events.actions';
 import { Ticket } from 'src/app/shared/model/ticket-model';
 import { PaginationService, PAGE_SIZE } from 'src/app/shared/pagination/pagination.service';
 import { MusicGenre, genreToEnum } from 'src/app/shared/model/music-genres.model';
 import { selectPricePerType } from '../../book/store/booking.selectors';
-import { AddEvent } from '../../navbar/shopping-cart/store/shopping-cart.actions';
+import { AddEvent, DeleteEvent } from '../../navbar/shopping-cart/store/shopping-cart.actions';
+import { selectEventIDs as selectEventsIDs } from '../../navbar/shopping-cart/store/shopping-cart.selectors';
 @Component({
   selector: 'app-events-card-list',
   templateUrl: './events-card-list.component.html',
@@ -77,10 +78,24 @@ export class EventsCardListComponent implements OnInit {
   }
 
   onBookmark(event: Event) {
+    console.log('aa')
     //if event is in store -> remove 
     //else add to store 
     //change icon style
-    this.store.dispatch(new AddEvent({event}))
+    this.store.pipe(
+
+      //ngrx issue workaround
+      select(<any>selectEventsIDs),
+      first(),
+      tap(ids => {
+        
+        ids.includes(event.id) ?
+        this.store.dispatch(new DeleteEvent({eventId: event.id})) :
+        this.store.dispatch(new AddEvent({event}));
+
+    
+      })
+    ).subscribe();
   }
 
   isActive(eventId: number) {
