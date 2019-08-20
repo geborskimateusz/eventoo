@@ -2,7 +2,7 @@
   <img [src]="event.img" alt="" class="home__img" />
   <svg
     [ngClass]="
-      (isActive(event.id) | async)
+      (isInShoppingCart(event.id) | async)
         ? 'home__like'
         : 'home__like home__like-bookmark'
     "
@@ -11,7 +11,9 @@
     <title>
       Add to shopping list
     </title>
-    <use xlink:href="../../../assets/fonts/sprite.svg#icon-shopping-cart"></use>
+    <use *ngIf="!(isInShoppingCart(event.id) | async)" xlink:href="../../../assets/fonts/sprite.svg#icon-shopping-cart"></use>
+    <use *ngIf="(isInShoppingCart(event.id) | async)" xlink:href="../../../assets/fonts/sprite.svg#icon-bookmark"></use>
+
   </svg>
   <h5 class="home__name">{{ event.title }}</h5>
   <div class="home__location">

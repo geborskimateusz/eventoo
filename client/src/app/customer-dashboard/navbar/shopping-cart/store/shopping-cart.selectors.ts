@@ -8,6 +8,11 @@ export const selectShoppingCartState = createSelector(
     (state: CustomerDashboardState) => state.shoppingCart
 );
 
+export const selectEventsFromShoppingList = createSelector(
+    selectShoppingCartState,
+    fromShoppingCart.selectAll
+)
+
 export const selectTotalCount = createSelector(
     selectShoppingCartState,
     fromShoppingCart.selectTotal

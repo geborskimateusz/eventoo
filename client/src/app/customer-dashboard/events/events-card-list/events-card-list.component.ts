@@ -78,31 +78,28 @@ export class EventsCardListComponent implements OnInit {
   }
 
   onBookmark(event: Event) {
-    console.log('aa')
-    //if event is in store -> remove 
-    //else add to store 
-    //change icon style
+
     this.store.pipe(
 
-      //ngrx issue workaround
+      // <any> -> ngrx issue workaround
       select(<any>selectEventsIDs),
       first(),
       tap(ids => {
-        
-        ids.includes(event.id) ?
-        this.store.dispatch(new DeleteEvent({eventId: event.id})) :
-        this.store.dispatch(new AddEvent({event}));
 
-    
+        ids.includes(event.id) ?
+          this.store.dispatch(new DeleteEvent({ eventId: event.id })) :
+          this.store.dispatch(new AddEvent({ event }));
+
+
       })
     ).subscribe();
   }
 
-  isActive(eventId: number) {
-    //select if in bookmark store
-    //return true/false 
-    return of(false)
-
+  isInShoppingCart(eventId: number): Observable<boolean> {
+    return this.store.pipe(
+      select(<any>selectEventsIDs),
+      map(ids => ids.includes(eventId))
+    )
   }
 
 }
