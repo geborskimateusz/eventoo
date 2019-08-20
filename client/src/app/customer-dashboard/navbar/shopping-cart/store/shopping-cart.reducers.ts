@@ -25,3 +25,6 @@ export function shoppingCartReducer(state = initialShoppingCartState, action: Sh
         }
     }
 }
+
+
+export const {selectAll, selectIds, selectTotal} = adapter.getSelectors();

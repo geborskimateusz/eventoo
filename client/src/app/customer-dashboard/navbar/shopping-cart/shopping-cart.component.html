@@ -2,7 +2,7 @@
     <svg class="user-nav__icon">
       <use xlink:href="../../../assets/fonts/sprite.svg#icon-shopping-cart"></use>
     </svg>
-    <span *ngIf="areEventsBookmarked | async" class="user-nav__notification">7</span>
+    <span *ngIf="!(isShoppingCartEmpty | async)" class="user-nav__notification">7</span>
   </a>
 
   <mat-menu  #appMenu="matMenu">

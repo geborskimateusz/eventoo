@@ -10,6 +10,7 @@ import { Ticket } from 'src/app/shared/model/ticket-model';
 import { PaginationService, PAGE_SIZE } from 'src/app/shared/pagination/pagination.service';
 import { MusicGenre, genreToEnum } from 'src/app/shared/model/music-genres.model';
 import { selectPricePerType } from '../../book/store/booking.selectors';
+import { AddEvent } from '../../navbar/shopping-cart/store/shopping-cart.actions';
 @Component({
   selector: 'app-events-card-list',
   templateUrl: './events-card-list.component.html',
@@ -75,11 +76,11 @@ export class EventsCardListComponent implements OnInit {
     return events.length === 0;
   }
 
-  onBookmark(eventId: number) {
-    console.log('onBookmark ', eventId)
+  onBookmark(event: Event) {
     //if event is in store -> remove 
     //else add to store 
     //change icon style
+    this.store.dispatch(new AddEvent({event}))
   }
 
   isActive(eventId: number) {

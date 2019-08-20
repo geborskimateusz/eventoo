@@ -3,9 +3,9 @@ import { EventsState } from './events.reducers';
 import * as fromEvents from './events.reducers'
 import { MusicGenre } from 'src/app/shared/model/music-genres.model';
 import { PageQuery } from './events.actions';
-import { selectCustomerDashboardState, CustomerDashboardState } from '../../store/customer-dashboard.reducers';
+import { selectCustomerDashboardState } from '../../store/customer-dashboard.selectors';
+import { CustomerDashboardState } from '../../store/customer-dashboard.reducers';
 
-// export const selectEventsState = createFeatureSelector<EventsState>("events");
 
 export const selectEventsState = createSelector(
     selectCustomerDashboardState,

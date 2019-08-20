@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { AppState } from 'src/app/store';
+import { Store, select } from '@ngrx/store';
+import { isShoppingCartEmpty } from './store/shopping-cart.selectors';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -8,12 +12,15 @@ import { Observable, of } from 'rxjs';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  areEventsBookmarked: Observable<boolean>;
+  isShoppingCartEmpty: Observable<boolean>;
 
-  constructor() { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-    this.areEventsBookmarked = of(true);
+    this.isShoppingCartEmpty = this.store.pipe(
+      select(isShoppingCartEmpty),
+      tap(flag => console.log(flag))
+    )
   }
 
 }
