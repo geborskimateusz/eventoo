@@ -6,7 +6,6 @@ import { ServicesComponent } from './services/services.component';
 import { EventComponent } from './events/event/event.component';
 // import { BookComponent } from './book/book.component';
 import { UserComponent } from './user/user.component';
-import { ShoppingCart } from './user/shopping-cart/shopping-cart-component';
 import { EventRatesComponent } from './events/event/event-rates/event-rates.component';
 import { AuthGuard } from '../auth/auth.guard';
 import { EventResolver } from '../shared/event/event.resolver';
@@ -35,11 +34,11 @@ const routes: Routes = [
         canActivate: [AuthGuard],
       },
       {
-        path: 'user', component: UserComponent,
-        canActivate: [AuthGuard], children: [
-          // { path: 'bookmarks', component: BookComponent },
-          { path: 'shoppingCart', component: ShoppingCart }
-        ]
+        path: 'user', component: UserComponent
+        // canActivate: [AuthGuard], children: [
+        //   // { path: 'bookmarks', component: BookComponent },
+        //   { path: 'shoppingCart', component: ShoppingCart }
+        // ]
       }
     ]
   }

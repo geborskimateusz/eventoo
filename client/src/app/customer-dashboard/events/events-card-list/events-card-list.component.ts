@@ -25,7 +25,6 @@ export class EventsCardListComponent implements OnInit {
 
   isEmpty$: Observable<boolean>;
 
-
   constructor(private store: Store<AppState>,
     private paginationService: PaginationService) { }
 
@@ -76,5 +75,18 @@ export class EventsCardListComponent implements OnInit {
     return events.length === 0;
   }
 
+  onBookmark(eventId: number) {
+    console.log('onBookmark ', eventId)
+    //if event is in store -> remove 
+    //else add to store 
+    //change icon style
+  }
+
+  isActive(eventId: number) {
+    //select if in bookmark store
+    //return true/false 
+    return of(false)
+
+  }
 
 }

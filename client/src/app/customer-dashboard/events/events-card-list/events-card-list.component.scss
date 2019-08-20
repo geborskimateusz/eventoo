@@ -49,6 +49,19 @@
     z-index: 2;
     justify-self: end;
     margin: 1rem;
+
+    &-bookmark {
+      fill: $color-white;
+      border-radius: 10%;
+      background-color: $color-primary;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    &-bookmark:hover {
+      fill: $color-primary-light;
+      background-color: transparent;
+    }
   }
 
   &__name {

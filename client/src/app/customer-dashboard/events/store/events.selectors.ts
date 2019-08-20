@@ -3,7 +3,14 @@ import { EventsState } from './events.reducers';
 import * as fromEvents from './events.reducers'
 import { MusicGenre } from 'src/app/shared/model/music-genres.model';
 import { PageQuery } from './events.actions';
-export const selectEventsState = createFeatureSelector<EventsState>("events");
+import { selectCustomerDashboardState, CustomerDashboardState } from '../../store/customer-dashboard.state';
+
+// export const selectEventsState = createFeatureSelector<EventsState>("events");
+
+export const selectEventsState = createSelector(
+    selectCustomerDashboardState,
+    (state: CustomerDashboardState) => state.events
+);
 
 export const selectEventById = (eventId: number) => createSelector(
     selectEventsState,

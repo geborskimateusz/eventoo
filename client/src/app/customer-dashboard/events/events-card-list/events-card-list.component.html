@@ -1,7 +1,17 @@
 <div class="home" *ngFor="let event of events$ | async; let i = index">
   <img [src]="event.img" alt="" class="home__img" />
-  <svg class="home__like">
-    <use xlink:href="../../../assets/fonts/sprite2.svg#icon-heart-full"></use>
+  <svg
+    [ngClass]="
+      (isActive(event.id) | async)
+        ? 'home__like'
+        : 'home__like home__like-bookmark'
+    "
+    (click)="onBookmark(event.id)"
+  >
+    <title>
+      Add to shopping list
+    </title>
+    <use xlink:href="../../../assets/fonts/sprite.svg#icon-shopping-cart"></use>
   </svg>
   <h5 class="home__name">{{ event.title }}</h5>
   <div class="home__location">
@@ -33,8 +43,12 @@
   </button>
 </div>
 
-<div *ngIf="(isEmpty$ | async)" class="condition-container">
-  <img src="../../../../assets/img/mirage-list-is-empty.png" alt="https://icons8.com" class="condition-container--img">
+<div *ngIf="isEmpty$ | async" class="condition-container">
+  <img
+    src="../../../../assets/img/mirage-list-is-empty.png"
+    alt="https://icons8.com"
+    class="condition-container--img"
+  />
 </div>
 
 <div *ngIf="isLoading$ | async" class="condition-container">
