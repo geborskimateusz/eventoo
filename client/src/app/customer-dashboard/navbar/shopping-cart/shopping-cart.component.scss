@@ -7,6 +7,11 @@
   display: flex;
   align-items: center;
 }
+
+.mat-menu-panel {
+  overflow: hidden !important;
+}
+
 .user-nav__icon {
   height: 4.25rem;
   width: 2.25rem;
@@ -38,7 +43,45 @@
   @include respond(tab-land-small) {
     top: 0.5rem;
     right: 0.6rem;
+  }  
+}
+
+.btn__select {
+  display: flex;
+  align-content: center;
+  color: $color-grey-dark-2;
+
+  &--img {
+    width: 25%;
+    border-radius: 5%;
   }
 
-  
+  &--paragraph {
+    margin-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+  }
+}
+
+.btn__select:hover {
+  background-color: $color-primary-light-2;
+}
+
+
+.cart__list--empty {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &--img {
+    width: 50%;
+  }
+
+  &--paragraph {
+    color: $color-grey-dark-2;
+
+  }
 }

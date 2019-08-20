@@ -10,19 +10,20 @@
 </a>
 
 <mat-menu #appMenu="matMenu">
-  <div *ngIf="areEventsBookmarked | async; else notification">
-    <button mat-menu-item>Event 1</button>
-    <button mat-menu-item>Event 2</button>
-    <button mat-menu-item>Event 3</button>
-    <button mat-menu-item>Event 4</button>
-    <button mat-menu-item>Event 5</button>
-    <button mat-menu-item [routerLink]="['user/bookmarks']">More..</button>
+  <div *ngIf="!(isShoppingCartEmpty$ | async); else empty">
+    <div *ngFor="let event of shoppingCartFragment$ | async">
+      <button class="btn__select" mat-menu-item>
+        <img class="btn__select--img" [src]="event.img" [alt]="event.title">
+        <p class="btn__select--paragraph">{{ event.title }}</p>
+      </button>
+    </div>
+    <button class="btn__select" mat-menu-item [routerLink]="['user/bookmarks']">More..</button>
   </div>
-  <ng-template #notification>
-    <p>There are no events in your bookmarks</p>
+  <ng-template #empty>
+    <div class="cart__list--empty">
+      <img class="cart__list--empty--img" src="../../../../assets/img/mirage-list-is-empty.png" alt="Empty list">
+      <p class="cart__list--empty--paragraph">Shopping cart is empty.</p>
+    </div>
   </ng-template>
 </mat-menu>
 
-<!-- <button mat-icon-button [matMenuTriggerFor]="appMenu">
-    <mat-icon>more_vert</mat-icon>
-  </button> -->
