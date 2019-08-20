@@ -1,0 +1,44 @@
+@import "../../../../styles/abstracts/variables";
+@import "../../../styles/abstracts/mixins.scss";
+
+
+:host {
+  //   position: relative;
+  display: flex;
+  align-items: center;
+}
+.user-nav__icon {
+  height: 4.25rem;
+  width: 2.25rem;
+  position: relative;
+}
+
+.user-nav__icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-nav__notification {
+  fill: $color-grey-dark-2;
+  font-size: 0.8rem;
+  height: 1.75rem;
+  width: 1.75rem;
+  border-radius: 50%;
+  background-color: $color-primary;
+  color: $color-white;
+  position: absolute;
+  top: 0.2rem;
+  right: 0.1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include respond(tab-land-small) {
+    top: 0.5rem;
+    right: 0.6rem;
+  }
+
+  
+}

@@ -1,1 +1,16 @@
-<p>bookmarks works!</p>
+<a mat-icon-button [matMenuTriggerFor]="appMenu" class="user-nav__icon-box">
+    <svg class="user-nav__icon">
+      <use xlink:href="../../../assets/fonts/sprite.svg#icon-bookmark"></use>
+    </svg>
+    <span class="user-nav__notification">7</span>
+  </a>
+
+  <mat-menu #appMenu="matMenu">
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item>Help</button>
+    <button mat-menu-item  [routerLink]="['user/bookmarks']">More..</button>
+  </mat-menu>
+  
+  <!-- <button mat-icon-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button> -->
