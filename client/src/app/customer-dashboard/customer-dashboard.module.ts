@@ -26,7 +26,7 @@ import { TicketsComponent } from './book/tickets/tickets.component';
 import { UserDetailsComponent } from './book/account-details/user-details/user-details.component';
 import { CompanyDetailsComponent } from './book/account-details/company-details/company-details.component';
 import { ShoppingCartComponent } from './navbar/shopping-cart/shopping-cart.component';
-import { customerDashboardReducers } from './store/customer-dashboard.state';
+import { customerDashboardReducers } from './store/customer-dashboard.reducers';
 
 
 @NgModule({

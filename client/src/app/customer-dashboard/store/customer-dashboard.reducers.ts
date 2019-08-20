@@ -20,5 +20,5 @@ export const customerDashboardReducers: ActionReducerMap<CustomerDashboardState>
     shoppingCart: fromShoppingCart.shoppingCartReducer
 }
 
-export const selectCustomerDashboardState = createFeatureSelector<CustomerDashboardState>("customerDashboard");
+
 

@@ -1,15 +1,11 @@
 import { Event } from 'src/app/shared/model/event.model';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { EventsActions, EventsActionTypes } from './events.actions';
-import * as fromCustomerDashboard from '../../store/customer-dashboard.state';
+import * as fromCustomerDashboard from '../../store/customer-dashboard.reducers';
 
 export interface EventsState extends EntityState<Event> {
     loading: boolean;
 }
-
-// export interface State extends fromCustomerDashboard.CustomerDashboardState {
-//     events: EventsState
-// }
 
 export const adapter: EntityAdapter<Event> = createEntityAdapter<Event>();
 
