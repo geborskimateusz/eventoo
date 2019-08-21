@@ -10,6 +10,7 @@ import { EventRatesComponent } from './events/event/event-rates/event-rates.comp
 import { AuthGuard } from '../auth/auth.guard';
 import { EventResolver } from '../shared/event/event.resolver';
 import { EventDetailComponent } from './events/event/event-detail/event-detail.component';
+import { ShoppingCartListComponent } from './user/shopping-cart-list/shopping-cart-list.component';
 
 
 const routes: Routes = [
@@ -34,11 +35,11 @@ const routes: Routes = [
         canActivate: [AuthGuard],
       },
       {
-        path: 'user', component: UserComponent
-        // canActivate: [AuthGuard], children: [
-        //   // { path: 'bookmarks', component: BookComponent },
-        //   { path: 'shoppingCart', component: ShoppingCart }
-        // ]
+        path: 'user', component: UserComponent,
+        // canActivate: [AuthGuard],
+         children: [
+          { path: 'shoppingCart', component: ShoppingCartListComponent }
+        ]
       }
     ]
   }

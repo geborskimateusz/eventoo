@@ -27,6 +27,7 @@ import { UserDetailsComponent } from './book/account-details/user-details/user-d
 import { CompanyDetailsComponent } from './book/account-details/company-details/company-details.component';
 import { ShoppingCartComponent } from './navbar/shopping-cart/shopping-cart.component';
 import { customerDashboardReducers } from './store/customer-dashboard.reducers';
+import { ShoppingCartListComponent } from './user/shopping-cart-list/shopping-cart-list.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { customerDashboardReducers } from './store/customer-dashboard.reducers';
         UserReviewsComponent,
         EventDetailComponent,
         EventsCardListComponent,
+        ShoppingCartListComponent,
     ],
     imports: [
         CustomerDashboardRoutingModule,
