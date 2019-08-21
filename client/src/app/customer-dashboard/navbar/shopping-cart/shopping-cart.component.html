@@ -12,7 +12,7 @@
 <mat-menu #appMenu="matMenu">
   <div *ngIf="!(isShoppingCartEmpty$ | async); else empty">
     <div *ngFor="let event of shoppingCartFragment$ | async">
-      <button class="btn__select" mat-menu-item>
+      <button [routerLink]="['./event/', event.id]" class="btn__select" mat-menu-item>
         <img class="btn__select--img" [src]="event.img" [alt]="event.title">
         <p class="btn__select--paragraph">{{ event.title }}</p>
       </button>
