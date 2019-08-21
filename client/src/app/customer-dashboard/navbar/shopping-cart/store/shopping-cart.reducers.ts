@@ -18,7 +18,10 @@ export function shoppingCartReducer(state = initialShoppingCartState, action: Sh
             return adapter.addOne(action.payload.event, state);
 
         case ShoppingCartActionTypes.DeleteEvent:
-                return adapter.removeOne(action.payload.eventId, state)
+                return adapter.removeOne(action.payload.eventId, state);
+
+        case ShoppingCartActionTypes.AddEventsToShoppingCart:
+                return adapter.addAll(action.payload.events, state);
     
         default: {
             return state;

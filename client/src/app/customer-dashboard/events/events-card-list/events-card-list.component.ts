@@ -11,7 +11,7 @@ import { PaginationService, PAGE_SIZE } from 'src/app/shared/pagination/paginati
 import { MusicGenre, genreToEnum } from 'src/app/shared/model/music-genres.model';
 import { selectPricePerType } from '../../book/store/booking.selectors';
 import { AddEvent, DeleteEvent } from '../../navbar/shopping-cart/store/shopping-cart.actions';
-import { selectEventIDs as selectEventsIDs } from '../../navbar/shopping-cart/store/shopping-cart.selectors';
+import { selectEventsIDs as selectEventsIDs } from '../../navbar/shopping-cart/store/shopping-cart.selectors';
 @Component({
   selector: 'app-events-card-list',
   templateUrl: './events-card-list.component.html',

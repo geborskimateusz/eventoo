@@ -1,16 +1,17 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { AppState } from 'src/app/store';
 import { Store, select } from '@ngrx/store';
-import { isShoppingCartEmpty, selectTotalCount, selectEventsFromShoppingList } from './store/shopping-cart.selectors';
+import { isShoppingCartEmpty, selectTotalCount, selectEventsFromShoppingList, selectEventsIDs } from './store/shopping-cart.selectors';
 import { tap, map } from 'rxjs/operators';
 import { Event } from "/home/mat/Projects/eventoo-app/client/src/app/shared/model/event.model";
+import { PutShoppingCart } from './store/shopping-cart.actions';
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
   styleUrls: ['./shopping-cart.component.scss'],
 })
-export class ShoppingCartComponent implements OnInit {
+export class ShoppingCartComponent implements OnInit, OnDestroy {
 
   isShoppingCartEmpty$: Observable<boolean>;
   count$: Observable<number>;
@@ -33,6 +34,18 @@ export class ShoppingCartComponent implements OnInit {
       select(selectEventsFromShoppingList),
       map(events => this.paginateEvents(events))
     )
+  }
+
+  //user is logged out
+  ngOnDestroy() {
+
+    this.store.pipe(
+
+      //<any> -> ngrx issue workaround
+      select(<any>selectEventsIDs),
+      map(eventsIds => this.store.dispatch(new PutShoppingCart({ eventsIds })))
+    ).subscribe();
+
   }
 
   private paginateEvents(events: Event[]): Event[] {

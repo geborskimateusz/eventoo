@@ -18,7 +18,7 @@ export const selectTotalCount = createSelector(
     fromShoppingCart.selectTotal
 )
 
-export const selectEventIDs = createSelector(
+export const selectEventsIDs = createSelector(
     selectShoppingCartState,
     fromShoppingCart.selectIds
 )

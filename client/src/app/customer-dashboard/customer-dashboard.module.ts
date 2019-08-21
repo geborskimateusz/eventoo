@@ -28,6 +28,7 @@ import { CompanyDetailsComponent } from './book/account-details/company-details/
 import { ShoppingCartComponent } from './navbar/shopping-cart/shopping-cart.component';
 import { customerDashboardReducers } from './store/customer-dashboard.reducers';
 import { ShoppingCartListComponent } from './user/shopping-cart-list/shopping-cart-list.component';
+import { ShoppingCartEffects } from './navbar/shopping-cart/store/shopping-cart.effects';
 
 
 @NgModule({
@@ -54,7 +55,7 @@ import { ShoppingCartListComponent } from './user/shopping-cart-list/shopping-ca
         SharedModule,
         StoreModule.forFeature('customerDashboard', customerDashboardReducers),
         // StoreModule.forFeature('events', eventsReducer),
-        EffectsModule.forFeature([EventsEffects])
+        EffectsModule.forFeature([EventsEffects, ShoppingCartEffects])
     ],
     providers: [
         EventResolver

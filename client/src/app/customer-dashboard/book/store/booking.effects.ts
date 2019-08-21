@@ -28,8 +28,6 @@ export class BookingEffects {
                     ticket
                 }
 
-                console.log(preparedTicket)
-
                 arr.push(preparedTicket)
 
                 return arr;
