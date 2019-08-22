@@ -9,18 +9,22 @@ import java.util.List;
 @NoArgsConstructor
 public class ShoppingCartDTO {
     private Long userId;
-    private List<Long> eventsIds;
+    private List<EventDTO> events;
 
     @Builder
-    public ShoppingCartDTO(List<Long> eventsIds) {
-        this.eventsIds = eventsIds;
+    public ShoppingCartDTO(Long userId, List<EventDTO> events) {
+        this.userId = userId;
+        this.events = events;
     }
+
+
+
 
     @Override
     public String toString() {
         return "ShoppingCartDTO{" +
                 "userId=" + userId +
-                ", eventsIds=" + eventsIds +
+                ", events=" + events+
                 '}';
     }
 }

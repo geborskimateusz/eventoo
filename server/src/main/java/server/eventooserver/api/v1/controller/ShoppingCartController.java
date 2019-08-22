@@ -19,6 +19,12 @@ public class ShoppingCartController {
         this.shoppingCartService = shoppingCartService;
     }
 
+    @GetMapping("/{userId}")
+    @ResponseStatus(HttpStatus.OK)
+    public ShoppingCartDTO getShoppingCart(@PathVariable Long userId) {
+        return shoppingCartService.findById(userId);
+    }
+
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public void putShoppingCart(@RequestBody ShoppingCartDTO shoppingCartDTO) {

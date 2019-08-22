@@ -81,10 +81,18 @@ public class Bootstrap implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+//        EventDTO eventDTO = new EventDTO();
+//        eventDTO.setId(1L);
+//
+//        EventDTO eventDTO2 = new EventDTO();
+//        eventDTO2.setId(2L);
+//
+//
 //        ShoppingCartDTO shoppingCartDTO = ShoppingCartDTO.builder()
-//                .eventsIds(Arrays.asList(3L, 1L))
+//                .events(Arrays.asList(eventDTO,eventDTO2))
 //                .userId(3L)
 //                .build();
+//
 //        shoppingCartService.saveOrUpdate(shoppingCartDTO);
     }
 

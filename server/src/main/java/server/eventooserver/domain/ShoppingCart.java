@@ -12,10 +12,16 @@ import javax.persistence.Table;
 
 @Getter
 @Setter
-@Builder
+@NoArgsConstructor
 @Entity(name = "ShoppingCart")
 @Table(name = "shopping_cart")
 public class ShoppingCart extends BaseEntity {
+
+    @Builder
+    public ShoppingCart(UserDetails userDetails, Event event) {
+        this.userDetails = userDetails;
+        this.event = event;
+    }
 
     @OneToOne
     @JoinColumn(name = "user_details_id")
