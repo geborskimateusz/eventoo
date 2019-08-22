@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { UserDetails } from 'src/app/shared/model/user-details';
 import { selectUserDetails, isLoggedIn } from 'src/app/auth/store/auth.selector';
-import { selectEventsIDs } from './shopping-cart/store/shopping-cart.selectors';
+import { selectEventsIDs, selectEventsFromShoppingList } from './shopping-cart/store/shopping-cart.selectors';
 import { PutShoppingCart } from './shopping-cart/store/shopping-cart.actions';
 
 @Component({
@@ -46,8 +46,8 @@ export class NavbarComponent implements OnInit {
     this.store.pipe(
 
       //<any> -> ngrx issue workaround
-      select(<any>selectEventsIDs),
-      map(eventsIds => this.store.dispatch(new PutShoppingCart({ eventsIds }))),
+      select(selectEventsFromShoppingList),
+      map(events => this.store.dispatch(new PutShoppingCart({ events }))),
       tap(() => this.store.dispatch(new Logout()))
     ).subscribe();
 

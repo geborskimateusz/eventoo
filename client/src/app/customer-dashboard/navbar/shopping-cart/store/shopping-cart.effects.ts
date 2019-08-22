@@ -16,8 +16,8 @@ export class ShoppingCartEffects {
         ofType<PutShoppingCart>(ShoppingCartActionTypes.PutShoppingCart),
         switchMap(action => {
             const userId = localStorage.getItem("current_user_id");
-            const eventsIds = action.payload.eventsIds;
-            let bookmarks = { userId, eventsIds }
+            const events = action.payload.events;
+            let bookmarks = { userId, events }
 
             return this.httpClient.put('http://localhost:8080/api/v1/shoppingCart', bookmarks)
                 .pipe(

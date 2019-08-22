@@ -31,7 +31,7 @@ export class AddEventsToShoppingCart implements Action {
 
 export class PutShoppingCart implements Action {
     readonly type = ShoppingCartActionTypes.PutShoppingCart;
-    constructor(public payload: {eventsIds: number[] }) { }
+    constructor(public payload: {events: Event[] }) { }
 }
 
 export type ShoppingCartActions =
