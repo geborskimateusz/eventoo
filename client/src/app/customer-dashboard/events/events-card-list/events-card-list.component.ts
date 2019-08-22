@@ -77,7 +77,7 @@ export class EventsCardListComponent implements OnInit {
     return events.length === 0;
   }
 
-  onBookmark(event: Event) {
+  onAddToShoppingCart(event: Event) {
 
     this.store.pipe(
 

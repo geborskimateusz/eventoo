@@ -8,10 +8,9 @@ import server.eventooserver.api.v1.mapper.EventMapper;
 import server.eventooserver.api.v1.mapper.ShoppingCartMapper;
 import server.eventooserver.api.v1.repository.ShoppingCartRepository;
 import server.eventooserver.domain.Event;
-import server.eventooserver.domain.ShoppingCart;
+import server.eventooserver.domain.ShoppingCartElement;
 import server.eventooserver.domain.UserDetails;
 
-import javax.swing.text.html.Option;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
@@ -37,7 +36,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     @Override
     public ShoppingCartDTO findByUserId(Long userId) {
 
-        List<ShoppingCart> shoppingCartElements = shoppingCartRepository.findAllByUserDetailsId(userId);
+        List<ShoppingCartElement> shoppingCartElements = shoppingCartRepository.findAllByUserDetailsId(userId);
 
         List<EventDTO> eventDTOS = shoppingCartElements.stream()
                 .map(shoppingCart -> eventMapper.eventToEventDTO(shoppingCart.getEvent()))
@@ -53,12 +52,12 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     @Override
     public void deleteByUserIdAndEventId(Long userId, Long eventId) {
 
-        Optional<ShoppingCart> optionalShoppingCart = shoppingCartRepository.findByUserDetailsIdAndEventId(userId,eventId);
+        Optional<ShoppingCartElement> optionalShoppingCart = shoppingCartRepository.findByUserDetailsIdAndEventId(userId,eventId);
 
         if (optionalShoppingCart.isPresent()) {
 
-            ShoppingCart shoppingCart = optionalShoppingCart.get();
-            
+            ShoppingCartElement shoppingCart = optionalShoppingCart.get();
+
             shoppingCartRepository.deleteById(shoppingCart.getId());
         }
 
@@ -73,7 +72,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
             eventDTOS.forEach(eventDTO -> {
 
-                Optional<ShoppingCart> optionalShoppingCart = shoppingCartRepository.findByUserDetailsIdAndEventId(
+                Optional<ShoppingCartElement> optionalShoppingCart = shoppingCartRepository.findByUserDetailsIdAndEventId(
                         userDetails.getId(),
                         eventDTO.getId()
                 );
@@ -88,7 +87,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
                     events.forEach(event -> {
 
-                        ShoppingCart shoppingCartEl = ShoppingCart.builder()
+                        ShoppingCartElement shoppingCartEl = ShoppingCartElement.builder()
                                 .event(event)
                                 .userDetails(userDetails)
                                 .build();

@@ -15,10 +15,10 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Entity(name = "ShoppingCart")
 @Table(name = "shopping_cart")
-public class ShoppingCart extends BaseEntity {
+public class ShoppingCartElement extends BaseEntity {
 
     @Builder
-    public ShoppingCart(UserDetails userDetails, Event event) {
+    public ShoppingCartElement(UserDetails userDetails, Event event) {
         this.userDetails = userDetails;
         this.event = event;
     }
