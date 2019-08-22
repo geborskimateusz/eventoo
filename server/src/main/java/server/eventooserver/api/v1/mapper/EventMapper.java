@@ -17,7 +17,6 @@ public interface EventMapper {
     default void setTickets(@MappingTarget EventDTO eventDTO, Event event) {
         event.getTickets().forEach(ticket -> ticket.setEvent(null));
     }
-
     EventDTO eventToEventDTO(Event event);
 
 
