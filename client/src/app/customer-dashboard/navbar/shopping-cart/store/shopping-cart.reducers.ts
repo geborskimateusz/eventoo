@@ -22,6 +22,9 @@ export function shoppingCartReducer(state = initialShoppingCartState, action: Sh
 
         case ShoppingCartActionTypes.AddEventsToShoppingCart:
                 return adapter.addAll(action.payload.events, state);
+        
+        case ShoppingCartActionTypes.ResetShoppingCart:
+            return adapter.removeAll(state)
     
         default: {
             return state;

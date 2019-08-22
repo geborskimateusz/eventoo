@@ -6,7 +6,8 @@ export enum ShoppingCartActionTypes {
     DeleteEvent = '[Shopping Cart API] Delete event',
     ShoppingCartRequest = '[Shopping Cart API] Shopping Cart Request',
     AddEventsToShoppingCart = '[Shopping Cart API] Add Events To Shopping Cart',
-    PutShoppingCart = '[Shopping Cart API] Put Shopping Car',
+    PutShoppingCart = '[Shopping Cart API] Put Shopping Cart',
+    ResetShoppingCart = '[Shopping Cart API] Reset Shopping Cart'
 }
 
 export class AddEvent implements Action {
@@ -31,7 +32,11 @@ export class AddEventsToShoppingCart implements Action {
 
 export class PutShoppingCart implements Action {
     readonly type = ShoppingCartActionTypes.PutShoppingCart;
-    constructor(public payload: {events: Event[] }) { }
+    constructor(public payload: {userId: string, events: Event[] }) { }
+}
+
+export class ResetShoppingCart implements Action {
+    readonly type = ShoppingCartActionTypes.ResetShoppingCart;
 }
 
 export type ShoppingCartActions =
@@ -39,4 +44,5 @@ export type ShoppingCartActions =
     | DeleteEvent
     | ShoppingCartRequest
     | AddEventsToShoppingCart
-    | PutShoppingCart;
+    | PutShoppingCart
+    | ResetShoppingCart;

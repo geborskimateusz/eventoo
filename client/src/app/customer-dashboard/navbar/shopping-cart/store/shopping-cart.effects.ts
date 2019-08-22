@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, Effect } from '@ngrx/effects';
 import { HttpClient } from '@angular/common/http';
-import { PutShoppingCart, ShoppingCartActionTypes, ShoppingCartRequest, AddEventsToShoppingCart } from './shopping-cart.actions';
-import { tap, map, catchError, switchMap } from 'rxjs/operators';
+import { PutShoppingCart, ShoppingCartActionTypes, ShoppingCartRequest, AddEventsToShoppingCart, ResetShoppingCart } from './shopping-cart.actions';
+import { tap, map, catchError, switchMap, concatMap, withLatestFrom, filter } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
 import { Event } from 'src/app/shared/model/event.model';
+import { select, Store } from '@ngrx/store';
+import { isShoppingCartEmpty } from './shopping-cart.selectors';
+import { AppState } from 'src/app/store';
 
 export interface ShoppingCart {
     userId: string,
@@ -15,16 +18,19 @@ export interface ShoppingCart {
 export class ShoppingCartEffects {
 
     constructor(private actions$: Actions,
-        private httpClient: HttpClient) { }
+        private httpClient: HttpClient,
+        private store: Store<AppState>) { }
 
-    @Effect({ dispatch: false })
+    @Effect()
     putShoppingCart$ = this.actions$.pipe(
         ofType<PutShoppingCart>(ShoppingCartActionTypes.PutShoppingCart),
-        switchMap(action => {
-            
-            const userId = localStorage.getItem("current_user_id");
+        concatMap(action => {
+
+            const userId = action.payload.userId;
             const events = action.payload.events;
+
             let shoppingCart: ShoppingCart = { userId, events }
+            console.log(shoppingCart)
 
             return this.httpClient.put('http://localhost:8080/api/v1/shoppingCart', shoppingCart)
                 .pipe(
@@ -33,6 +39,9 @@ export class ShoppingCartEffects {
                         return EMPTY
                     })
                 )
+        }),
+        map(() => {
+            return new ResetShoppingCart();
         })
 
     )
