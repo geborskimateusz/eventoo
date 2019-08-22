@@ -50,10 +50,24 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     }
 
+    @Override
+    public void deleteByUserIdAndEventId(Long userId, Long eventId) {
+
+        Optional<ShoppingCart> optionalShoppingCart = shoppingCartRepository.findByUserDetailsIdAndEventId(userId,eventId);
+
+        if (optionalShoppingCart.isPresent()) {
+
+            ShoppingCart shoppingCart = optionalShoppingCart.get();
+            
+            shoppingCartRepository.deleteById(shoppingCart.getId());
+        }
+
+    }
+
     @Transactional
     @Override
     public void saveOrUpdate(ShoppingCartDTO shoppingCartDTO) {
-         
+
             UserDetails userDetails = userService.findById(shoppingCartDTO.getUserId());
             List<EventDTO> eventDTOS = shoppingCartDTO.getEvents();
 

@@ -1,6 +1,7 @@
 package server.eventooserver.api.v1.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import server.eventooserver.api.v1.dto.ShoppingCartDTO;
@@ -28,7 +29,13 @@ public class ShoppingCartController {
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public void putShoppingCart(@RequestBody ShoppingCartDTO shoppingCartDTO) {
-        System.out.println("userid =" + shoppingCartDTO.getUserId());
         shoppingCartService.saveOrUpdate(shoppingCartDTO);
+    }
+
+    @DeleteMapping("/{userId}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteFromShoppingCart(@PathVariable Long userId,
+                                       @RequestParam(name = "eventId") Long eventId) {
+        shoppingCartService.deleteByUserIdAndEventId(userId, eventId);
     }
 }

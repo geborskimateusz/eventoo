@@ -87,7 +87,7 @@ export class EventsCardListComponent implements OnInit {
       tap(ids => {
 
         ids.includes(event.id) ?
-          this.store.dispatch(new DeleteEvent({ eventId: event.id })) :
+          this.store.dispatch(new DeleteEvent({ event: event })) :
           this.store.dispatch(new AddEvent({ event }));
 
 

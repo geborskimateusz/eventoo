@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, Effect } from '@ngrx/effects';
 import { HttpClient } from '@angular/common/http';
-import { PutShoppingCart, ShoppingCartActionTypes, ShoppingCartRequest, AddEventsToShoppingCart, ResetShoppingCart } from './shopping-cart.actions';
-import { tap, map, catchError, switchMap, concatMap, withLatestFrom, filter } from 'rxjs/operators';
+import { PutShoppingCart, ShoppingCartActionTypes, ShoppingCartRequest, AddEventsToShoppingCart, ResetShoppingCart, DeleteEvent } from './shopping-cart.actions';
+import { tap, map, catchError, switchMap, concatMap, withLatestFrom, filter, combineLatest } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
 import { Event } from 'src/app/shared/model/event.model';
 import { select, Store } from '@ngrx/store';
-import { isShoppingCartEmpty } from './shopping-cart.selectors';
+import { isShoppingCartEmpty, selectEventFromShoppingList } from './shopping-cart.selectors';
 import { AppState } from 'src/app/store';
 
 export interface ShoppingCart {
@@ -60,4 +60,39 @@ export class ShoppingCartEffects {
             return new AddEventsToShoppingCart({ events: shoppingCart.events })
         })
     )
+
+    @Effect({ dispatch: false })
+    deleteFromShoppingCart$ = this.actions$.pipe(
+        ofType<DeleteEvent>(ShoppingCartActionTypes.DeleteEvent),
+        switchMap(action => {
+
+            const userId: string = localStorage.getItem("current_user_id");
+            const eventId: number = action.payload.event.id;
+
+            console.log(userId, eventId)
+            return this.httpClient.delete(`http://localhost:8080/api/v1/shoppingCart/${userId}?eventId=${eventId}`)
+                .pipe(
+                    catchError(err => {
+                        console.log(err);
+                        return EMPTY
+                    })
+                )
+        })
+    )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

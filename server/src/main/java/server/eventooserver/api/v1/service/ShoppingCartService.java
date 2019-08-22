@@ -6,4 +6,6 @@ public interface ShoppingCartService {
     void saveOrUpdate(ShoppingCartDTO shoppingCartDTO);
 
     ShoppingCartDTO findByUserId(Long userId);
+
+    void deleteByUserIdAndEventId(Long userId, Long eventId);
 }

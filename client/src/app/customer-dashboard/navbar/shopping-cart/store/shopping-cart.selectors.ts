@@ -27,3 +27,8 @@ export const isShoppingCartEmpty = createSelector(
     selectTotalCount,
     total => total === 0
 )
+
+export const selectEventFromShoppingList = (eventId: number) => createSelector(
+    selectShoppingCartState,
+    shoppingCartState => shoppingCartState.entities[eventId]
+)
