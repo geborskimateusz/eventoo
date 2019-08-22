@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import server.eventooserver.api.v1.dto.EventsDTO;
 import server.eventooserver.api.v1.mapper.EventMapper;
 import server.eventooserver.api.v1.repository.EventRepository;
+import server.eventooserver.api.v1.service.exception.ResourceNotFoundException;
 import server.eventooserver.domain.Event;
 import server.eventooserver.domain.MusicGenre;
 
@@ -68,6 +69,11 @@ public class EventServiceImpl implements EventService {
                                 .map(eventMapper::eventToEventDTO)
                                 .collect(Collectors.toList())
                 ).build();
+    }
+
+    @Override
+    public Event findById(Long id) {
+        return eventRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
     }
 
     private boolean allEventsRequested(MusicGenre genre) {

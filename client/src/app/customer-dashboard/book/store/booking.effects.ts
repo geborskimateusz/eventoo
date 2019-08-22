@@ -41,7 +41,6 @@ export class BookingEffects {
                 orderedTickets,
                 userDetailsId
             }, { responseType: 'text' })
-
                 .pipe(
                     catchError(err => {
                         console.log(err)

@@ -25,11 +25,11 @@ export class AuthEffects {
 
   @Effect()
   init$ = defer((): Observable<Login | Logout> => {
-    const userData = localStorage.getItem("current_user_id");
+    const userId = localStorage.getItem("current_user_id");
 
     //get item user id ant look and send request for find by id
-    return (userData) ?
-      of(new Login({ userDetails: JSON.parse(userData) })) :
+    return (userId) ?
+      of(new Login({ userDetails: JSON.parse(userId) })) :
       of(new Logout())
 
   });

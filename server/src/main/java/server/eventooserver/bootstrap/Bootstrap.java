@@ -1,85 +1,92 @@
-//package server.eventooserver.bootstrap;
-//
-//import com.amazonaws.auth.AWSCredentials;
-//import com.amazonaws.auth.AWSStaticCredentialsProvider;
-//import com.amazonaws.auth.BasicAWSCredentials;
-//import com.amazonaws.regions.Regions;
-//import com.amazonaws.services.s3.AmazonS3;
-//import com.amazonaws.services.s3.AmazonS3Client;
-//import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-//import com.amazonaws.services.s3.model.Bucket;
-//import lombok.AllArgsConstructor;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.beans.factory.annotation.Value;
-//import org.springframework.boot.CommandLineRunner;
-//import org.springframework.http.MediaType;
-//import org.springframework.mail.javamail.JavaMailSender;
-//import org.springframework.mail.javamail.MimeMessageHelper;
-//import org.springframework.stereotype.Component;
-//
-//import server.eventooserver.api.v1.dto.*;
-//import server.eventooserver.api.v1.mapper.InvoiceMapper;
-//import server.eventooserver.api.v1.repository.*;
-//import server.eventooserver.api.v1.service.*;
-//import server.eventooserver.domain.*;
-//
-//import javax.activation.DataSource;
-//import javax.mail.MessagingException;
-//import javax.mail.internet.MimeMessage;
-//import javax.mail.util.ByteArrayDataSource;
-//import java.io.ByteArrayOutputStream;
-//import java.io.File;
-//import java.io.IOException;
-//import java.nio.file.Files;
-//import java.nio.file.Paths;
-//import java.time.LocalDate;
-//import java.util.Arrays;
-//import java.util.List;
-//import java.util.stream.Collectors;
-//
-//
-//@Component
-//public class Bootstrap implements CommandLineRunner {
-//
-//    private final UserDetailsRepository userDetailsRepository;
-//    private final AddressRepository addressRepository;
-//    private final OrderRepository orderRepository;
-//    private final TicketRepository ticketRepository;
-//    private final OrderService orderService;
-//    private final TicketService ticketService;
-//    private final FilesUtilService filesUtilService;
-//    private final UserService userService;
-//    private final InvoiceMapper invoiceMapper = InvoiceMapper.INSTANCE;
-//
-//    private AmazonS3 s3client;
-//
-//    @Value("${amazon.properties.endpointUrl}")
-//    private String endpointUrl;
-//    @Value("${amazon.properties.bucketName}")
-//    private String bucketName;
-//    @Value("${amazon.properties.accessKey}")
-//    private String accessKey;
-//    @Value("${amazon.properties.secretKey}")
-//    private String secretKey;
-//
-//    @Autowired
-//    private JavaMailSender sender;
-//
-//    public Bootstrap(UserDetailsRepository userDetailsRepository, AddressRepository addressRepository, OrderRepository orderRepository, TicketRepository ticketRepository, OrderService orderService, TicketService ticketService, FilesUtilService filesUtilService, UserService userService) {
-//        this.userDetailsRepository = userDetailsRepository;
-//        this.addressRepository = addressRepository;
-//        this.orderRepository = orderRepository;
-//        this.ticketRepository = ticketRepository;
-//        this.orderService = orderService;
-//        this.ticketService = ticketService;
-//        this.filesUtilService = filesUtilService;
-//        this.userService = userService;
-//    }
-//
-//    @Override
-//    public void run(String... args) throws Exception {
-//
-//    }
+package server.eventooserver.bootstrap;
+
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSStaticCredentialsProvider;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.regions.Regions;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import com.amazonaws.services.s3.model.Bucket;
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.http.MediaType;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Component;
+
+import server.eventooserver.api.v1.dto.*;
+import server.eventooserver.api.v1.mapper.InvoiceMapper;
+import server.eventooserver.api.v1.repository.*;
+import server.eventooserver.api.v1.service.*;
+import server.eventooserver.domain.*;
+
+import javax.activation.DataSource;
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import javax.mail.util.ByteArrayDataSource;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+
+@Component
+public class Bootstrap implements CommandLineRunner {
+
+    private final UserDetailsRepository userDetailsRepository;
+    private final AddressRepository addressRepository;
+    private final OrderRepository orderRepository;
+    private final TicketRepository ticketRepository;
+    private final OrderService orderService;
+    private final TicketService ticketService;
+    private final FilesUtilService filesUtilService;
+    private final UserService userService;
+    private final InvoiceMapper invoiceMapper = InvoiceMapper.INSTANCE;
+
+    @Autowired
+    ShoppingCartService shoppingCartService;
+
+    private AmazonS3 s3client;
+
+    @Value("${amazon.properties.endpointUrl}")
+    private String endpointUrl;
+    @Value("${amazon.properties.bucketName}")
+    private String bucketName;
+    @Value("${amazon.properties.accessKey}")
+    private String accessKey;
+    @Value("${amazon.properties.secretKey}")
+    private String secretKey;
+
+    @Autowired
+    private JavaMailSender sender;
+
+    public Bootstrap(UserDetailsRepository userDetailsRepository, AddressRepository addressRepository, OrderRepository orderRepository, TicketRepository ticketRepository, OrderService orderService, TicketService ticketService, FilesUtilService filesUtilService, UserService userService) {
+        this.userDetailsRepository = userDetailsRepository;
+        this.addressRepository = addressRepository;
+        this.orderRepository = orderRepository;
+        this.ticketRepository = ticketRepository;
+        this.orderService = orderService;
+        this.ticketService = ticketService;
+        this.filesUtilService = filesUtilService;
+        this.userService = userService;
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+//        ShoppingCartDTO shoppingCartDTO = ShoppingCartDTO.builder()
+//                .eventsIds(Arrays.asList(3L, 1L))
+//                .userId(3L)
+//                .build();
+//        shoppingCartService.saveOrUpdate(shoppingCartDTO);
+    }
 
 //    private void sendEmail() throws IOException {
 //
@@ -188,4 +195,4 @@
 //
 //        userDetailsRepository.save(userDetails);
 //    }
-//}
+}

@@ -11,7 +11,7 @@ import { PutShoppingCart } from './store/shopping-cart.actions';
   templateUrl: './shopping-cart.component.html',
   styleUrls: ['./shopping-cart.component.scss'],
 })
-export class ShoppingCartComponent implements OnInit, OnDestroy {
+export class ShoppingCartComponent implements OnInit {
 
   isShoppingCartEmpty$: Observable<boolean>;
   count$: Observable<number>;
@@ -34,18 +34,6 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
       select(selectEventsFromShoppingList),
       map(events => this.paginateEvents(events))
     )
-  }
-
-  //user is logged out
-  ngOnDestroy() {
-
-    this.store.pipe(
-
-      //<any> -> ngrx issue workaround
-      select(<any>selectEventsIDs),
-      map(eventsIds => this.store.dispatch(new PutShoppingCart({ eventsIds })))
-    ).subscribe();
-
   }
 
   private paginateEvents(events: Event[]): Event[] {

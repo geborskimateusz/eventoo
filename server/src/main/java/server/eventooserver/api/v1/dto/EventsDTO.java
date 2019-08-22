@@ -12,5 +12,4 @@ import java.util.List;
 @Builder
 public class EventsDTO {
     List<EventDTO> events = new ArrayList<>();
-
 }
