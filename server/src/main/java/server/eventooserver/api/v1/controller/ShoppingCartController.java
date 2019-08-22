@@ -22,12 +22,13 @@ public class ShoppingCartController {
     @GetMapping("/{userId}")
     @ResponseStatus(HttpStatus.OK)
     public ShoppingCartDTO getShoppingCart(@PathVariable Long userId) {
-        return shoppingCartService.findById(userId);
+        return shoppingCartService.findByUserId(userId);
     }
 
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public void putShoppingCart(@RequestBody ShoppingCartDTO shoppingCartDTO) {
+        System.out.println("userid =" + shoppingCartDTO.getUserId());
         shoppingCartService.saveOrUpdate(shoppingCartDTO);
     }
 }

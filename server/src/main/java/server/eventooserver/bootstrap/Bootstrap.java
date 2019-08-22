@@ -161,13 +161,13 @@ public class Bootstrap implements CommandLineRunner {
 //        ////////////////////
 //        orderService.orderTickets(invoiceDTO);
 
-//        UserDetails userDetails = userService.findById(invoiceDTO.getUserDetailsId());
+//        UserDetails userDetails = userService.findByUserId(invoiceDTO.getUserDetailsId());
 //
 //
 //        Invoice invoice = invoiceMapper.invoiceDTOtoInvoice(invoiceDTO);
 //        List<OrderedTicket> ticketList = invoice.getOrderedTickets().stream()
 //                .map(orderedTicket -> {
-//                    Ticket ticket = ticketService.findById(orderedTicket.getTicket().getId());
+//                    Ticket ticket = ticketService.findByUserId(orderedTicket.getTicket().getId());
 //
 //                    orderedTicket.setTicket(ticket);
 //

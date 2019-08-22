@@ -5,5 +5,5 @@ import server.eventooserver.api.v1.dto.ShoppingCartDTO;
 public interface ShoppingCartService {
     void saveOrUpdate(ShoppingCartDTO shoppingCartDTO);
 
-    ShoppingCartDTO findById(Long userId);
+    ShoppingCartDTO findByUserId(Long userId);
 }

@@ -11,8 +11,10 @@ import server.eventooserver.domain.Event;
 import server.eventooserver.domain.ShoppingCart;
 import server.eventooserver.domain.UserDetails;
 
+import javax.swing.text.html.Option;
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -33,7 +35,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     }
 
     @Override
-    public ShoppingCartDTO findById(Long userId) {
+    public ShoppingCartDTO findByUserId(Long userId) {
 
         List<ShoppingCart> shoppingCartElements = shoppingCartRepository.findAllByUserDetailsId(userId);
 
@@ -51,30 +53,37 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     @Transactional
     @Override
     public void saveOrUpdate(ShoppingCartDTO shoppingCartDTO) {
+         
+            UserDetails userDetails = userService.findById(shoppingCartDTO.getUserId());
+            List<EventDTO> eventDTOS = shoppingCartDTO.getEvents();
 
-        UserDetails userDetails = userService.findById(shoppingCartDTO.getUserId());
+            eventDTOS.forEach(eventDTO -> {
 
-        List<Event> events = shoppingCartDTO.getEvents().stream()
-                .map(BaseEntityDTO::getId)
-                .map(eventService::findById).collect(Collectors.toList());
+                Optional<ShoppingCart> optionalShoppingCart = shoppingCartRepository.findByUserDetailsIdAndEventId(
+                        userDetails.getId(),
+                        eventDTO.getId()
+                );
 
-        events.forEach(event -> {
-            ShoppingCart shoppingCartEl = ShoppingCart.builder()
-                    .event(event)
-                    .userDetails(userDetails)
-                    .build();
+                if (!optionalShoppingCart.isPresent()) {
 
-            shoppingCartRepository.save(shoppingCartEl);
-        });
+                    System.out.println("there is no bookmark for user="+userDetails.getId() + " and event="+eventDTO.getId() );
 
-//        List<EventDTO> eventDTOS = shoppingCartElements.stream()
-//                .map(shoppingCart -> eventMapper.eventToEventDTO(shoppingCart.getEvent()))
-//                .collect(Collectors.toList());
-//
-//        return ShoppingCartDTO.builder()
-//                .userId(userDetails.getId())
-//                .events(eventDTOS)
-//                .build();
+                    List<Event> events = shoppingCartDTO.getEvents().stream()
+                            .map(BaseEntityDTO::getId)
+                            .map(eventService::findById).collect(Collectors.toList());
+
+                    events.forEach(event -> {
+
+                        ShoppingCart shoppingCartEl = ShoppingCart.builder()
+                                .event(event)
+                                .userDetails(userDetails)
+                                .build();
+
+                        shoppingCartRepository.save(shoppingCartEl);
+                    });
+                }
+
+            });
 
     }
 }

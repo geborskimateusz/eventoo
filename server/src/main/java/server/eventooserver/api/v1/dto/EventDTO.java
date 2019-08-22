@@ -26,7 +26,8 @@ public class EventDTO extends BaseEntityDTO{
     @Override
     public String toString() {
         return "EventDTO{" +
-                "title='" + title + '\'' +
+
+                "title='" + getId() + '\'' +
                 ", description='" + description + '\'' +
                 ", date=" + date +
                 ", img='" + img + '\'' +
