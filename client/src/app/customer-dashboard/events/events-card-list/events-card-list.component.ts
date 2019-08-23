@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, AfterViewInit, AfterContentChecked, OnChanges } from '@angular/core';
-import { Event } from '../../../shared/model/event.model';
 import { Observable, of, forkJoin, EMPTY, zip, combineLatest } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
@@ -13,6 +12,7 @@ import { selectPricePerType } from '../../book/store/booking.selectors';
 import { AddEvent, DeleteEvent } from '../../navbar/shopping-cart/store/shopping-cart.actions';
 import { selectEventsIDs as selectEventsIDs } from '../../navbar/shopping-cart/store/shopping-cart.selectors';
 import { EventService } from 'src/app/shared/event.service';
+import { Event } from 'src/app/shared/model/event.model';
 @Component({
   selector: 'app-events-card-list',
   templateUrl: './events-card-list.component.html',
@@ -42,16 +42,7 @@ export class EventsCardListComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
 
-    combineLatest(this.eventService.searchedEvent$, this.events$)
-      .subscribe(([input, events]) => {
-
-        if (input !== '') {
-          console.log('searching for ' + input + ' in [].size = ' + events.length)
-        } else {
-          console.log('empty imput, resetting array')
-        }
-      })
-
+    this.events$ = this.onSearchEvents();
 
   }
 
@@ -82,6 +73,33 @@ export class EventsCardListComponent implements OnInit, AfterViewInit {
         })
       ))
     );
+  }
+
+  onSearchEvents() {
+    return combineLatest(this.eventService.searchedEvent$, this.events$)
+      .pipe(
+        switchMap(([input, events]) => {
+
+          input = input.toUpperCase();
+
+          const isNotEmpty = input !== '';
+          if (isNotEmpty) {
+
+            events = events.reduce((arr, event) => {
+
+              let upperCaseTitle = event.title.toUpperCase();
+
+              if (upperCaseTitle.includes(input)) {
+                arr.push(event);
+              }
+
+              return arr;
+
+            }, [])
+          }
+
+          return [events];
+        }))
   }
 
 

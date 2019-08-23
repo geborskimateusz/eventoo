@@ -22,8 +22,8 @@ export class SearchBarComponent implements OnInit, AfterViewInit {
     fromEvent<any>(this.input.nativeElement, 'keyup')
             .pipe(
                 map(event => event.target.value),
-                // debounceTime(400),
-                // distinctUntilChanged(),
+                debounceTime(400),
+                distinctUntilChanged(),
             ).subscribe(input => this.eventService.searchEvent(input));
   }
 
