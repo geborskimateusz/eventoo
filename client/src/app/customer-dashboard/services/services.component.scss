@@ -1,16 +1,31 @@
 @import "../../../styles/abstracts/variables";
 :host {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.team {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+
+  margin: 2rem;
+
+  &--img {
+    width: 50%;
+    border-radius: 5px;
+  }
 }
 
 .features {
-    padding: 5rem;
+  padding: 5rem;
 
-    display: grid;
-    // grid-template-columns: repeat(3, 1fr);
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    grid-gap: 6rem;
-    align-items: start;
+  display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 6rem;
+  align-items: start;
 }
 
 .feature {
