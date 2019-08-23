@@ -29,6 +29,7 @@ import { ShoppingCartComponent } from './navbar/shopping-cart/shopping-cart.comp
 import { customerDashboardReducers } from './store/customer-dashboard.reducers';
 import { ShoppingCartListComponent } from './user/shopping-cart-list/shopping-cart-list.component';
 import { ShoppingCartEffects } from './navbar/shopping-cart/store/shopping-cart.effects';
+import { SearchBarComponent } from './navbar/search-bar/search-bar.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { ShoppingCartEffects } from './navbar/shopping-cart/store/shopping-cart.
         EventDetailComponent,
         EventsCardListComponent,
         ShoppingCartListComponent,
+        SearchBarComponent,
     ],
     imports: [
         CustomerDashboardRoutingModule,

@@ -24,64 +24,7 @@
   margin-left: 2rem;
 }
 
-.search {
-  flex: 0 0 40%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  //make search bar last element
-  @include respond(phone-small) {
-    order: 1;
-    flex: 0 0 100%;
-  }
-
-  &__input {
-    font-family: inherit;
-    font-size: inherit;
-    background-color: $color-grey-light-2;
-    border: 0.5px solid $color-grey-light-4;
-    padding: 0.7rem 2rem;
-    border-radius: 10rem;
-    width: 90%;
-    transition: all 0.3s;
-    margin-right: -3.5rem;
-
-    &:focus {
-      outline: none;
-      width: 100%;
-      background-color: $color-grey-light-3;
-    }
-
-    &::placeholder {
-      font-weight: 100;
-      color: $color-grey-dark-3;
-    }
-  }
-
-  &__input:focus + &__button {
-    background-color: $color-grey-light-3;
-  }
-
-  &__button {
-    border: none;
-    background-color: $color-grey-light-2;
-
-    &:focus {
-      outline: none;
-    }
-
-    &:active {
-      transform: translateY(2px);
-    }
-  }
-
-  &__icon {
-    height: 2rem;
-    width: 2rem;
-    fill: $color-grey-dark-3;
-  }
-}
 
 .user-nav {
     display: flex;
