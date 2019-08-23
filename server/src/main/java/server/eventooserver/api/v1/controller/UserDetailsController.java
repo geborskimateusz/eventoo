@@ -25,8 +25,16 @@ public class UserDetailsController {
 
     @ResponseStatus(HttpStatus.OK)
     @PostMapping(value = "/login")
-    public UserDetailsDTO loadUserByUserName(@RequestBody User user) {
+    public UserDetailsDTO authenticate(@RequestBody User user) {
         return userService.authenticateUser(user);
+    }
+
+    //find by username
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping
+    public UserDetailsDTO findByUsername(@RequestParam(value = "username") String username) {
+        System.out.println(username);
+        return null;
     }
 
 

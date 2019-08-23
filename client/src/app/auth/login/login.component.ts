@@ -7,7 +7,7 @@ import { AppState } from 'src/app/store';
 import { AuthService } from '../auth.service';
 import { tap, } from 'rxjs/operators';
 import { noop } from "rxjs";
-import { Login } from '../store/auth.actions';
+import { Login, LoginRequest } from '../store/auth.actions';
 import { ShoppingCartRequest } from 'src/app/customer-dashboard/navbar/shopping-cart/store/shopping-cart.actions';
 
 
@@ -39,20 +39,22 @@ export class LoginComponent implements OnInit {
   login() {
     const authData = this.form.value;
 
-    this.authService.login(authData.email, authData.password)
-      .pipe(
-        tap(userDetails => {
+    this.store.dispatch(new LoginRequest({ username: authData.email, password: authData.password }));
 
-          this.store.dispatch(new Login({ userDetails }));
-          this.onAuthSuccesfull.emit(true);
+  //   this.authService.login(authData.email, authData.password)
+  //     .pipe(
+  //       tap(userDetails => {
 
-          this.store.dispatch(new ShoppingCartRequest({ userId: userDetails.id }))
-        })
-      )
-      .subscribe(
-        noop,
-        () => alert('Login Failed')
-      );
+  //         this.store.dispatch(new Login({ userDetails }));
+  //         this.onAuthSuccesfull.emit(true);
+
+  //         this.store.dispatch(new ShoppingCartRequest({ userId: userDetails.id }))
+  //       })
+  //     )
+  //     .subscribe(
+  //       noop,
+  //       () => alert('Login Failed')
+  //     );
   }
 
 }

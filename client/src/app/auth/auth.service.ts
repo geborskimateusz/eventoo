@@ -12,9 +12,9 @@ export class AuthService {
 
     }
 
-    login(email: string, password: string): Observable<UserDetails> {
-        return this.http.post<UserDetails>('http://localhost:8080/api/v1/user/login', { username: email, password: password });
-    }
+    // login(email: string, password: string): Observable<UserDetails> {
+    //     return this.http.post<UserDetails>('http://localhost:8080/api/v1/user/login', { username: email, password: password });
+    // }
 
 
     // only in prod mode
