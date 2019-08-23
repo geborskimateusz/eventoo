@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, BehaviorSubject } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
 import { selectEventsPageByGenre } from 'src/app/customer-dashboard/events/store/events.selectors';
@@ -10,8 +10,9 @@ import { Event } from '../model/event.model';
 
 @Injectable()
 export class PaginationService {
+    firstPage = 0;
 
-    private paginationPageSource = new Subject<number>();
+    private paginationPageSource = new BehaviorSubject<number>(this.firstPage);
     page$ = this.paginationPageSource.asObservable();
 
     private nextPageEventsFlagSource = new Subject<boolean>();
@@ -20,8 +21,7 @@ export class PaginationService {
     constructor(private store: Store<AppState>) { }
 
     resetPointer() {
-        const firstPage = 0;
-        this.paginationPageSource.next(firstPage);
+        this.paginationPageSource.next(this.firstPage);
     }
 
     pageChange(page: number) {

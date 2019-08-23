@@ -3,16 +3,6 @@
 
 
   <app-search-bar></app-search-bar>
-  <!-- <form action="#" class="search">
-    <input type="text" class="search__input" placeholder="Search events" />
-    <button class="search__button">
-      <svg class="search__icon">
-        <use
-          xlink:href="../../assets/fonts/sprite.svg#icon-magnifying-glass"
-        ></use>
-      </svg>
-    </button>
-  </form> -->
 
   <nav class="user-nav">
     <a *ngIf="!(isLoggedIn$ | async); else loggedIn"  mat-list-item class="user-nav__icon-box" (click)="onLoginModalOpen()">

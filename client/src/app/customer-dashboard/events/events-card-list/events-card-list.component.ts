@@ -1,9 +1,9 @@
-import { Component, OnInit, Input, AfterViewInit, AfterContentChecked } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, AfterContentChecked, OnChanges } from '@angular/core';
 import { Event } from '../../../shared/model/event.model';
-import { Observable, of, forkJoin } from 'rxjs';
+import { Observable, of, forkJoin, EMPTY, zip, combineLatest } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
-import { map, tap, startWith, delay, switchMap, filter, concat, concatMap, mergeMap, first } from 'rxjs/operators';
+import { map, tap, startWith, delay, switchMap, filter, concat, concatMap, mergeMap, first, withLatestFrom, flatMap, take, repeat, exhaust, exhaustMap } from 'rxjs/operators';
 import { selectAllEvents, selectEventsByGenre, selectEventsPageByGenre, selectEventsLoading } from '../store/events.selectors';
 import { EventsPageRequested } from '../store/events.actions';
 import { Ticket } from 'src/app/shared/model/ticket-model';
@@ -12,12 +12,13 @@ import { MusicGenre, genreToEnum } from 'src/app/shared/model/music-genres.model
 import { selectPricePerType } from '../../book/store/booking.selectors';
 import { AddEvent, DeleteEvent } from '../../navbar/shopping-cart/store/shopping-cart.actions';
 import { selectEventsIDs as selectEventsIDs } from '../../navbar/shopping-cart/store/shopping-cart.selectors';
+import { EventService } from 'src/app/shared/event.service';
 @Component({
   selector: 'app-events-card-list',
   templateUrl: './events-card-list.component.html',
   styleUrls: ['./events-card-list.component.scss']
 })
-export class EventsCardListComponent implements OnInit {
+export class EventsCardListComponent implements OnInit, AfterViewInit {
 
   @Input() musicGenre: string;
 
@@ -28,13 +29,34 @@ export class EventsCardListComponent implements OnInit {
   isEmpty$: Observable<boolean>;
 
   constructor(private store: Store<AppState>,
-    private paginationService: PaginationService) { }
+    private paginationService: PaginationService,
+    private eventService: EventService) { }
 
   ngOnInit() {
 
     this.isLoading$ = this.store.pipe(select(selectEventsLoading))
 
-    this.events$ = this.paginationService.page$.pipe(
+    this.events$ = this.initEvents();
+
+  }
+
+  ngAfterViewInit() {
+
+    combineLatest(this.eventService.searchedEvent$, this.events$)
+      .subscribe(([input, events]) => {
+
+        if (input !== '') {
+          console.log('searching for ' + input + ' in [].size = ' + events.length)
+        } else {
+          console.log('empty imput, resetting array')
+        }
+      })
+
+
+  }
+
+  initEvents() {
+    return this.paginationService.page$.pipe(
       switchMap(pageIndex => this.store.pipe(
         delay(0),
         select(selectEventsPageByGenre(this.musicGenre, { pageIndex: pageIndex, pageSize: PAGE_SIZE })),
@@ -60,7 +82,6 @@ export class EventsCardListComponent implements OnInit {
         })
       ))
     );
-
   }
 
 
