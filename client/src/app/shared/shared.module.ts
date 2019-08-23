@@ -10,6 +10,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { PaginationService } from './pagination/pagination.service';
 import { FilesEffects } from './util/file-store/files.effects';
 import { EffectsModule } from '@ngrx/effects';
+import { BookComponent } from './book/book.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { EffectsModule } from '@ngrx/effects';
         PaginationComponent,
         EventOverviewComponent,
         EventLocalizationDialogComponent,
+        BookComponent
     ],
     providers: [
         EventService,
@@ -36,6 +38,7 @@ import { EffectsModule } from '@ngrx/effects';
         FormsModule,
         ReactiveFormsModule,
         EventOverviewComponent,
+        BookComponent
     ],
     entryComponents: [
         EventLocalizationDialogComponent
