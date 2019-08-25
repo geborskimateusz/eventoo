@@ -11,6 +11,7 @@ import { PaginationService } from './pagination/pagination.service';
 import { FilesEffects } from './util/file-store/files.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { BookComponent } from './book/book.component';
+import { UnderDevelopmentComponent } from './under-development/under-development.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { BookComponent } from './book/book.component';
         PaginationComponent,
         EventOverviewComponent,
         EventLocalizationDialogComponent,
-        BookComponent
+        BookComponent,
+        UnderDevelopmentComponent
     ],
     providers: [
         EventService,
@@ -38,7 +40,8 @@ import { BookComponent } from './book/book.component';
         FormsModule,
         ReactiveFormsModule,
         EventOverviewComponent,
-        BookComponent
+        BookComponent,
+        UnderDevelopmentComponent
     ],
     entryComponents: [
         EventLocalizationDialogComponent

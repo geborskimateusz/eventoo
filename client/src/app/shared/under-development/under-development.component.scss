@@ -1,0 +1,21 @@
+@import '../../../styles/abstracts/variables';
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &--img {
+        position: relative;
+        width: 50%;
+    }
+
+    &--paragraph {
+        position: absolute;
+        font-weight: 700;
+        color: $color-secondary-light;
+        top: 35%;
+        font-size: 4.5rem;
+    }
+}
