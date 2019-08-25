@@ -33,8 +33,7 @@ public class UserDetailsController {
     @ResponseStatus(HttpStatus.OK)
     @GetMapping
     public UserDetailsDTO findByUsername(@RequestParam(value = "username") String username) {
-        System.out.println(username);
-        return null;
+        return userService.authenticateUser(username);
     }
 
 

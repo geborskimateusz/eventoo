@@ -44,7 +44,7 @@ export class AuthEffects {
   findByUsername$ = this.actions$.pipe(
     ofType<FindByUsername>(AuthActionTypes.FindByUsername),
     switchMap(action => {
-      return this.httpClient.get<UserDetails>(`http://localhost:8080/api/v1/user/username?=${action.payload.username}`)
+      return this.httpClient.get<UserDetails>(`http://localhost:8080/api/v1/user?username=${action.payload.username}`)
         .pipe(
           catchError(err => {
             console.log(err)

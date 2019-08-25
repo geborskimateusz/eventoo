@@ -36,6 +36,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public UserDetailsDTO authenticateUser(String username) {
+
+        return userDetailsMapper.UserDetailsToUserDetailsDTO(
+                userDetailsRepository.findByEmail(username)
+                        .orElseThrow(ResourceNotFoundException::new)
+        );
+    }
+
+    @Override
     public UserDetailsDTO findDTOById(Long id) {
 
         return userDetailsMapper.UserDetailsToUserDetailsDTO(

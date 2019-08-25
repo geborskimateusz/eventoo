@@ -7,7 +7,10 @@ import server.eventooserver.domain.UserDetails;
 public interface UserService {
 
     UserDetailsDTO authenticateUser(User user);
+    UserDetailsDTO authenticateUser(String username);
 
     UserDetailsDTO findDTOById(Long id);
     UserDetails findById(Long id);
+
+
 }
