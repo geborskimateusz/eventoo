@@ -19,9 +19,18 @@ public class MailController {
         this.mailService = mailService;
     }
 
-    @GetMapping
+    @GetMapping("/confirmationOrder")
     @ResponseStatus(HttpStatus.OK)
-    public void sendConfirmationOrder(@RequestParam(value = "invoice") String invoiceName ){
+    public void sendConfirmationOrder(@RequestParam(value = "invoice") String invoiceName) {
         this.mailService.sendInvoice(invoiceName);
     }
+
+    @GetMapping("/contactRequest")
+    @ResponseStatus(HttpStatus.OK)
+    public void contactRequest(@RequestParam(value = "email") String email,
+                               @RequestParam(value = "fullName") String fullName) {
+        this.mailService.contactRequest(email, fullName);
+    }
+
+
 }

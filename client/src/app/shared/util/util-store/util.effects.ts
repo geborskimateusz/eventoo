@@ -1,12 +1,12 @@
 import { Inject, Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { DownloadRequested, FilesActionTypes, SendByEmailRequested, ContactRequest } from './files.actions';
+import { DownloadRequested, UtilActionTypes, SendByEmailRequested, ContactRequest } from './util.actions';
 import { tap, map, catchError, switchMap } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
 
 @Injectable()
-export class FilesEffects {
+export class UtilEffects {
 
     constructor(private actions$: Actions,
         private httpClient: HttpClient) { }
@@ -14,7 +14,7 @@ export class FilesEffects {
 
     @Effect({ dispatch: false })
     download$ = this.actions$.pipe(
-        ofType<DownloadRequested>(FilesActionTypes.DownloadRequested),
+        ofType<DownloadRequested>(UtilActionTypes.DownloadRequested),
         switchMap(action => {
             let fileName = action.payload.fileName;
 
@@ -41,14 +41,14 @@ export class FilesEffects {
 
     @Effect({ dispatch: false })
     sendConfirmationOrderEmail$ = this.actions$.pipe(
-        ofType<SendByEmailRequested>(FilesActionTypes.SendByEmailRequested),
+        ofType<SendByEmailRequested>(UtilActionTypes.SendByEmailRequested),
         tap(action => {
             let fileName = action.payload.fileName;
 
             let headers = new HttpHeaders();
             headers = headers.set('Accept', 'application/pdf');
 
-            let url = `http://localhost:8080/api/v1/messages?invoice=${fileName}`;
+            let url = `http://localhost:8080/api/v1/messages/confirmationOrder?invoice=${fileName}`;
 
             this.httpClient.get(url)
                 .pipe(
@@ -62,12 +62,12 @@ export class FilesEffects {
 
     @Effect({ dispatch: false })
     contactRequest$ = this.actions$.pipe(
-        ofType<ContactRequest>(FilesActionTypes.ContactRequest),
+        ofType<ContactRequest>(UtilActionTypes.ContactRequest),
         tap(action => {
             let email = action.payload.email;
             let fullName = action.payload.fullName;
 
-            let url = `http://localhost:8080/api/v1/messages?email=${email}?fullName=${fullName}`;
+            let url = `http://localhost:8080/api/v1/messages/contactRequest?email=${email}&fullName=${fullName}`;
 
             this.httpClient.get(url)
                 .pipe(

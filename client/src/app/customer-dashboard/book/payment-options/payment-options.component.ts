@@ -5,7 +5,7 @@ import { selectAllTickets, selectBookingLoading, selectLatestInvoice } from '../
 import { tap } from 'rxjs/operators';
 import { BookTicketsRequest } from '../store/booking.actions';
 import { Observable } from 'rxjs';
-import { DownloadRequested, SendByEmailRequested } from 'src/app/shared/util/file-store/files.actions';
+import { DownloadRequested, SendByEmailRequested } from 'src/app/shared/util/util-store/util.actions';
 
 @Component({
   selector: 'app-payment-options',

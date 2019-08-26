@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AppState } from 'src/app/store';
+import { Store } from '@ngrx/store';
+import { ContactRequest } from '../util/util-store/util.actions';
 
 
 @Component({
@@ -18,7 +21,7 @@ export class BookComponent implements OnInit {
   requestTypes = ['Services', 'Other']
 
 
-  constructor() {
+  constructor(private store: Store<AppState>) {
     this.contactForm = this.createFormGroup();
   }
 
@@ -40,7 +43,10 @@ export class BookComponent implements OnInit {
 
   onSubmit() {
     const result = this.contactForm.value;
-    console.log(result)
+    this.store.dispatch(new ContactRequest({
+      email: result.email,
+      fullName: result.fullName
+    }))
   }
 
 }
