@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { DownloadRequested, FilesActionTypes, SendByEmailRequested } from './files.actions';
+import { DownloadRequested, FilesActionTypes, SendByEmailRequested, ContactRequest } from './files.actions';
 import { tap, map, catchError, switchMap } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
 
@@ -49,6 +49,25 @@ export class FilesEffects {
             headers = headers.set('Accept', 'application/pdf');
 
             let url = `http://localhost:8080/api/v1/messages?invoice=${fileName}`;
+
+            this.httpClient.get(url)
+                .pipe(
+                    catchError(err => {
+                        console.log(err)
+                        return EMPTY;
+                    })
+                ).subscribe();
+        })
+    )
+
+    @Effect({ dispatch: false })
+    contactRequest$ = this.actions$.pipe(
+        ofType<ContactRequest>(FilesActionTypes.ContactRequest),
+        tap(action => {
+            let email = action.payload.email;
+            let fullName = action.payload.fullName;
+
+            let url = `http://localhost:8080/api/v1/messages?email=${email}?fullName=${fullName}`;
 
             this.httpClient.get(url)
                 .pipe(
