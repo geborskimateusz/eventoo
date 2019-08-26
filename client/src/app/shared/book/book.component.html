@@ -8,7 +8,7 @@
           </h2>
         </div>
 
-        <form action="#" class="form">
+        <form class="form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="form__group">
             <input
               type="text"
@@ -16,6 +16,7 @@
               class="form__input"
               placeholder="Full Name"
               required
+              formControlName="fullName"
             />
             <label for="name" class="form__label">Full Name</label>
           </div>
@@ -26,39 +27,29 @@
               class="form__input"
               placeholder="Email"
               required
+              formControlName="email"
             />
             <label for="email" class="form__label">Email</label>
           </div>
 
           <div class="form__group u-margin-bottom-medium">
-            <div class="form__radio-group">
-              <input
-                type="radio"
-                class="form__radio-input"
-                id="small"
-                name="size"
-              />
-              <label for="small" class="form__radio-label">
-                <span class="form__radio-button"></span>
-                Services</label
+            <mat-radio-group class="form__radio-group"                 formControlName="serviceType"
+            >
+              <mat-radio-button
+                *ngFor="let reqType of requestTypes"
+                [value]="reqType"
+
               >
-            </div>
-            <div class="form__radio-group">
-              <input
-                type="radio"
-                class="form__radio-input"
-                id="large"
-                name="size"
-              />
-              <label for="large" class="form__radio-label">
-                <span class="form__radio-button"></span>
-                Other</label
-              >
-            </div>
+                {{ reqType }}
+              </mat-radio-button>
+            </mat-radio-group>
           </div>
 
           <div class="form__group">
-            <button type="submit" class="btn btn--green">
+            <button
+              type="submit"
+              class="btn btn--green"
+            >
               Send request
             </button>
           </div>
