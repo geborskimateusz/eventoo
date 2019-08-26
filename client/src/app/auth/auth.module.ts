@@ -4,7 +4,6 @@ import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthDialog } from './auth-dialog/auth-dialog.component';
-import { AuthService } from './auth.service';
 import { StoreModule } from '@ngrx/store';
 import * as fromAuth from './store/auth.reducer';
 import { AuthGuard } from './auth.guard';
@@ -25,7 +24,6 @@ import { AuthEffects } from './store/auth.effects';
       EffectsModule.forFeature([AuthEffects])
     ],
     providers: [
-      AuthService,
       AuthGuard
     ],
     entryComponents: [

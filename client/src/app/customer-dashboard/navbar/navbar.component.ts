@@ -44,15 +44,12 @@ export class NavbarComponent implements OnInit {
 
   onLogout() {
 
-    console.log('onLlogout')
-
     this.store.pipe(
 
       //<any> -> ngrx issue workaround
       select(selectEventsFromShoppingList),
       take(1),
       map(events => {
-        console.log('onLlogout map')
 
         const userId = localStorage.getItem("current_user_id");
 

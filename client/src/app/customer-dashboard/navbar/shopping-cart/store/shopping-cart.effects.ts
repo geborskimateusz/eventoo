@@ -57,6 +57,7 @@ export class ShoppingCartEffects {
                 })
             )),
         map(shoppingCart => {
+            console.log(shoppingCart)
             return new AddEventsToShoppingCart({ events: shoppingCart.events })
         })
     )

@@ -4,12 +4,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DownloadRequested, UtilActionTypes, SendByEmailRequested, ContactRequest } from './util.actions';
 import { tap, map, catchError, switchMap } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
+import { UIService } from '../../ui/service/ui.service';
 
 @Injectable()
 export class UtilEffects {
 
     constructor(private actions$: Actions,
-        private httpClient: HttpClient) { }
+        private httpClient: HttpClient,
+        private uiService: UIService) { }
 
 
     @Effect({ dispatch: false })
@@ -42,7 +44,7 @@ export class UtilEffects {
     @Effect({ dispatch: false })
     sendConfirmationOrderEmail$ = this.actions$.pipe(
         ofType<SendByEmailRequested>(UtilActionTypes.SendByEmailRequested),
-        tap(action => {
+        switchMap(action => {
             let fileName = action.payload.fileName;
 
             let headers = new HttpHeaders();
@@ -50,32 +52,58 @@ export class UtilEffects {
 
             let url = `http://localhost:8080/api/v1/messages/confirmationOrder?invoice=${fileName}`;
 
-            this.httpClient.get(url)
+            return this.httpClient.get(url)
                 .pipe(
                     catchError(err => {
+
                         console.log(err)
+
+                        this.uiService.openSnackbar(
+                            'Something went wrong.',
+                            null,
+                            3000
+                        )
+
                         return EMPTY;
                     })
-                ).subscribe();
-        })
+                );
+        }),
+        map(() => this.uiService.openSnackbar(
+            'Message was sent successfully. ☑️',
+            null,
+            3000
+        ))
     )
 
     @Effect({ dispatch: false })
     contactRequest$ = this.actions$.pipe(
         ofType<ContactRequest>(UtilActionTypes.ContactRequest),
-        tap(action => {
+        switchMap(action => {
             let email = action.payload.email;
             let fullName = action.payload.fullName;
 
             let url = `http://localhost:8080/api/v1/messages/contactRequest?email=${email}&fullName=${fullName}`;
 
-            this.httpClient.get(url)
+            return this.httpClient.get(url)
                 .pipe(
                     catchError(err => {
+
                         console.log(err)
+
+                        this.uiService.openSnackbar(
+                            'Something went wrong.',
+                            null,
+                            3000
+                        )
+
                         return EMPTY;
                     })
-                ).subscribe();
-        })
+                );
+        }),
+        map(() => this.uiService.openSnackbar(
+            'Message was sent successfully. ☑️',
+            null,
+            3000
+        ))
     )
 }

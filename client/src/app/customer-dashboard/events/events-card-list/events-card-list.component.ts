@@ -13,8 +13,8 @@ import { AddEvent, DeleteEvent } from '../../navbar/shopping-cart/store/shopping
 import { selectEventsIDs as selectEventsIDs } from '../../navbar/shopping-cart/store/shopping-cart.selectors';
 import { EventService } from 'src/app/shared/event.service';
 import { Event } from 'src/app/shared/model/event.model';
-import { selectIsLoading } from 'src/app/shared/ui-store/ui.selectors';
-import { StartLoading, StopLoading } from 'src/app/shared/ui-store/ui.actions';
+import { selectIsLoading } from 'src/app/shared/ui/ui-store/ui.selectors';
+import { StartLoading, StopLoading } from 'src/app/shared/ui/ui-store/ui.actions';
 
 @Component({
   selector: 'app-events-card-list',

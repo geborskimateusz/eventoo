@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthActionTypes, Login, Logout, LoginRequest, FindByUsername } from './auth.actions';
-import { tap, switchMap, catchError, map } from 'rxjs/operators';
+import { tap, switchMap, catchError, map, mergeMap } from 'rxjs/operators';
 import { defer, of, Observable, EMPTY } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { UserDetails } from 'src/app/shared/model/user-details';
+import { UIService } from 'src/app/shared/ui/service/ui.service';
+import { ShoppingCartRequest } from 'src/app/customer-dashboard/navbar/shopping-cart/store/shopping-cart.actions';
 
 
 
@@ -12,7 +14,8 @@ import { UserDetails } from 'src/app/shared/model/user-details';
 export class AuthEffects {
 
   constructor(private actions$: Actions,
-    private httpClient: HttpClient) { }
+    private httpClient: HttpClient,
+    private uiService: UIService) { }
 
   @Effect()
   login$ = this.actions$.pipe(
@@ -22,20 +25,29 @@ export class AuthEffects {
         { username: action.payload.username, password: action.payload.password })
         .pipe(
           catchError(err => {
+
             console.log(err)
+
+            this.uiService.openSnackbar(
+              'Invalid username or password',
+              null,
+              3000
+          )
 
             return EMPTY;
           })
         )
 
     }),
-    map(userDetails => {
+    mergeMap(userDetails => {
+
       localStorage.setItem("current_user_id", JSON.stringify(userDetails.id))
       localStorage.setItem("current_username", JSON.stringify(userDetails.email))
 
-      console.log(userDetails)
-
-      return new Login({ userDetails })
+      return [
+        new Login({ userDetails }),
+        new ShoppingCartRequest({ userId: userDetails.id })        
+      ] 
 
     })
   );
@@ -47,6 +59,7 @@ export class AuthEffects {
       return this.httpClient.get<UserDetails>(`http://localhost:8080/api/v1/user?username=${action.payload.username}`)
         .pipe(
           catchError(err => {
+
             console.log(err)
 
             return EMPTY;
@@ -54,21 +67,15 @@ export class AuthEffects {
         )
 
     }),
-    map(userDetails => {
+    mergeMap(userDetails => {
   
-      console.log(userDetails)
-
-      return new Login({ userDetails })
-
+      return [
+        new Login({ userDetails }),
+        new ShoppingCartRequest({ userId: userDetails.id })        
+      ] 
     })
   );
 
-
-  // @Effect({ dispatch: false })
-  // login$ = this.actions$.pipe(
-  //   ofType<Login>(AuthActionTypes.Login),
-  //   tap(action => localStorage.setItem("current_user_id", JSON.stringify(action.payload.userDetails.id)))
-  // );
 
   @Effect({ dispatch: false })
   logout$ = this.actions$.pipe(
@@ -80,7 +87,6 @@ export class AuthEffects {
   init$ = defer((): Observable<FindByUsername | Logout> => {
     const username = localStorage.getItem("current_username");
 
-    //get item user id ant look and send request for find by id
     return (username) ?
       of(new FindByUsername({ username: JSON.parse(username) })) :
       of(new Logout())

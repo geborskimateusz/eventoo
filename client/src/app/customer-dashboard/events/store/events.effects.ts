@@ -8,7 +8,7 @@ import { AppState } from 'src/app/store';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { JsonPipe } from '@angular/common';
 import { Event } from 'src/app/shared/model/event.model';
-import { StopLoading } from 'src/app/shared/ui-store/ui.actions';
+import { StopLoading } from 'src/app/shared/ui/ui-store/ui.actions';
 
 @Injectable()
 export class EventsEffects {

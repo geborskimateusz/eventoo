@@ -13,7 +13,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { BookComponent } from './book/book.component';
 import { UnderDevelopmentComponent } from './under-development/under-development.component';
 import { StoreModule } from '@ngrx/store';
-import { uiReducers } from './ui-store/ui.reducers';
+import { uiReducers } from './ui/ui-store/ui.reducers';
+import { UIService } from './ui/service/ui.service';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { uiReducers } from './ui-store/ui.reducers';
     ],
     providers: [
         EventService,
-        PaginationService
+        PaginationService,
+        UIService
     ],
     imports: [
         CommonModule,
