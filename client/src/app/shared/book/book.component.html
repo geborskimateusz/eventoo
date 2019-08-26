@@ -9,36 +9,32 @@
         </div>
 
         <form class="form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-          <div class="form__group">
+          <mat-form-field class="form__group">
             <input
-              type="text"
-              id="name"
               class="form__input"
+              matInput
               placeholder="Full Name"
-              required
               formControlName="fullName"
             />
-            <label for="name" class="form__label">Full Name</label>
-          </div>
-          <div class="form__group">
+          </mat-form-field>
+
+          <mat-form-field class="form__group">
             <input
-              type="email"
-              id="email"
               class="form__input"
+              matInput
               placeholder="Email"
-              required
               formControlName="email"
             />
-            <label for="email" class="form__label">Email</label>
-          </div>
-
+          </mat-form-field>
+        
           <div class="form__group u-margin-bottom-medium">
-            <mat-radio-group class="form__radio-group"                 formControlName="serviceType"
+            <mat-radio-group
+              class="form__radio-group"
+              formControlName="serviceType"
             >
               <mat-radio-button
                 *ngFor="let reqType of requestTypes"
                 [value]="reqType"
-
               >
                 {{ reqType }}
               </mat-radio-button>
@@ -49,6 +45,7 @@
             <button
               type="submit"
               class="btn btn--green"
+              [disabled]="!contactForm.valid"
             >
               Send request
             </button>

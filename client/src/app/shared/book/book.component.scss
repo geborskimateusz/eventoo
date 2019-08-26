@@ -60,6 +60,10 @@
 }
 
 .form {
+  &__group {
+    width: 100%;
+  }
+
   &__group:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -114,7 +118,7 @@
   &__radio-group {
     width: 60%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 
     @include respond(tab-port) {
@@ -164,4 +168,18 @@
   &__radio-input:checked + &__radio-label &__radio-button::after {
     opacity: 1;
   }
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-radio-label-content {
+  font-size: 1.5rem;
+}
+
+::ng-deep .mat-form-field-label-wrapper {
+  font-size: 2rem;
+  left: 1rem;
+  color: $color-primary;
 }
