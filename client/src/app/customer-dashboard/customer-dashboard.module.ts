@@ -56,7 +56,6 @@ import { SearchBarComponent } from './navbar/search-bar/search-bar.component';
         CommonModule,
         SharedModule,
         StoreModule.forFeature('customerDashboard', customerDashboardReducers),
-        // StoreModule.forFeature('events', eventsReducer),
         EffectsModule.forFeature([EventsEffects, ShoppingCartEffects])
     ],
     providers: [

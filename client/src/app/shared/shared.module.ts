@@ -12,6 +12,8 @@ import { UtilEffects } from './util/util-store/util.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { BookComponent } from './book/book.component';
 import { UnderDevelopmentComponent } from './under-development/under-development.component';
+import { StoreModule } from '@ngrx/store';
+import { uiReducers } from './ui-store/ui.reducers';
 
 
 @NgModule({
@@ -32,6 +34,7 @@ import { UnderDevelopmentComponent } from './under-development/under-development
         FormsModule,
         ReactiveFormsModule,
         LeafletModule.forRoot(),
+        // StoreModule.forRoot(uiReducers),
         EffectsModule.forFeature([UtilEffects])
     ],
     exports: [

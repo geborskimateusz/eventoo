@@ -8,14 +8,16 @@ import {
 import { environment } from '../../environments/environment';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { routerReducer } from '@ngrx/router-store';
+import { UIState, uiReducers } from '../shared/ui-store/ui.reducers';
 
 
 export interface AppState {
-
+  // ui: UIState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-  router: routerReducer
+  router: routerReducer,
+  ui: uiReducers
 };
 
 

@@ -31,10 +31,10 @@ export const selectEventsByGenre = (musicGenre: string) => createSelector(
     )
 );
 
-export const selectAllEventsLoaded = createSelector(
-    selectEventsState,
-    eventsState => eventsState.loading
-);
+// export const selectAllEventsLoaded = createSelector(
+//     selectEventsState,
+//     eventsState => eventsState.loading
+// );
 
 export const selectEventsPageByGenre = (musicGenre: string, page: PageQuery) => createSelector(
     selectEventsByGenre(musicGenre),
@@ -46,7 +46,7 @@ export const selectEventsPageByGenre = (musicGenre: string, page: PageQuery) => 
         }
 )
 
-export const selectEventsLoading = createSelector(
-    selectEventsState,
-    state => state.loading
-)
+// export const selectEventsLoading = createSelector(
+//     selectEventsState,
+//     state => state.loading
+// )

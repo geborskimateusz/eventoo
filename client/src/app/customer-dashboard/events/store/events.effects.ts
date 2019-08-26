@@ -5,10 +5,10 @@ import { Action, Store, select } from '@ngrx/store';
 import { EventsActionTypes, EventRequested, EventLoaded, EventsPageRequested, EventsPageLoaded, EventsPageCancelled } from './events.actions';
 import { of } from 'rxjs';
 import { AppState } from 'src/app/store';
-import { selectAllEventsLoaded } from './events.selectors';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { JsonPipe } from '@angular/common';
 import { Event } from 'src/app/shared/model/event.model';
+import { StopLoading } from 'src/app/shared/ui-store/ui.actions';
 
 @Injectable()
 export class EventsEffects {
@@ -27,6 +27,7 @@ export class EventsEffects {
                     catchError(err => {
                         console.log(err)
                         this.store.dispatch(new EventsPageCancelled());
+                        this.store.dispatch(new StopLoading());
                         return of([])
                     }),
                 )

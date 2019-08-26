@@ -3,7 +3,7 @@ import { Observable, of, forkJoin, EMPTY, zip, combineLatest } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
 import { map, tap, startWith, delay, switchMap, filter, concat, concatMap, mergeMap, first, withLatestFrom, flatMap, take, repeat, exhaust, exhaustMap } from 'rxjs/operators';
-import { selectAllEvents, selectEventsByGenre, selectEventsPageByGenre, selectEventsLoading } from '../store/events.selectors';
+import { selectAllEvents, selectEventsByGenre, selectEventsPageByGenre } from '../store/events.selectors';
 import { EventsPageRequested } from '../store/events.actions';
 import { Ticket } from 'src/app/shared/model/ticket-model';
 import { PaginationService, PAGE_SIZE } from 'src/app/shared/pagination/pagination.service';
@@ -13,6 +13,9 @@ import { AddEvent, DeleteEvent } from '../../navbar/shopping-cart/store/shopping
 import { selectEventsIDs as selectEventsIDs } from '../../navbar/shopping-cart/store/shopping-cart.selectors';
 import { EventService } from 'src/app/shared/event.service';
 import { Event } from 'src/app/shared/model/event.model';
+import { selectIsLoading } from 'src/app/shared/ui-store/ui.selectors';
+import { StartLoading, StopLoading } from 'src/app/shared/ui-store/ui.actions';
+
 @Component({
   selector: 'app-events-card-list',
   templateUrl: './events-card-list.component.html',
@@ -34,7 +37,7 @@ export class EventsCardListComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
 
-    this.isLoading$ = this.store.pipe(select(selectEventsLoading))
+    this.isLoading$ = this.store.pipe(select(selectIsLoading))
 
     this.events$ = this.initEvents();
 
@@ -47,6 +50,8 @@ export class EventsCardListComponent implements OnInit, AfterViewInit {
   }
 
   initEvents() {
+    this.store.dispatch(new StartLoading())
+
     return this.paginationService.page$.pipe(
       switchMap(pageIndex => this.store.pipe(
         delay(0),
@@ -54,6 +59,9 @@ export class EventsCardListComponent implements OnInit, AfterViewInit {
         map(events => {
 
           if (events.length > 0) {
+
+            this.store.dispatch(new StopLoading())
+
             return events;
           }
 
@@ -64,6 +72,7 @@ export class EventsCardListComponent implements OnInit, AfterViewInit {
               pageSize: PAGE_SIZE
             }
           }));
+
 
           return [];
         }),

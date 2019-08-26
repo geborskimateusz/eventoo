@@ -4,14 +4,11 @@ import { EventsActions, EventsActionTypes } from './events.actions';
 import * as fromCustomerDashboard from '../../store/customer-dashboard.reducers';
 
 export interface EventsState extends EntityState<Event> {
-    loading: boolean;
 }
 
 export const adapter: EntityAdapter<Event> = createEntityAdapter<Event>();
 
-export const initialEventsState: EventsState = adapter.getInitialState({
-    loading: false
-});
+export const initialEventsState: EventsState = adapter.getInitialState({});
 
 export function eventsReducer(state = initialEventsState, action: EventsActions) {
     switch (action.type) {
@@ -19,17 +16,20 @@ export function eventsReducer(state = initialEventsState, action: EventsActions)
         case EventsActionTypes.EventLoaded:
             return adapter.addOne(action.payload.event, state);
 
-        case EventsActionTypes.EventsPageRequested:
-            return { ...state, loading: true }
+        // case EventsActionTypes.EventsPageRequested:
+        //     return { ...state, loading: true }
 
         case EventsActionTypes.EventsPageLoaded:
             return adapter.upsertMany(
                 action.payload.events,
-                {...state, loading: false
+                {...state,
+                    //  loading: false
                 });
 
         case EventsActionTypes.EventsPageCancelled:
-                return { ...state, loading: false }
+                return { ...state,
+                    //  loading: false
+                 }
 
         default: {
             return state;
