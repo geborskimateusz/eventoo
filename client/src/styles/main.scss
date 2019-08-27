@@ -17,7 +17,9 @@
 
 @import "layout/grid";
 
-
+.mat-dialog-container {
+    padding: 0px !important;
+  }
 
 .mat-simple-snackbar {
     justify-content: center !important;
