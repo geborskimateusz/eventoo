@@ -1,4 +1,7 @@
 @import "../../../styles/abstracts/variables";
+@import "../../../styles/abstracts/mixins";
+
+
 :host {
   flex: 1;
   display: flex;
@@ -14,9 +17,15 @@
 
   margin: 2rem;
 
-  &--img {
+  &__img {
     width: 50%;
     border-radius: 5px;
+  }
+
+  &__logo {
+    @include respond(phone) {
+      left: 1.5%;
+    }
   }
 }
 

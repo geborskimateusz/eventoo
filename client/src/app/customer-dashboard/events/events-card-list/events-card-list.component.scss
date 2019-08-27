@@ -29,7 +29,7 @@
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-row-gap: 3.5rem;
+  grid-row-gap: 2rem;
 
   text-align: center;
 
@@ -85,15 +85,15 @@
 
   &__location,
   &__rooms {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
   }
 
   &__location,
   &__rooms,
   &__area,
   &__price {
-    font-size: 1.5rem;
-    margin-left: 2rem;
+    font-size: 1.3rem;
+    margin-left: 1rem;
 
     display: flex;
     align-items: center;
@@ -109,7 +109,6 @@
   &__btn {
     grid-column: 1 / -1;
     background-color: $color-primary-light;
-    transform: translateY(4rem);
     border-radius: 0 0 25px 25px;
     color: $color-white;
   }
