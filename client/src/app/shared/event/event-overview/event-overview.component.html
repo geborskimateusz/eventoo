@@ -1,53 +1,47 @@
 <div class="gallery">
-    <figure class="gallery__item">
-      <img
-        [src]="eventData.img"
-        alt="Artist"
-        class="gallery__photo"
-      />
-    </figure>
-  </div>
-  
+  <figure class="gallery__item">
+    <img [src]="eventData.img" alt="Artist" class="gallery__photo" />
+  </figure>
+</div>
+
+<h1 class="heading-secondary event-title">
+  {{ eventData.title }}
+</h1>
+
 <div class="overview">
-    <div class="overview__date">
-      <svg class="overview__icon-calendar">
-        <use xlink:href="../../assets/fonts/sprite2.svg#icon-calendar"></use>
-      </svg>
-      <h1 class="btn-inline">{{eventData.date | date: 'dd/MM/yyyy'}}</h1>
-    </div>
-    <div class="overview__location">
-      <svg class="overview__icon-location">
-        <use xlink:href="../../assets/fonts/sprite.svg#icon-location-pin"></use>
-      </svg>
-      <button (click)="openMapDialog()" class="btn-inline">{{eventData.location.partialAddress}} <span>(Find in maps)</span></button>
-    </div>
-    <h1 class="overview__heading">
-      {{eventData.title}}
-    </h1>
-    <div class="overview__stars">
-      <svg class="overview__icon-star">
-        <use
-          xlink:href="../../assets/fonts/sprite.svg#icon-star-outlined"
-        ></use>
-      </svg>
-      <svg class="overview__icon-star">
-        <use
-          xlink:href="../../assets/fonts/sprite.svg#icon-star-outlined"
-        ></use>
-      </svg>
-      <svg class="overview__icon-star">
-        <use
-          xlink:href="../../assets/fonts/sprite.svg#icon-star-outlined"
-        ></use>
-      </svg>
-      <svg class="overview__icon-star">
-        <use
-          xlink:href="../../assets/fonts/sprite.svg#icon-star-outlined"
-        ></use>
-      </svg>
-    </div>
-    <div class="overview__rating">
-      <div class="overview__rating-average">8.6</div>
-      <div class="overview__rating-count">429 votes</div>
-    </div>
+  <div class="overview__date">
+    <svg class="overview__icon-calendar">
+      <use xlink:href="../../assets/fonts/sprite2.svg#icon-calendar"></use>
+    </svg>
+    <h1 class="btn-inline">{{ eventData.date | date: "dd/MM/yyyy" }}</h1>
   </div>
+  <div class="overview__location">
+    <svg class="overview__icon-location">
+      <use xlink:href="../../assets/fonts/sprite.svg#icon-location-pin"></use>
+    </svg>
+    <button (click)="openMapDialog()" class="btn-inline">
+      {{ eventData.location.partialAddress }} <span>(Find in maps)</span>
+    </button>
+  </div>
+  <!-- <h1 class="overview__heading">
+      {{eventData.title}}
+    </h1> -->
+  <div class="overview__stars">
+    <svg class="overview__icon-star">
+      <use xlink:href="../../assets/fonts/sprite.svg#icon-star-outlined"></use>
+    </svg>
+    <svg class="overview__icon-star">
+      <use xlink:href="../../assets/fonts/sprite.svg#icon-star-outlined"></use>
+    </svg>
+    <svg class="overview__icon-star">
+      <use xlink:href="../../assets/fonts/sprite.svg#icon-star-outlined"></use>
+    </svg>
+    <svg class="overview__icon-star">
+      <use xlink:href="../../assets/fonts/sprite.svg#icon-star-outlined"></use>
+    </svg>
+  </div>
+  <div class="overview__rating">
+    <div class="overview__rating-average">8.6</div>
+    <div class="overview__rating-count">429 votes</div>
+  </div>
+</div>

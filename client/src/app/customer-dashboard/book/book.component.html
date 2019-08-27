@@ -3,7 +3,7 @@
 <mat-vertical-stepper [linear]="true" #stepper pointerEvents>
   <mat-step>
     <ng-template matStepLabel>Select tickets</ng-template>
-    <div class="drag__info">
+    <div class="drag__info heading-secondary">
       <mat-icon id="drag__info-icon">arrow_downward</mat-icon>
       <p id="dragInfo">Choose tickets then drag them to your shopping list.</p>
     </div>
@@ -15,7 +15,7 @@
       <app-tickets [listType]="shoppingList"></app-tickets>
     </div>
     <div>
-      <h4>Price {{ totalPrice | async }}$</h4>
+      <h4 class="heading-secondary heading-secondary-danger">Price {{ totalPrice | async }}$</h4>
     </div>
     <div>
       <button

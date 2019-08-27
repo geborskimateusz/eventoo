@@ -1,26 +1,35 @@
 @import "../../../../styles/abstracts/variables";
 
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .payment__options {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  margin: 1.5rem auto;
 
   &--option {
     text-transform: uppercase;
     color: $color-primary;
     margin: 0 2rem;
     cursor: pointer;
-
-    &-first {
-    }
-
-    &-second {
-    }
   }
 
   &--option:hover {
     color: rgba($color-primary-light, 0.8);
-    transition: all .2s;
+    transition: all 0.2s;
   }
+}
+
+::ng-deep .mat-spinner {
+  margin: 5rem auto;
+}
+
+::ng-deep .mat-spinner circle {
+  stroke: $color-primary;
 }

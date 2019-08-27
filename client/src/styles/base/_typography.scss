@@ -34,7 +34,7 @@ body {
     animation: moveInRight 1s ease-out;
 
     @include respond(phone) {
-      letter-spacing: .5 rem;
+      letter-spacing: 0.5 rem;
       font-size: 2rem;
     }
   }
@@ -63,6 +63,20 @@ body {
 
   @include respond(phone) {
     font-size: 2.5rem;
+  }
+
+  &-small {
+    font-size: 1.5rem;
+  }
+
+  &-danger {
+    font-size: 1.5rem;
+
+    background-image: linear-gradient(
+      to right,
+      $color-ribbon-primary-dark,
+      $color-secondary-dark
+    );
   }
 }
 

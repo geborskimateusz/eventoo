@@ -1,7 +1,7 @@
 <div class="lists__container">
-  <h4>{{ listType }}</h4>
+  <h4 class="heading-secondary lists__container--title">{{ listType }}</h4>
 
-  <div class="lists__container-list">
+  <div class="lists__container--list">
    <div class="ticket__list" *ngFor="let ticket of tickets | async">
 
     <app-ticket [ticket]="ticket" [listType]="listType"></app-ticket>

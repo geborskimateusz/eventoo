@@ -1,13 +1,16 @@
 @import "../../../../styles/abstracts/variables";
 
-
 .lists__container {
   width: 40rem;
   margin: 0 2.5rem 2.5rem 0;
   display: inline-block;
   vertical-align: top;
 
-  &-list {
+  &--title {
+    font-size: 2rem;
+  }
+
+  &--list {
     width: 100%;
     min-height: 6rem;
     background: $color-white;

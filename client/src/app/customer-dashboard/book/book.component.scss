@@ -1,23 +1,37 @@
 @import "../../../styles/abstracts/variables";
+@import "../../../styles/abstracts/mixins";
 
 :host {
   flex: 1;
   font-size: 1.7rem;
 }
 
+
 .drag__info {
   display: flex;
   align-items: center;
   padding: 1rem 1rem;
+  margin-bottom: 1rem;
 
   p {
     margin-left: 1rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+
+    @include respond(tab-port){
+      font-size: 1.5rem;
+    }
+
   }
 }
 
 .tickets__lists {
   display: flex;
   justify-content: space-around;
+
+  @include respond(tab-port){
+    flex-direction: column;
+  }
 }
 
 

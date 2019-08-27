@@ -12,7 +12,17 @@
     width: 100%;
     max-width: 50rem;
     border-radius: 1rem;
+
+    box-shadow: 0 5px 5px -3px rgba(214, 180, 246, 0.2),
+    0 8px 10px 1px rgba(214, 180, 246, 0.14),
+    0 3px 14px 2px rgba(214, 180, 246, 0.12);
   }
+}
+
+.event-title {
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
 }
 
 .overview {
@@ -21,7 +31,8 @@
   border-bottom: 1px solid $color-grey-light-2;
 
   &__date {
-    flex: 0 0 12%;
+    flex: 0 0 15%;
+    margin-left: 1rem;
   }
   &__stars,
   &__rating {
@@ -29,7 +40,11 @@
   }
 
   &__location {
-    flex: 0 0 21%;
+    justify-content: center;
+    flex: 0 0 25%;
+    margin-left: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__date {
