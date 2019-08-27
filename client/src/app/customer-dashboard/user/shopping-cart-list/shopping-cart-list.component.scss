@@ -1,14 +1,15 @@
-@import '../../../../styles/abstracts/variables';
+@import "../../../../styles/abstracts/variables";
+@import "../../../../styles/abstracts/mixins";
 
 .cart__container {
   display: flex;
   flex-direction: column;
   margin: 5% 1%;
-
   color: $color-grey-dark-2;
 
-
   &--heading {
+    text-align: center;
+    margin-bottom: 3rem;
   }
 
   &--table {
@@ -24,6 +25,12 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 
+  @include respond(phone) {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
   &--img {
     grid-area: 1 / 1 / 2 / 2;
 
@@ -32,7 +39,7 @@
     display: flex;
 
     padding-bottom: 1rem;
-
+    margin: 1rem auto;
 
     &-src {
       width: 70%;
@@ -43,20 +50,37 @@
   &--details {
     grid-area: 1 / 2 / 2 / 3;
 
+
+    @include respond(phone) {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     &-paragraph {
-
     }
 
     &-cta {
-      background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+      background-image: linear-gradient(
+        to right,
+        $color-primary-light,
+        $color-primary-dark
+      );
       width: 30%;
       margin-top: 1rem;
       color: $color-white;
+      margin: 1rem auto;
+
+      @include respond(tab-land) {
+        font-size: 1.3rem;
+      }
+
+      @include respond(tab-port) {
+        width: 60%;
+      }
     }
   }
 }
@@ -74,7 +98,7 @@ tr.example-event-row:not(.example-expanded-row):hover {
 }
 
 tr.example-event-row:not(.example-expanded-row):active {
-  background: #9673B7;
+  background: #9673b7;
 }
 
 .example-event-row td {
@@ -87,10 +111,11 @@ tr.example-event-row:not(.example-expanded-row):active {
 }
 
 .mat-elevation-z8 {
-  box-shadow: 0 5px 5px -3px rgba(214, 180, 246, .2), 0 8px 10px 1px rgba(214, 180, 246,.14), 0 3px 14px 2px rgba(214, 180, 246,.12);
+  box-shadow: 0 5px 5px -3px rgba(214, 180, 246, 0.2),
+    0 8px 10px 1px rgba(214, 180, 246, 0.14),
+    0 3px 14px 2px rgba(214, 180, 246, 0.12);
 }
 
 .mat-cell {
   color: $color-grey-dark-2;
-
 }

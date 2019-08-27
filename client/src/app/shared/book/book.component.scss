@@ -47,6 +47,14 @@
     @include respond(tab-port) {
       width: 120%;
     }
+
+    &--header {
+      font-size: 3.5rem;
+
+      @include respond(phone-small) {
+        font-size: 2rem;
+      }
+    }
   }
 }
 
@@ -176,6 +184,10 @@
 
 ::ng-deep .mat-radio-label-content {
   font-size: 1.5rem;
+
+  @include respond(tab-port) {
+    color: $color-white;  
+  }
 }
 
 ::ng-deep .mat-form-field-label-wrapper {

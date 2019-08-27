@@ -16,7 +16,8 @@ export class StoriesComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(StoriesExpandedDialog, {
-      minWidth: '50rem'
+      minWidth: '50rem',
+      panelClass: 'under-dev-dialog'
     })
   }
 
