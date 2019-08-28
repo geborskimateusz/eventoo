@@ -29,6 +29,7 @@ public class ShoppingCartController {
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public void putShoppingCart(@RequestBody ShoppingCartDTO shoppingCartDTO) {
+        System.out.println(shoppingCartDTO);
         shoppingCartService.saveOrUpdate(shoppingCartDTO);
     }
 

@@ -26,6 +26,8 @@ export class ShoppingCartEffects {
         ofType<PutShoppingCart>(ShoppingCartActionTypes.PutShoppingCart),
         concatMap(action => {
 
+            console.log(action)
+
             const userId = action.payload.userId;
             const events = action.payload.events;
 

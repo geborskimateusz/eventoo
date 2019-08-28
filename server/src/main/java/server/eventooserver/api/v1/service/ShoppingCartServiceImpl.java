@@ -1,5 +1,6 @@
 package server.eventooserver.api.v1.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import server.eventooserver.api.v1.dto.BaseEntityDTO;
 import server.eventooserver.api.v1.dto.EventDTO;
@@ -16,6 +17,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 public class ShoppingCartServiceImpl implements ShoppingCartService {
 
@@ -52,7 +54,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     @Override
     public void deleteByUserIdAndEventId(Long userId, Long eventId) {
 
-        Optional<ShoppingCartElement> optionalShoppingCart = shoppingCartRepository.findByUserDetailsIdAndEventId(userId,eventId);
+        Optional<ShoppingCartElement> optionalShoppingCart = shoppingCartRepository.findByUserDetailsIdAndEventId(userId, eventId);
 
         if (optionalShoppingCart.isPresent()) {
 
@@ -67,36 +69,32 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     @Override
     public void saveOrUpdate(ShoppingCartDTO shoppingCartDTO) {
 
-            UserDetails userDetails = userService.findById(shoppingCartDTO.getUserId());
-            List<EventDTO> eventDTOS = shoppingCartDTO.getEvents();
+        UserDetails userDetails = userService.findById(shoppingCartDTO.getUserId());
+        List<EventDTO> eventDTOS = shoppingCartDTO.getEvents();
 
-            eventDTOS.forEach(eventDTO -> {
+        eventDTOS.forEach(eventDTO -> {
 
-                Optional<ShoppingCartElement> optionalShoppingCart = shoppingCartRepository.findByUserDetailsIdAndEventId(
-                        userDetails.getId(),
-                        eventDTO.getId()
-                );
+            Optional<ShoppingCartElement> optionalShoppingCart = shoppingCartRepository.findByUserDetailsIdAndEventId(
+                    userDetails.getId(),
+                    eventDTO.getId()
+            );
 
-                if (!optionalShoppingCart.isPresent()) {
+            if (!optionalShoppingCart.isPresent()) {
 
-                    System.out.println("there is no bookmark for user="+userDetails.getId() + " and event="+eventDTO.getId() );
+                log.info("there is no bookmark for user=" + userDetails.getId() + " and event=" + eventDTO.getId());
 
-                    List<Event> events = shoppingCartDTO.getEvents().stream()
-                            .map(BaseEntityDTO::getId)
-                            .map(eventService::findById).collect(Collectors.toList());
+                Event event = eventService.findById(eventDTO.getId());
 
-                    events.forEach(event -> {
+                ShoppingCartElement shoppingCartEl = ShoppingCartElement.builder()
+                        .event(event)
+                        .userDetails(userDetails)
+                        .build();
 
-                        ShoppingCartElement shoppingCartEl = ShoppingCartElement.builder()
-                                .event(event)
-                                .userDetails(userDetails)
-                                .build();
+                shoppingCartRepository.save(shoppingCartEl);
 
-                        shoppingCartRepository.save(shoppingCartEl);
-                    });
-                }
+            }
 
-            });
+        });
 
     }
 }
