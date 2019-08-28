@@ -22,7 +22,9 @@ export class DeleteEvent implements Action {
 
 export class ShoppingCartRequest implements Action {
     readonly type = ShoppingCartActionTypes.ShoppingCartRequest;
-    constructor(public payload: { userId: number }) { }
+    constructor(public payload: { userId: number }) { 
+        console.log('ShoppingCartActionTypes.ShoppingCartRequest')
+    }
 }
 
 export class AddEventsToShoppingCart implements Action {

@@ -1,40 +1,36 @@
 <header class="header">
   <img src="../../assets/img/hand-small.png" alt="trillo logo" class="logo" />
 
-
   <app-search-bar></app-search-bar>
 
   <nav class="user-nav">
-    <a *ngIf="!(isLoggedIn$ | async); else loggedIn"  mat-list-item class="user-nav__icon-box" (click)="onLoginModalOpen()">
+    <a
+      *ngIf="!(isLoggedIn$ | async); else loggedIn"
+      mat-list-item
+      class="user-nav__icon-box"
+      (click)="onLoginModalOpen()"
+    >
       <mat-icon>account_circle</mat-icon>
       <span>Login</span>
     </a>
 
     <ng-template #loggedIn>
+      <app-shopping-cart></app-shopping-cart>
 
-        <app-shopping-cart></app-shopping-cart>
-        
-        <a class="user-nav__user" [routerLink]="['/underConstruction']" >
-          <img
-            src="../../../assets//img//user-1.jpg"
-            alt="User photo"
-            class="user-nav__user-photo"
-          />
-          <span class="user-nav__user-name">Mark</span>
-        </a>
-        <a  mat-list-item class="user-nav__icon-box" (click)="onLogout()">
-            <mat-icon>exit_to_app</mat-icon>
-            <span>Logout</span>
-        </a>
+      <a class="user-nav__user" [routerLink]="['/underConstruction']">
+        <img
+          [src]="(userDetails$ | async).imagePath"
+          alt="User photo"
+          class="user-nav__user-photo"
+        />
+        <span class="user-nav__user-name">
+          {{ (userDetails$ | async).firstName }}</span
+        >
+      </a>
+      <a mat-list-item class="user-nav__icon-box" (click)="onLogout()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </a>
     </ng-template>
-
-
   </nav>
 </header>
-
-
-
-
-
-
-

@@ -16,6 +16,7 @@
   height: 4.25rem;
   width: 2.25rem;
   position: relative;
+  z-index: 0;
 }
 
 .user-nav__icon-box {
@@ -35,6 +36,8 @@
   position: absolute;
   top: 0.2rem;
   right: 0.1rem;
+  z-index: 1;
+
 
   display: flex;
   justify-content: center;

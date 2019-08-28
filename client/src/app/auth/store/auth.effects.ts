@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthActionTypes, Login, Logout, LoginRequest, FindByUsername } from './auth.actions';
-import { tap, switchMap, catchError, map, mergeMap } from 'rxjs/operators';
+import { tap, switchMap, catchError, map, mergeMap, concatMap } from 'rxjs/operators';
 import { defer, of, Observable, EMPTY } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { UserDetails } from 'src/app/shared/model/user-details';
@@ -32,22 +32,22 @@ export class AuthEffects {
               'Invalid username or password',
               null,
               3000
-          )
+            )
 
             return EMPTY;
           })
         )
 
     }),
-    mergeMap(userDetails => {
+    switchMap(userDetails => {
 
       localStorage.setItem("current_user_id", JSON.stringify(userDetails.id))
       localStorage.setItem("current_username", JSON.stringify(userDetails.email))
 
       return [
         new Login({ userDetails }),
-        new ShoppingCartRequest({ userId: userDetails.id })        
-      ] 
+        new ShoppingCartRequest({ userId: userDetails.id })
+      ]
 
     })
   );
@@ -67,15 +67,11 @@ export class AuthEffects {
         )
 
     }),
-    mergeMap(userDetails => {
+    switchMap(userDetails => [
+      new Login({ userDetails }),
+      new ShoppingCartRequest({ userId: userDetails.id })
+    ]),
 
-      console.log(userDetails)
-  
-      return [
-        new Login({ userDetails }),
-        new ShoppingCartRequest({ userId: userDetails.id })        
-      ] 
-    })
   );
 
 

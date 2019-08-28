@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, ofType, Effect } from '@ngrx/effects';
 import { HttpClient } from '@angular/common/http';
 import { PutShoppingCart, ShoppingCartActionTypes, ShoppingCartRequest, AddEventsToShoppingCart, ResetShoppingCart, DeleteEvent } from './shopping-cart.actions';
-import { tap, map, catchError, switchMap, concatMap, withLatestFrom, filter, combineLatest } from 'rxjs/operators';
+import { tap, map, catchError, switchMap, concatMap, withLatestFrom, filter, combineLatest, mergeMap } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
 import { Event } from 'src/app/shared/model/event.model';
 import { select, Store } from '@ngrx/store';
@@ -51,13 +51,17 @@ export class ShoppingCartEffects {
     @Effect()
     initializeShoppingCart$ = this.actions$.pipe(
         ofType<ShoppingCartRequest>(ShoppingCartActionTypes.ShoppingCartRequest),
-        switchMap(action => this.httpClient.get<ShoppingCart>(`http://localhost:8080/api/v1/shoppingCart/${action.payload.userId}`)
+        switchMap(action => {
+            console.log('in request');
+
+            return this.httpClient.get<ShoppingCart>(`http://localhost:8080/api/v1/shoppingCart/${action.payload.userId}`)
             .pipe(
                 catchError(err => {
                     console.log(err);
                     return EMPTY
                 })
-            )),
+            )
+        }),
         map(shoppingCart => {
             return new AddEventsToShoppingCart({ events: shoppingCart.events })
         })
