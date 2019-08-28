@@ -25,3 +25,18 @@
     justify-content: center !important;
 }
 
+/* default and hover color */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: $color-primary-light;
+}
+
+/* focused color */
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: $color-primary-dark;
+}
+
+/* floating label color */
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-label { 
+  color: $color-primary-light; 
+}
+

@@ -2,17 +2,17 @@
 @import "../../../styles/abstracts/mixins";
 
 .login {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border: none;
   box-shadow: none;
 }
 
 .form {
-    flex-direction: row;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
   &__input {
     width: 100%;
   }
@@ -20,6 +20,6 @@
   &__submit {
     margin: 1rem auto;
     border-radius: 5rem;
-    width: 100%;
+    width: 80%;
   }
 }

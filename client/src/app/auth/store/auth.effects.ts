@@ -68,6 +68,8 @@ export class AuthEffects {
 
     }),
     mergeMap(userDetails => {
+
+      console.log(userDetails)
   
       return [
         new Login({ userDetails }),
