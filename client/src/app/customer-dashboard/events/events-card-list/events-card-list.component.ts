@@ -29,7 +29,7 @@ export class EventsCardListComponent implements OnInit, AfterViewInit {
 
   isLoading$: Observable<boolean>;
 
-  isEmpty$: Observable<boolean>;
+  isEmpty$: Observable<boolean>;z
 
   constructor(private store: Store<AppState>,
     private paginationService: PaginationService,

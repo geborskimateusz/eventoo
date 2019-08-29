@@ -11,10 +11,16 @@
     <title>
       Add to shopping list
     </title>
-    <use *ngIf="!(isInShoppingCart(event.id) | async)" xlink:href="../../../assets/fonts/sprite.svg#icon-shopping-cart"></use>
-    <use *ngIf="(isInShoppingCart(event.id) | async)" xlink:href="../../../assets/fonts/sprite.svg#icon-bookmark"></use>
-
+    <use
+      *ngIf="!(isInShoppingCart(event.id) | async)"
+      xlink:href="../../../assets/fonts/sprite.svg#icon-shopping-cart"
+    ></use>
+    <use
+      *ngIf="isInShoppingCart(event.id) | async"
+      xlink:href="../../../assets/fonts/sprite.svg#icon-bookmark"
+    ></use>
   </svg>
+
   <h5 class="home__name">{{ event.title }}</h5>
   <div class="home__location">
     <svg class="home__like">
