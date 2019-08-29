@@ -14,7 +14,7 @@ class EventMapperTest {
 
     @Test
     void eventDTOtoEvent() {
-        
+
         EventDTO eventDTO = EventDTOdatasource.getEventDTO();
         Event event = eventMapper.eventDTOtoEvent(eventDTO);
 
