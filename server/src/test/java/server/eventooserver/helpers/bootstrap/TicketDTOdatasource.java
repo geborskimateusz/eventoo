@@ -11,7 +11,7 @@ public class TicketDTOdatasource {
     public static final int PRICE = 150;
 
 
-    public static final TicketDTO getTicketDTO() {
+    public static TicketDTO getTicketDTO() {
         return TicketDTO.builder()
                 .type(TICKET_TYPE)
                 .inStock(IN_STOCK)
