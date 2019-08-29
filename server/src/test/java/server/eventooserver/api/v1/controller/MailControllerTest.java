@@ -17,6 +17,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -41,11 +42,19 @@ public class MailControllerTest {
     public void sendConfirmationOrder() throws Exception {
 
         mockMvc.perform(get(TestApiUrlStrings.API_V1_MESSAGES_SEND_CONFIRMATION_ORDER)
-        .contentType(MediaType.APPLICATION_JSON))
+                .param("invoice", "fakeemail@gmail.com_23_2019-08-19.pdf")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
                 .andExpect(status().isOk());
     }
 
     @Test
-    public void contactRequest() {
+    public void contactRequest() throws Exception {
+        mockMvc.perform(get(TestApiUrlStrings.API_V1_MESSAGES_CONTACT_REQUEST)
+                .param("email", "fakeemail@gmail.com")
+                .param("fullName", "John Doe")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk());
     }
 }
