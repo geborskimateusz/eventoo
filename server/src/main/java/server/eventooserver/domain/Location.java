@@ -28,4 +28,14 @@ public class Location extends BaseEntity {
         this.lat = lat;
         this.lon = lon;
     }
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "partialAddress='" + partialAddress + '\'' +
+                ", fullAddress='" + fullAddress + '\'' +
+                ", lat=" + lat +
+                ", lon=" + lon +
+                '}';
+    }
 }

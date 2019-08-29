@@ -1,8 +1,9 @@
 package server.eventooserver.api.v1.controller;
 
 import com.amazonaws.services.dynamodbv2.xspec.L;
-import org.junit.Ignore;
-import org.junit.Test;
+
+import jdk.nashorn.internal.ir.annotations.Ignore;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -16,7 +17,6 @@ import server.eventooserver.helpers.controller.TestApiUrlStrings;
 
 import static org.hamcrest.Matchers.any;
 import static org.hamcrest.Matchers.hasSize;
-import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;

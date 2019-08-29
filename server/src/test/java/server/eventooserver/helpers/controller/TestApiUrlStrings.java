@@ -14,4 +14,7 @@ public class TestApiUrlStrings {
     public static final String API_V1_ORDER = API_V1 + "order";
 
     public static final String API_V1_SHOPPING_CART = API_V1 + "shoppingCart";
+
+    public static final String API_V1_USER = API_V1 + "user";
+    public static final String API_V1_USER_AUTHENTICATE = API_V1_USER + "/login";
 }

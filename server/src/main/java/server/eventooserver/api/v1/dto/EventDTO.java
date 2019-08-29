@@ -23,11 +23,11 @@ public class EventDTO extends BaseEntityDTO{
     private LocationDTO location;
     Set<TicketDTO> tickets = new HashSet<>();
 
+
     @Override
     public String toString() {
         return "EventDTO{" +
-
-                "title='" + getId() + '\'' +
+                "title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", date=" + date +
                 ", img='" + img + '\'' +

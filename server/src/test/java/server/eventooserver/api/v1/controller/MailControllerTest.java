@@ -1,6 +1,6 @@
 package server.eventooserver.api.v1.controller;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -10,7 +10,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import server.eventooserver.api.v1.service.MailService;
 import server.eventooserver.helpers.controller.TestApiUrlStrings;
 
-import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.equalTo;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;

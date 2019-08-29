@@ -1,7 +1,8 @@
 package server.eventooserver.api.v1.controller;
 
-import org.junit.Ignore;
-import org.junit.Test;
+
+import jdk.nashorn.internal.ir.annotations.Ignore;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -14,7 +15,6 @@ import server.eventooserver.helpers.bootstrap.InvoiceDTOdatasource;
 import server.eventooserver.helpers.controller.TestApiUrlStrings;
 
 import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;

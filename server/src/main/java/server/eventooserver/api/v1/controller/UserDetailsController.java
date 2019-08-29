@@ -29,7 +29,6 @@ public class UserDetailsController {
         return userService.authenticateUser(user);
     }
 
-    //find by username
     @ResponseStatus(HttpStatus.OK)
     @GetMapping
     public UserDetailsDTO findByUsername(@RequestParam(value = "username") String username) {
