@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { UserDetails } from 'src/app/shared/model/user-details';
 import { UIService } from 'src/app/shared/ui/service/ui.service';
 import { ShoppingCartRequest } from 'src/app/customer-dashboard/navbar/shopping-cart/store/shopping-cart.actions';
+import { DataSource } from '@angular/cdk/table';
 
 
 
@@ -70,8 +71,7 @@ export class AuthEffects {
     switchMap(userDetails => [
       new Login({ userDetails }),
       new ShoppingCartRequest({ userId: userDetails.id })
-    ]),
-
+    ])
   );
 
 
@@ -92,3 +92,11 @@ export class AuthEffects {
   });
 
 }
+
+
+
+
+ // tap(() => {
+    //   console.log(EVENTS_DATASOURCE[0].location.fullAddress)
+    //   this.httpClient.put('http://localhost:8080/api/v1/events', {events: [EVENTS_DATASOURCE[0]]}).subscribe()
+    // })

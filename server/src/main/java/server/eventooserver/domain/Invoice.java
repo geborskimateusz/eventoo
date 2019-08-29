@@ -19,7 +19,8 @@ public class Invoice extends BaseEntity {
 
     private LocalDate orderDate;
 
-    @OneToMany(cascade = {
+    @OneToMany(
+            cascade = {
             CascadeType.DETACH,
             CascadeType.MERGE,
             CascadeType.PERSIST,

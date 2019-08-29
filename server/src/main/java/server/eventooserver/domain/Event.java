@@ -11,8 +11,7 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
+//@AllArgsConstructor
 @Entity(name = "Event")
 @Table(name = "event")
 public class Event extends BaseEntity {
@@ -31,22 +30,15 @@ public class Event extends BaseEntity {
     @JoinColumn(name = "location_id")
     Location location;
 
-    @OneToMany(cascade = {
-            CascadeType.DETACH,
-            CascadeType.MERGE,
-            CascadeType.PERSIST,
-            CascadeType.REFRESH
-    },
+    @OneToMany(
+            cascade = CascadeType.ALL,
             mappedBy = "event")
     Set<Ticket> tickets = new HashSet<>();
-
-
 
     public void addTicket(Ticket ticket) {
         this.tickets.add(ticket);
         ticket.setEvent(this);
     }
-
 
     @Override
     public String toString() {
@@ -57,7 +49,7 @@ public class Event extends BaseEntity {
                 ", img='" + img + '\'' +
                 ", genre=" + genre +
                 ", location=" + location +
-                ", tickets=" + tickets.size() +
+                ", tickets=" + tickets +
                 '}';
     }
 }

@@ -47,6 +47,7 @@ public class EventServiceImpl implements EventService {
                                 .map(eventDTO -> eventMapper.eventDTOtoEvent(eventDTO))
                                 .peek(event -> event.getTickets().forEach(event::addTicket))
                                 .map(eventRepository::save)
+                                .peek(System.out::println)
                                 .map(event -> eventMapper.eventToEventDTO(event))
                                 .collect(Collectors.toList())
                 ).build();

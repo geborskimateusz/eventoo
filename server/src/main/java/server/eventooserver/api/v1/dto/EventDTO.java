@@ -32,8 +32,8 @@ public class EventDTO extends BaseEntityDTO{
                 ", date=" + date +
                 ", img='" + img + '\'' +
                 ", genre=" + genre +
-//                ", location=" + location +
-//                ", tickets=" + tickets +
+                ", location=" + location +
+                ", tickets=" + tickets +
                 '}';
     }
 }

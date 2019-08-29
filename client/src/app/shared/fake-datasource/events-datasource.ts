@@ -1,4 +1,4 @@
-// import { Event } from '../model/event.model';
+//  import { Event } from '../model/event.model';
 // import { MusicGenre } from '../model/music-genres.model';
 // import { TicketTypes } from '../model/ticket-types.model';
 
@@ -6,7 +6,7 @@
 
 //     //DANCE, 5 EVENS
 //     {
-//         id: 1,
+//         // id: 1,
 //         title: 'Little Big',
 //         description: 'Little Big is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -20,35 +20,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -60,7 +60,7 @@
 //     },
 
 //     {
-//         id: 2,
+//         // id: 2,
 //         title: 'Hooverphonic',
 //         description: 'Hooverphonic is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -74,35 +74,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -114,7 +114,7 @@
 //     },
 
 //     {
-//         id: 3,
+//         // id: 3,
 //         title: 'The Amazons ',
 //         description: 'The Amazons is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -128,35 +128,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -168,7 +168,7 @@
 //     },
 
 //     {
-//         id: 4,
+//         // id: 4,
 //         title: 'When Saints Go Machine',
 //         description: 'When Saints Go Machine is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -182,35 +182,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -222,7 +222,7 @@
 //     },
 
 //     {
-//         id: 5,
+//         // id: 5,
 //         title: 'Mayday',
 //         description: 'Mayday is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -236,35 +236,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -279,7 +279,7 @@
 //     //POP, 7 events
 
 //     {
-//         id: 6,
+//         // id: 6,
 //         title: 'Combichrist',
 //         description: 'Combichrist is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -293,35 +293,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -333,7 +333,7 @@
 //     },
 
 //     {
-//         id: 7,
+//         // id: 7,
 //         title: 'Thirty Seconds To Mars',
 //         description: 'Thirty Seconds To Mars is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -347,35 +347,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -387,7 +387,7 @@
 //     },
 
 //     {
-//         id: 8,
+//         // id: 8,
 //         title: 'Kortez',
 //         description: 'Kortez is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -401,35 +401,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -441,7 +441,7 @@
 //     },
 
 //     {
-//         id: 9,
+//         // id: 9,
 //         title: 'The Australian Pink Floyd Show',
 //         description: 'The Australian Pink Floyd Show is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -455,35 +455,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -495,7 +495,7 @@
 //     },
 
 //     {
-//         id: 10,
+//         // id: 10,
 //         title: 'Bullet for My Valentine',
 //         description: 'Bullet for My Valentine is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -509,35 +509,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -549,7 +549,7 @@
 //     },
 
 //     {
-//         id: 11,
+//         // id: 11,
 //         title: 'Little Steven & the Disciples of Soul',
 //         description: 'Little Steven & the Disciples of Soul is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -563,35 +563,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -603,7 +603,7 @@
 //     },
 
 //     {
-//         id: 12,
+//         // id: 12,
 //         title: 'Yeasayer',
 //         description: 'Yeasayer is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -617,35 +617,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -657,7 +657,7 @@
 //     },
 
 //     {
-//         id: 13,
+//         // id: 13,
 //         title: 'Caspian ',
 //         description: 'Caspian is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -671,35 +671,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -711,7 +711,7 @@
 //     },
 
 //     {
-//         id: 14,
+//         // id: 14,
 //         title: 'Cavetown',
 //         description: 'Cavetown is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -725,35 +725,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -765,7 +765,7 @@
 //     },
 
 //     {
-//         id: 15,
+//         // id: 15,
 //         title: 'Hozier',
 //         description: 'Hozier is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -779,35 +779,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -822,7 +822,7 @@
 //     //JAZZ 12 Events
 
 //     {
-//         id: 16,
+//         // id: 16,
 //         title: 'JBBO + Stanley Breckenridge (USA)',
 //         description: 'JBBO + Stanley Breckenridge (USA) is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -836,35 +836,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -876,7 +876,7 @@
 //     },
 
 //     {
-//         id: 17,
+//         // id: 17,
 //         title: 'Joachim Mencel Artisena',
 //         description: 'Joachim Mencel Artisena is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -890,35 +890,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -930,7 +930,7 @@
 //     },
 
 //     {
-//         id: 18,
+//         // id: 18,
 //         title: ' Boba Jazz Band',
 //         description: 'Boba Jazz Band is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -944,35 +944,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -984,7 +984,7 @@
 //     },
 
 //     {
-//         id: 19,
+//         // id: 19,
 //         title: 'Beth Hart',
 //         description: 'Beth Hart is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -998,35 +998,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1038,7 +1038,7 @@
 //     },
 
 //     {
-//         id: 20,
+//         // id: 20,
 //         title: 'KOMEDA AHEAD - Oleś Brothers & Christopher Dell',
 //         description: 'KOMEDA AHEAD - Oleś Brothers & Christopher Dell is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -1052,35 +1052,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1092,7 +1092,7 @@
 //     },
 
 //     {
-//         id: 21,
+//         // id: 21,
 //         title: 'Krzysztof Ścierański Solo',
 //         description: 'Krzysztof Ścierański Solo is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -1106,35 +1106,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1146,7 +1146,7 @@
 //     },
 
 //     {
-//         id: 22,
+//         // id: 22,
 //         title: 'Kajetan Galas & Małgorzata Zuber Quartet',
 //         description: 'Kajetan Galas & Małgorzata Zuber Quartet is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -1160,35 +1160,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1200,7 +1200,7 @@
 //     },
 
 //     {
-//         id: 23,
+//         // id: 23,
 //         title: 'Finał INTL Jazz Platform / P.Damasiewicz Power of the Horns',
 //         description: 'Finał INTL Jazz Platform / P.Damasiewicz Power of the Horns is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -1214,35 +1214,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1254,7 +1254,7 @@
 //     },
 
 //     {
-//         id: 24,
+//         // id: 24,
 //         title: 'Grażyna Auguścik & Paulinho Garcia (Brazylia)',
 //         description: 'Grażyna Auguścik & Paulinho Garcia (Brazylia) is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -1268,35 +1268,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1308,7 +1308,7 @@
 //     },
 
 //     {
-//         id: 25,
+//         // id: 25,
 //         title: 'Madeleine Peyroux',
 //         description: 'Madeleine Peyroux is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -1322,35 +1322,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1362,7 +1362,7 @@
 //     },
 
 //     {
-//         id: 26,
+//         // id: 26,
 //         title: 'Ladies Jazz Festival: Angelique Kidjo',
 //         description: 'Ladies Jazz Festival: Angelique Kidjo is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -1376,35 +1376,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1416,7 +1416,7 @@
 //     },
 
 //     {
-//         id: 27,
+//         // id: 27,
 //         title: 'Ladies Jazz Festival: Nouvelle Vague',
 //         description: 'Ladies Jazz Festival: Nouvelle Vague is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -1430,35 +1430,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1471,12 +1471,12 @@
 
 //     //HIP HOP
 //     {
-//         id: 28,
+//         // id: 28,
 //         title: 'Kali',
 //         description: 'Kali is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
 //         img: 'https://s1.ticketm.net/img/tat/dam/a/d8c/d1e1685d-87ba-40ce-9893-d17fe5d20d8c_1086751_CUSTOM.jpg',
-//         genre: MusicGenre.HIP-HOP,
+//         genre: MusicGenre.HIP_HOP,
 //         location: {
 //             partialAddress: 'Spodek',
 //             fullAddress: 'al. Korfantego 35, 40-005 Katowice',
@@ -1485,35 +1485,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1525,12 +1525,12 @@
 //     },
 
 //     {
-//         id: 29,
+//         // id: 29,
 //         title: 'Oleszyce Rap Festiwal',
 //         description: 'Oleszyce Rap Festiwal is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
 //         img: 'https://s1.ticketm.net/img/tat/dam/a/724/1344d317-46ec-4c82-905a-a7c8256f3724_1098011_CUSTOM.jpg',
-//         genre: MusicGenre.HIP-HOP,
+//         genre: MusicGenre.HIP_HOP,
 //         location: {
 //             partialAddress: 'B17 Club',
 //             fullAddress: 'Poznań - 5.10, Klub B17',
@@ -1539,35 +1539,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1579,12 +1579,12 @@
 //     },
 
 //     {
-//         id: 30,
+//         // id: 30,
 //         title: 'Blackbear',
 //         description: 'Blackbear is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
 //         img: 'https://s1.ticketm.net/img/tat/dam/a/209/751fcab1-3f78-4ca2-b7c9-b4554d84a209_1031321_CUSTOM.jpg',
-//         genre: MusicGenre.HIP-HOP,
+//         genre: MusicGenre.HIP_HOP,
 //         location: {
 //             partialAddress: 'Concert Center A2',
 //             fullAddress: 'Góralska 5, 53-610 Wrocław',
@@ -1593,35 +1593,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1633,12 +1633,12 @@
 //     },
 
 //     {
-//         id: 31,
+//         // id: 31,
 //         title: 'Little Simz',
 //         description: 'Little Simz is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
 //         img: 'https://s1.ticketm.net/img/tat/dam/a/7e6/25828e14-a989-4282-946c-8a460df2e7e6_1026461_CUSTOM.jpg',
-//         genre: MusicGenre.HIP-HOP,
+//         genre: MusicGenre.HIP_HOP,
 //         location: {
 //             partialAddress: 'Praga Centrum',
 //             fullAddress: 'Szwedzka 2/4, 05-077 Warszawa',
@@ -1647,35 +1647,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1687,12 +1687,12 @@
 //     },
 
 //     {
-//         id: 32,
+//         // id: 32,
 //         title: 'Hilltop Hoods',
 //         description: 'Hilltop Hoods is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
 //         img: 'https://s1.ticketm.net/img/tat/dam/a/1b6/637d0cfd-f399-41be-8767-a0ab065a81b6_767811_CUSTOM.jpg',
-//         genre: MusicGenre.HIP-HOP,
+//         genre: MusicGenre.HIP_HOP,
 //         location: {
 //             partialAddress: 'LAB Night CLub',
 //             fullAddress: 'Grochowe Łąki 5, 61-752 Poznań',
@@ -1701,35 +1701,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1741,12 +1741,12 @@
 //     },
 
 //     {
-//         id: 33,
+//         // id: 33,
 //         title: 'SCARLXRD',
 //         description: 'SCARLXRD is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
 //         img: 'https://s1.ticketm.net/img/tat/dam/a/190/da90ed68-1aa6-4dfa-80bc-efee2373f190_1081041_CUSTOM.jpg',
-//         genre: MusicGenre.HIP-HOP,
+//         genre: MusicGenre.HIP_HOP,
 //         location: {
 //             partialAddress: 'Spodek',
 //             fullAddress: 'al. Korfantego 35, 40-005 Katowice',
@@ -1755,35 +1755,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1795,12 +1795,12 @@
 //     },
 
 //     {
-//         id: 34,
+//         // id: 34,
 //         title: 'Injury Reserve',
 //         description: 'Injury Reserve is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
 //         img: 'https://s1.ticketm.net/img/tat/dam/a/bbf/72e61ea0-3412-4c43-a589-643b63137bbf_1075971_CUSTOM.jpg',
-//         genre: MusicGenre.HIP-HOP,
+//         genre: MusicGenre.HIP_HOP,
 //         location: {
 //             partialAddress: 'Proxima',
 //             fullAddress: 'Żwirki i Wigury 99A, 02-089 Warszawa',
@@ -1809,35 +1809,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1849,12 +1849,12 @@
 //     },
 
 //     {
-//         id: 35,
+//         // id: 35,
 //         title: 'Paris',
 //         description: 'Paris is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
 //         img: 'https://s1.ticketm.net/img/tat/dam/a/e30/23eec530-731e-4657-9ab4-71b8cb5b4e30_917581_CUSTOM.jpg',
-//         genre: MusicGenre.HIP-HOP,
+//         genre: MusicGenre.HIP_HOP,
 //         location: {
 //             partialAddress: 'Dolina Charlotty',
 //             fullAddress: 'Żwirki i Wigury 99A, 02-089 Warszawa',
@@ -1863,35 +1863,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1903,12 +1903,12 @@
 //     },
 
 //     {
-//         id: 36,
+//         // id: 36,
 //         title: '102 BOYZ',
 //         description: '102 BOYZ is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
 //         img: 'https://s1.ticketm.net/img/tat/dam/a/71c/ca3a2ef2-ab3e-4924-a3ee-a7d30bab171c_1012261_CUSTOM.jpg',
-//         genre: MusicGenre.HIP-HOP,
+//         genre: MusicGenre.HIP_HOP,
 //         location: {
 //             partialAddress: 'Main Pump House',
 //             fullAddress: 'aleja Nowotarskiego 9/4, 33-380 Krynica-Zdrój',
@@ -1917,35 +1917,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -1957,12 +1957,12 @@
 //     },
 
 //     {
-//         id: 37,
+//         // id: 37,
 //         title: 'An Orchestral Rendition of Dr. Dre: 2001',
 //         description: 'An Orchestral Rendition of Dr. Dre: 2001 is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
 //         img: 'https://s1.ticketm.net/img/tat/dam/a/b4f/d62e36b3-1b64-4c9a-91d1-262485b4ab4f_1050921_CUSTOM.jpg',
-//         genre: MusicGenre.HIP-HOP,
+//         genre: MusicGenre.HIP_HOP,
 //         location: {
 //             partialAddress: 'Dolina Charlotty',
 //             fullAddress: 'Żwirki i Wigury 99A, 02-089 Warszawa',
@@ -1971,35 +1971,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2011,12 +2011,12 @@
 //     },
 
 //     {
-//         id: 38,
+//         // id: 38,
 //         title: 'Crazy Town',
 //         description: 'Crazy Town is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
 //         img: 'https://s1.ticketm.net/img/tat/dam/a/17a/3be17b2f-6e3c-4738-887e-3a02acabf17a_1034191_CUSTOM.jpg',
-//         genre: MusicGenre.HIP-HOP,
+//         genre: MusicGenre.HIP_HOP,
 //         location: {
 //             partialAddress: 'Square. Students club',
 //             fullAddress: 'Stanisława Skarżyńskiego 1, 31-866 Kraków',
@@ -2025,35 +2025,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2065,12 +2065,12 @@
 //     },
 
 //     {
-//         id: 39,
+//         // id: 39,
 //         title: 'Encore',
 //         description: 'Encore is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
 //         img: 'https://s1.ticketm.net/img/tat/cft1/201306/25/260170.jpg',
-//         genre: MusicGenre.HIP-HOP,
+//         genre: MusicGenre.HIP_HOP,
 //         location: {
 //             partialAddress: 'B17 Club',
 //             fullAddress: 'Poznań - 5.10, Klub B17',
@@ -2079,35 +2079,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2119,12 +2119,12 @@
 //     },
 
 //     {
-//         id: 40,
+//         // id: 40,
 //         title: 'Das Efx',
 //         description: 'Das Efx is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
 //         img: 'https://s1.ticketm.net/img/tat/dam/a/055/7d3bc2c8-fbd1-4963-8888-4636a01b0055_1079271_CUSTOM.jpg',
-//         genre: MusicGenre.HIP-HOP,
+//         genre: MusicGenre.HIP_HOP,
 //         location: {
 //             partialAddress: 'Concert Center A2',
 //             fullAddress: 'Góralska 5, 53-610 Wrocław',
@@ -2133,35 +2133,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2175,7 +2175,7 @@
 
 //     //ROCK
 //     {
-//         id: 41,
+//         // id: 41,
 //         title: 'Duff McKagan',
 //         description: 'Duff McKagan is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -2189,35 +2189,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2229,7 +2229,7 @@
 //     },
 
 //     {
-//         id: 42,
+//         // id: 42,
 //         title: 'The Faim',
 //         description: 'The Faim is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -2243,35 +2243,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2283,7 +2283,7 @@
 //     },
 
 //     {
-//         id: 43,
+//         // id: 43,
 //         title: 'We Were Promised Jetpacks',
 //         description: 'We Were Promised Jetpacks is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -2297,35 +2297,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2337,7 +2337,7 @@
 //     },
 
 //     {
-//         id: 44,
+//         // id: 44,
 //         title: 'Pile',
 //         description: 'Pile is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -2351,35 +2351,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2391,7 +2391,7 @@
 //     },
 
 //     {
-//         id: 45,
+//         // id: 45,
 //         title: 'Chromatics',
 //         description: 'Chromatics is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -2405,35 +2405,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2445,7 +2445,7 @@
 //     },
 
 //     {
-//         id: 46,
+//         // id: 46,
 //         title: 'New Model Army',
 //         description: 'New Model Army is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -2459,35 +2459,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2499,7 +2499,7 @@
 //     },
 
 //     {
-//         id: 47,
+//         // id: 47,
 //         title: 'Nick Murphy',
 //         description: 'Nick Murphy is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -2513,35 +2513,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2553,7 +2553,7 @@
 //     },
 
 //     {
-//         id: 48,
+//         // id: 48,
 //         title: 'The Rasmus',
 //         description: 'The Rasmus is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -2567,35 +2567,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2611,7 +2611,7 @@
 
 //     //METAL
 //     {
-//         id: 49,
+//         // id: 49,
 //         title: 'Soulfly',
 //         description: 'Soulfly is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -2625,35 +2625,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2665,7 +2665,7 @@
 //     },
 
 //     {
-//         id: 50,
+//         // id: 50,
 //         title: 'Windhand',
 //         description: 'Windhand is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -2679,35 +2679,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2719,7 +2719,7 @@
 //     },
 
 //     {
-//         id: 51,
+//         // id: 51,
 //         title: 'Of Mice & Men',
 //         description: 'Of Mice & Men is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -2733,35 +2733,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2773,7 +2773,7 @@
 //     },
 
 //     {
-//         id: 52,
+//         // id: 52,
 //         title: 'Decapitated',
 //         description: 'Decapitated is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -2787,35 +2787,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2827,7 +2827,7 @@
 //     },
 
 //     {
-//         id: 53,
+//         // id: 53,
 //         title: 'Metallica',
 //         description: 'Metallica is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -2841,35 +2841,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2881,7 +2881,7 @@
 //     },
 
 //     {
-//         id: 54,
+//         // id: 54,
 //         title: 'Bury Tomorrow',
 //         description: 'Bury Tomorrow is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -2895,35 +2895,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2935,7 +2935,7 @@
 //     },
 
 //     {
-//         id: 55,
+//         // id: 55,
 //         title: 'The Gathering',
 //         description: 'The Gathering is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -2949,35 +2949,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -2989,7 +2989,7 @@
 //     },
 
 //     {
-//         id: 56,
+//         // id: 56,
 //         title: 'Airbourne',
 //         description: 'Airbourne is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3003,35 +3003,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3043,7 +3043,7 @@
 //     },
 
 //     {
-//         id: 57,
+//         // id: 57,
 //         title: 'Behemoth',
 //         description: 'Behemoth is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3057,35 +3057,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3097,7 +3097,7 @@
 //     },
 
 //     {
-//         id: 58,
+//         // id: 58,
 //         title: 'Nile',
 //         description: 'Nile is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3111,35 +3111,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3151,7 +3151,7 @@
 //     },
 
 //     {
-//         id: 59,
+//         // id: 59,
 //         title: 'Machine Head',
 //         description: 'Machine Head is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3165,35 +3165,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3205,7 +3205,7 @@
 //     },
 
 //     {
-//         id: 60,
+//         // id: 60,
 //         title: 'Aborted',
 //         description: 'Aborted is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3219,35 +3219,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3259,7 +3259,7 @@
 //     },
 
 //     {
-//         id: 61,
+//         // id: 61,
 //         title: 'Percival ',
 //         description: 'Percival is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3273,35 +3273,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3313,7 +3313,7 @@
 //     },
 
 //     {
-//         id: 62,
+//         // id: 62,
 //         title: 'The Exploited',
 //         description: 'The Exploited is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3327,35 +3327,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3367,7 +3367,7 @@
 //     },
 
 //     {
-//         id: 63,
+//         // id: 63,
 //         title: 'Volbeat',
 //         description: 'Volbeat is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3381,35 +3381,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3421,7 +3421,7 @@
 //     },
 
 //     {
-//         id: 64,
+//         // id: 64,
 //         title: 'Skillet',
 //         description: 'Skillet is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3435,35 +3435,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3477,7 +3477,7 @@
 //     //FOLK
 
 //     {
-//         id: 65,
+//         // id: 65,
 //         title: 'Goran Bregovic',
 //         description: 'Goran Bregovic is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3491,35 +3491,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3531,7 +3531,7 @@
 //     },
 
 //     {
-//         id: 66,
+//         // id: 66,
 //         title: 'Festiwal Pannonica',
 //         description: 'Festiwal Pannonica is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3545,35 +3545,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3585,7 +3585,7 @@
 //     },
 
 //     {
-//         id: 67,
+//         // id: 67,
 //         title: 'Brit Floyd',
 //         description: 'Brit Floyd is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3599,35 +3599,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3639,7 +3639,7 @@
 //     },
 
 //     {
-//         id: 68,
+//         // id: 68,
 //         title: 'Roo Panes',
 //         description: 'Roo Panes is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3653,35 +3653,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3693,7 +3693,7 @@
 //     },
 
 //     {
-//         id: 69,
+//         // id: 69,
 //         title: 'Jade Bird',
 //         description: 'Jade Bird is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3707,35 +3707,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3747,7 +3747,7 @@
 //     },
 
 //     {
-//         id: 70,
+//         // id: 70,
 //         title: 'Home Free',
 //         description: 'Home Free is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3761,35 +3761,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3803,7 +3803,7 @@
 //     //REGGAE
 
 //     {
-//         id: 71,
+//         // id: 71,
 //         title: 'Indios Bravos',
 //         description: 'Indios Bravos is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3817,35 +3817,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3857,7 +3857,7 @@
 //     },
 
 //     {
-//         id: 72,
+//         // id: 72,
 //         title: 'Bednarek',
 //         description: 'Bednarek is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3871,35 +3871,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3912,7 +3912,7 @@
 
 
 //     {
-//         id: 73,
+//         // id: 73,
 //         title: 'Xavier Rudd',
 //         description: 'Xavier Rudd is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3926,35 +3926,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -3967,7 +3967,7 @@
 
 //     // SOUL
 //     {
-//         id: 74,
+//         // id: 74,
 //         title: 'Jade Bird',
 //         description: 'Jade Bird is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -3981,35 +3981,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,
@@ -4021,7 +4021,7 @@
 //     },
 
 //     {
-//         id: 70,
+//         // id: 70,
 //         title: 'Home Free',
 //         description: 'Home Free is lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.',
 //         date: new Date(),
@@ -4035,35 +4035,35 @@
 //         },
 //         tickets: [
 //             {
-//                 id: 1,
+//                 // id: 1,
 //                 type: TicketTypes.VIP,
 //                 price: 450,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 2,
+//                 // id: 2,
 //                 type: TicketTypes.goldenCircleEarlyEntrance,
 //                 price: 250,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 3,
+//                 // id: 3,
 //                 type: TicketTypes.goldenCircleRegular,
 //                 price: 270,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 4,
+//                 // id: 4,
 //                 type: TicketTypes.generalAdmission,
 //                 price: 130,
 //                 totalAmmount: 20,
 //                 inStock: 15
 //             },
 //             {
-//                 id: 5,
+//                 // id: 5,
 //                 type: TicketTypes.stands,
 //                 price: 50,
 //                 totalAmmount: 20,

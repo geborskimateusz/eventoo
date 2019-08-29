@@ -1,29 +1,40 @@
 <a mat-icon-button [matMenuTriggerFor]="appMenu" class="user-nav__icon-box">
-  <svg class="user-nav__icon">
+  <svg class="user-nav__icon-box--icon">
     <use xlink:href="../../../assets/fonts/sprite.svg#icon-shopping-cart"></use>
   </svg>
-  <span
-    *ngIf="!(isShoppingCartEmpty$ | async)"
-    class="user-nav__notification"
-    >{{ count$ | async }}</span
-  >
+  <span *ngIf="!(isShoppingCartEmpty$ | async)" class="user-nav__icon-box--notification"
+    >{{ count$ | async }}
+  </span>
 </a>
 
 <mat-menu #appMenu="matMenu">
   <div *ngIf="!(isShoppingCartEmpty$ | async); else empty">
     <div *ngFor="let event of shoppingCartFragment$ | async">
-      <button [routerLink]="['./event/', event.id]" class="btn__select" mat-menu-item>
-        <img class="btn__select--img" [src]="event.img" [alt]="event.title">
+      <button
+        [routerLink]="['./event/', event.id]"
+        class="btn__select"
+        mat-menu-item
+      >
+        <img class="btn__select--img" [src]="event.img" [alt]="event.title" />
         <p class="btn__select--paragraph">{{ event.title }}</p>
       </button>
     </div>
-    <button class="btn__select btn__select-centered" mat-menu-item [routerLink]="['user/shoppingCart']">Find more</button>
+    <button
+      class="btn__select btn__select-centered"
+      mat-menu-item
+      [routerLink]="['user/shoppingCart']"
+    >
+      Find more
+    </button>
   </div>
   <ng-template #empty>
     <div class="cart__list--empty">
-      <img class="cart__list--empty--img" src="../../../../assets/img/mirage-list-is-empty.png" alt="Empty list">
+      <img
+        class="cart__list--empty--img"
+        src="../../../../assets/img/mirage-list-is-empty.png"
+        alt="Empty list"
+      />
       <p class="cart__list--empty--paragraph">Shopping cart is empty.</p>
     </div>
   </ng-template>
 </mat-menu>
-

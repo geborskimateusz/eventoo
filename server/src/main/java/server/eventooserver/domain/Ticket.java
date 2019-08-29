@@ -9,8 +9,7 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
+//@AllArgsConstructor
 @Entity(name = "Ticket")
 @Table(name = "ticket")
 public class Ticket extends BaseEntity {
@@ -21,15 +20,16 @@ public class Ticket extends BaseEntity {
     private Integer totalAmmount;
     private Integer inStock;
 
-    @ManyToOne(cascade = {
-            CascadeType.DETACH,
-            CascadeType.MERGE,
-            CascadeType.PERSIST,
-            CascadeType.REFRESH
-    })
+    @ManyToOne(
+            cascade = {
+                    CascadeType.DETACH,
+                    CascadeType.MERGE,
+                    CascadeType.PERSIST,
+                    CascadeType.REFRESH
+            }
+    )
     @JoinColumn(name = "event_id")
     Event event;
-
 
     @Override
     public String toString() {
@@ -38,7 +38,7 @@ public class Ticket extends BaseEntity {
                 ", price=" + price +
                 ", totalAmmount=" + totalAmmount +
                 ", inStock=" + inStock +
-                ", event=" + event +
+//                ", event id =" + event.getId() +
                 '}';
     }
 }
