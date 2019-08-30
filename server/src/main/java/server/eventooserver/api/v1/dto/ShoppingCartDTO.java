@@ -17,9 +17,6 @@ public class ShoppingCartDTO {
         this.events = events;
     }
 
-
-
-
     @Override
     public String toString() {
         return "ShoppingCartDTO{" +

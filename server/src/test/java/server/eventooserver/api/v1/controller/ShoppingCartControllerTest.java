@@ -1,7 +1,5 @@
 package server.eventooserver.api.v1.controller;
 
-import com.amazonaws.services.dynamodbv2.xspec.L;
-
 import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -12,10 +10,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import server.eventooserver.api.v1.dto.ShoppingCartDTO;
 import server.eventooserver.api.v1.service.ShoppingCartService;
-import server.eventooserver.helpers.bootstrap.ShoppingCartDTOdatasource;
+import server.eventooserver.helpers.bootstrap.ShoppingCartDatasource;
 import server.eventooserver.helpers.controller.TestApiUrlStrings;
 
-import static org.hamcrest.Matchers.any;
 import static org.hamcrest.Matchers.hasSize;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.times;
@@ -26,7 +23,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.hamcrest.Matchers.equalTo;
 import static server.eventooserver.helpers.controller.AbstractRestControllerTest.asJsonString;
 
 public class ShoppingCartControllerTest {
@@ -49,7 +45,7 @@ public class ShoppingCartControllerTest {
     @Test
     public void getShoppingCart() throws Exception {
 
-        ShoppingCartDTO expected = ShoppingCartDTOdatasource.getShoppingCartDTO();
+        ShoppingCartDTO expected = ShoppingCartDatasource.getShoppingCartDTO();
 
         when(shoppingCartService.findByUserId(anyLong())).thenReturn(expected);
 
@@ -66,7 +62,7 @@ public class ShoppingCartControllerTest {
     @Test
     public void putShoppingCart() throws Exception {
 
-        ShoppingCartDTO expected = ShoppingCartDTOdatasource.getShoppingCartDTO();
+        ShoppingCartDTO expected = ShoppingCartDatasource.getShoppingCartDTO();
 
         String url = TestApiUrlStrings.API_V1_SHOPPING_CART;
         mockMvc.perform(put(url)

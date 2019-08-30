@@ -11,6 +11,7 @@ import server.eventooserver.domain.Ticket;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 
 public class EventDatasource {
 
@@ -56,5 +57,9 @@ public class EventDatasource {
                         ))
                 )
                 .build();
+    }
+
+    public static List<EventDTO> getEventDTOs() {
+        return Arrays.asList(getEventDTO(), getEventDTO());
     }
 }
