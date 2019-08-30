@@ -1,8 +1,10 @@
 package server.eventooserver.helpers.bootstrap;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 
-public class ByteArrayOutputStreamDatasource {
+public class StreamDatasource {
 
     public static ByteArrayOutputStream getByteArrayOutputStream() {
 
@@ -13,5 +15,9 @@ public class ByteArrayOutputStreamDatasource {
         }
 
         return bout;
+    }
+
+    public static InputStream getInputStream() {
+        return new ByteArrayInputStream(getByteArrayOutputStream().toByteArray());
     }
 }
