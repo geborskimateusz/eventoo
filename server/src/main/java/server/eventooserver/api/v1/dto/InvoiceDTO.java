@@ -22,7 +22,7 @@ public class InvoiceDTO {
         return "InvoiceDTO{" +
                 "orderDate=" + orderDate +
                 ", orderedTickets=" + orderedTickets +
-                ", userId=" + userDetailsId +
+                ", userDetailsId=" + userDetailsId +
                 '}';
     }
 }

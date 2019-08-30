@@ -47,7 +47,7 @@ public class Ticket extends BaseEntity {
                 ", price=" + price +
                 ", totalAmmount=" + totalAmmount +
                 ", inStock=" + inStock +
-//                ", event id =" + event.getId() +
+                ", event=" + event +
                 '}';
     }
 }

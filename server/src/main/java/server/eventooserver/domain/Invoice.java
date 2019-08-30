@@ -34,9 +34,10 @@ public class Invoice extends BaseEntity {
     private UserDetails userDetails;
 
     @Builder
-    public Invoice(LocalDate orderDate, Set<OrderedTicket> orderedTickets) {
+    public Invoice(LocalDate orderDate, Set<OrderedTicket> orderedTickets, UserDetails userDetails) {
         this.orderDate = orderDate;
         this.orderedTickets = orderedTickets;
+        this.userDetails = userDetails;
     }
 
     public void addOrderedTicket(OrderedTicket ticket) {

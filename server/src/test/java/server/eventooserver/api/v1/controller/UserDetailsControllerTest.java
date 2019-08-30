@@ -3,25 +3,17 @@ package server.eventooserver.api.v1.controller;
 
 import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import server.eventooserver.api.v1.dto.InvoiceDTO;
 import server.eventooserver.api.v1.dto.UserDetailsDTO;
-import server.eventooserver.api.v1.service.ShoppingCartService;
 import server.eventooserver.api.v1.service.UserService;
 import server.eventooserver.domain.User;
-import server.eventooserver.helpers.bootstrap.InvoiceDTOdatasource;
 import server.eventooserver.helpers.bootstrap.UserDatasource;
-import server.eventooserver.helpers.bootstrap.UserDetailsDTOdatasource;
+import server.eventooserver.helpers.bootstrap.UserDetailsDatasource;
 import server.eventooserver.helpers.controller.TestApiUrlStrings;
 
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -60,7 +52,7 @@ public class UserDetailsControllerTest {
     @Test
     public void authenticate() throws Exception {
         User given = UserDatasource.getUser();
-        UserDetailsDTO userDetailsDTO = UserDetailsDTOdatasource.getUserDetailsDTO();
+        UserDetailsDTO userDetailsDTO = UserDetailsDatasource.getUserDetailsDTO();
 
         when(userService.authenticateUser(anyString())).thenReturn(userDetailsDTO);
 

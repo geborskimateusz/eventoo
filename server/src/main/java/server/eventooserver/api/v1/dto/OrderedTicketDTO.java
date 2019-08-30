@@ -23,9 +23,8 @@ public class OrderedTicketDTO extends BaseEntityDTO {
     @Override
     public String toString() {
         return "OrderedTicketDTO{" +
-                "id = " + super.getId() + "\n" +
                 "amount=" + amount +
-                "ticket" + ticket +
+                ", ticket=" + ticket +
                 '}';
     }
 }

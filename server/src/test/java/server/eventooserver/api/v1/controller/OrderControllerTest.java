@@ -11,7 +11,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import server.eventooserver.api.v1.dto.InvoiceDTO;
 import server.eventooserver.api.v1.service.OrderService;
-import server.eventooserver.helpers.bootstrap.InvoiceDTOdatasource;
+import server.eventooserver.helpers.bootstrap.InvoiceDatasource;
 import server.eventooserver.helpers.controller.TestApiUrlStrings;
 
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -46,7 +46,7 @@ public class OrderControllerTest {
     public void bookTickets() throws Exception {
 
         String expected = "doe055952@gmail.com_24_2019-08-19.pdf";
-        InvoiceDTO given = InvoiceDTOdatasource.getInvoiceDTO();
+        InvoiceDTO given = InvoiceDatasource.getInvoiceDTO();
 
         when(orderService.orderTickets(any(InvoiceDTO.class))).thenReturn(expected);
 

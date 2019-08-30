@@ -33,7 +33,7 @@ public class OrderedTicket extends BaseEntity {
         return "OrderedTicket{" +
                 "amount=" + amount +
                 ", ticket=" + ticket +
-//                ", invoice=" + invoice.getOrderDate() +
+                ", invoice=" + invoice +
                 '}';
     }
 }
