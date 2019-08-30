@@ -13,6 +13,4 @@ public interface InvoiceMapper {
 
     @Mapping(source = "userDetailsId", target = "userDetails.id")
     Invoice invoiceDTOtoInvoice(InvoiceDTO invoiceDTO);
-
-    InvoiceDTO invoiceToInvoiceDTO(Invoice invoice);
 }

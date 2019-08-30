@@ -11,7 +11,6 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-//@AllArgsConstructor
 @Entity(name = "Event")
 @Table(name = "event")
 public class Event extends BaseEntity {
@@ -34,6 +33,17 @@ public class Event extends BaseEntity {
             cascade = CascadeType.ALL,
             mappedBy = "event")
     Set<Ticket> tickets = new HashSet<>();
+
+    @Builder
+    public Event(String title, String description, LocalDate date, String img, MusicGenre genre, Location location, Set<Ticket> tickets) {
+        this.title = title;
+        this.description = description;
+        this.date = date;
+        this.img = img;
+        this.genre = genre;
+        this.location = location;
+        this.tickets = tickets;
+    }
 
     public void addTicket(Ticket ticket) {
         this.tickets.add(ticket);

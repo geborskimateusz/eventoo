@@ -5,7 +5,7 @@ import server.eventooserver.api.v1.dto.TicketDTO;
 
 public class OrderedTicketDTOdatasource {
 
-    public static final TicketDTO TICKET_DTO = TicketDTOdatasource.getTicketDTO();
+    public static final TicketDTO TICKET_DTO = TicketDatasource.getTicketDTO();
     public static final int AMOUNT = 5;
 
     public static OrderedTicketDTO getOrderedTicketDTO() {

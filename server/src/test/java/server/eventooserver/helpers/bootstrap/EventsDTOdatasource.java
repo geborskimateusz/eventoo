@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 public class EventsDTOdatasource {
 
-    public static final EventDTO EVENT_DTO = EventDTOdatasource.getEventDTO();
+    public static final EventDTO EVENT_DTO = EventDatasource.getEventDTO();
 
     public static  final EventsDTO getEventsDTO() {
         return  EventsDTO.builder()

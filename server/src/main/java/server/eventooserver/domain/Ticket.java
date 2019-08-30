@@ -3,13 +3,13 @@ package server.eventooserver.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAccessorOrder;
 import java.util.HashSet;
 import java.util.Set;
 
 @Getter
 @Setter
 @NoArgsConstructor
-//@AllArgsConstructor
 @Entity(name = "Ticket")
 @Table(name = "ticket")
 public class Ticket extends BaseEntity {
@@ -30,6 +30,15 @@ public class Ticket extends BaseEntity {
     )
     @JoinColumn(name = "event_id")
     Event event;
+
+    @Builder
+    public Ticket(TicketType type, Integer price, Integer totalAmmount, Integer inStock, Event event) {
+        this.type = type;
+        this.price = price;
+        this.totalAmmount = totalAmmount;
+        this.inStock = inStock;
+        this.event = event;
+    }
 
     @Override
     public String toString() {
