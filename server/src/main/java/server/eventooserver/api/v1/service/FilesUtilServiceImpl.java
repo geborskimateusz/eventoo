@@ -6,22 +6,22 @@ import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.draw.LineSeparator;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import server.eventooserver.api.v1.dto.UserDetailsDTO;
 import server.eventooserver.domain.Invoice;
 import server.eventooserver.domain.UserDetails;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.ByteArrayInputStream;
+import java.io.*;
+import java.net.URISyntaxException;
 
 
 import static server.eventooserver.api.v1.service.util.SharedConstans.DOT;
 import static server.eventooserver.api.v1.service.util.SharedConstans.PDF_EXTENSION;
 import static server.eventooserver.api.v1.service.util.SharedConstans.UNDERSCORE;
 
+@Slf4j
 @Service
 public class FilesUtilServiceImpl implements FilesUtilService {
 
@@ -36,8 +36,6 @@ public class FilesUtilServiceImpl implements FilesUtilService {
         this.awsS3service = awsS3service;
     }
 
-    //TODO THIS METHOD SHOULD UPLOAD FILE TO AWS S3, FOR TESTING IT UPLOADS FILE TO src/main/resources/static/pdf/
-    //TODO THIS METHOD SHOULD RETURN PDF ID ETC. FOR CLIENT REQUEST
     @Override
     public String generateConfirmationOrder(Invoice invoice) {
 
@@ -71,8 +69,13 @@ public class FilesUtilServiceImpl implements FilesUtilService {
             document.add(new Chunk(horizontalLine));
 
             pdfUtil.renderOrder(document, invoice.getOrderedTickets());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+
+        } catch (DocumentException
+                | URISyntaxException
+                | IOException e) {
+
+            log.error(e.getMessage());
+
         } finally {
 
             document.close();
@@ -80,10 +83,10 @@ public class FilesUtilServiceImpl implements FilesUtilService {
             InputStream inputStream = new ByteArrayInputStream(out.toByteArray());
 
             awsS3service.uploadFile(inputStream, pdfName);
-
         }
 
         return pdfName;
+
     }
 
 }
