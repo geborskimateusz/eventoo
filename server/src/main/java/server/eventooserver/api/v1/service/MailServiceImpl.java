@@ -36,8 +36,6 @@ public class MailServiceImpl extends AbstractMailService implements MailService 
 
     }
 
-
-
     @Override
     public void contactRequest(String email, String fullName) {
         sendEmail(email, fullName);
