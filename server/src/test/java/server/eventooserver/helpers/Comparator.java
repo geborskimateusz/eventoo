@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Comparator {
 
-    public static void areEquals(Object dto, Object domain) {
+    public static void contains(Object dto, Object domain) {
         String dtoAsString = ObjectStringJoiner.join(dto);
         dtoAsString = ObjectStringJoiner.dtoToPlainDomain(dtoAsString);
 

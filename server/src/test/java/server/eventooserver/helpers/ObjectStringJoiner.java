@@ -31,7 +31,9 @@ public class ObjectStringJoiner {
 
             Object instance = field.get(o);
 
-            return instance.toString();
+            if (instance != null){
+                return instance.toString();
+            }
 
         } catch (IllegalAccessException e) {
             System.out.println(e.getMessage());

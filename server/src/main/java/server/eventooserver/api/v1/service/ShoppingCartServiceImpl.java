@@ -2,11 +2,9 @@ package server.eventooserver.api.v1.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import server.eventooserver.api.v1.dto.BaseEntityDTO;
 import server.eventooserver.api.v1.dto.EventDTO;
 import server.eventooserver.api.v1.dto.ShoppingCartDTO;
 import server.eventooserver.api.v1.mapper.EventMapper;
-import server.eventooserver.api.v1.mapper.ShoppingCartMapper;
 import server.eventooserver.api.v1.repository.ShoppingCartRepository;
 import server.eventooserver.domain.Event;
 import server.eventooserver.domain.ShoppingCartElement;
@@ -26,7 +24,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     private final ShoppingCartRepository shoppingCartRepository;
 
-    private final ShoppingCartMapper shoppingCartMapper = ShoppingCartMapper.INSTANCE;
     private final EventMapper eventMapper = EventMapper.INSTANCE;
 
     public ShoppingCartServiceImpl(UserService userService, EventService eventService, ShoppingCartRepository shoppingCartRepository) {

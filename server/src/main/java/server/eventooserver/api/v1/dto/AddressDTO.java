@@ -24,4 +24,15 @@ public class AddressDTO extends BaseEntityDTO {
         this.homeNo = homeNo;
         this.postalCode = postalCode;
     }
+
+    @Override
+    public String toString() {
+        return "AddressDTO{" +
+                "country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", homeNo='" + homeNo + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                '}';
+    }
 }

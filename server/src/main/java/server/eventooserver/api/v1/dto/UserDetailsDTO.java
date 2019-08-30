@@ -33,4 +33,16 @@ public class UserDetailsDTO extends BaseEntityDTO {
         this.invoices = invoices;
     }
 
+    @Override
+    public String toString() {
+        return "UserDetailsDTO{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", address=" + address +
+                ", imagePath='" + imagePath + '\'' +
+                ", invoices=" + invoices +
+                '}';
+    }
 }

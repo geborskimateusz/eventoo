@@ -31,4 +31,15 @@ public class Address extends BaseEntity {
         this.homeNo = homeNo;
         this.postalCode = postalCode;
     }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", homeNo='" + homeNo + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                '}';
+    }
 }

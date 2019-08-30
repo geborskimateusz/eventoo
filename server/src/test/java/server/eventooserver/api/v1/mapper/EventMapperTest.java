@@ -4,10 +4,7 @@ import org.junit.jupiter.api.Test;
 import server.eventooserver.api.v1.dto.EventDTO;
 import server.eventooserver.domain.Event;
 import server.eventooserver.helpers.Comparator;
-import server.eventooserver.helpers.ObjectStringJoiner;
 import server.eventooserver.helpers.bootstrap.EventDatasource;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class EventMapperTest {
 
@@ -19,7 +16,7 @@ class EventMapperTest {
         EventDTO eventDTO = EventDatasource.getEventDTO();
         Event event = eventMapper.eventDTOtoEvent(eventDTO);
 
-        Comparator.areEquals(eventDTO, event);
+        Comparator.contains(eventDTO, event);
 
     }
 
@@ -29,7 +26,7 @@ class EventMapperTest {
         Event event = EventDatasource.getEvent();
         EventDTO eventDTO = eventMapper.eventToEventDTO(event);
 
-        Comparator.areEquals(eventDTO,event);
+        Comparator.contains(eventDTO,event);
 
     }
 }
