@@ -26,7 +26,6 @@ public class OrderServiceImpl implements OrderService {
     private final UserService userService;
     private final AwsS3service awsS3service;
 
-
     private final OrderRepository orderRepository;
 
     private final InvoiceMapper invoiceMapper = InvoiceMapper.INSTANCE;
