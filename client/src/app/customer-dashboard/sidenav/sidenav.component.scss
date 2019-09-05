@@ -1,5 +1,6 @@
 @import "../../../styles/abstracts/variables";
 @import "../../../styles/abstracts/mixins.scss";
+
 :host {
   flex: 0 0 20%;
   display: flex;
@@ -92,7 +93,6 @@
   }
 }
 
-// LEGAL
 .legal {
   font-size: 1.2rem;
   text-align: center;
