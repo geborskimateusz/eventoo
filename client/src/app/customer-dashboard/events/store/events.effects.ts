@@ -9,6 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { JsonPipe } from '@angular/common';
 import { Event } from 'src/app/shared/model/event.model';
 import { StopLoading } from 'src/app/shared/ui/ui-store/ui.actions';
+import { ApplicationConstans } from 'src/app/app-const';
 
 @Injectable()
 export class EventsEffects {
@@ -22,7 +23,7 @@ export class EventsEffects {
     loadEvents$ = this.actions$.pipe(
         ofType<EventsPageRequested>(EventsActionTypes.EventsPageRequested),
         mergeMap((action) => {
-            return this.httpClient.get<Event[]>(`http://localhost:8080/api/v1/events/${action.payload.musicGenre}?page=${action.payload.page.pageIndex}`)
+            return this.httpClient.get<Event[]>(`${ApplicationConstans.BASE_URL}/events/${action.payload.musicGenre}?page=${action.payload.page.pageIndex}`)
                 .pipe(
                     catchError(err => {
                         console.log(err)

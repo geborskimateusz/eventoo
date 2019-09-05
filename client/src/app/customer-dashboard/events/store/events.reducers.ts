@@ -16,20 +16,13 @@ export function eventsReducer(state = initialEventsState, action: EventsActions)
         case EventsActionTypes.EventLoaded:
             return adapter.addOne(action.payload.event, state);
 
-        // case EventsActionTypes.EventsPageRequested:
-        //     return { ...state, loading: true }
-
         case EventsActionTypes.EventsPageLoaded:
             return adapter.upsertMany(
                 action.payload.events,
-                {...state,
-                    //  loading: false
-                });
+                {...state});
 
         case EventsActionTypes.EventsPageCancelled:
-                return { ...state,
-                    //  loading: false
-                 }
+                return { ...state}
 
         default: {
             return state;

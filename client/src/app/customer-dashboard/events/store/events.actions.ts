@@ -45,4 +45,4 @@ export type EventsActions =
     | EventLoaded
     | EventsPageRequested
     | EventsPageLoaded
-   | EventsPageCancelled;
+    | EventsPageCancelled;
