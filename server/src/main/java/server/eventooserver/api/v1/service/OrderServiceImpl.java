@@ -12,7 +12,9 @@ import server.eventooserver.domain.UserDetails;
 
 import javax.transaction.Transactional;
 import java.io.ByteArrayOutputStream;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import static server.eventooserver.api.v1.service.util.SharedConstans.S3_INVOICE_DIR;
@@ -44,16 +46,18 @@ public class OrderServiceImpl implements OrderService {
 
         Invoice invoice = invoiceMapper.invoiceDTOtoInvoice(invoiceDTO);
 
-        List<OrderedTicket> orderedTickets = invoice.getOrderedTickets().stream()
+        Set<OrderedTicket> orderedTickets = invoice.getOrderedTickets().stream()
                 .peek(orderedTicket -> {
 
                     Ticket ticket = ticketService.updateTicketByOrderAmount(orderedTicket);
 
                     orderedTicket.setTicket(ticket);
 
-                }).collect(Collectors.toList());
+
+                }).collect(Collectors.toSet());
 
         orderedTickets.forEach(invoice::addOrderedTicket);
+        invoice.setOrderedTickets(orderedTickets);
 
         UserDetails userDetails = userService.findById(invoiceDTO.getUserDetailsId());
         invoice.setUserDetails(userDetails);

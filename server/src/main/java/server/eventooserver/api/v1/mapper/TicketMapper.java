@@ -7,7 +7,7 @@ import server.eventooserver.api.v1.dto.TicketDTO;
 import server.eventooserver.domain.Event;
 import server.eventooserver.domain.Ticket;
 
-@Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
+@Mapper(componentModel = "spring")
 public interface TicketMapper {
 
     TicketMapper INSTANCE = Mappers.getMapper(TicketMapper.class);
@@ -15,10 +15,12 @@ public interface TicketMapper {
     Ticket ticketDTOtoTicket(TicketDTO ticketDTO);
 
 
-    @BeforeMapping
-    default void setEvents(@MappingTarget TicketDTO ticketDTO, Ticket ticket) {
-        ticket.getEvent().setTickets(null);
-    }
+//    @BeforeMapping
+//    default void setEvents(@MappingTarget TicketDTO ticketDTO, Ticket ticket) {
+////        ticket.getEvent().setTickets(null);
+//    }
+
+    @Mapping(target = "event.tickets", ignore = true)
     TicketDTO ticketToTicketDTO(Ticket ticket);
 
 }

@@ -47,6 +47,7 @@ class TicketServiceImplTest {
         assertAll(() -> {
             assertEquals(given.getType(), saved.getType());
             assertEquals(given.getInStock(), saved.getInStock());
+            assertNull(saved.getEvent());
         });
     }
 

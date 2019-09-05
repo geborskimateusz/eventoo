@@ -34,15 +34,15 @@ export class FinalizeOrderDialogComponent implements OnInit {
   }
 
   generateOrderConfirmation() {
-    // this.store.pipe(
-    //   select(selectAllTickets),
-    //   tap(tickets => {
+    this.store.pipe(
+      select(selectAllTickets),
+      tap(tickets => {
 
-    //     this.store.dispatch(
-    //       new BookTicketsRequest({
-    //         orderedTickets: tickets
-    //       }))
-    //   })
-    // ).subscribe();
+        this.store.dispatch(
+          new BookTicketsRequest({
+            orderedTickets: tickets
+          }))
+      })
+    ).subscribe();
   }
 }

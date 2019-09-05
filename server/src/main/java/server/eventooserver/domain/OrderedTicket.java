@@ -13,7 +13,7 @@ public class OrderedTicket extends BaseEntity {
 
     private Integer amount;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="ticket_id")
     private Ticket ticket;
 

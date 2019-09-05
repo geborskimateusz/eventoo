@@ -20,12 +20,7 @@ public class Invoice extends BaseEntity {
     private LocalDate orderDate;
 
     @OneToMany(
-            cascade = {
-            CascadeType.DETACH,
-            CascadeType.MERGE,
-            CascadeType.PERSIST,
-            CascadeType.REFRESH
-    },
+            cascade = CascadeType.ALL,
             mappedBy = "invoice")
     private Set<OrderedTicket> orderedTickets = new HashSet<>();
 
