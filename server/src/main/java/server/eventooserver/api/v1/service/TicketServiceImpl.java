@@ -28,7 +28,6 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public TicketDTO saveOrUpdateTicket(TicketDTO ticketDTO) {
-
         return ticketMapper.ticketToTicketDTO(
                 ticketRepository.save(
                         ticketMapper.ticketDTOtoTicket(ticketDTO)
@@ -51,6 +50,7 @@ public class TicketServiceImpl implements TicketService {
     @Override
     @Transactional
     public Ticket updateTicketByOrderAmount(OrderedTicket orderedTicket) {
+
         Ticket found = findById(orderedTicket.getTicket().getId());
 
         decreaseInStockAmount(orderedTicket, found);

@@ -31,7 +31,8 @@ public class OrderedTicket extends BaseEntity {
     @Override
     public String toString() {
         return "OrderedTicket{" +
-                "amount=" + amount +
+                "id " + getId() +
+                " amount=" + amount +
                 ", ticket=" + ticket +
                 ", invoice=" + invoice +
                 '}';

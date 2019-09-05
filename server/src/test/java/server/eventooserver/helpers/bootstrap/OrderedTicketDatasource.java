@@ -15,6 +15,7 @@ public class OrderedTicketDatasource {
     public static final TicketDTO TICKET_DTO = TicketDatasource.getTicketDTO();
     public static final int AMOUNT = 5;
     public static final Ticket TICKET = TicketDatasource.getTicket();
+    public static final long ID = 1L;
 
     public static OrderedTicket getOrderedTicket() {
         return OrderedTicket.builder()

@@ -7,7 +7,7 @@ import server.eventooserver.api.v1.dto.TicketDTO;
 import server.eventooserver.domain.Event;
 import server.eventooserver.domain.Ticket;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
 public interface TicketMapper {
 
     TicketMapper INSTANCE = Mappers.getMapper(TicketMapper.class);

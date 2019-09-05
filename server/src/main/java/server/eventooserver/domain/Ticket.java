@@ -43,7 +43,8 @@ public class Ticket extends BaseEntity {
     @Override
     public String toString() {
         return "Ticket{" +
-                "type=" + type +
+                "id " + getId() +
+                " type=" + type +
                 ", price=" + price +
                 ", totalAmmount=" + totalAmmount +
                 ", inStock=" + inStock +

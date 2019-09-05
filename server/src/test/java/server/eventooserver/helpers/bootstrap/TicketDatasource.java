@@ -10,6 +10,7 @@ public class TicketDatasource {
     public static final int IN_STOCK = 20;
     public static final int TOTAL_AMOUNT = 15;
     public static final int PRICE = 150;
+    public static final long ID = 1L;
 
     public static Ticket getTicket() {
         return Ticket.builder()
