@@ -29,24 +29,19 @@ export class EventsCardListComponent implements OnInit, AfterViewInit {
 
   isLoading$: Observable<boolean>;
 
-  isEmpty$: Observable<boolean>;z
+  isEmpty$: Observable<boolean>;
 
   constructor(private store: Store<AppState>,
     private paginationService: PaginationService,
     private eventService: EventService) { }
 
   ngOnInit() {
-
     this.isLoading$ = this.store.pipe(select(selectIsLoading))
-
     this.events$ = this.initEvents();
-
   }
 
   ngAfterViewInit() {
-
     this.events$ = this.onSearchEvents();
-
   }
 
   initEvents() {
@@ -133,12 +128,9 @@ export class EventsCardListComponent implements OnInit, AfterViewInit {
       select(<any>selectEventsIDs),
       first(),
       tap(ids => {
-
         ids.includes(event.id) ?
           this.store.dispatch(new DeleteEvent({ event: event })) :
           this.store.dispatch(new AddEvent({ event }));
-
-
       })
     ).subscribe();
   }

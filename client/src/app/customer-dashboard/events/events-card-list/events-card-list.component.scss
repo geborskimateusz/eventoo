@@ -1,5 +1,6 @@
 @import "../../../../styles/abstracts/variables";
 @import "../../../../styles/abstracts/mixins";
+
 :host {
   display: grid;
   grid-template-columns: repeat(3, minmax(25rem, 1fr));
@@ -24,7 +25,7 @@
   }
 }
 
-.home {
+.event {
   background-color: $color-grey-light-2;
 
   display: grid;
@@ -84,12 +85,12 @@
   }
 
   &__location,
-  &__rooms {
+  &__date {
     margin-top: 2rem;
   }
 
   &__location,
-  &__rooms,
+  &__date,
   &__area,
   &__price {
     font-size: 1.3rem;

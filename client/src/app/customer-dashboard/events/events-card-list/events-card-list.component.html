@@ -1,10 +1,10 @@
-<div class="home" *ngFor="let event of events$ | async; let i = index">
-  <img [src]="event.img" alt="" class="home__img" />
+<div class="event" *ngFor="let event of events$ | async; let i = index">
+  <img [src]="event.img" alt="" class="event__img" />
   <svg
     [ngClass]="
       (isInShoppingCart(event.id) | async)
-        ? 'home__like'
-        : 'home__like home__like-bookmark'
+        ? 'event__like'
+        : 'event__like event__like-bookmark'
     "
     (click)="onAddToShoppingCart(event)"
   >
@@ -21,32 +21,32 @@
     ></use>
   </svg>
 
-  <h5 class="home__name">{{ event.title }}</h5>
-  <div class="home__location">
-    <svg class="home__like">
+  <h5 class="event__name">{{ event.title }}</h5>
+  <div class="event__location">
+    <svg class="event__like">
       <use xlink:href="../../../assets/fonts/sprite2.svg#icon-map-pin"></use>
     </svg>
     <p>{{ event.location.partialAddress }}</p>
   </div>
-  <div class="home__rooms">
-    <svg class="home__like">
+  <div class="event__date">
+    <svg class="event__like">
       <use xlink:href="../../../assets/fonts/sprite2.svg#icon-calendar"></use>
     </svg>
     <p>{{ getDate(event) }}</p>
   </div>
-  <div class="home__area">
-    <svg class="home__like">
+  <div class="event__area">
+    <svg class="event__like">
       <use xlink:href="../../../assets/fonts/sprite2.svg#icon-documents"></use>
     </svg>
     <p>Starts from {{ getStandsTicketPrice(event.tickets) }}$</p>
   </div>
-  <div class="home__price">
-    <svg class="home__like">
+  <div class="event__price">
+    <svg class="event__like">
       <use xlink:href="../../../assets/fonts/sprite2.svg#icon-modern-mic"></use>
     </svg>
     <p>{{ event.genre }}</p>
   </div>
-  <button class="btn home__btn" [routerLink]="['../event/', event.id]">
+  <button class="btn event__btn" [routerLink]="['../event/', event.id]">
     Read more
   </button>
 </div>
