@@ -38,21 +38,6 @@ export class LoginComponent implements OnInit {
 
     this.store.dispatch(new LoginRequest({ username: authData.email, password: authData.password }));
     this.onAuthSuccesfull.emit(true);
-
-  //   this.authService.login(authData.email, authData.password)
-  //     .pipe(
-  //       tap(userDetails => {
-
-  //         this.store.dispatch(new Login({ userDetails }));
-  //         this.onAuthSuccesfull.emit(true);
-
-  //         this.store.dispatch(new ShoppingCartRequest({ userId: userDetails.id }))
-  //       })
-  //     )
-  //     .subscribe(
-  //       noop,
-  //       () => alert('Login Failed')
-  //     );
   }
 
 }
