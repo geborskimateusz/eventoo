@@ -2,6 +2,7 @@ package server.eventooserver.api.v1.controller;
 
 
 import jdk.nashorn.internal.ir.annotations.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -29,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static server.eventooserver.helpers.controller.AbstractRestControllerTest.asJsonString;
 
-
+@Disabled(value = "not ready yet")
 public class UserDetailsControllerTest {
 
     @Mock
@@ -48,13 +49,12 @@ public class UserDetailsControllerTest {
                 .build();
     }
 
-    @Ignore
     @Test
     public void authenticate() throws Exception {
         User given = UserDatasource.getUser();
         UserDetailsDTO userDetailsDTO = UserDetailsDatasource.getUserDetailsDTO();
 
-        when(userService.authenticateUser(anyString())).thenReturn(userDetailsDTO);
+        when(userService.authenticate(anyString())).thenReturn(userDetailsDTO);
 
         mockMvc.perform(post(TestApiUrlStrings.API_V1_USER_AUTHENTICATE)
                 .content(asJsonString(given))
@@ -64,11 +64,7 @@ public class UserDetailsControllerTest {
                 .andDo(print())
                 .andExpect(jsonPath("$.firstName", equalTo("John")));
 
-        verify(userService, times(1)).authenticateUser(any(User.class));
+        verify(userService, times(1)).authenticate(any(User.class));
     }
 
-
-    @Test
-    public void findByUsername() {
-    }
 }

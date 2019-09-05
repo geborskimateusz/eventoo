@@ -3,8 +3,6 @@ package server.eventooserver.api.v1.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import server.eventooserver.api.v1.dto.EventDTO;
-import server.eventooserver.domain.Event;
 import server.eventooserver.domain.User;
 import server.eventooserver.api.v1.dto.UserDetailsDTO;
 import server.eventooserver.api.v1.service.UserService;
@@ -26,13 +24,13 @@ public class UserDetailsController {
     @ResponseStatus(HttpStatus.OK)
     @PostMapping(value = "/login")
     public UserDetailsDTO authenticate(@RequestBody User user) {
-        return userService.authenticateUser(user);
+        return userService.authenticate(user);
     }
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping
     public UserDetailsDTO findByUsername(@RequestParam(value = "username") String username) {
-        return userService.authenticateUser(username);
+        return userService.authenticate(username);
     }
 
 

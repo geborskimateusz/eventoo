@@ -1,6 +1,7 @@
 package server.eventooserver.api.v1.controller;
 
 import jdk.nashorn.internal.ir.annotations.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -58,7 +59,7 @@ public class ShoppingCartControllerTest {
     }
 
     //TODO
-    @Ignore
+    @Disabled(value = "not ready yet")
     @Test
     public void putShoppingCart() throws Exception {
 

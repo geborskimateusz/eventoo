@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.when;
 import static server.eventooserver.api.v1.service.util.SharedConstans.PDF_EXTENSION;
 
@@ -51,17 +52,18 @@ class OrderServiceImplTest {
     void orderTickets() {
 
         InvoiceDTO invoiceDTO = InvoiceDatasource.getInvoiceDTO();
+        Invoice invoice = InvoiceDatasource.getInvoice();
         UserDetails userDetails = UserDetailsDatasource.getUserDetails();
 
-        String fileName = userDetails.getEmail() + invoiceDTO.getOrderDate() + PDF_EXTENSION;
+        String fileName = userDetails.getEmail() + invoice.getOrderDate() + PDF_EXTENSION;
 
         when(userService.findById(anyLong())).thenReturn(userDetails);
         when(filesUtilService.generateConfirmationOrder(any(Invoice.class))).thenReturn(fileName);
+        when(orderRepository.save(any(Invoice.class))).thenReturn(invoice);
 
         String actual = orderService.orderTickets(invoiceDTO);
+
+        assertEquals(actual, fileName);
     }
 
-    @Test
-    void downloadInvoice() {
-    }
 }

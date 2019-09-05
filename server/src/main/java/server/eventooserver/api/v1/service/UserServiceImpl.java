@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDetailsDTO authenticateUser(User user) {
+    public UserDetailsDTO authenticate(User user) {
 
         return userDetailsMapper.UserDetailsToUserDetailsDTO(
                 userDetailsRepository.findByEmail(user.getUsername())
@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDetailsDTO authenticateUser(String username) {
+    public UserDetailsDTO authenticate(String username) {
 
         return userDetailsMapper.UserDetailsToUserDetailsDTO(
                 userDetailsRepository.findByEmail(username)

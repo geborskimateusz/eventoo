@@ -42,7 +42,6 @@ class MailServiceImplTest {
     @BeforeEach
     void setUp(){
         MimeMessage mimeMessage = new MimeMessage((Session) null);
-//        javaMailSender = mock(JavaMailSender.class);
         when(javaMailSender.createMimeMessage()).thenReturn(mimeMessage);
     }
 
@@ -64,8 +63,6 @@ class MailServiceImplTest {
     void contactRequest() {
         mailService.contactRequest(FAKE_EMAIL, FAKE_NAME);
 
-        //?
         verifyZeroInteractions(abstractMailService);
-
     }
 }

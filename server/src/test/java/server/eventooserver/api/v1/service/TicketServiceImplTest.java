@@ -99,8 +99,6 @@ class TicketServiceImplTest {
 
         Ticket actual = ticketService.updateTicketByOrderAmount(orderedTicket);
 
-        System.out.println(actual);
-
         assertNotNull(actual);
 
     }

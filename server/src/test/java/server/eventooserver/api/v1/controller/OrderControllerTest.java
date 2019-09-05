@@ -2,6 +2,7 @@ package server.eventooserver.api.v1.controller;
 
 
 import jdk.nashorn.internal.ir.annotations.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -23,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static server.eventooserver.helpers.controller.AbstractRestControllerTest.asJsonString;
 
-//TODO Develop OrderControllerTest
+@Disabled(value = "not ready yet")
 public class OrderControllerTest {
 
     @Mock
@@ -41,7 +42,6 @@ public class OrderControllerTest {
                 .build();
     }
 
-    @Ignore
     @Test
     public void bookTickets() throws Exception {
 
@@ -58,8 +58,4 @@ public class OrderControllerTest {
                 .andExpect(jsonPath("$", equalTo(expected)));
     }
 
-    @Ignore
-    @Test
-    public void downloadInvoice() {
-    }
 }

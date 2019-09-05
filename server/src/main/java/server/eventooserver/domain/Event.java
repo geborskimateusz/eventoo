@@ -59,7 +59,6 @@ public class Event extends BaseEntity {
                 ", img='" + img + '\'' +
                 ", genre=" + genre +
                 ", location=" + location +
-                ", tickets=" + tickets +
                 '}';
     }
 }

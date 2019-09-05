@@ -78,7 +78,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
             if (!optionalShoppingCart.isPresent()) {
 
-                log.info("there is no bookmark for user=" + userDetails.getId() + " and event=" + eventDTO.getId());
+                log.info("There is no bookmark for user = " + userDetails.getId() + " and event = " + eventDTO.getId());
 
                 Event event = eventService.findById(eventDTO.getId());
 

@@ -3,6 +3,7 @@ package server.eventooserver.helpers.bootstrap;
 import server.eventooserver.api.v1.dto.AddressDTO;
 import server.eventooserver.api.v1.dto.UserDetailsDTO;
 import server.eventooserver.domain.Address;
+import server.eventooserver.domain.User;
 import server.eventooserver.domain.UserDetails;
 
 public class UserDetailsDatasource {
@@ -14,6 +15,7 @@ public class UserDetailsDatasource {
     public static final String FAKE_URL = "Fake url";
     public static final Address ADDRESS = AddressDatasource.getAddress();
     public static final AddressDTO ADDRESS_DTO = AddressDatasource.getAddressDTO();
+    public static final String FAKE_PASSWORD = "fake password";
 
     public static UserDetails getUserDetails() {
         return UserDetails.builder()
@@ -34,6 +36,13 @@ public class UserDetailsDatasource {
                 .email(EMAIL)
                 .address(ADDRESS_DTO)
                 .imagePath(FAKE_URL)
+                .build();
+    }
+
+    public static User getUser() {
+        return User.builder()
+                .username(EMAIL)
+                .password(FAKE_PASSWORD)
                 .build();
     }
 }

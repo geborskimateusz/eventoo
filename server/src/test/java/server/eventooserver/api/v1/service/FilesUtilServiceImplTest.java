@@ -16,10 +16,13 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
+import static server.eventooserver.api.v1.service.util.SharedConstans.PDF_EXTENSION;
+import static server.eventooserver.api.v1.service.util.SharedConstans.UNDERSCORE;
 
 class FilesUtilServiceImplTest {
 
-    public static final String FILE_NAME = "fakeemail@gmail.com_null_2019-08-30.pdf";
+
+    public static final long ID = 1L;
     @Mock
     PdfUtil pdfUtil;
 
@@ -35,13 +38,16 @@ class FilesUtilServiceImplTest {
     }
 
     @Test
-    void generateConfirmationOrder()  {
+    void generateConfirmationOrder() {
 
         Invoice invoice = InvoiceDatasource.getInvoice();
+        invoice.setId(ID);
+
+        String expected =  invoice.getUserDetails().getEmail() + UNDERSCORE + invoice.getId() + UNDERSCORE + invoice.getOrderDate() + PDF_EXTENSION;
 
         String fileName = filesUtilService.generateConfirmationOrder(invoice);
 
-        assertEquals(FILE_NAME, fileName);
+        assertEquals(expected, fileName);
 
 
     }

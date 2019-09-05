@@ -1,60 +1,60 @@
-package server.eventooserver.helpers.bootstrap;
-
-import com.amazonaws.services.s3.AmazonS3;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.stereotype.Component;
-
-import server.eventooserver.api.v1.mapper.InvoiceMapper;
-import server.eventooserver.api.v1.repository.*;
-import server.eventooserver.api.v1.service.*;
-
-
-@Component
-public class Bootstrap implements CommandLineRunner {
-
-    private final UserDetailsRepository userDetailsRepository;
-    private final AddressRepository addressRepository;
-    private final OrderRepository orderRepository;
-    private final TicketRepository ticketRepository;
-    private final OrderService orderService;
-    private final TicketService ticketService;
-    private final FilesUtilService filesUtilService;
-    private final UserService userService;
-    private final InvoiceMapper invoiceMapper = InvoiceMapper.INSTANCE;
-
-    @Autowired
-    ShoppingCartService shoppingCartService;
-
-    private AmazonS3 s3client;
-
-    @Value("${amazon.properties.endpointUrl}")
-    private String endpointUrl;
-    @Value("${amazon.properties.bucketName}")
-    private String bucketName;
-    @Value("${amazon.properties.accessKey}")
-    private String accessKey;
-    @Value("${amazon.properties.secretKey}")
-    private String secretKey;
-
-    @Autowired
-    private JavaMailSender sender;
-
-    public Bootstrap(UserDetailsRepository userDetailsRepository, AddressRepository addressRepository, OrderRepository orderRepository, TicketRepository ticketRepository, OrderService orderService, TicketService ticketService, FilesUtilService filesUtilService, UserService userService) {
-        this.userDetailsRepository = userDetailsRepository;
-        this.addressRepository = addressRepository;
-        this.orderRepository = orderRepository;
-        this.ticketRepository = ticketRepository;
-        this.orderService = orderService;
-        this.ticketService = ticketService;
-        this.filesUtilService = filesUtilService;
-        this.userService = userService;
-    }
-
-    @Override
-    public void run(String... args) throws Exception {
+//package server.eventooserver.helpers.bootstrap;
+//
+//import com.amazonaws.services.s3.AmazonS3;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Value;
+//import org.springframework.boot.CommandLineRunner;
+//import org.springframework.mail.javamail.JavaMailSender;
+//import org.springframework.stereotype.Component;
+//
+//import server.eventooserver.api.v1.mapper.InvoiceMapper;
+//import server.eventooserver.api.v1.repository.*;
+//import server.eventooserver.api.v1.service.*;
+//
+//
+//@Component
+//public class Bootstrap implements CommandLineRunner {
+//
+//    private final UserDetailsRepository userDetailsRepository;
+//    private final AddressRepository addressRepository;
+//    private final OrderRepository orderRepository;
+//    private final TicketRepository ticketRepository;
+//    private final OrderService orderService;
+//    private final TicketService ticketService;
+//    private final FilesUtilService filesUtilService;
+//    private final UserService userService;
+//    private final InvoiceMapper invoiceMapper = InvoiceMapper.INSTANCE;
+//
+//    @Autowired
+//    ShoppingCartService shoppingCartService;
+//
+//    private AmazonS3 s3client;
+//
+//    @Value("${amazon.properties.endpointUrl}")
+//    private String endpointUrl;
+//    @Value("${amazon.properties.bucketName}")
+//    private String bucketName;
+//    @Value("${amazon.properties.accessKey}")
+//    private String accessKey;
+//    @Value("${amazon.properties.secretKey}")
+//    private String secretKey;
+//
+//    @Autowired
+//    private JavaMailSender sender;
+//
+//    public Bootstrap(UserDetailsRepository userDetailsRepository, AddressRepository addressRepository, OrderRepository orderRepository, TicketRepository ticketRepository, OrderService orderService, TicketService ticketService, FilesUtilService filesUtilService, UserService userService) {
+//        this.userDetailsRepository = userDetailsRepository;
+//        this.addressRepository = addressRepository;
+//        this.orderRepository = orderRepository;
+//        this.ticketRepository = ticketRepository;
+//        this.orderService = orderService;
+//        this.ticketService = ticketService;
+//        this.filesUtilService = filesUtilService;
+//        this.userService = userService;
+//    }
+//
+//    @Override
+//    public void run(String... args) throws Exception {
 //        EventDTO eventDTO = new EventDTO();
 //        eventDTO.setId(1L);
 //
@@ -68,8 +68,8 @@ public class Bootstrap implements CommandLineRunner {
 //                .build();
 //
 //        shoppingCartService.saveOrUpdate(shoppingCartDTO);
-    }
-
+//    }
+//
 //    private void sendEmail() throws IOException {
 //
 //        byte[] array = Files.readAllBytes(Paths.get("/home/mat/Documents/Potwierdzenie_transakcji_nr_0054027546_290719.pdf"));
@@ -93,8 +93,8 @@ public class Bootstrap implements CommandLineRunner {
 //            System.out.println(e.getMessage());
 //        }
 //    }
-
-
+//
+//
 //    private void generateInvoice() {
 //        AddressDTO address = AddressDTO.builder()
 //                .country("Fcountry")
@@ -134,7 +134,7 @@ public class Bootstrap implements CommandLineRunner {
 //
 //        ////////////////////
 //        orderService.orderTickets(invoiceDTO);
-
+//
 //        UserDetails userDetails = userService.findByUserId(invoiceDTO.getUserDetailsId());
 //
 //
@@ -177,4 +177,4 @@ public class Bootstrap implements CommandLineRunner {
 //
 //        userDetailsRepository.save(userDetails);
 //    }
-}
+//}

@@ -38,10 +38,9 @@ public class FilesUtilServiceImpl implements FilesUtilService {
 
     @Override
     public String generateConfirmationOrder(Invoice invoice) {
-
         UserDetails userDetails = invoice.getUserDetails();
-        String pdfName = userDetails.getEmail() + UNDERSCORE + invoice.getId() + UNDERSCORE + invoice.getOrderDate() + PDF_EXTENSION;
 
+        String pdfName = userDetails.getEmail() + UNDERSCORE + invoice.getId() + UNDERSCORE + invoice.getOrderDate() + PDF_EXTENSION;
 
         Document document = new Document();
         ByteArrayOutputStream out = new ByteArrayOutputStream();
