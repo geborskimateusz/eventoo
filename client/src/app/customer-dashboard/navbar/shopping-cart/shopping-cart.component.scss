@@ -1,9 +1,7 @@
 @import "../../../../styles/abstracts/variables";
 @import "../../../../styles/abstracts/mixins.scss";
 
-
 :host {
-  //   position: relative;
   display: flex;
   align-items: center;
 }
@@ -11,7 +9,6 @@
 .mat-menu-panel {
   overflow: hidden !important;
 }
-
 
 .user-nav__icon-box {
   display: flex;

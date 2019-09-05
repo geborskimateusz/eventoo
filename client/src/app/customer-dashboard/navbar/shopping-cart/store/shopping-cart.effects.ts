@@ -8,6 +8,7 @@ import { Event } from 'src/app/shared/model/event.model';
 import { select, Store } from '@ngrx/store';
 import { isShoppingCartEmpty, selectEventFromShoppingList } from './shopping-cart.selectors';
 import { AppState } from 'src/app/store';
+import { ApplicationConstans } from 'src/app/app-const';
 
 export interface ShoppingCart {
     userId: string,
@@ -18,8 +19,7 @@ export interface ShoppingCart {
 export class ShoppingCartEffects {
 
     constructor(private actions$: Actions,
-        private httpClient: HttpClient,
-        private store: Store<AppState>) { }
+        private httpClient: HttpClient) { }
 
     @Effect()
     putShoppingCart$ = this.actions$.pipe(
@@ -34,7 +34,7 @@ export class ShoppingCartEffects {
             let shoppingCart: ShoppingCart = { userId, events }
             console.log(shoppingCart)
 
-            return this.httpClient.put('http://localhost:8080/api/v1/shoppingCart', shoppingCart)
+            return this.httpClient.put(`${ApplicationConstans.BASE_URL}/shoppingCart`, shoppingCart)
                 .pipe(
                     catchError(err => {
                         console.log(err);
@@ -54,7 +54,7 @@ export class ShoppingCartEffects {
         switchMap(action => {
             console.log('in request');
 
-            return this.httpClient.get<ShoppingCart>(`http://localhost:8080/api/v1/shoppingCart/${action.payload.userId}`)
+            return this.httpClient.get<ShoppingCart>(`${ApplicationConstans.BASE_URL}/shoppingCart/${action.payload.userId}`)
             .pipe(
                 catchError(err => {
                     console.log(err);
@@ -76,7 +76,7 @@ export class ShoppingCartEffects {
             const eventId: number = action.payload.event.id;
 
             console.log(userId, eventId)
-            return this.httpClient.delete(`http://localhost:8080/api/v1/shoppingCart/${userId}?eventId=${eventId}`)
+            return this.httpClient.delete(`${ApplicationConstans.BASE_URL}/shoppingCart/${userId}?eventId=${eventId}`)
                 .pipe(
                     catchError(err => {
                         console.log(err);

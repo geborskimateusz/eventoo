@@ -23,7 +23,6 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit() {
     this.isShoppingCartEmpty$ = this.store.pipe(
       select(isShoppingCartEmpty),
-      tap(flad => console.log(flad))
     );
 
     this.count$ = this.store.pipe(
@@ -40,10 +39,11 @@ export class ShoppingCartComponent implements OnInit {
 
     let length = events.length;
 
-    if (length <= 5) {
+    const elementsPerPage = 5;
+    if (length <= elementsPerPage) {
       return events;
     } else {
-      return events.slice(length - 5, length);
+      return events.slice(length - elementsPerPage, length);
     }
   }
 
