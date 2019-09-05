@@ -11,6 +11,7 @@ import { selectUserDetails, isLoggedIn } from 'src/app/auth/store/auth.selector'
 import { selectEventsIDs, selectEventsFromShoppingList, isShoppingCartEmpty } from './shopping-cart/store/shopping-cart.selectors';
 import { PutShoppingCart } from './shopping-cart/store/shopping-cart.actions';
 import { filter } from 'minimatch';
+import { ApplicationConstans } from 'src/app/app-const';
 
 @Component({
   selector: 'app-navbar',
@@ -45,13 +46,11 @@ export class NavbarComponent implements OnInit {
   onLogout() {
 
     this.store.pipe(
-
-      //<any> -> ngrx issue workaround
       select(selectEventsFromShoppingList),
       take(1),
       map(events => {
 
-        const userId = localStorage.getItem("current_user_id");
+        const userId = localStorage.getItem(ApplicationConstans.CURRENT_USER_ID);
 
         this.store.dispatch(new PutShoppingCart({ userId, events }))
       }),

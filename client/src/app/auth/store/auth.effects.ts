@@ -43,8 +43,8 @@ export class AuthEffects {
     }),
     switchMap(userDetails => {
 
-      localStorage.setItem("current_user_id", JSON.stringify(userDetails.id))
-      localStorage.setItem("current_username", JSON.stringify(userDetails.email))
+      localStorage.setItem(ApplicationConstans.CURRENT_USER_ID, JSON.stringify(userDetails.id))
+      localStorage.setItem(ApplicationConstans.CURRENT_USERNAME, JSON.stringify(userDetails.email))
 
       return [
         new Login({ userDetails }),
@@ -84,7 +84,7 @@ export class AuthEffects {
 
   @Effect()
   init$ = defer((): Observable<FindByUsername | Logout> => {
-    const username = localStorage.getItem("current_username");
+    const username = localStorage.getItem(ApplicationConstans.CURRENT_USERNAME);
 
     return (username) ?
       of(new FindByUsername({ username: JSON.parse(username) })) :
