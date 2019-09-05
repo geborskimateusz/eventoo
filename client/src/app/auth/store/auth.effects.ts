@@ -8,6 +8,7 @@ import { UserDetails } from 'src/app/shared/model/user-details';
 import { UIService } from 'src/app/shared/ui/service/ui.service';
 import { ShoppingCartRequest } from 'src/app/customer-dashboard/navbar/shopping-cart/store/shopping-cart.actions';
 import { DataSource } from '@angular/cdk/table';
+import { ApplicationConstans } from 'src/app/app-const';
 
 
 
@@ -22,7 +23,7 @@ export class AuthEffects {
   login$ = this.actions$.pipe(
     ofType<LoginRequest>(AuthActionTypes.LoginRequest),
     switchMap(action => {
-      return this.httpClient.post<UserDetails>('http://localhost:8080/api/v1/user/login',
+      return this.httpClient.post<UserDetails>(`${ApplicationConstans.BASE_URL}/user/login`,
         { username: action.payload.username, password: action.payload.password })
         .pipe(
           catchError(err => {
@@ -57,7 +58,7 @@ export class AuthEffects {
   findByUsername$ = this.actions$.pipe(
     ofType<FindByUsername>(AuthActionTypes.FindByUsername),
     switchMap(action => {
-      return this.httpClient.get<UserDetails>(`http://localhost:8080/api/v1/user?username=${action.payload.username}`)
+      return this.httpClient.get<UserDetails>(`${ApplicationConstans.BASE_URL}/user?username=${action.payload.username}`)
         .pipe(
           catchError(err => {
 
@@ -96,7 +97,3 @@ export class AuthEffects {
 
 
 
- // tap(() => {
-    //   console.log(EVENTS_DATASOURCE[0].location.fullAddress)
-    //   this.httpClient.put('http://localhost:8080/api/v1/events', {events: [EVENTS_DATASOURCE[0]]}).subscribe()
-    // })
