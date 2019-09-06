@@ -11,9 +11,7 @@ import { routerReducer } from '@ngrx/router-store';
 import { UIState, uiReducers } from '../shared/ui/ui-store/ui.reducers';
 
 
-export interface AppState {
-  // ui: UIState;
-}
+export interface AppState {}
 
 export const reducers: ActionReducerMap<AppState> = {
   router: routerReducer,

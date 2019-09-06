@@ -1,6 +1,22 @@
 import { Injectable } from "@angular/core";
 import { Event } from 'src/app/shared/model/event.model';
 import { Subject, BehaviorSubject } from 'rxjs';
+import { Location} from './model/location.model';
+import { Ticket } from './model/ticket-model';
+
+export interface EventDataOverview {
+    eventId: number,
+    title: string,
+    img: string,
+    date: Date,
+    location: Location
+}
+
+export interface EventDataDetail {
+    eventId: number,
+    description: string,
+    tickets: Ticket[]
+}
 
 @Injectable()
 export class EventService {
@@ -12,7 +28,7 @@ export class EventService {
         this.searchedEventSource.next(bandName);
     }
 
-    getEventDataOverview(event: Event) {
+    getEventDataOverview(event: Event): EventDataOverview {
         return {
             eventId: event.id,
             title: event.title,
@@ -22,7 +38,7 @@ export class EventService {
         }
     }
 
-    getEventDataDetail(event: Event) {
+    getEventDataDetail(event: Event): EventDataDetail {
         return {
             eventId: event.id,
             description: event.description,
