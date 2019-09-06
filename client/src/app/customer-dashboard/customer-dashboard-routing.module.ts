@@ -4,9 +4,7 @@ import { CustomerDashboardComponent } from './customer-dashboard.component';
 import { EventsComponent } from './events/events.component';
 import { ServicesComponent } from './services/services.component';
 import { EventComponent } from './events/event/event.component';
-// import { BookComponent } from './book/book.component';
 import { UserComponent } from './user/user.component';
-import { EventRatesComponent } from './events/event/event-rates/event-rates.component';
 import { AuthGuard } from '../auth/auth.guard';
 import { EventResolver } from '../shared/event/event.resolver';
 import { EventDetailComponent } from './events/event/event-detail/event-detail.component';
@@ -28,10 +26,9 @@ const routes: Routes = [
           event: EventResolver
         },
       },
-      { path: 'eventRates', component: EventRatesComponent },
       { path: 'services', component: ServicesComponent },
       {
-        path: 'order', loadChildren: () => import('./book/book-module').then(mod => mod.BookModule),
+        path: 'order', loadChildren: () => import('./book/book.module').then(mod => mod.BookModule),
         canActivate: [AuthGuard],
       },
       {

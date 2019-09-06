@@ -9,7 +9,6 @@ import { ListTypes } from '../list-type';
 import { selectPricePerType } from '../store/booking.selectors';
 import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-// import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
 
 @Component({
     selector: 'app-ticket',

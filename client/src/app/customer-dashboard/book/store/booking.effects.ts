@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store';
 import { EMPTY } from 'rxjs';
+import { ApplicationConstans } from 'src/app/app-const';
 
 
 @Injectable()
@@ -33,10 +34,10 @@ export class BookingEffects {
                 return arr;
             }, [])
 
-            let userDetailsId = localStorage.getItem("current_user_id");
+            let userDetailsId = localStorage.getItem(ApplicationConstans.CURRENT_USER_ID);
 
 
-            return this.httpClient.patch('http://localhost:8080/api/v1/order', {
+            return this.httpClient.patch(`${ApplicationConstans.BASE_URL}/order`, {
                 orderDate: new Date(),
                 orderedTickets,
                 userDetailsId

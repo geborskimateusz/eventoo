@@ -1,11 +1,11 @@
 <div class="detail__container">
-  <div class="detail__container-payer-details">
+  <div class="detail__container--payer-details">
     <app-user-details></app-user-details>
   </div>
-  <div class="detail__container-recipent-details">
+  <div class="detail__container--recipent-details">
     <app-company-details></app-company-details>
   </div>
-  <div class="detail__container-order-details">
+  <div class="detail__container--order-details">
     <h4 class="heading-secondary heading-secondary-small">Order details</h4>
     <ul>
       <li *ngFor="let ticket of orderedTickets | async">
@@ -17,7 +17,7 @@
       </li>
     </ul>
   </div>
-  <div class="detail__container-total-price heading-secondary heading-secondary-danger">
+  <div class="detail__container--total-price heading-secondary heading-secondary-danger">
     <h4>Total: {{ totalPrice }}$</h4>
   </div>
 </div>
