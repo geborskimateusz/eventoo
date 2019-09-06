@@ -9,7 +9,6 @@ import { MaterialModule } from '../material.module';
 import { ServicesComponent } from './services/services.component';
 import { EventComponent } from './events/event/event.component';
 import { UserComponent } from './user/user.component';
-import { EventRatesComponent } from './events/event/event-rates/event-rates.component';
 import { EventCtaComponent } from './events/event/event-cta/event-cta.component';
 import { UserReviewsComponent } from './events/event/user-reviews/user-reviews.component';
 import { EventDetailComponent } from './events/event/event-detail/event-detail.component';
@@ -42,7 +41,6 @@ import { SearchBarComponent } from './navbar/search-bar/search-bar.component';
         EventComponent,
         ShoppingCartComponent,
         UserComponent,
-        EventRatesComponent,
         EventCtaComponent,
         UserReviewsComponent,
         EventDetailComponent,

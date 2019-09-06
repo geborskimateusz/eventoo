@@ -5,6 +5,7 @@ import { DownloadRequested, UtilActionTypes, SendByEmailRequested, ContactReques
 import { tap, map, catchError, switchMap } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
 import { UIService } from '../../ui/service/ui.service';
+import { ApplicationConstans } from 'src/app/app-const';
 
 @Injectable()
 export class UtilEffects {
@@ -23,7 +24,7 @@ export class UtilEffects {
             let headers = new HttpHeaders();
             headers = headers.set('Accept', 'application/pdf');
 
-            let url = `http://localhost:8080/api/v1/order/${fileName}`;
+            let url = `${ApplicationConstans.BASE_URL}/order/${fileName}`;
             console.log(url)
 
             return this.httpClient.get(url, { headers: headers, responseType: 'blob' })
@@ -36,6 +37,7 @@ export class UtilEffects {
         }),
         map(file => {
             let pdf = new Blob([file], { type: 'application/pdf' });
+
             let fileURL = URL.createObjectURL(pdf);
             window.open(fileURL)
         })
@@ -50,7 +52,7 @@ export class UtilEffects {
             let headers = new HttpHeaders();
             headers = headers.set('Accept', 'application/pdf');
 
-            let url = `http://localhost:8080/api/v1/messages/confirmationOrder?invoice=${fileName}`;
+            let url = `${ApplicationConstans.BASE_URL}/messages/confirmationOrder?invoice=${fileName}`;
 
             return this.httpClient.get(url)
                 .pipe(
@@ -58,21 +60,13 @@ export class UtilEffects {
 
                         console.log(err)
 
-                        this.uiService.openSnackbar(
-                            'Something went wrong.',
-                            null,
-                            3000
-                        )
+                        this.openSnackBar('Something went wrong.');
 
                         return EMPTY;
                     })
                 );
         }),
-        map(() => this.uiService.openSnackbar(
-            'Message was sent successfully. ☑️',
-            null,
-            3000
-        ))
+        map(() => this.openSnackBar('Message was sent successfully. ☑️'))
     )
 
     @Effect({ dispatch: false })
@@ -82,7 +76,7 @@ export class UtilEffects {
             let email = action.payload.email;
             let fullName = action.payload.fullName;
 
-            let url = `http://localhost:8080/api/v1/messages/contactRequest?email=${email}&fullName=${fullName}`;
+            let url = `${ApplicationConstans.BASE_URL}/messages/contactRequest?email=${email}&fullName=${fullName}`;
 
             return this.httpClient.get(url)
                 .pipe(
@@ -90,20 +84,21 @@ export class UtilEffects {
 
                         console.log(err)
 
-                        this.uiService.openSnackbar(
-                            'Something went wrong.',
-                            null,
-                            3000
-                        )
+                        this.openSnackBar('Something went wrong.');
 
                         return EMPTY;
                     })
                 );
         }),
-        map(() => this.uiService.openSnackbar(
-            'Message was sent successfully. ☑️',
+        map(() => this.openSnackBar('Message was sent successfully. ☑️'))
+    )
+
+
+    private openSnackBar(message: string) {
+        this.uiService.openSnackbar(
+            message,
             null,
             3000
-        ))
-    )
+        )
+    }
 }

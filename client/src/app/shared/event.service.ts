@@ -12,8 +12,6 @@ export class EventService {
         this.searchedEventSource.next(bandName);
     }
 
-
-
     getEventDataOverview(event: Event) {
         return {
             eventId: event.id,

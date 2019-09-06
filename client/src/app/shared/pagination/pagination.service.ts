@@ -18,7 +18,7 @@ export class PaginationService {
     private nextPageEventsFlagSource = new Subject<boolean>();
     nextPageEvents$ = this.nextPageEventsFlagSource.asObservable();
 
-    constructor(private store: Store<AppState>) { }
+    constructor() { }
 
     resetPointer() {
         this.paginationPageSource.next(this.firstPage);

@@ -12,8 +12,6 @@ import { Observable } from 'rxjs';
 })
 export class PaginationComponent implements OnInit {
 
-  // itemsPerPage = 15;
-
   currentPage = 0;
   nextPageContainsEvents: boolean;
 
