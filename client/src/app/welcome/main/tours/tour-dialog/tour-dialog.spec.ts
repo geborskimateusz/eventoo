@@ -1,14 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TourDialog } from './tour-dialog';
+import { MaterialModule } from 'src/app/material.module';
+import { MatDialogRef } from '@angular/material';
 
-describe('BookModalComponent', () => {
+fdescribe('BookModalComponent', () => {
   let component: TourDialog;
   let fixture: ComponentFixture<TourDialog>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TourDialog ]
+      imports: [MaterialModule],
+      declarations: [ TourDialog ],
+      providers: [
+        {provide: MatDialogRef, useValue: {}},
+      ]
     })
     .compileComponents();
   }));
@@ -22,4 +28,12 @@ describe('BookModalComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('onClose', () => {
+    spyOn(component, 'onClose');
+
+    component.onClose();
+
+    expect(component.onClose).toHaveBeenCalled();
+  })
 });
