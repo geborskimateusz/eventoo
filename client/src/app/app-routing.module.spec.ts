@@ -15,7 +15,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { CustomerDashboardModule } from './customer-dashboard/customer-dashboard.module';
 import { NgModuleFactoryLoader } from '@angular/core';
 
-fdescribe('AppRoutingModule', () => {
+describe('AppRoutingModule', () => {
 
     let location: Location;
     let router: Router;

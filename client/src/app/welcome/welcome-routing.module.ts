@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AboutComponent } from './main/about/about.component';
 import { WelcomeComponent } from './welcome.component';
 
-const routes: Routes = [
+export const routes: Routes = [
     { path: 'about', component: WelcomeComponent }
 ];
 
