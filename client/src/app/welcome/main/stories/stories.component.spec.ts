@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StoriesComponent } from './stories.component';
+import { MaterialModule } from 'src/app/material.module';
 
 describe('StoriesComponent', () => {
   let component: StoriesComponent;
@@ -8,6 +9,7 @@ describe('StoriesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [MaterialModule],
       declarations: [ StoriesComponent ]
     })
     .compileComponents();
@@ -22,4 +24,12 @@ describe('StoriesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('openDialog', () => {
+    spyOn(component, 'openDialog');
+
+    component.openDialog();
+
+    expect(component.dialog).toHaveBeenCalled();
+  })
 });

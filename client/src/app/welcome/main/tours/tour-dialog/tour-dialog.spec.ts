@@ -4,7 +4,7 @@ import { TourDialog } from './tour-dialog';
 import { MaterialModule } from 'src/app/material.module';
 import { MatDialogRef } from '@angular/material';
 
-fdescribe('BookModalComponent', () => {
+describe('BookModalComponent', () => {
   let component: TourDialog;
   let fixture: ComponentFixture<TourDialog>;
 
