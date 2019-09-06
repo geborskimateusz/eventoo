@@ -9,13 +9,10 @@ import { DOCUMENT } from '@angular/common';
 })
 export class NavbarComponent implements OnInit {
 
-  @ViewChild('navi-toggle', {static: false}) closeBtn: ElementRef;
-
   constructor(@Inject(DOCUMENT) private document) { }
 
   ngOnInit() {
   }
-
 
   //shortest workourond for close by click on anchor tag
   onClose() {

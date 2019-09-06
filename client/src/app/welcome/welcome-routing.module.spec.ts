@@ -11,7 +11,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducers } from '../store';
 import { EffectsModule } from '@ngrx/effects';
 
-fdescribe('WelcomeRoutingModule', () => {
+describe('WelcomeRoutingModule', () => {
 
     let location: Location;
     let router: Router;

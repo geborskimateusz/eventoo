@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavbarComponent } from './navbar.component';
 
-describe('NavbarComponent', () => {
+fdescribe('NavbarComponent', () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
 
@@ -22,4 +22,12 @@ describe('NavbarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call onClose()', () => {
+    spyOn(component, 'onClose');
+
+    component.onClose();
+
+    expect(component.onClose).toHaveBeenCalled();
+  })
 });
