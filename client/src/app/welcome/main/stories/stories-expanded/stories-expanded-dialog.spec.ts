@@ -5,7 +5,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { MaterialModule } from 'src/app/material.module';
 import { MatDialogRef } from '@angular/material';
 
-fdescribe('StoriesExpandedComponent', () => {
+describe('StoriesExpandedComponent', () => {
   let component: StoriesExpandedDialog;
   let fixture: ComponentFixture<StoriesExpandedDialog>;
 
