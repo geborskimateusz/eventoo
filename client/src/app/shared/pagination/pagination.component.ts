@@ -19,9 +19,9 @@ export class PaginationComponent implements OnInit {
 
   ngOnInit() {
 
-     this.paginationService.nextPageEvents$.subscribe(
-       flag => this.nextPageContainsEvents = flag
-     )
+    this.paginationService.nextPageEvents$.subscribe(
+      flag => this.nextPageContainsEvents = flag
+    )
 
     this.paginationService.page$.pipe(
       delay(0)
@@ -42,6 +42,7 @@ export class PaginationComponent implements OnInit {
   }
 
   incrementPage() {
+    console.log('called')
     this.currentPage++;
     this.changePage();
   }
@@ -50,7 +51,7 @@ export class PaginationComponent implements OnInit {
     return page + 1;
   }
 
-  private changePage() {
+  changePage() {
     this.paginationService.pageChange(this.currentPage);
   }
 
@@ -78,6 +79,6 @@ export class PaginationComponent implements OnInit {
     return index == 1;
   }
 
- 
+
 
 }

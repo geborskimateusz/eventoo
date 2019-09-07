@@ -2,7 +2,7 @@ import { EventService, EventDataOverview, EventDataDetail } from "./event.servic
 import { TestBed, async, flushMicrotasks, fakeAsync, tick } from '@angular/core/testing';
 import { EVENTS_DATASOURCE } from './fake-datasource/events-datasource';
 
-fdescribe('EventService', () => {
+describe('EventService', () => {
 
     let eventService: EventService;
     let fakeEvent = EVENTS_DATASOURCE[0];

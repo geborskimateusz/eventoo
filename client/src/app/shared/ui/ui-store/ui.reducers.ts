@@ -4,7 +4,7 @@ export interface UIState {
     isLoading: boolean;
 }
 
-const initialState: UIState = {
+export const initialState: UIState = {
     isLoading: false
 };
 
@@ -27,4 +27,5 @@ export function uiReducers(state = initialState, action: UIActions) {
                 ...state
             }
     }
+
 }
