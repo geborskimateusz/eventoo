@@ -23,9 +23,7 @@ export class EventOverviewComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
-  ngOnInit() {
-    console.log(this.eventData)
-  }
+  ngOnInit() {  }
 
 
   openMapDialog() {

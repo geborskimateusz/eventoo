@@ -2,7 +2,7 @@ import { TestBed, fakeAsync, tick, flushMicrotasks } from "@angular/core/testing
 import { PaginationService } from './pagination.service';
 import { of } from 'rxjs/internal/observable/of';
 
-fdescribe('PaginationService', () => {
+describe('PaginationService', () => {
     const firstPage = 0;
 
     let pagintationService: PaginationService;
