@@ -4,7 +4,7 @@ import { PaginationComponent } from './pagination.component';
 import { PaginationService } from './pagination.service';
 import { ViewCompileResult } from '@angular/compiler/src/view_compiler/view_compiler';
 
-fdescribe('PaginationComponent', () => {
+describe('PaginationComponent', () => {
   let component: PaginationComponent;
   let fixture: ComponentFixture<PaginationComponent>;
   let paginationService: PaginationService;

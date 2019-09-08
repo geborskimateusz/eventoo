@@ -2,8 +2,11 @@ import { Injectable } from '@angular/core';
 import { Subject, Observable, BehaviorSubject } from 'rxjs';
 import { Event } from '../model/event.model';
 
+export const PAGE_SIZE: number = 6;
+
 @Injectable()
 export class PaginationService {
+    
     firstPage = 0;
 
     private paginationPageSource = new BehaviorSubject<number>(this.firstPage);
@@ -31,5 +34,3 @@ export class PaginationService {
     }
 
 }
-
-export const PAGE_SIZE: number = 6;
