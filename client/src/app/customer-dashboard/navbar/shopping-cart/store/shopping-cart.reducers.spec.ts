@@ -3,7 +3,7 @@ import { EVENTS_DATASOURCE } from 'src/app/shared/fake-datasource/events-datasou
 import { AddEvent, DeleteEvent, AddEventsToShoppingCart, ResetShoppingCart } from './shopping-cart.actions';
 import { shoppingCartReducer, initialShoppingCartState } from './shopping-cart.reducers';
 
-fdescribe('ShoppingCartReducer', () => {
+describe('ShoppingCartReducer', () => {
 
     let events = [...EVENTS_DATASOURCE];
     let event = events[0];

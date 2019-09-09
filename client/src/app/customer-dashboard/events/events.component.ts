@@ -20,8 +20,7 @@ export class EventsComponent implements OnInit {
 
   currentTab: MusicGenre = MusicGenre.ALL;
 
-  constructor(private store: Store<AppState>,
-    private paginationService: PaginationService) {
+  constructor(private paginationService: PaginationService) {
   }
 
   ngOnInit() {

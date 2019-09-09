@@ -21,8 +21,8 @@ export function eventsReducer(state = initialEventsState, action: EventsActions)
                 action.payload.events,
                 {...state});
 
-        case EventsActionTypes.EventsPageCancelled:
-                return { ...state}
+        // case EventsActionTypes.EventsPageCancelled:
+        //         return { ...state}
 
         default: {
             return state;
