@@ -4,11 +4,13 @@ import { EventsCardListComponent } from './events-card-list.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MaterialModule } from 'src/app/material.module';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { PaginationService } from 'src/app/shared/pagination/pagination.service';
 import { EventService } from 'src/app/shared/event.service';
+import { of } from 'rxjs';
+import { EVENTS_DATASOURCE } from 'src/app/shared/fake-datasource/events-datasource';
 
-fdescribe('EventsCardListComponent', () => {
+describe('EventsCardListComponent', () => {
   let component: EventsCardListComponent;
   let fixture: ComponentFixture<EventsCardListComponent>;
   let storeSpy: any;
@@ -44,12 +46,4 @@ fdescribe('EventsCardListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('initEvents', fakeAsync(() => {
-
-    component.initEvents();
-
-    expect(storeSpy.dispatch).toHaveBeenCalled();
-
-  }))
 });

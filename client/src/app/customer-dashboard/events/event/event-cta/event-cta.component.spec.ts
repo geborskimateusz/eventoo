@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EventCtaComponent } from './event-cta.component';
+import { EVENTS_DATASOURCE } from 'src/app/shared/fake-datasource/events-datasource';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('EventCtaComponent', () => {
   let component: EventCtaComponent;
@@ -8,7 +10,8 @@ describe('EventCtaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EventCtaComponent ]
+      declarations: [ EventCtaComponent ],
+      imports: [RouterTestingModule]
     })
     .compileComponents();
   }));
@@ -16,6 +19,7 @@ describe('EventCtaComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(EventCtaComponent);
     component = fixture.componentInstance;
+    component.eventId = EVENTS_DATASOURCE[0].id;
     fixture.detectChanges();
   });
 

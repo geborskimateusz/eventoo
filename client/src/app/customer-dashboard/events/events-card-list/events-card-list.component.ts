@@ -52,24 +52,7 @@ export class EventsCardListComponent implements OnInit, AfterViewInit {
         delay(0),
         select(selectEventsPageByGenre(this.musicGenre, { pageIndex: pageIndex, pageSize: PAGE_SIZE })),
         map(events => {
-
-          if (events.length > 0) {
-
-            this.store.dispatch(new StopLoading())
-
-            return events;
-          }
-
-          this.store.dispatch(new EventsPageRequested({
-            musicGenre: genreToEnum(this.musicGenre),
-            page: {
-              pageIndex: pageIndex,
-              pageSize: PAGE_SIZE
-            }
-          }));
-
-
-          return [];
+          return this.fetchOrSelectEvents(events, pageIndex)
         }),
         tap(events => {
           this.isEmpty$ = of(this.isListEmpty(events))
@@ -77,6 +60,26 @@ export class EventsCardListComponent implements OnInit, AfterViewInit {
         })
       ))
     );
+  }
+
+  fetchOrSelectEvents(events: Event[], pageIndex: number): any {
+    if (events.length > 0) {
+
+      this.store.dispatch(new StopLoading())
+
+      return events;
+    }
+
+    this.store.dispatch(new EventsPageRequested({
+      musicGenre: genreToEnum(this.musicGenre),
+      page: {
+        pageIndex: pageIndex,
+        pageSize: PAGE_SIZE
+      }
+    }));
+
+
+    return [];
   }
 
   onSearchEvents() {
