@@ -13,7 +13,9 @@ public class OrderedTicket extends BaseEntity {
 
     private Integer amount;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(
+            cascade = CascadeType.ALL
+    )
     @JoinColumn(name="ticket_id")
     private Ticket ticket;
 

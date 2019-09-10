@@ -36,8 +36,16 @@ export class BookingEffects {
 
             let userDetailsId = localStorage.getItem(ApplicationConstans.CURRENT_USER_ID);
 
+            console.log(
+                {
+                    orderDate: new Date(),
+                    orderedTickets,
+                    userDetailsId
+                }
+            )
 
-            return this.httpClient.patch(`${ApplicationConstans.BASE_URL}/order`, {
+            return this.httpClient.patch(`${ApplicationConstans.BASE_URL}/order`,
+             {
                 orderDate: new Date(),
                 orderedTickets,
                 userDetailsId

@@ -57,7 +57,6 @@ public class OrderServiceImpl implements OrderService {
                 }).collect(Collectors.toSet());
 
         orderedTickets.forEach(invoice::addOrderedTicket);
-        invoice.setOrderedTickets(orderedTickets);
 
         UserDetails userDetails = userService.findById(invoiceDTO.getUserDetailsId());
         invoice.setUserDetails(userDetails);
