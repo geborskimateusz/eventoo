@@ -2,7 +2,7 @@ import { EVENTS_DATASOURCE } from "src/app/shared/fake-datasource/events-datasou
 import { EventLoaded, EventsPageLoaded } from './events.actions';
 import { initialEventsState, eventsReducer } from './events.reducers';
 
-describe('EventsReducers', () => {
+fdescribe('EventsReducers', () => {
 
     let events = [...EVENTS_DATASOURCE];
     let event = events[0];

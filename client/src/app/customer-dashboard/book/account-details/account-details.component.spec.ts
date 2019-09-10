@@ -1,14 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AccountDetailsComponent } from './account-details.component';
+import { Store } from '@ngrx/store';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('AccountDetailsComponent', () => {
   let component: AccountDetailsComponent;
   let fixture: ComponentFixture<AccountDetailsComponent>;
+  let storeSpy;
 
   beforeEach(async(() => {
+    storeSpy = jasmine.createSpyObj('Store', ["pipe", "dispatch"])
+
     TestBed.configureTestingModule({
-      declarations: [ AccountDetailsComponent ]
+      declarations: [ AccountDetailsComponent ],
+      providers: [
+        { provide: Store, useValue: storeSpy }
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

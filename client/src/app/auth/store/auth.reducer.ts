@@ -18,7 +18,6 @@ export function authReducer(state = initialAuthState, action: AuthActions): Stat
   switch (action.type) {
 
     case (AuthActionTypes.Login):
-      console.log('AuthActionTypes.Login', action.payload)
       return {
         userDetails: action.payload.userDetails,
         loggedIn: true

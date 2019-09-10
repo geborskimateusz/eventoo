@@ -7,7 +7,7 @@ import { PaginationService } from 'src/app/shared/pagination/pagination.service'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { splitTypescriptSuffix } from '@angular/compiler/src/aot/util';
 
-describe('EventViewComponent', () => {
+xdescribe('EventsComponent', () => {
   let component: EventsComponent;
   let fixture: ComponentFixture<EventsComponent>;
   let paginationService: PaginationService;
