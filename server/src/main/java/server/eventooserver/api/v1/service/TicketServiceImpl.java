@@ -1,10 +1,7 @@
 package server.eventooserver.api.v1.service;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import server.eventooserver.api.v1.dto.InvoiceDTO;
-import server.eventooserver.api.v1.dto.OrderedTicketDTO;
 import server.eventooserver.api.v1.dto.TicketDTO;
 import server.eventooserver.api.v1.mapper.TicketMapper;
 import server.eventooserver.api.v1.repository.TicketRepository;
@@ -12,9 +9,7 @@ import server.eventooserver.api.v1.service.exception.ResourceNotFoundException;
 import server.eventooserver.domain.OrderedTicket;
 import server.eventooserver.domain.Ticket;
 
-import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
-import java.util.Optional;
 
 @Slf4j
 @Service
@@ -60,11 +55,6 @@ public class TicketServiceImpl implements TicketService {
         Ticket found = findById(orderedTicket.getTicket().getId());
 
         decreaseInStockAmount(orderedTicket, found);
-
-//        return ticketMapper.ticketDTOtoTicket(
-//                saveOrUpdateTicket(
-//                        ticketMapper.ticketToTicketDTO(found)
-//                )
 
         return  found;
 

@@ -9,7 +9,6 @@ import server.eventooserver.domain.OrderedTicket;
 import server.eventooserver.domain.TicketType;
 import server.eventooserver.domain.UserDetails;
 
-import javax.transaction.Transactional;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Path;

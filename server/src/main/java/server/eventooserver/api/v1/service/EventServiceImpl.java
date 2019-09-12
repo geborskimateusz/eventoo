@@ -13,10 +13,6 @@ import server.eventooserver.domain.Event;
 import server.eventooserver.domain.MusicGenre;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
 import java.util.stream.Collectors;
 
 import static server.eventooserver.api.v1.service.util.SharedConstans.DASH;

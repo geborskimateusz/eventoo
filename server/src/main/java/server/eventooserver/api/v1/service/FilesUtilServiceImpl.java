@@ -1,23 +1,23 @@
 package server.eventooserver.api.v1.service;
 
-import com.amazonaws.services.dynamodbv2.xspec.S;
-import com.itextpdf.text.*;
-
+import com.itextpdf.text.Chunk;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.draw.LineSeparator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import server.eventooserver.api.v1.dto.UserDetailsDTO;
 import server.eventooserver.domain.Invoice;
 import server.eventooserver.domain.UserDetails;
 
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
 
-
-import static server.eventooserver.api.v1.service.util.SharedConstans.DOT;
 import static server.eventooserver.api.v1.service.util.SharedConstans.PDF_EXTENSION;
 import static server.eventooserver.api.v1.service.util.SharedConstans.UNDERSCORE;
 

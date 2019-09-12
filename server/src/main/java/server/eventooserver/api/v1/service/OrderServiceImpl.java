@@ -12,8 +12,6 @@ import server.eventooserver.domain.UserDetails;
 
 import javax.transaction.Transactional;
 import java.io.ByteArrayOutputStream;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -52,7 +50,6 @@ public class OrderServiceImpl implements OrderService {
                     Ticket ticket = ticketService.updateTicketByOrderAmount(orderedTicket);
 
                     orderedTicket.setTicket(ticket);
-
 
                 }).collect(Collectors.toSet());
 

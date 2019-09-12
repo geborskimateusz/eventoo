@@ -14,12 +14,6 @@ public interface TicketMapper {
 
     Ticket ticketDTOtoTicket(TicketDTO ticketDTO);
 
-
-//    @BeforeMapping
-//    default void setEvents(@MappingTarget TicketDTO ticketDTO, Ticket ticket) {
-////        ticket.getEvent().setTickets(null);
-//    }
-
     @Mapping(target = "event.tickets", ignore = true)
     TicketDTO ticketToTicketDTO(Ticket ticket);
 

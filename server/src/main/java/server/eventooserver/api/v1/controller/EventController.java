@@ -3,12 +3,8 @@ package server.eventooserver.api.v1.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import server.eventooserver.api.v1.dto.EventDTO;
 import server.eventooserver.api.v1.dto.EventsDTO;
 import server.eventooserver.api.v1.service.EventService;
-import server.eventooserver.domain.MusicGenre;
-
-import java.util.List;
 
 @Slf4j
 @CrossOrigin(value = "${cors.origin.value}")
