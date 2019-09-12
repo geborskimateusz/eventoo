@@ -21,7 +21,7 @@ public final class MessageTemplates {
             "You have reached " + EVENTOO + ". \n" +
                     "All of our representatives are currently busy, \n" +
                     "but if you leave us a detailed message with your number we will return your call in the next two hours. \n\n" +
-                    "Thank you for email and have a great day. \n\n" +
+                    "Thank you for email  and have a great day. \n\n" +
                     COMPANY_DETAILS;
 
     public static String getPersonalizeContactRequest(String fullName) {
