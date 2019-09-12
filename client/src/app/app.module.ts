@@ -9,7 +9,6 @@ import { WelcomeModule } from './welcome/welcome.module';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './store';
-import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,7 +16,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './auth/store/auth.effects';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { CustomSerializer } from './shared/util/utils';
-
+import { AngularFireModule } from '@angular/fire';  
+import { environment } from '../environments/environment';  
 
 @NgModule({
   declarations: [
@@ -26,6 +26,7 @@ import { CustomSerializer } from './shared/util/utils';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase)  ,
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,

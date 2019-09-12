@@ -1,10 +1,9 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { EventsState } from './events.reducers';
-import * as fromEvents from './events.reducers'
+import { createSelector } from '@ngrx/store';
 import { MusicGenre } from 'src/app/shared/model/music-genres.model';
-import { PageQuery } from './events.actions';
-import { selectCustomerDashboardState } from '../../store/customer-dashboard.selectors';
 import { CustomerDashboardState } from '../../store/customer-dashboard.reducers';
+import { selectCustomerDashboardState } from '../../store/customer-dashboard.selectors';
+import { PageQuery } from './events.actions';
+import * as fromEvents from './events.reducers';
 
 
 export const selectEventsState = createSelector(

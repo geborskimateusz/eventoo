@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthActionTypes, Login, Logout, LoginRequest, FindByUsername } from './auth.actions';
-import { tap, switchMap, catchError, map, mergeMap, concatMap } from 'rxjs/operators';
+import { tap, switchMap, catchError } from 'rxjs/operators';
 import { defer, of, Observable, EMPTY } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { UserDetails } from 'src/app/shared/model/user-details';
 import { UIService } from 'src/app/shared/ui/service/ui.service';
 import { ShoppingCartRequest } from 'src/app/customer-dashboard/navbar/shopping-cart/store/shopping-cart.actions';
-import { DataSource } from '@angular/cdk/table';
 import { ApplicationConstans } from 'src/app/app-const';
 
 

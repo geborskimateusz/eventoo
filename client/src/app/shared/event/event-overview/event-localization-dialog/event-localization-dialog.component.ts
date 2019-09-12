@@ -1,7 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { icon, latLng, marker, tileLayer } from 'leaflet';
 import { Location } from 'src/app/shared/model/location.model';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { icon, latLng, marker, polyline, tileLayer, popup } from 'leaflet';
 
 export interface DialogData {
   location: Location

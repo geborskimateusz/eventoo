@@ -1,15 +1,14 @@
-import { first, mergeMap, map, withLatestFrom, filter, shareReplay, tap, catchError } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Effect, Actions, ofType } from '@ngrx/effects';
-import { Action, Store, select } from '@ngrx/store';
-import { EventsActionTypes, EventRequested, EventLoaded, EventsPageRequested, EventsPageLoaded, EventsPageCancelled } from './events.actions';
+import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Store } from '@ngrx/store';
 import { of } from 'rxjs';
-import { AppState } from 'src/app/store';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { JsonPipe } from '@angular/common';
+import { catchError, map, mergeMap } from 'rxjs/operators';
+import { ApplicationConstans } from 'src/app/app-const';
 import { Event } from 'src/app/shared/model/event.model';
 import { StopLoading } from 'src/app/shared/ui/ui-store/ui.actions';
-import { ApplicationConstans } from 'src/app/app-const';
+import { AppState } from 'src/app/store';
+import { EventsActionTypes, EventsPageCancelled, EventsPageLoaded, EventsPageRequested } from './events.actions';
 
 @Injectable()
 export class EventsEffects {

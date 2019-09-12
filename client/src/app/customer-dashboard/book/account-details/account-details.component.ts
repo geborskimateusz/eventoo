@@ -4,7 +4,6 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
 import { selectAllTickets } from '../store/booking.selectors';
-import { tap, map } from 'rxjs/operators';
 import { Event } from 'src/app/shared/model/event.model';
 
 @Component({

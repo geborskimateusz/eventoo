@@ -1,14 +1,10 @@
-import { Component, OnInit, Input, Output, ViewEncapsulation, OnDestroy } from '@angular/core';
-import { Event } from 'src/app/shared/model/event.model';
-import { EventEmitter } from '@angular/core';
-import { Ticket } from 'src/app/shared/model/ticket-model';
+import { Component, OnInit, Input } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
-import { BookingActionTypes, AddAllTickets, SaveOrUpdateTicket, DeleteTicket } from '../store/booking.actions';
+import { SaveOrUpdateTicket, DeleteTicket } from '../store/booking.actions';
 import { ListTypes } from '../list-type';
 import { selectPricePerType } from '../store/booking.selectors';
 import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-ticket',

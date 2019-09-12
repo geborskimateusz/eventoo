@@ -1,13 +1,10 @@
-import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { Ticket } from 'src/app/shared/model/ticket-model';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
-import { SaveOrUpdateTicket, DeleteTicket } from '../store/booking.actions';
-import { selectAllTickets, selectPricePerType } from '../store/booking.selectors';
-import { map, tap } from 'rxjs/operators';
+import { selectAllTickets } from '../store/booking.selectors';
 import { ListTypes } from '../list-type';
-import { Observable, of } from 'rxjs';
-import { tick } from '@angular/core/testing';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tickets',

@@ -1,8 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AppState } from 'src/app/store';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store';
 import { ContactRequest } from '../util/util-store/util.actions';
 
 

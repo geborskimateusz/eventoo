@@ -1,8 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Ticket } from 'src/app/shared/model/ticket-model';
 import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
-import { OrderedTickets } from 'src/app/shared/model/order.model';
-
 
 export enum BookingActionTypes {
     AddAllTickets = '[Booking API] Tickets Added',

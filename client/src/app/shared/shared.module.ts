@@ -1,20 +1,18 @@
-import { NgModule } from '@angular/core';
-import { PaginationComponent } from './pagination/pagination.component';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '../material.module';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { EventOverviewComponent } from './event/event-overview/event-overview.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { EffectsModule } from '@ngrx/effects';
+import { MaterialModule } from '../material.module';
+import { BookComponent } from './book/book.component';
 import { EventService } from './event.service';
 import { EventLocalizationDialogComponent } from './event/event-overview/event-localization-dialog/event-localization-dialog.component';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { EventOverviewComponent } from './event/event-overview/event-overview.component';
+import { PaginationComponent } from './pagination/pagination.component';
 import { PaginationService } from './pagination/pagination.service';
-import { UtilEffects } from './util/util-store/util.effects';
-import { EffectsModule } from '@ngrx/effects';
-import { BookComponent } from './book/book.component';
-import { UnderDevelopmentComponent } from './under-development/under-development.component';
-import { StoreModule } from '@ngrx/store';
-import { uiReducers } from './ui/ui-store/ui.reducers';
 import { UIService } from './ui/service/ui.service';
+import { UnderDevelopmentComponent } from './under-development/under-development.component';
+import { UtilEffects } from './util/util-store/util.effects';
 
 
 @NgModule({
@@ -36,7 +34,6 @@ import { UIService } from './ui/service/ui.service';
         FormsModule,
         ReactiveFormsModule,
         LeafletModule.forRoot(),
-        // StoreModule.forRoot(uiReducers),
         EffectsModule.forFeature([UtilEffects])
     ],
     exports: [

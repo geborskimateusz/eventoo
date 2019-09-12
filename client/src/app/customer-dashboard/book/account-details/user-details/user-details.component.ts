@@ -4,7 +4,6 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { UserDetails } from 'src/app/shared/model/user-details';
 import { selectUserDetails, isLoggedIn } from 'src/app/auth/store/auth.selector';
-import { tap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-details',

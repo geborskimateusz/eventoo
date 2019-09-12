@@ -1,34 +1,29 @@
-import { NgModule } from "@angular/core";
-import { CustomerDashboardComponent } from './customer-dashboard.component';
 import { CommonModule } from '@angular/common';
-import { CustomerDashboardRoutingModule } from './customer-dashboard-routing.module';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { EventsComponent } from './events/events.component';
-import { MaterialModule } from '../material.module';
-import { ServicesComponent } from './services/services.component';
-import { EventComponent } from './events/event/event.component';
-import { UserComponent } from './user/user.component';
-import { EventCtaComponent } from './events/event/event-cta/event-cta.component';
-import { UserReviewsComponent } from './events/event/user-reviews/user-reviews.component';
-import { EventDetailComponent } from './events/event/event-detail/event-detail.component';
-import { EventOverviewComponent } from '../shared/event/event-overview/event-overview.component';
-
-import { SharedModule } from '../shared/shared.module';
-import { EventResolver } from '../shared/event/event.resolver';
+import { NgModule } from "@angular/core";
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { eventsReducer } from './events/store/events.reducers';
-import { EventsEffects } from './events/store/events.effects';
+import { MaterialModule } from '../material.module';
+import { EventResolver } from '../shared/event/event.resolver';
+import { SharedModule } from '../shared/shared.module';
+import { CustomerDashboardRoutingModule } from './customer-dashboard-routing.module';
+import { CustomerDashboardComponent } from './customer-dashboard.component';
+import { EventCtaComponent } from './events/event/event-cta/event-cta.component';
+import { EventDetailComponent } from './events/event/event-detail/event-detail.component';
+import { EventComponent } from './events/event/event.component';
+import { UserReviewsComponent } from './events/event/user-reviews/user-reviews.component';
 import { EventsCardListComponent } from './events/events-card-list/events-card-list.component';
-import { TicketsComponent } from './book/tickets/tickets.component';
-import { UserDetailsComponent } from './book/account-details/user-details/user-details.component';
-import { CompanyDetailsComponent } from './book/account-details/company-details/company-details.component';
+import { EventsComponent } from './events/events.component';
+import { EventsEffects } from './events/store/events.effects';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SearchBarComponent } from './navbar/search-bar/search-bar.component';
 import { ShoppingCartComponent } from './navbar/shopping-cart/shopping-cart.component';
+import { ShoppingCartEffects } from './navbar/shopping-cart/store/shopping-cart.effects';
+import { ServicesComponent } from './services/services.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 import { customerDashboardReducers } from './store/customer-dashboard.reducers';
 import { ShoppingCartListComponent } from './user/shopping-cart-list/shopping-cart-list.component';
-import { ShoppingCartEffects } from './navbar/shopping-cart/store/shopping-cart.effects';
-import { SearchBarComponent } from './navbar/search-bar/search-bar.component';
+import { UserComponent } from './user/user.component';
+
 
 
 @NgModule({

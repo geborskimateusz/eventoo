@@ -1,13 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Route } from '@angular/compiler/src/core';
-import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store';
-import { tap, } from 'rxjs/operators';
-import { noop } from "rxjs";
-import { Login, LoginRequest } from '../store/auth.actions';
-import { ShoppingCartRequest } from 'src/app/customer-dashboard/navbar/shopping-cart/store/shopping-cart.actions';
+import { LoginRequest } from '../store/auth.actions';
 
 
 @Component({

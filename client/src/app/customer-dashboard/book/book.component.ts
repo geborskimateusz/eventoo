@@ -1,20 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA, MatDialog, MatStepper } from '@angular/material';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { MatDialog, MatStepper } from '@angular/material';
 import { Event } from 'src/app/shared/model/event.model';
 import { ActivatedRoute } from '@angular/router';
 import { EventData as EventDataOverview } from '../../shared/event/event-overview/event-overview.component';
 import { EventService } from '../../shared/event.service';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
-import { AddAllTickets, SaveOrUpdateTicket } from './store/booking.actions';
 import { Ticket } from 'src/app/shared/model/ticket-model';
 import { selectAllTickets, selectTotalPrice } from './store/booking.selectors';
-import { map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { ListTypes } from './list-type';
 import { Observable, of } from 'rxjs';
-import { selectEventById } from '../events/store/events.selectors';
 import { FinalizeOrderDialogComponent } from './finalize-order-dialog/finalize-order-dialog.component';
 
 

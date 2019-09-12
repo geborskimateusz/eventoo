@@ -1,11 +1,10 @@
 import { Component, OnInit, Output, EventEmitter, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef } from '@angular/material';
 import { AppState } from 'src/app/store';
 import { Store, select } from '@ngrx/store';
 import { selectAllTickets, selectBookingLoading } from '../store/booking.selectors';
 import { tap } from 'rxjs/operators';
 import { BookTicketsRequest } from '../store/booking.actions';
-import { Observable } from 'rxjs';
 
 
 @Component({

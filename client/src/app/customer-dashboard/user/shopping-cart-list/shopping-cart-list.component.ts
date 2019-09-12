@@ -1,10 +1,10 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
-import { Store, select } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
+import { tap } from 'rxjs/operators';
+import { Event } from 'src/app/shared/model/event.model';
 import { AppState } from 'src/app/store';
 import { selectEventsFromShoppingList } from '../../navbar/shopping-cart/store/shopping-cart.selectors';
-import { take, tap } from 'rxjs/operators';
-import { Event } from 'src/app/shared/model/event.model';
 
 @Component({
   selector: 'app-shopping-cart-list',

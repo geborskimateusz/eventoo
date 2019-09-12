@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppState } from 'src/app/store';
 import { Store, select } from '@ngrx/store';
-import { selectAllTickets, selectBookingLoading, selectLatestInvoice } from '../store/booking.selectors';
-import { tap } from 'rxjs/operators';
-import { BookTicketsRequest } from '../store/booking.actions';
+import { selectBookingLoading, selectLatestInvoice } from '../store/booking.selectors';
 import { Observable } from 'rxjs';
 import { DownloadRequested, SendByEmailRequested } from 'src/app/shared/util/util-store/util.actions';
 

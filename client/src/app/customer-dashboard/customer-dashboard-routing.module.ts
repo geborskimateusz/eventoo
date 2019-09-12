@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { CustomerDashboardComponent } from './customer-dashboard.component';
-import { EventsComponent } from './events/events.component';
-import { ServicesComponent } from './services/services.component';
-import { EventComponent } from './events/event/event.component';
-import { UserComponent } from './user/user.component';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../auth/auth.guard';
 import { EventResolver } from '../shared/event/event.resolver';
-import { EventDetailComponent } from './events/event/event-detail/event-detail.component';
+import { CustomerDashboardComponent } from './customer-dashboard.component';
+import { EventComponent } from './events/event/event.component';
+import { EventsComponent } from './events/events.component';
+import { ServicesComponent } from './services/services.component';
 import { ShoppingCartListComponent } from './user/shopping-cart-list/shopping-cart-list.component';
+import { UserComponent } from './user/user.component';
 
 
 const routes: Routes = [

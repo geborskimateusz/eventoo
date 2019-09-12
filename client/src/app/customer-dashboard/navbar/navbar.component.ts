@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { AuthDialog } from 'src/app/auth/auth-dialog/auth-dialog.component';
-import { AppState } from 'src/app/store';
-import { Store, select } from '@ngrx/store';
-import { Logout } from 'src/app/auth/store/auth.actions';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { map, tap, take } from 'rxjs/operators';
-import { UserDetails } from 'src/app/shared/model/user-details';
-import { selectUserDetails, isLoggedIn } from 'src/app/auth/store/auth.selector';
-import { selectEventsIDs, selectEventsFromShoppingList, isShoppingCartEmpty } from './shopping-cart/store/shopping-cart.selectors';
-import { PutShoppingCart } from './shopping-cart/store/shopping-cart.actions';
-import { filter } from 'minimatch';
+import { map, take, tap } from 'rxjs/operators';
 import { ApplicationConstans } from 'src/app/app-const';
+import { AuthDialog } from 'src/app/auth/auth-dialog/auth-dialog.component';
+import { Logout } from 'src/app/auth/store/auth.actions';
+import { isLoggedIn, selectUserDetails } from 'src/app/auth/store/auth.selector';
+import { UserDetails } from 'src/app/shared/model/user-details';
+import { AppState } from 'src/app/store';
+import { PutShoppingCart } from './shopping-cart/store/shopping-cart.actions';
+import { selectEventsFromShoppingList } from './shopping-cart/store/shopping-cart.selectors';
 
 @Component({
   selector: 'app-navbar',

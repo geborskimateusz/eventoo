@@ -1,5 +1,4 @@
-import { Action } from '@ngrx/store';
-import { User } from '../model/user.model';
+
 import { AuthActionTypes, AuthActions } from './auth.actions';
 import { UserDetails } from 'src/app/shared/model/user-details';
 

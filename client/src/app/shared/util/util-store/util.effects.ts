@@ -1,11 +1,11 @@
-import { Inject, Injectable } from '@angular/core';
-import { Actions, Effect, ofType } from '@ngrx/effects';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { DownloadRequested, UtilActionTypes, SendByEmailRequested, ContactRequest } from './util.actions';
-import { tap, map, catchError, switchMap } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { Actions, Effect, ofType } from '@ngrx/effects';
 import { EMPTY } from 'rxjs';
-import { UIService } from '../../ui/service/ui.service';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { ApplicationConstans } from 'src/app/app-const';
+import { UIService } from '../../ui/service/ui.service';
+import { ContactRequest, DownloadRequested, SendByEmailRequested, UtilActionTypes } from './util.actions';
 
 @Injectable()
 export class UtilEffects {
@@ -25,7 +25,6 @@ export class UtilEffects {
             headers = headers.set('Accept', 'application/pdf');
 
             let url = `${ApplicationConstans.BASE_URL}/order/${fileName}`;
-            console.log(url)
 
             return this.httpClient.get(url, { headers: headers, responseType: 'blob' })
                 .pipe(

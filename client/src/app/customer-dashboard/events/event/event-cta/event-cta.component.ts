@@ -1,6 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { Ticket } from 'src/app/shared/model/ticket-model';
 
 @Component({
   selector: 'app-event-cta',

@@ -1,20 +1,19 @@
-import { Component, OnInit, Input, AfterViewInit, AfterContentChecked, OnChanges } from '@angular/core';
-import { Observable, of, forkJoin, EMPTY, zip, combineLatest } from 'rxjs';
-import { Store, select } from '@ngrx/store';
-import { AppState } from 'src/app/store';
-import { map, tap, startWith, delay, switchMap, filter, concat, concatMap, mergeMap, first, withLatestFrom, flatMap, take, repeat, exhaust, exhaustMap } from 'rxjs/operators';
-import { selectAllEvents, selectEventsByGenre, selectEventsPageByGenre } from '../store/events.selectors';
-import { EventsPageRequested } from '../store/events.actions';
-import { Ticket } from 'src/app/shared/model/ticket-model';
-import { PaginationService, PAGE_SIZE } from 'src/app/shared/pagination/pagination.service';
-import { MusicGenre, genreToEnum } from 'src/app/shared/model/music-genres.model';
-import { selectPricePerType } from '../../book/store/booking.selectors';
-import { AddEvent, DeleteEvent } from '../../navbar/shopping-cart/store/shopping-cart.actions';
-import { selectEventsIDs as selectEventsIDs } from '../../navbar/shopping-cart/store/shopping-cart.selectors';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { combineLatest, Observable, of } from 'rxjs';
+import { delay, first, map, switchMap, tap } from 'rxjs/operators';
 import { EventService } from 'src/app/shared/event.service';
 import { Event } from 'src/app/shared/model/event.model';
-import { selectIsLoading } from 'src/app/shared/ui/ui-store/ui.selectors';
+import { genreToEnum } from 'src/app/shared/model/music-genres.model';
+import { Ticket } from 'src/app/shared/model/ticket-model';
+import { PAGE_SIZE, PaginationService } from 'src/app/shared/pagination/pagination.service';
 import { StartLoading, StopLoading } from 'src/app/shared/ui/ui-store/ui.actions';
+import { selectIsLoading } from 'src/app/shared/ui/ui-store/ui.selectors';
+import { AppState } from 'src/app/store';
+import { AddEvent, DeleteEvent } from '../../navbar/shopping-cart/store/shopping-cart.actions';
+import { selectEventsIDs as selectEventsIDs } from '../../navbar/shopping-cart/store/shopping-cart.selectors';
+import { EventsPageRequested } from '../store/events.actions';
+import { selectEventsPageByGenre } from '../store/events.selectors';
 
 @Component({
   selector: 'app-events-card-list',

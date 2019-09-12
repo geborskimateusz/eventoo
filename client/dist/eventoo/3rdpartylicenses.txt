@@ -32,6 +32,9 @@ MIT
 @angular/core
 MIT
 
+@angular/fire
+MIT
+
 @angular/forms
 MIT
 
@@ -116,6 +119,15 @@ SOFTWARE.
 
 
 
+@firebase/app
+Apache-2.0
+
+@firebase/logger
+Apache-2.0
+
+@firebase/util
+Apache-2.0
+
 @ngrx/effects
 MIT
 
@@ -127,6 +139,8 @@ MIT
 
 @ngrx/store
 MIT
+
+firebase/app
 
 leaflet
 BSD-2-Clause

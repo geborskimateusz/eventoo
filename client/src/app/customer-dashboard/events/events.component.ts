@@ -1,12 +1,6 @@
-import { Component, OnInit, ɵConsole } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { Store, select } from '@ngrx/store';
-import { AppState } from 'src/app/store';
-import { selectAllEvents } from './store/events.selectors';
-import { EventsPageRequested } from './store/events.actions';
-import { map } from 'rxjs/operators';
-import { MusicGenre } from 'src/app/shared/model/music-genres.model';
+import { Component, OnInit } from '@angular/core';
 import { MatTabChangeEvent } from '@angular/material';
+import { MusicGenre } from 'src/app/shared/model/music-genres.model';
 import { PaginationService } from 'src/app/shared/pagination/pagination.service';
 
 @Component({

@@ -36,14 +36,6 @@ export class BookingEffects {
 
             let userDetailsId = localStorage.getItem(ApplicationConstans.CURRENT_USER_ID);
 
-            console.log(
-                {
-                    orderDate: new Date(),
-                    orderedTickets,
-                    userDetailsId
-                }
-            )
-
             return this.httpClient.patch(`${ApplicationConstans.BASE_URL}/order`,
              {
                 orderDate: new Date(),
@@ -52,7 +44,9 @@ export class BookingEffects {
             }, { responseType: 'text' })
                 .pipe(
                     catchError(err => {
+
                         console.log(err)
+                        
                         this.store.dispatch(new OrderCancelled())
 
                         return EMPTY;

@@ -1,7 +1,5 @@
 import { EntityAdapter, createEntityAdapter, EntityState } from '@ngrx/entity';
 import { BookingActions, BookingActionTypes } from './booking.actions';
-import { Ticket } from 'src/app/shared/model/ticket-model';
-import { retry } from 'rxjs/operators';
 import { OrderedTicket } from 'src/app/shared/model/ordered-ticket.model';
 
 export interface BookingState extends EntityState<OrderedTicket> {

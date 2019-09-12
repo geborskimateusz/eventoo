@@ -1,7 +1,6 @@
+import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { Event } from 'src/app/shared/model/event.model';
-import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { EventsActions, EventsActionTypes } from './events.actions';
-import * as fromCustomerDashboard from '../../store/customer-dashboard.reducers';
 
 export interface EventsState extends EntityState<Event> {
 }
@@ -17,12 +16,7 @@ export function eventsReducer(state = initialEventsState, action: EventsActions)
             return adapter.addOne(action.payload.event, state);
 
         case EventsActionTypes.EventsPageLoaded:
-            return adapter.upsertMany(
-                action.payload.events,
-                {...state});
-
-        // case EventsActionTypes.EventsPageCancelled:
-        //         return { ...state}
+            return adapter.upsertMany(action.payload.events, { ...state });
 
         default: {
             return state;

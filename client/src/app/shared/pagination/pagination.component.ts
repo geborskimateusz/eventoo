@@ -1,9 +1,6 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
-import { PaginationService } from './pagination.service';
+import { Component, OnInit } from '@angular/core';
 import { delay } from 'rxjs/operators';
-import { AppState } from 'src/app/store';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { PaginationService } from './pagination.service';
 
 @Component({
   selector: 'app-pagination',
@@ -42,7 +39,6 @@ export class PaginationComponent implements OnInit {
   }
 
   incrementPage() {
-    console.log('called')
     this.currentPage++;
     this.changePage();
   }

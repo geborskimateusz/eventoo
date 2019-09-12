@@ -1,14 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Actions, ofType, Effect } from '@ngrx/effects';
 import { HttpClient } from '@angular/common/http';
-import { PutShoppingCart, ShoppingCartActionTypes, ShoppingCartRequest, AddEventsToShoppingCart, ResetShoppingCart, DeleteEvent } from './shopping-cart.actions';
-import { tap, map, catchError, switchMap, concatMap, withLatestFrom, filter, combineLatest, mergeMap } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { Actions, Effect, ofType } from '@ngrx/effects';
 import { EMPTY } from 'rxjs';
-import { Event } from 'src/app/shared/model/event.model';
-import { select, Store } from '@ngrx/store';
-import { isShoppingCartEmpty, selectEventFromShoppingList } from './shopping-cart.selectors';
-import { AppState } from 'src/app/store';
+import { catchError, concatMap, map, switchMap } from 'rxjs/operators';
 import { ApplicationConstans } from 'src/app/app-const';
+import { Event } from 'src/app/shared/model/event.model';
+import { AddEventsToShoppingCart, DeleteEvent, PutShoppingCart, ResetShoppingCart, ShoppingCartActionTypes, ShoppingCartRequest } from './shopping-cart.actions';
 
 export interface ShoppingCart {
     userId: string,
@@ -26,13 +23,10 @@ export class ShoppingCartEffects {
         ofType<PutShoppingCart>(ShoppingCartActionTypes.PutShoppingCart),
         concatMap(action => {
 
-            console.log(action)
-
             const userId = action.payload.userId;
             const events = action.payload.events;
 
             let shoppingCart: ShoppingCart = { userId, events }
-            console.log(shoppingCart)
 
             return this.httpClient.put(`${ApplicationConstans.BASE_URL}/shoppingCart`, shoppingCart)
                 .pipe(
@@ -52,7 +46,6 @@ export class ShoppingCartEffects {
     initializeShoppingCart$ = this.actions$.pipe(
         ofType<ShoppingCartRequest>(ShoppingCartActionTypes.ShoppingCartRequest),
         switchMap(action => {
-            console.log('in request');
 
             return this.httpClient.get<ShoppingCart>(`${ApplicationConstans.BASE_URL}/shoppingCart/${action.payload.userId}`)
             .pipe(
@@ -75,7 +68,6 @@ export class ShoppingCartEffects {
             const userId: string = localStorage.getItem("current_user_id");
             const eventId: number = action.payload.event.id;
 
-            console.log(userId, eventId)
             return this.httpClient.delete(`${ApplicationConstans.BASE_URL}/shoppingCart/${userId}?eventId=${eventId}`)
                 .pipe(
                     catchError(err => {

@@ -1,11 +1,10 @@
-import { Component, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { AppState } from 'src/app/store';
-import { Store, select } from '@ngrx/store';
-import { isShoppingCartEmpty, selectTotalCount, selectEventsFromShoppingList, selectEventsIDs } from './store/shopping-cart.selectors';
-import { tap, map } from 'rxjs/operators';
+import { isShoppingCartEmpty, selectEventsFromShoppingList, selectTotalCount } from './store/shopping-cart.selectors';
 import { Event } from "/home/mat/Projects/eventoo-app/client/src/app/shared/model/event.model";
-import { PutShoppingCart } from './store/shopping-cart.actions';
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',

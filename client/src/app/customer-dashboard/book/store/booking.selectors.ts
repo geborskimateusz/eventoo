@@ -1,8 +1,6 @@
 import { BookingState } from './booking.reducers';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import * as fromBooking from './booking.reducers';
-import { map } from 'leaflet';
-import { tap, filter } from 'rxjs/operators';
 
 export const selectBookingState = createFeatureSelector<BookingState>("booking");
 
