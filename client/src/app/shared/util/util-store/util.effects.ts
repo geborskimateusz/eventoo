@@ -76,7 +76,7 @@ export class UtilEffects {
             let fullName = action.payload.fullName;
 
             let url = `${ApplicationConstans.BASE_URL}/messages/contactRequest?email=${email}&fullName=${fullName}`;
-
+            
             return this.httpClient.get(url)
                 .pipe(
                     catchError(err => {

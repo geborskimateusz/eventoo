@@ -18,6 +18,7 @@ import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { CustomSerializer } from './shared/util/utils';
 import { AngularFireModule } from '@angular/fire';  
 import { environment } from '../environments/environment';  
+import {ServiceWorkerModule} from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,9 @@ import { environment } from '../environments/environment';
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot({
       serializer: CustomSerializer,
-    })],
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
