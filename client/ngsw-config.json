@@ -24,5 +24,19 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "events",
+      "urls": [
+        "/events/All?page=0"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "timeout": "10s",
+        "maxAge": "1d",
+        "maxSize": 100
+      }
+    }
   ]
 }
