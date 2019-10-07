@@ -1,10 +1,8 @@
-#Eventoo
-##Eventoo is an E-commerce web application where you can check Eventoo fake company offer.
+Eventoo
+Eventoo is an E-commerce web application where you can check Eventoo fake company offer.
+This project was build with frameworks like Angular and Spring.
 
-##This project was build with frameworks like Angular and Spring.
-
-
-##Implemented functionalities:
+Implemented functionalities:
 
 1. 📫 Sending emails via JavaMailSender
 2. 🗺️ Map previews, due to Leaflet
